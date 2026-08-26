@@ -1,0 +1,60 @@
+/* Subtle Floating Animations */
+@keyframes floatTop {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatBottom {
+    0% {
+        transform: translateY(0px) rotate(-12deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotate(-6deg);
+    }
+}
+
+@keyframes floatLicensingCone {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotate(8deg);
+    }
+}
+
+@keyframes floatLicensingTorus {
+    0% {
+        transform: translateY(0px) rotateX(55deg) rotateY(-20deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotateX(45deg) rotateY(-10deg);
+    }
+}
+
+@keyframes floatCone {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-12px) rotate(6deg);
+    }
+}
+
+@keyframes floatTorus {
+    0% {
+        transform: translateY(0px) rotateX(60deg) rotateY(-15deg);
+    }
+
+    100% {
+        transform: translateY(10px) rotateX(50deg) rotateY(-5deg);
+    }
+}
