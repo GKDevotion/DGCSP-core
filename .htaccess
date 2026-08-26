@@ -38,15 +38,15 @@ RewriteRule ^service-details/([^/]+)$ service-details.php?slug=$1 [L,QSA]
 
 RewriteRule ^solution-details/([^/]+)$ solution-details.php?slug=$1 [L,QSA]
 
-RewriteRule ^offshore-justisdictions$ offshore-justisdictions.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions$ offshore-jurisdictions.php?slug=$1 [L,QSA]
 RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 
-RewriteRule ^offshore-justisdictions/documentation offshore-justisdictions/documentation.php?slug=$1 [L,QSA]
-RewriteRule ^offshore-justisdictions/mainly-investment-markets offshore-justisdictions/mainly-investment-markets.php?slug=$1 [L,QSA]
-RewriteRule ^offshore-justisdictions/minimum-setup-investment-duration offshore-justisdictions/minimum-setup-investment-duration.php?slug=$1 [L,QSA]
-RewriteRule ^offshore-justisdictions/office-location-rules-ragulation offshore-justisdictions/office-location-rules-ragulation.php?slug=$1 [L,QSA]
-RewriteRule ^offshore-justisdictions/pros-cons offshore-justisdictions/pros-cons.php?slug=$1 [L,QSA]
-RewriteRule ^offshore-justisdictions/type-of-income-source offshore-justisdictions/type-of-income-source.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/documentation offshore-jurisdictions/documentation.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/mainly-investment-markets offshore-jurisdictions/mainly-investment-markets.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/minimum-setup-investment-duration offshore-jurisdictions/minimum-setup-investment-duration.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/office-location-rules-ragulation offshore-jurisdictions/office-location-rules-ragulation.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/pros-cons offshore-jurisdictions/pros-cons.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-jurisdictions/type-of-income-source offshore-jurisdictions/type-of-income-source.php?slug=$1 [L,QSA]
 
 # Catch-all: anything else that isn't a real file/folder or a route above -> custom 404
 RewriteCond %{REQUEST_FILENAME} !-f
