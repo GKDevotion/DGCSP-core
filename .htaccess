@@ -1,0 +1,139 @@
+# ============================================
+# Shree Gurve Technology - .htaccess
+# Perf + SEO + Security hardening
+# ============================================
+
+RewriteEngine On
+
+# --------------------------------------------
+# 1. Force HTTPS (skipped on localhost/127.0.0.1 for local WAMP/XAMPP testing)
+# --------------------------------------------
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https//%{HTTP_HOST}/$1 [L,R=301]
+
+# --------------------------------------------
+# 2. Force non-www (canonical single domain) - also skipped locally
+#    NOTE: If you prefer www, flip this block (see comment).
+# --------------------------------------------
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https//%1/$1 [L,R=301]
+
+# --- To force WWW instead, comment block above and use this:
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https//www.%{HTTP_HOST}/$1 [L,R=301]
+
+# --------------------------------------------
+# 3. Existing clean-URL rewrites (unchanged)
+# --------------------------------------------
+
+# Allow real files/folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Service details URL
+
+RewriteRule ^service-details/([^/]+)$ service-details.php?slug=$1 [L,QSA]
+
+RewriteRule ^solution-details/([^/]+)$ solution-details.php?slug=$1 [L,QSA]
+
+RewriteRule ^offshore-justisdictions$ offshore-justisdictions.php?slug=$1 [L,QSA]
+RewriteRule ^services$ services.php?slug=$1 [L,QSA]
+
+RewriteRule ^offshore-justisdictions/documentation offshore-justisdictions/documentation.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-justisdictions/mainly-investment-markets offshore-justisdictions/mainly-investment-markets.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-justisdictions/minimum-setup-investment-duration offshore-justisdictions/minimum-setup-investment-duration.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-justisdictions/office-location-rules-ragulation offshore-justisdictions/office-location-rules-ragulation.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-justisdictions/pros-cons offshore-justisdictions/pros-cons.php?slug=$1 [L,QSA]
+RewriteRule ^offshore-justisdictions/type-of-income-source offshore-justisdictions/type-of-income-source.php?slug=$1 [L,QSA]
+
+# Catch-all: anything else that isn't a real file/folder or a route above -> custom 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ 404.php [L]
+
+ErrorDocument 404 /404.php
+
+# --------------------------------------------
+# 4. Compression (gzip/deflate) - big perf win
+# --------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf application/x-font-ttf
+</IfModule>
+
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json
+</IfModule>
+
+# --------------------------------------------
+# 5. Browser caching (long cache for static assets)
+# --------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    ExpiresByType image/jpg              "access plus 1 year"
+    ExpiresByType image/jpeg             "access plus 1 year"
+    ExpiresByType image/png              "access plus 1 year"
+    ExpiresByType image/webp             "access plus 1 year"
+    ExpiresByType image/svg+xml          "access plus 1 year"
+    ExpiresByType image/x-icon           "access plus 1 year"
+
+    ExpiresByType font/ttf               "access plus 1 year"
+    ExpiresByType font/otf               "access plus 1 year"
+    ExpiresByType font/woff              "access plus 1 year"
+    ExpiresByType font/woff2             "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+
+    ExpiresByType text/css               "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript        "access plus 1 month"
+
+    ExpiresByType application/pdf        "access plus 1 month"
+
+    ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# --------------------------------------------
+# 6. Security headers
+# --------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# --------------------------------------------
+# 7. Block access to sensitive files
+# --------------------------------------------
+<Files "contact.txt">
+    Require all denied
+</Files>
+
+<Files "appointment.txt">
+    Require all denied
+</Files>
+
+<Files "function.php">
+    Require all denied
+</Files>
+
+Options -Indexes

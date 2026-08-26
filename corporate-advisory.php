@@ -1,4 +1,8 @@
-<?php include('elements/header.php'); ?>
+<?php 
+require_once __DIR__ . '/config.php';
+include ROOT_PATH . '/elements/header.php';
+
+?>
 
     <!-- JSON-LD Structured Data (SEO, AEO, GEO Optimization) -->
     <script type="application/ld+json">
@@ -429,4 +433,4 @@
         </div>
     </section>
 
-<?php include('elements/footer.php'); ?>
+<?php include ROOT_PATH . '/elements/footer.php'; ?>

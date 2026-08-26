@@ -1,4 +1,8 @@
-<?php include('elements/header.php'); ?>
+<?php 
+require_once __DIR__ . '/../config.php';
+include ROOT_PATH . '/elements/header.php';
+
+?>
 
     <style>
         :root {
@@ -299,6 +303,7 @@
                 </div>
             </div>
 
+            <?php include ROOT_PATH . '/elements/offshore-jurisdiction-menu.php'; ?>
         </div>
     </main>
-<?php include('elements/footer.php'); ?>
+<?php include ROOT_PATH . '/elements/footer.php'; ?>

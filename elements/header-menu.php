@@ -120,8 +120,8 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
     
             <!-- Brand / Image Logo -->
-            <a class="navbar-brand me-auto py-0" href="index.php">
-                <img src="assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
+            <a class="navbar-brand me-auto py-0" href="<?= BASE_URL ?>">
+                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
             </a>
 
             <!-- Mobile Toggle Button -->
@@ -174,13 +174,13 @@
                             Solutions
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="global-entity-management">Global Entity Management</a></li>
-                            <li><a class="dropdown-item" href="accounting-tax">Accounting & TAX</a></li>
-                            <li><a class="dropdown-item" href="fund-service">Fund Services</a></li>
-                            <li><a class="dropdown-item" href="private-family-wealth">Private Wealth & Family Office</a></li>
-                            <li><a class="dropdown-item" href="merger-acquisition">Merger & Acquisition</a></li>
-                            <li><a class="dropdown-item" href="corporate-advisory">Corporate Advisory</a></li>
-                            <li><a class="dropdown-item" href="banking-solution">Banking Solutions</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/global-entity-management">Global Entity Management</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/accounting-tax">Accounting & TAX</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/fund-service">Fund Services</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/private-family-wealth">Private Wealth & Family Office</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/merger-acquisition">Merger & Acquisition</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/corporate-advisory">Corporate Advisory</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/banking-solution">Banking Solutions</a></li>
                         </ul>
                     </li>
 
@@ -199,7 +199,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="offshore-justisdictions">
+                        <a class="nav-link" href="<?= BASE_URL ?>/offshore-jurisdictions">
                             Offshore Jurisdictions
                         </a>
                     </li>
@@ -209,9 +209,9 @@
                             Licensing
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="forex-broker-license">Forex Broker License</a></li>
-                            <li><a class="dropdown-item" href="crypto-currency-license">Crypto Currency License</a></li>
-                            <li><a class="dropdown-item" href="payment-solution-license">Payment Solution License</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/forex-broker-license">Forex Broker License</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/crypto-currency-license">Crypto Currency License</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/payment-solution-license">Payment Solution License</a></li>
                         </ul>
                     </li>
 

@@ -1,28 +1,9 @@
-<?php include('elements/header.php'); ?>
+<?php 
+require_once __DIR__ . '/../config.php';
+include ROOT_PATH . '/elements/header.php';
+?>
 
-<style>
-        :root {
-            --gold-primary: #b89655;
-            --gold-hover: #96783d;
-            --text-dark: #333333;
-            --gold-banner-bg: #b58d3d;
-            --gray-color: #f5f6f8;
-            --font-family: 'Poppins', sans-serif;
-            --gold-border: rgba(163, 130, 64, 0.2);
-            --gold-light: #f9f5ed;
-            --white: #ffffff;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 30px rgba(184, 150, 85, 0.15);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        body {
-            font-family: var(--font-family);
-            color: var(--text-dark);
-            background-color: #fafafa;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    <style>
 
         /* Hero Banner */
         .hero-banner {
@@ -318,7 +299,8 @@
                 </div>
             </div>
 
+            <?php include ROOT_PATH . '/elements/offshore-jurisdiction-menu.php'; ?>
         </div>
     </main>
 
-<?php include('elements/footer.php'); ?>
+<?php include ROOT_PATH . '/elements/footer.php'; ?>

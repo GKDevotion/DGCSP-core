@@ -32,4 +32,4 @@
 </head>
 <body>
 
-    <?php include('elements/header-menu.php'); ?>
+    <?php include ROOT_PATH . '/elements/header-menu.php'; ?>
