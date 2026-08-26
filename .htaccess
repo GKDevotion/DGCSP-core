@@ -39,14 +39,36 @@ RewriteRule ^service-details/([^/]+)$ service-details.php?slug=$1 [L,QSA]
 RewriteRule ^solution-details/([^/]+)$ solution-details.php?slug=$1 [L,QSA]
 
 RewriteRule ^offshore-jurisdictions$ offshore-jurisdictions.php?slug=$1 [L,QSA]
-RewriteRule ^services$ services.php?slug=$1 [L,QSA]
-
 RewriteRule ^offshore-jurisdictions/documentation offshore-jurisdictions/documentation.php?slug=$1 [L,QSA]
 RewriteRule ^offshore-jurisdictions/mainly-investment-markets offshore-jurisdictions/mainly-investment-markets.php?slug=$1 [L,QSA]
 RewriteRule ^offshore-jurisdictions/minimum-setup-investment-duration offshore-jurisdictions/minimum-setup-investment-duration.php?slug=$1 [L,QSA]
 RewriteRule ^offshore-jurisdictions/office-location-rules-ragulation offshore-jurisdictions/office-location-rules-ragulation.php?slug=$1 [L,QSA]
 RewriteRule ^offshore-jurisdictions/pros-cons offshore-jurisdictions/pros-cons.php?slug=$1 [L,QSA]
 RewriteRule ^offshore-jurisdictions/type-of-income-source offshore-jurisdictions/type-of-income-source.php?slug=$1 [L,QSA]
+
+RewriteRule ^forex-broker-license$ forex-broker-license.php?slug=$1 [L,QSA]
+RewriteRule ^global-entity-management$ global-entity-management.php?slug=$1 [L,QSA]
+RewriteRule ^accounting-tax$ accounting-tax.php?slug=$1 [L,QSA]
+RewriteRule ^fund-service$ fund-service.php?slug=$1 [L,QSA]
+RewriteRule ^private-family-wealth$ private-family-wealth.php?slug=$1 [L,QSA]
+RewriteRule ^merger-acquisition$ merger-acquisition.php?slug=$1 [L,QSA]
+RewriteRule ^corporate-advisory$ corporate-advisory.php?slug=$1 [L,QSA]
+RewriteRule ^banking-solution$ banking-solution.php?slug=$1 [L,QSA]
+
+RewriteRule ^forex-broker-license$ forex-broker-license.php?slug=$1 [L,QSA]
+RewriteRule ^crypto-currency-license$ crypto-currency-license.php?slug=$1 [L,QSA]
+RewriteRule ^payment-solution-license$ payment-solution-license.php?slug=$1 [L,QSA]
+RewriteRule ^ready-made-licenses$ ready-made-licenses.php?slug=$1 [L,QSA]
+RewriteRule ^about-us$ about-us.php?slug=$1 [L,QSA]
+RewriteRule ^contact-us$ contact-us.php?slug=$1 [L,QSA]
+RewriteRule ^faqs$ faqs.php?slug=$1 [L,QSA]
+RewriteRule ^news-insight$ news-insight.php?slug=$1 [L,QSA]
+RewriteRule ^webinars$ webinars.php?slug=$1 [L,QSA]
+RewriteRule ^resources$ resources.php?slug=$1 [L,QSA]
+RewriteRule ^our-client$ our-client.php?slug=$1 [L,QSA]
+
+RewriteRule ^services$ services.php?slug=$1 [L,QSA]
+RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 
 # Catch-all: anything else that isn't a real file/folder or a route above -> custom 404
 RewriteCond %{REQUEST_FILENAME} !-f
