@@ -159,13 +159,13 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <!-- Mobile View Secondary Links -->
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link text-gold fw-semibold" href="#">News & Insights</a>
+                        <a class="nav-link text-gold fw-semibold" href="<?= BASE_URL ?>/news-insights">News & Insights</a>
                     </li>
                     <li class="nav-item d-lg-none">
-                        <a class="nav-link text-gold fw-semibold" href="#">Webinars</a>
+                        <a class="nav-link text-gold fw-semibold" href="<?= BASE_URL ?>/webinars">Webinars</a>
                     </li>
                     <li class="nav-item d-lg-none border-bottom pb-2 mb-2">
-                        <a class="nav-link text-gold fw-semibold" href="#">Resources</a>
+                        <a class="nav-link text-gold fw-semibold" href="<?= BASE_URL ?>/resources">Resources</a>
                     </li>
 
                     <!-- Main Navigation Items -->
@@ -216,11 +216,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Read-Made Licenses</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/ready-made-licenses">Read-Made Licenses</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Our Client</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/our-client">Our Client</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -228,9 +228,9 @@
                             Our Company
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">About Us</a></li>
-                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                            <li><a class="dropdown-item" href="#">FAQs</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/about-us">About Us</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/contact-us">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="<?= BASE_URL ?>/faqs">FAQs</a></li>
                         </ul>
                     </li>
 
@@ -240,17 +240,17 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-0">
                             <li>
-                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/news-insight">
                                     <i class="bi bi-newspaper text-gold"></i> News & Insights
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/webinars">
                                     <i class="bi bi-camera-reels text-gold"></i> Webinars
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/resources">
                                     <i class="bi bi-folder-symlink text-gold"></i> Resources
                                 </a>
                             </li>

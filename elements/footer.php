@@ -250,5 +250,27 @@
 
         <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
 
+        <script>
+       
+            if( $('.accordion-header').length > 0 ){
+                // Simple Accordion Toggle Logic
+                const accordionHeaders = document.querySelectorAll('.accordion-header');
+                accordionHeaders.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const accordionItem = header.parentElement;
+                        
+                        // Toggle active state on current item
+                        accordionItem.classList.toggle('active');
+                        
+                        // Close other items (optional single-open behavior)
+                        document.querySelectorAll('.accordion-item').forEach(item => {
+                            if (item !== accordionItem) {
+                                item.classList.remove('active');
+                            }
+                        });
+                    });
+                });
+            }
+        </script>
     </body>
 </html>
