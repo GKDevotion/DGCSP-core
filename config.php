@@ -34,7 +34,7 @@ if (
 
     define(
         'BASE_URL',
-        $protocol . $host
+        $protocol . $host.'/dgcps'
     );
 }
 
