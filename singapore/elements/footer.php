@@ -10,7 +10,8 @@
         <!-- Swiper JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <script src="assets/js/custom.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
+        <script src="<?= BASE_URL ?>/singapore/assets/js/sg-custom.js"></script>
 
     </body>
 </html>

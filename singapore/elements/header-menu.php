@@ -121,7 +121,7 @@
     
             <!-- Brand / Image Logo -->
             <a class="navbar-brand me-auto py-0" href="index.php">
-                <img src="assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
+                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
             </a>
 
             <!-- Mobile Toggle Button -->
@@ -172,17 +172,17 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Stored Value Facility</a></li>
                             <li><a class="dropdown-item" href="#">Crypto Currency Solution</a></li>
-                            <li><a class="dropdown-item" href="#"></a>CMS License?</li>
-                            <li><a class="dropdown-item" href="#"></a>FinTech Businss?</li>
-                            <li><a class="dropdown-item" href="#"></a>NFT Business Setup</li>
-                            <li><a class="dropdown-item" href="#"></a>Crypto Wallet & Exchange Activity</li>
-                            <li><a class="dropdown-item" href="#"></a>Resident Director</li>
-                            <li><a class="dropdown-item" href="#"></a>Corporate Finance Solutions?</li>
-                            <li><a class="dropdown-item" href="#"></a>Listing on Stock Exchange?</li>
-                            <li><a class="dropdown-item" href="#"></a>Financial Company</li>
-                            <li><a class="dropdown-item" href="#"></a>Crypto Currency Solutions</li>
-                            <li><a class="dropdown-item" href="#"></a>Money Remmittance Business</li>
-                            <li><a class="dropdown-item" href="#"></a>Corporate Fianance Solutions</li>
+                            <li><a class="dropdown-item" href="#">CMS License?</a></li>
+                            <li><a class="dropdown-item" href="#">FinTech Businss?</a></li>
+                            <li><a class="dropdown-item" href="#">NFT Business Setup</a></li>
+                            <li><a class="dropdown-item" href="#">Crypto Wallet & Exchange Activity</a></li>
+                            <li><a class="dropdown-item" href="#">Resident Director</a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Finance Solutions?</a></li>
+                            <li><a class="dropdown-item" href="#">Listing on Stock Exchange?</a></li>
+                            <li><a class="dropdown-item" href="#">Financial Company</a></li>
+                            <li><a class="dropdown-item" href="#">Crypto Currency Solutions</a></li>
+                            <li><a class="dropdown-item" href="#">Money Remmittance Business</a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Fianance Solutions</a></li>
                         </ul>
                     </li>
 
