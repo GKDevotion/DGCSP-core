@@ -135,9 +135,15 @@
                 <!-- Main Primary Navigation -->
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
+                    <li class="nav-item">
+                        <a class="nav-link text-gold" href="<?= BASE_URL ?>">
+                            Home
+                        </a>
+                    </li>
+
                     <!-- Corporate Structure -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-gold dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Corporate Structure
                         </a>
                         <ul class="dropdown-menu">
