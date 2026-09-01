@@ -20,7 +20,6 @@
 }
 
 body, html {
-    overflow-x: hidden;
     font-family: var(--font-family);
     color: var(--text-dark);
     font-size: 1rem;
@@ -28,7 +27,7 @@ body, html {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-size: 1rem;
-    letter-spacing: .5px
+    letter-spacing: .5px;
 }
 
 .theme-border {
@@ -189,15 +188,39 @@ body, html {
    STICKY HEADER ENHANCEMENTS
    ========================================================================== */
 
+/* Fixes the dropdown cutting off without needing overflow properties */
+.devotion-header .navbar,
+.devotion-header .container-fluid {
+    position: static !important; 
+}
+
+.devotion-header .dropdown {
+    position: relative; /* Keeps the dropdown menu anchored only to its link item */
+}
+
 .devotion-header.sticky-top {
+    position: sticky;
+    top: 0;
     z-index: 1030;
-    /* Ensures navigation stays on top of content */
+    overflow: visible !important; /* Forces layout visibility over sticky containers */
+}
+
+/* ==========================================================================
+   STICKY WRAPPER ENHANCEMENTS (Both Belt & Header)
+   ========================================================================== */
+
+.main-sticky-navigation {
+    position: -webkit-sticky; /* For Safari compatibility */
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Keeps both elements above the scrolling page content */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
 }
 
-/* Optional: Shrink padding slightly when sticky for a cleaner look while scrolling */
-.devotion-header.sticky-top {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+/* Optional styling cleanup for the header inside the wrapper */
+.devotion-header {
+    transition: all 0.3s ease-in-out;
 }
 
 /* --- Image Logo Styling --- */
@@ -304,7 +327,7 @@ body, html {
     font-size: 0.875rem;
     font-weight: 400;
     color: #444444;
-    padding: 0.6rem 1.25rem;
+    padding: 0.5rem 1rem;
     position: relative;
     border-left: 3px solid transparent;
     /* Hidden left border indicator */

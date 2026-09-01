@@ -30,7 +30,7 @@
             { name: "Mauritius", xRatio: 0.15, yRatio: 0.25, width: 185, height: 260, imgSrc: "assets/images/Jurisdictions/Mauritius.png", url: "https://example.com/mauritius" },
             { name: "UAE",       xRatio: 0.40, yRatio: 0.18, width: 190, height: 180, imgSrc: "assets/images/Jurisdictions/UAE.png",       url: "https://example.com/uae" },
             { name: "Hongkong",  xRatio: 0.80, yRatio: 0.20, width: 230, height: 190, imgSrc: "assets/images/Jurisdictions/HongKong.png",  url: "https://example.com/hongkong" },
-            { name: "Singapore", xRatio: 0.25, yRatio: 0.75, width: 280, height: 200, imgSrc: "assets/images/Jurisdictions/Singapore.png", url: "https://example.com/singapore" },
+            { name: "Singapore", xRatio: 0.25, yRatio: 0.75, width: 280, height: 200, imgSrc: "assets/images/Jurisdictions/Singapore.png", url: "<?= BASE_URL ?>/singapore" },
             { name: "India",     xRatio: 0.58, yRatio: 0.58, width: 300, height: 400, imgSrc: "assets/images/Jurisdictions/India.png",     url: "https://example.com/india" },
             { name: "UK",        xRatio: 0.85, yRatio: 0.65, width: 170, height: 350, imgSrc: "assets/images/Jurisdictions/UK.png",        url: "https://example.com/uk" }
         ].map(country => ({

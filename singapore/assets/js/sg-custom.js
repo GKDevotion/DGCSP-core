@@ -100,3 +100,103 @@ function handleFormSubmit(event) {
 window.onload = function() {
     updateCostCalculator();
 };
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS animations
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+
+    if( $(".nav-pill-btn").length > 0) {
+        // Auto highlight pill nav items on scroll
+        const sections = document.querySelectorAll("section[id]");
+        const navPills = document.querySelectorAll(".nav-pill-btn");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 120;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navPills.forEach((pill) => {
+                pill.classList.remove("active");
+                if (pill.getAttribute("href") === `#${current}`) {
+                    pill.classList.add("active");
+                }
+            });
+        });
+    }
+});
+
+// Duty & Tax Calculation Logic
+function calculateSavings() {
+    const cargo = parseFloat(document.getElementById('cargoValue').value) || 0;
+    const duty = parseFloat(document.getElementById('dutyRate').value) || 0;
+
+    const gstSaved = cargo * 0.09; // 9% Singapore GST
+    const dutySaved = cargo * (duty / 100);
+    const total = gstSaved + dutySaved;
+
+    document.getElementById('totalSavings').innerText = `$${total.toLocaleString('en-US', {maximumFractionDigits: 0})} USD`;
+}
+
+// Form Response Handler
+function showConfirmationMessage() {
+    const msg = document.getElementById('formResponseMessage');
+    msg.classList.remove('d-none');
+    setTimeout(() => {
+        msg.classList.add('d-none');
+    }, 6000);
+}
+
+// Smooth Hover Dropdown behavior for Desktop
+const dropdowns = document.querySelectorAll('.navbar .dropdown');
+if (window.innerWidth > 991) {
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', function() {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+        });
+        dropdown.addEventListener('mouseleave', function() {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        });
+    });
+}
+
+if( $('.calc-option').length > 0 ) {
+    // Fee Calculator Logic
+    const checkboxes = document.querySelectorAll('.calc-option');
+    const totalDisplay = document.getElementById('calcTotal');
+
+    function calculateTotal() {
+        let currentTotal = 0;
+        checkboxes.forEach(chk => {
+            if (chk.checked) {
+                currentTotal += parseInt(chk.value);
+            }
+        });
+        if(totalDisplay) totalDisplay.textContent = '$' + currentTotal.toLocaleString();
+    }
+
+    checkboxes.forEach(chk => {
+        chk.addEventListener('change', calculateTotal);
+    });
+
+    // Consultation Form Submit Notification
+    const form = document.getElementById('consultationForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your consultation request has been submitted. Our Singapore advisory team will contact you within 24 hours.');
+            form.reset();
+        });
+    }
+}
