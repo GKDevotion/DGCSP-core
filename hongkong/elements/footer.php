@@ -252,7 +252,7 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
-        <script src="<?= BASE_URL ?>/singapore/assets/js/sg-custom.js"></script>
+        <script src="<?= BASE_URL ?>/hongkong/assets/js/hk-custom.js"></script>
 
     </body>
 </html>
