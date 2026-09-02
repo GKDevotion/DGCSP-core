@@ -332,8 +332,171 @@ include ROOT_PATH . '/singapore/elements/header.php';
         </div>
     </section>
 
+    <!-- Fees Section -->
+    <section class="py-5" id="fees-timeline">
+        <div class="container py-4">
+            <div id="engagement-fees" class="mb-5" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="section-title">Engagement Fees?</h2>
+                    <p class="section-subtitle">Transparent retainer fees, government filing costs, and institutional licensing package pricing.</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white rounded-4 shadow-sm border h-100 text-center">
+                            <span class="badge bg-secondary mb-3">Starter Tier</span>
+                            <h4>ACRA Incorporation</h4>
+                            <h2 class="fw-bold my-3" style="color: var(--gold-primary);">$1,500 <span class="fs-6 text-muted">SGD</span></h2>
+                            <p class="text-muted small">Ideal for foreign subsidiaries and local business startups.</p>
+                            <hr>
+                            <ul class="list-unstyled text-start small lh-lg mb-4">
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> ACRA Name Reservation & Govt Fees</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> Constitution & Company Profile</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> First Year Corporate Secretary</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact')" class="btn btn-outline-gold w-100">Get Started</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white rounded-4 shadow-sm border-2 border-warning h-100 text-center position-relative">
+                            <span class="badge bg-warning text-dark m-3">Recommended</span>
+                            <h4>Payment License (SPI/MPI)</h4>
+                            <h2 class="fw-bold my-3" style="color: var(--gold-primary);">$8,500 <span class="fs-6 text-muted">SGD</span></h2>
+                            <p class="text-muted small">For Money Remittance & E-Money operators.</p>
+                            <hr>
+                            <ul class="list-unstyled text-start small lh-lg mb-4">
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> Complete MAS Form 1 Application</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> AML/CFT Policy & ERA Drafting</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> Local Nominee Director Intro</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact')" class="btn btn-gold w-100">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white rounded-4 shadow-sm border h-100 text-center">
+                            <span class="badge bg-dark mb-3">Institutional</span>
+                            <h4>CMS License (SFA)</h4>
+                            <h2 class="fw-bold my-3" style="color: var(--gold-primary);">$15,000 <span class="fs-6 text-muted">SGD</span></h2>
+                            <p class="text-muted small">Fund management & securities dealing setup.</p>
+                            <hr>
+                            <ul class="list-unstyled text-start small lh-lg mb-4">
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> Comprehensive Capital Markets Filing</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> Legal Structure Legal Opinion</li>
+                                <li><i class="fa-solid fa-check text-gold me-2"></i> End-to-end MAS Interview Prep</li>
+                            </ul>
+                            <a onclick="switchView('home', 'contact')" class="btn btn-outline-gold w-100">Consult Specialist</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Estimator Calculator -->
+                <div class="calculator-card mt-4">
+                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-calculator text-gold me-2"></i> Custom Cost Estimator</h5>
+                    <form id="calcForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input calc-option" type="checkbox" id="opt1" value="1500" checked>
+                                    <label class="form-check-label d-flex justify-content-between fw-500" for="opt1">
+                                        <span>ACRA Company Incorporation & Govt Fees</span>
+                                        <span class="text-gold fw-bold">$1,500 SGD</span>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input calc-option" type="checkbox" id="opt2" value="3500">
+                                    <label class="form-check-label d-flex justify-content-between fw-500" for="opt2">
+                                        <span>Resident Director Service (Annual Provision)</span>
+                                        <span class="text-gold fw-bold">$3,500 SGD</span>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input calc-option" type="checkbox" id="opt3" value="1200">
+                                    <label class="form-check-label d-flex justify-content-between fw-500" for="opt3">
+                                        <span>Corporate Secretary & Address Registration</span>
+                                        <span class="text-gold fw-bold">$1,200 SGD</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input calc-option" type="checkbox" id="opt4" value="8500">
+                                    <label class="form-check-label d-flex justify-content-between fw-500" for="opt4">
+                                        <span>MAS Money Remittance / Payment License Prep</span>
+                                        <span class="text-gold fw-bold">$8,500 SGD</span>
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input calc-option" type="checkbox" id="opt5" value="2000">
+                                    <label class="form-check-label d-flex justify-content-between fw-500" for="opt5">
+                                        <span>Corporate Banking Account Opening Assistance</span>
+                                        <span class="text-gold fw-bold">$2,000 SGD</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <span class="text-muted small">Estimated Total Investment:</span>
+                                <h3 class="fw-bold mb-0 text-dark"><span id="calcTotal" style="color: var(--gold-primary);">$1,500</span> SGD</h3>
+                            </div>
+                            <a onclick="switchView('home', 'contact')" class="btn btn-gold">Lock In Custom Quote</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Timeline Section -->
+    <section class="py-5 bg-gray" id="fees-timeline">
+        <div class="container py-4">
+            <div id="timelines" class="pt-4" data-aos="fade-up">
+                <div class="text-center mb-4">
+                    <h2 class="section-title">Timelines?</h2>
+                    <p class="section-subtitle">Roadmap of turnaround times from initial incorporation to full operational MAS go-live.</p>
+                </div>
+
+                <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="timeline-step">
+                                <h5 class="fw-bold">Phase 1: ACRA Entity Incorporation</h5>
+                                <span class="badge bg-light text-dark mb-2">Duration: 24 - 48 Hours</span>
+                                <p class="text-muted small">ACRA name approval, constitutional drafting, officer appointments, and immediate issuance of UEN (Unique Entity Number).</p>
+                            </div>
+
+                            <div class="timeline-step">
+                                <h5 class="fw-bold">Phase 2: MAS License Dossier Compilation</h5>
+                                <span class="badge bg-light text-dark mb-2">Duration: 2 - 4 Weeks</span>
+                                <p class="text-muted small">Formulating business plan, AML/CFT enterprise risk assessment, technology security policies, and resident director onboarding.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="timeline-step">
+                                <h5 class="fw-bold">Phase 3: MAS Review & Query Clearance</h5>
+                                <span class="badge bg-light text-dark mb-2">Duration: 3 - 5 Months</span>
+                                <p class="text-muted smal">Submission on MAS-eLicensing portal, regulatory interview representation, and responding to MAS clarification notices.</p>
+                            </div>
+
+                            <div class="timeline-step">
+                                <h5 class="fw-bold">Phase 4: In-Principle Approval & Go-Live</h5>
+                                <span class="badge bg-light text-dark mb-2">Duration: 2 - 4 Weeks</span>
+                                <p class="text-muted small">Capital injection verification, escrow account activation, security deposit lodgment with MAS, and final license issuance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section 6: FAQ Accordion -->
-    <section id="faq" class="section-padding">
+    <section id="faq" class="section-padding ">
         <div class="container">
             <div class="text-center max-w-800 mx-auto mb-5" data-aos="fade-up">
                 <span class="section-title-badge">Common Questions</span>

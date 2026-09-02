@@ -163,6 +163,8 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/manufacturing#free-zones">Free Zones?</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/manufacturing#compare-free-zones">Compare Free Zone Companies</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/manufacturing#engagement-fees">Engagement Fees?</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/manufacturing#timelines">Timelines?</a></li>
                             </ul>
                         </li>
 
@@ -185,16 +187,6 @@
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/financial-services#crypto-solutions-adv">Crypto Currency Solutions</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/financial-services#money-remittance">Money Remmittance Business</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore/financial-services#corporate-finance-solutions">Corporate Fianance Solutions</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Fees & Timeline
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Engagement Fees?</a></li>
-                                <li><a class="dropdown-item" href="#">Timeslines?</a></li>
                             </ul>
                         </li>
 
