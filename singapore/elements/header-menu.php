@@ -139,7 +139,7 @@
 
                         <!-- Corporate Structure -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/corporate-structure" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/corporate-structure"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Corporate Structure
                             </a>
                             <ul class="dropdown-menu">
@@ -157,7 +157,7 @@
 
                         <!-- Manufacturing -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/manufacturing" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/manufacturing"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Manufacturing
                             </a>
                             <ul class="dropdown-menu">
@@ -168,7 +168,7 @@
 
                         <!-- Financial Services -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/financial-services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/singapore/financial-services"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Financial Services
                             </a>
                             <ul class="dropdown-menu">
