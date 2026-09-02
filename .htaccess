@@ -55,7 +55,6 @@ RewriteRule ^merger-acquisition$ merger-acquisition.php?slug=$1 [L,QSA]
 RewriteRule ^corporate-advisory$ corporate-advisory.php?slug=$1 [L,QSA]
 RewriteRule ^banking-solution$ banking-solution.php?slug=$1 [L,QSA]
 
-RewriteRule ^forex-broker-license$ forex-broker-license.php?slug=$1 [L,QSA]
 RewriteRule ^crypto-currency-license$ crypto-currency-license.php?slug=$1 [L,QSA]
 RewriteRule ^payment-solution-license$ payment-solution-license.php?slug=$1 [L,QSA]
 RewriteRule ^ready-made-licenses$ ready-made-licenses.php?slug=$1 [L,QSA]
