@@ -48,7 +48,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore">Singapore</a></li>
-                                <li><a class="dropdown-item" href="#">Hong Kong</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/hongkong">Hong Kong</a></li>
                                 <li><a class="dropdown-item" href="#">Moritius </a></li>
                                 <li><a class="dropdown-item" href="#">India</a></li>
                                 <li><a class="dropdown-item" href="#">UAE</a></li>
