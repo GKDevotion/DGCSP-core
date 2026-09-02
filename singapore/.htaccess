@@ -40,14 +40,17 @@ RewriteRule ^manufacturing/([^/]+)/?$ manufacturing.php?slug=$1 [L,QSA]
 RewriteRule ^financial-services/?$ financial-services.php [L,QSA]
 RewriteRule ^financial-services/([^/]+)/?$ financial-services.php?slug=$1 [L,QSA]
 
-# Offshore Jurisdictions
-RewriteRule ^offshore-jurisdictions/?$ offshore-jurisdictions.php [L,QSA]
+# book-keeping
+RewriteRule ^book-keeping/?$ book-keeping.php [L,QSA]
+RewriteRule ^book-keeping/([^/]+)/?$ book-keeping.php?slug=$1 [L,QSA]
 
-# Offshore Jurisdictions Documentation
-RewriteRule ^offshore-jurisdictions/documentation/?$ offshore-jurisdictions/documentation.php [L,QSA]
+# business-setup
+RewriteRule ^business-setup/?$ business-setup.php [L,QSA]
+RewriteRule ^business-setup/([^/]+)/?$ business-setup.php?slug=$1 [L,QSA]
 
-# Forex Broker License
-RewriteRule ^forex-broker-license/?$ forex-broker-license.php [L,QSA]
+# cash-flow
+RewriteRule ^cash-flow/?$ cash-flow.php [L,QSA]
+RewriteRule ^cash-flow/([^/]+)/?$ cash-flow.php?slug=$1 [L,QSA]
 
 # --------------------------------------------
 # 5. Custom 404
