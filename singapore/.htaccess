@@ -37,6 +37,7 @@ RewriteRule ^manufacturing/?$ manufacturing.php [L,QSA]
 RewriteRule ^manufacturing/([^/]+)/?$ manufacturing.php?slug=$1 [L,QSA]
 
 # Financial Services
+RewriteRule ^financial-services/?$ financial-services.php [L,QSA]
 RewriteRule ^financial-services/([^/]+)/?$ financial-services.php?slug=$1 [L,QSA]
 
 # Offshore Jurisdictions
