@@ -32,6 +32,9 @@
 
     <!-- Include jQuery for smooth animation -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 

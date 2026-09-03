@@ -1,8 +1,8 @@
 :root {
-    --gold-primary: #b89655;
+    --gold-primary: #ab8139;
     --gold-hover: #96783d;
     --text-dark: #333333;
-    --gold-banner-bg: #b58d3d;
+    --gold-banner-bg: #ab8139;
     --gray-color: #f5f6f8;
     --font-family: 'Poppins';
     --gold-border: rgba(163, 130, 64, 0.2);
@@ -11,6 +11,8 @@
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 30px rgba(184, 150, 85, 0.15);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-card: 0 12px 35px rgba(184, 150, 85, 0.08);
+    --shadow-hover: 0 20px 45px rgba(184, 150, 85, 0.18);
 }
 
 * {

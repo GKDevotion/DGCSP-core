@@ -250,8 +250,12 @@
 
         <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
         <script>
        
+            AOS.init({ duration: 800, once: true });
+
             if( $('.accordion-header').length > 0 ){
                 // Simple Accordion Toggle Logic
                 const accordionHeaders = document.querySelectorAll('.accordion-header');
