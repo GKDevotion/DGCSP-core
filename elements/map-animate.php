@@ -108,6 +108,19 @@
         line-height: 25px;
     }
 
+    .gold-accent-banner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 7.5rem;
+        background-color: var(--gold-banner-bg);
+        z-index: 1;
+        box-shadow: 0 -4px 20px rgba(171, 129, 57, 0.2);
+        background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.2px, transparent 1.2px);
+        background-size: 16px 16px;
+    }
+
 </style>
 
 <!-- Interactive Canvas Header Map Banner Section -->
@@ -210,7 +223,15 @@
             </div>
 
         </div>
+
+        <p class="hero-subtitle mx-auto mt-4">
+            Global Business Consulting & Company Formation Services
+        </p>
+
     </div>
+
+    <!-- Gold Accent Banner under bottom section -->
+    <div class="gold-accent-banner"></div>
 </section>
 
 <script>

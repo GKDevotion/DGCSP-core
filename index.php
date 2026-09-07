@@ -5,7 +5,7 @@ include ROOT_PATH . '/elements/map-animate.php';
 ?>
 
 <!-- Hero & Services Intro Section -->
-<section class="hero-services-wrapper position-relative overflow-hidden pb-5">
+<section class="hero-services-wrapper position-relative overflow-hidden pb-5 d-none">
     
     <!-- Decorative Floating Elements (Geometric Shapes) -->
     <div class="shape-top-left d-none d-md-block" data-aos="fade-left" data-aos-delay="150">
