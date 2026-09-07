@@ -13,6 +13,7 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-card: 0 12px 35px rgba(184, 150, 85, 0.08);
     --shadow-hover: 0 20px 45px rgba(184, 150, 85, 0.18);
+    --bg-light: #faf8f5;
 }
 
 * {

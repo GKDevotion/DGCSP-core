@@ -1,22 +1,253 @@
 <style>
-    /* Fixed Selector Typo & Full Screen Canvas Styling */
+    /* --- Canvas Interactive Map Banner Styling --- */
+    .canvas-section {
+        position: relative;
+        width: 100%;
+        background: radial-gradient(circle at 50% 30%, rgba(171, 129, 57, 0.08) 0%, transparent 70%),
+                    linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+        overflow: hidden;
+        border-bottom: 1px solid rgba(171, 129, 57, 0.1);
+    }
+
     canvas.map-animate,
     #canvas.map-animate {
         display: block;
         width: 100%;
         height: 70vh;
+        min-height: 420px;
     }
 
     @media (max-width: 768px) {
         canvas.map-animate,
         #canvas.map-animate {
-            height: 25vh;
+            height: 45vh;
+            min-height: 320px;
         }
     }
+
+    /* --- Feature Section Below Canvas --- */
+    
+    .cards-wrapper-relative {
+        position: relative;
+        z-index: 2;
+        margin-top: -4rem;
+    }
+
+    /* --- Glassmorphism Card Styling matching Reference Image --- */
+    .glass-card {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-radius: 1.25rem;
+        box-shadow: 
+            0 10px 30px -5px rgba(0, 0, 0, 0.2),
+            0 4px 12px 0 rgba(171, 129, 57, 0.5),
+            inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        z-index: 3;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(171, 129, 57, 0.6);
+        box-shadow: 
+            0 20px 40px -10px rgba(171, 129, 57, 0.3),
+            0 8px 20px -4px rgba(0, 0, 0, 0.1),
+            inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+    }
+
+    .glass-card:hover .card-icon {
+        transform: scale(1.12);
+        color: var(--gold-primary) !important;
+    }
+
+    .glass-card:hover .gold-divider {
+        width: 3.2rem;
+        background-color: var(--gold-primary);
+    }
+
+    /* Icon Container */
+    .icon-container {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+
+    .card-icon {
+        width: 4.3rem;
+        height: auto;
+        color: #1a1a1a;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Gold Divider Bar */
+    .gold-divider {
+        height: 3px;
+        width: 2.2rem;
+        background-color: var(--gold-primary);
+        border-radius: 2px;
+        margin: 0.75rem auto;
+        transition: width 0.35s ease, background-color 0.35s ease;
+    }
+
+    /* Text Content in lower gold tint block */
+    .card-body-content {
+        padding: 0.75rem 0.75rem 1.25rem 0.75rem;
+    }
+
+    .brand-font{
+        line-height: 25px;
+    }
+
 </style>
-<canvas id="canvas" class="map-animate"></canvas>
+
+<!-- Interactive Canvas Header Map Banner Section -->
+<section class="canvas-section">
+    <!-- The Canvas map animation element -->
+    <canvas id="canvas" class="map-animate"></canvas>
+
+    <div class="container-xl cards-wrapper-relative mb-4">
+        <!-- Bootstrap 5 Grid for 6 Glass Cards -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch">
+            
+            <!-- Card 1: 10+ Countries -->
+            <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('10+ Countries & Global Coverage')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/country.png" alt="Globe Icon" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            10+ Countries &<br>Global Coverage
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Transparent Pricing -->
+            <div class="col" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('Transparent Pricing')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/best-price.png" alt="Best Pricing" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            Transparent<br>Pricing
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Fast Company Setup -->
+            <div class="col" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('Fast Company Setup')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/clock.png" alt="Clock Icon" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            Fast Company<br>Setup
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Secure & Confidential -->
+            <div class="col" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('Secure & Confidential')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/cyber-security.png" alt="Globe Icon" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            Secure &<br>Confidential
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Expert Business Support -->
+            <div class="col" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('Expert Business Support')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/customer-support.png" alt="Customer Support Icon" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            Expert Business<br>Support
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: 24x7 Support Center -->
+            <div class="col" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700">
+                <div class="glass-card text-center" onclick="handleCardClick('24 x 7 Support Center')">
+                    <div class="icon-container">
+                        <img src="assets/images/icons/24-hours-support.png" alt="24 Hours Support" class="card-icon">
+                    </div>
+                    <div class="card-body-content w-100">
+                        <div class="gold-divider"></div>
+                        <h3 class="fw-bold fs-6 mt-2 text-dark mb-0 brand-font">
+                            24 x 7<br>Support Center
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+    });
+
+    // Toast logic
+    let toastTimeout;
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastText = document.getElementById('toast-text');
+        toastText.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+    function handleCardClick(title) {
+        showToast(`Selected: ${title}`);
+    }
+
+    function triggerAosRefresh() {
+        AOS.refreshHard();
+        showToast("AOS Animations Refreshed");
+    }
+
+    /* -------------------------------------------------------------
+        CANVAS INTERACTIVE MAP BANNER ANIMATION LOGIC
+    ------------------------------------------------------------- */
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -26,14 +257,31 @@
     let activeBadges = [];
 
     // Configuration
-    const PARTICLE_COUNT = 40;
-    const CONNECT_DISTANCE = 250;
-    const MOUSE_RADIUS = 30;
-    const MAX_REPULSION_DIST = 300;
-    const MAX_OFFSET = 35;
+    const PARTICLE_COUNT = 38;
+    const CONNECT_DISTANCE = 220;
+    const MOUSE_RADIUS = 160;
+    const MAX_REPULSION_DIST = 260;
+    const MAX_OFFSET = 30;
+
+    // Vector SVG Generator Helper to guarantee maps render perfectly without 404 links
+    function createCountrySvgDataUrl(label, color) {
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+            <path d="M20,15 Q35,5 55,10 T85,25 Q95,45 75,65 T40,75 Q10,60 15,35 Z" fill="rgba(171, 129, 57, 0.12)" stroke="${color}" stroke-width="2.5" stroke-dasharray="4 2"/>
+            <circle cx="50" cy="40" r="6" fill="${color}"/>
+            <circle cx="50" cy="40" r="12" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.6"/>
+            <text x="50" y="68" font-family="Poppins, sans-serif" font-size="11" font-weight="700" fill="#2b2b2b" text-anchor="middle">${label}</text>
+        </svg>`;
+        return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
 
     // Map layout definitions using proportional width/height ratios (wRatio & hRatio)
     const countryData = [
+        // { name: "Mauritius", xRatio: 0.18, yRatio: 0.35, wRatio: 0.12, hRatio: 0.32, url: "#mauritius", imgSrc: createCountrySvgDataUrl("Mauritius", "#ab8139") },
+        // { name: "UAE",       xRatio: 0.36, yRatio: 0.22, wRatio: 0.12, hRatio: 0.32, url: "#uae",       imgSrc: createCountrySvgDataUrl("UAE", "#ab8139") },
+        // { name: "HongKong",  xRatio: 0.76, yRatio: 0.28, wRatio: 0.12, hRatio: 0.32, url: "#hongkong",  imgSrc: createCountrySvgDataUrl("Hong Kong", "#ab8139") },
+        // { name: "Singapore", xRatio: 0.32, yRatio: 0.72, wRatio: 0.13, hRatio: 0.32, url: "#singapore", imgSrc: createCountrySvgDataUrl("Singapore", "#ab8139") },
+        // { name: "India",     xRatio: 0.54, yRatio: 0.52, wRatio: 0.13, hRatio: 0.35, url: "#india",     imgSrc: createCountrySvgDataUrl("India", "#ab8139") },
+        // { name: "UK",        xRatio: 0.82, yRatio: 0.68, wRatio: 0.12, hRatio: 0.32, url: "#uk",        imgSrc: createCountrySvgDataUrl("UK", "#ab8139") }
         { name: "Mauritius", xRatio: 0.20, yRatio: 0.25, wRatio: 0.13, hRatio: 0.45, imgSrc: "assets/images/Jurisdictions/Mauritius.svg", url: "https://example.com/mauritius" },
         { name: "UAE",       xRatio: 0.40, yRatio: 0.18, wRatio: 0.13, hRatio: 0.32, imgSrc: "assets/images/Jurisdictions/UAE.svg",       url: "https://example.com/uae" },
         { name: "Hongkong",  xRatio: 0.72, yRatio: 0.20, wRatio: 0.13, hRatio: 0.35, imgSrc: "assets/images/Jurisdictions/HongKong.svg",  url: "<?= BASE_URL ?>/hongkong" },
@@ -46,18 +294,18 @@
         offsetY: 0,
         targetOffsetX: 0,
         targetOffsetY: 0,
-        scale: 1,             // Current scale factor
-        targetScale: 1        // Target scale factor (1 normal, 1.15 zoomed)
+        scale: 1,
+        targetScale: 1
     }));
 
     const staticNodes = [
-        { x: 0.32, y: 0.13 },
-        { x: 0.54, y: 0.06 },
-        { x: 0.12, y: 0.61 },
-        { x: 0.31, y: 0.42 },
-        { x: 0.40, y: 0.88 },
-        { x: 0.62, y: 0.42 },
-        { x: 0.68, y: 0.66 }
+        { x: 0.28, y: 0.18 },
+        { x: 0.48, y: 0.12 },
+        { x: 0.10, y: 0.55 },
+        { x: 0.25, y: 0.48 },
+        { x: 0.42, y: 0.82 },
+        { x: 0.64, y: 0.38 },
+        { x: 0.68, y: 0.72 }
     ];
 
     const mapConnections = [
@@ -89,7 +337,6 @@
         "rgba(236, 253, 245, 0.95)"
     ];
 
-    // Helper function to calculate dynamic sizes based on screen dimensions
     function getCountryDimensions(country) {
         return {
             w: (width * country.wRatio) * country.scale,
@@ -97,7 +344,6 @@
         };
     }
 
-    // Mouse Tracker
     const mouse = {
         x: null,
         y: null,
@@ -118,7 +364,6 @@
         document.body.style.cursor = 'default';
     });
 
-    // Click Handler for Country Redirection
     canvas.addEventListener('click', (e) => {
         const rect = canvas.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
@@ -135,15 +380,12 @@
             const bottom = pos.y + h / 2;
 
             if (clickX >= left && clickX <= right && clickY >= top && clickY <= bottom) {
-                if (country.url) {
-                    window.location.href = country.url;
-                }
+                showToast(`Navigating to ${country.name} Jurisdiction...`);
                 break;
             }
         }
     });
 
-    // Check Cursor Hover & Trigger Zoom
     function checkHoverAndCursor() {
         let isHovering = false;
 
@@ -157,7 +399,7 @@
             const bottom = pos.y + h / 2;
 
             if (mouse.x >= left && mouse.x <= right && mouse.y >= top && mouse.y <= bottom) {
-                country.targetScale = 1.15; // Zoom scale factor on hover
+                country.targetScale = 1.15;
                 isHovering = true;
             } else {
                 country.targetScale = 1;
@@ -167,7 +409,7 @@
         document.body.style.cursor = isHovering ? 'pointer' : 'default';
     }
 
-    // Preload Map Images
+    // Preload Map SVG Images
     countryData.forEach(country => {
         country.img = new Image();
         country.img.src = country.imgSrc;
@@ -204,7 +446,7 @@
         constructor(x, y) {
             this.x = x;
             this.y = y;
-            this.maxRadius = Math.random() * 25 + 15;
+            this.maxRadius = Math.random() * 22 + 14;
             this.currentRadius = 3;
             this.speed = Math.random() * 0.3 + 0.15;
         }
@@ -220,7 +462,7 @@
             const alpha = 1 - (this.currentRadius / this.maxRadius);
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
-            ctx.strokeStyle = `rgba(184, 134, 11, ${alpha * 0.8})`;
+            ctx.strokeStyle = `rgba(171, 129, 57, ${alpha * 0.85})`;
             ctx.lineWidth = 1;
             ctx.stroke();
         }
@@ -230,16 +472,16 @@
     class ServiceBadge {
         constructor(text) {
             this.text = text;
-            this.x = Math.random() * (width - 240) + 120;
+            this.x = Math.random() * (width - 260) + 130;
             this.y = Math.random() * (height - 180) + 90;
 
             this.bgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
             this.alpha = 0;
             this.fadeState = 'in';
-            this.fadeSpeed = 0.03;
+            this.fadeSpeed = 0.035;
 
             this.floatOffset = Math.random() * Math.PI * 2;
-            this.floatSpeed = 0.015;
+            this.floatSpeed = 0.018;
         }
 
         update() {
@@ -262,100 +504,72 @@
         draw() {
             if (this.alpha <= 0) return;
 
-            const floatY = Math.sin(this.floatOffset) * 5;
+            const floatY = Math.sin(this.floatOffset) * 6;
             const drawY = this.y + floatY;
 
             ctx.save();
             ctx.globalAlpha = this.alpha;
 
-            // 1. Responsive Font Size based on screen width
-            const fontSize = width < 768 ? 14 : 12; 
-            ctx.font = `600 ${fontSize}px poppins, sans-serif`;
+            const fontSize = width < 768 ? 12 : 13; 
+            ctx.font = `600 ${fontSize}px Poppins, sans-serif`;
 
             const textMetrics = ctx.measureText(this.text);
-            const paddingX = 16;
+            const paddingX = 18;
             
-            // 2. INCREASED HEIGHT & DYNAMIC PADDING (prevents text clipping)
             const badgeWidth = textMetrics.width + paddingX * 2;
-            const badgeHeight = fontSize + 15; // Increased height dynamically (32px - 34px)
+            const badgeHeight = fontSize + 18;
 
             const rectX = this.x - badgeWidth / 2;
             const rectY = drawY - badgeHeight / 2;
 
             // Background Pill Badge
             ctx.beginPath();
-            ctx.roundRect(rectX, rectY, badgeWidth, badgeHeight, badgeHeight / 2);
+            if (ctx.roundRect) {
+                ctx.roundRect(rectX, rectY, badgeWidth, badgeHeight, badgeHeight / 2);
+            } else {
+                ctx.rect(rectX, rectY, badgeWidth, badgeHeight);
+            }
             ctx.fillStyle = this.bgColor;
-            ctx.shadowColor = 'rgba(184, 134, 11, 0.35)';
-            ctx.shadowBlur = 10;
-            ctx.shadowOffsetY = 3;
+            ctx.shadowColor = 'rgba(171, 129, 57, 0.35)';
+            ctx.shadowBlur = 12;
+            ctx.shadowOffsetY = 4;
             ctx.fill();
 
             // Golden Accent Border
-            ctx.strokeStyle = 'rgba(184, 134, 11, 0.6)';
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(171, 129, 57, 0.7)';
+            ctx.lineWidth = 1.2;
             ctx.stroke();
 
-            // 3. PROPER TEXT BASELINE ALIGNMENT
+            // Text Render
             ctx.shadowColor = 'transparent';
             ctx.fillStyle = '#1a1a1a';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            
-            // Render text exactly at center vertical position
             ctx.fillText(this.text, this.x, drawY);
 
             ctx.restore();
         }
     }
 
-    // Recursive Random Badge Trigger (every 2-3 seconds)
-    // function triggerRandomBadges() {
-    //     activeBadges.forEach(badge => badge.fadeState = 'out');
-
-    //     const countToSpawn = Math.floor(Math.random() * 6) + 2;
-    //     const shuffledServices = [...servicesList].sort(() => 0.1 - Math.random());
-
-    //     setTimeout(() => {
-    //         activeBadges = activeBadges.filter(b => b.alpha > 0);
-    //         for (let i = 0; i < countToSpawn; i++) {
-    //             activeBadges.push(new ServiceBadge(shuffledServices[i]));
-    //         }
-    //     }, 200);
-
-    //     const nextInterval = Math.floor(Math.random() * 1000) + 2000;
-    //     setTimeout(triggerRandomBadges, nextInterval);
-    // }
-
-    // Index tracker to keep loop position
     let currentServiceIndex = 0;
 
     function triggerSequentialBadges() {
-        // Phase 1: Start fading out current active badges
         activeBadges.forEach(badge => badge.fadeState = 'out');
 
-        // Phase 2: Wait briefly for fade-out, clear old badges, then push the NEXT single service
         setTimeout(() => {
-            // Remove completely faded out badges
             activeBadges = activeBadges.filter(b => b.alpha > 0);
-
-            // Fetch the service title in sequential order
             const serviceText = servicesList[currentServiceIndex];
-
-            // Push the new single badge
             activeBadges.push(new ServiceBadge(serviceText));
-
-            // Advance to next index (loops back to 0 when reaching the end)
             currentServiceIndex = (currentServiceIndex + 1) % servicesList.length;
-        }, 500); // 500ms gives enough time for smooth fade out before spawning
+        }, 400);
 
-        // Phase 3: Trigger the next badge strictly every 1 seconds (1000 ms)
-        setTimeout(triggerSequentialBadges, 3000);
+        setTimeout(triggerSequentialBadges, 2800);
     }
 
     function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight - 125;
+        const container = canvas.parentElement;
+        width = canvas.width = container.clientWidth;
+        height = canvas.height = container.clientHeight;
         init();
     }
 
@@ -382,7 +596,6 @@
         });
     }
 
-    // Opposite Direction Motion Logic & Scale Easing
     function updateOppositeRepULSION() {
         countryData.forEach(country => {
             const baseCenterX = country.xRatio * width;
@@ -410,17 +623,15 @@
                 country.targetOffsetY = 0;
             }
 
-            // Smooth linear interpolation for offsets & hover zoom scale
-            country.offsetX += (country.targetOffsetX - country.offsetX) * 0.01;
-            country.offsetY += (country.targetOffsetY - country.offsetY) * 0.01;
-            country.scale += (country.targetScale - country.scale) * 0.01;
+            country.offsetX += (country.targetOffsetX - country.offsetX) * 0.05;
+            country.offsetY += (country.targetOffsetY - country.offsetY) * 0.05;
+            country.scale += (country.targetScale - country.scale) * 0.08;
         });
     }
 
-    // Draw Map Network Lines
     function drawMapConnections() {
-        ctx.strokeStyle = 'rgba(210, 210, 210, 0.8)';
-        ctx.lineWidth = 0.8;
+        ctx.strokeStyle = 'rgba(210, 190, 150, 0.45)';
+        ctx.lineWidth = 1;
 
         mapConnections.forEach(([t1, i1, t2, i2]) => {
             const p1 = getPosition(t1 === 'c' ? countryData[i1] : staticNodes[i1]);
@@ -433,7 +644,6 @@
         });
     }
 
-    // Connect Moving Particles to each other & Mouse
     function connectDynamicParticles() {
         for (let a = 0; a < particles.length; a++) {
             for (let b = a + 1; b < particles.length; b++) {
@@ -442,8 +652,8 @@
                 let dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < CONNECT_DISTANCE) {
-                    let opacity = (1 - (dist / CONNECT_DISTANCE)) * 0.8;
-                    ctx.strokeStyle = `rgba(150, 150, 150, ${opacity})`;
+                    let opacity = (1 - (dist / CONNECT_DISTANCE)) * 0.4;
+                    ctx.strokeStyle = `rgba(171, 129, 57, ${opacity})`;
                     ctx.lineWidth = 0.8;
                     ctx.beginPath();
                     ctx.moveTo(particles[a].x, particles[a].y);
@@ -458,9 +668,9 @@
                 let mdist = Math.sqrt(mdx * mdx + mdy * mdy);
 
                 if (mdist < mouse.radius) {
-                    let mOpacity = (1 - (mdist / mouse.radius)) * 0.8;
-                    ctx.strokeStyle = `rgba(184, 134, 11, ${mOpacity})`;
-                    ctx.lineWidth = 1;
+                    let mOpacity = (1 - (mdist / mouse.radius)) * 0.7;
+                    ctx.strokeStyle = `rgba(171, 129, 57, ${mOpacity})`;
+                    ctx.lineWidth = 1.1;
                     ctx.beginPath();
                     ctx.moveTo(particles[a].x, particles[a].y);
                     ctx.lineTo(mouse.x, mouse.y);
@@ -470,18 +680,16 @@
         }
     }
 
-    // Draw Map Node Dots
     function drawStaticNodes() {
         staticNodes.forEach(node => {
             const pos = getPosition(node);
             ctx.beginPath();
-            ctx.arc(pos.x, pos.y, 3, 0, Math.PI * 2);
-            ctx.fillStyle = '#a0a0a0';
+            ctx.arc(pos.x, pos.y, 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#ab8139';
             ctx.fill();
         });
     }
 
-    // Draw Country Images with Dynamic Screen-Based Sizes
     function drawCountries() {
         updateOppositeRepULSION();
 
@@ -498,33 +706,32 @@
         });
     }
 
-    // Main Render Loop (Strict Render Layering Order)
     function animate() {
         ctx.clearRect(0, 0, width, height);
 
-        // Layer 1: Base Map Connection Lines
+        // Layer 1: Connections
         drawMapConnections();
 
-        // Layer 2: Node Pulse Rings
+        // Layer 2: Pulse rings
         pulses.forEach(pulse => {
             pulse.update();
             pulse.draw();
         });
 
-        // Layer 3: Static Map Nodes
+        // Layer 3: Static Nodes
         drawStaticNodes();
 
-        // Layer 4: Dynamic Background Particles & Network Mesh
+        // Layer 4: Particles Mesh
         particles.forEach(particle => {
             particle.update();
             particle.draw();
         });
         connectDynamicParticles();
 
-        // Layer 5: Country Maps (Renders under the badges)
+        // Layer 5: Country SVGs
         drawCountries();
 
-        // Layer 6: Service Badges (Renders ALWAYS TOP of the Country Images)
+        // Layer 6: Badges ALWAYS ON TOP
         activeBadges.forEach(badge => {
             badge.update();
             badge.draw();
@@ -533,8 +740,10 @@
         requestAnimationFrame(animate);
     }
 
-    resize();
-    // triggerRandomBadges();
-    triggerSequentialBadges();
-    animate();
+    // Initialize Canvas on load
+    window.onload = function() {
+        resize();
+        triggerSequentialBadges();
+        animate();
+    };
 </script>
