@@ -242,6 +242,16 @@
             </div>
         </footer>
 
+        <!-- Message Toast for Interactive Feedback -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="actionToast" class="toast align-items-center text-bg-light border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex bg-golden-gradient rounded shadow-sm">
+                    <div class="toast-body fw-medium" id="toastMessage"></div>
+                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        
         <!-- Bootstrap 5.3 JS Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         
@@ -254,7 +264,7 @@
 
         <script>
        
-            AOS.init({ duration: 800, once: true });
+            AOS.init({ duration: 900, once: false, mirror: true });
 
             if( $('.accordion-header').length > 0 ){
                 // Simple Accordion Toggle Logic

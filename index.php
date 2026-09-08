@@ -505,7 +505,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-4">
-                    <span class="btn-pill-learn">View all Global Entity Management</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Global Entity Management...')">View all Global Entity Management</span>
                 </div>
             </a>
         </div>
@@ -520,7 +520,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-4">
-                    <span class="btn-pill-learn">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Accounting & Tax...')">Learn more</span>
                 </div>
             </a>
         </div>
@@ -535,7 +535,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-4">
-                    <span class="btn-pill-learn">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Fund Services...')">Learn more</span>
                 </div>
             </a>
         </div>
@@ -555,7 +555,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-4">
-                    <span class="btn-pill-learn">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Private Wealth & Family Offices...')">Learn more</span>
                 </div>
             </a>
         </div>
@@ -570,7 +570,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-4">
-                    <span class="btn-pill-learn">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Mergers & Acquisitions...')">Learn more</span>
                 </div>
             </a>
         </div>
@@ -587,7 +587,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                     </p>
                 </div>
                 <div class="tile-content pt-3">
-                    <span class="btn-pill-learn">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Corporate Advisory...')">Learn more</span>
                 </div>
             </a>
 
@@ -600,7 +600,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                 </p>
             </div>
             <div class="tile-content pt-3">
-                <span class="btn-pill-learn">Learn more</span>
+                <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Banking Solutions...')">Learn more</span>
             </div>
             </a>
 
@@ -863,7 +863,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                             <p class="glassmorphism-card-text">
                                 Choose a unique name and bring your company to life with Devotion.
                             </p>
-                            <a href="#" class="btn-pill-action" onclick="handleAction(event)">
+                            <a href="#" class="btn-pill-action" onclick="handleToastAction(event, 'Redirecting to your growth journey...')">
                                 <span>Start your growth journey</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -1478,17 +1478,17 @@ include ROOT_PATH . '/elements/map-animate.php';
                     <div class="d-flex flex-column gap-3 max-width-pills">
                         <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="fade-left" data-aos-delay="200">
                             <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6">Forex Broker License</span>
+                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Forex Broker License...')">Forex Broker License</span>
                         </a>
 
                         <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="zoom-in" data-aos-delay="550">
                             <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6">Crypto Currency License</span>
+                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Crypto Currency License...')">Crypto Currency License</span>
                         </a>
 
                         <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="fade-right" data-aos-delay="400">
                             <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6">Payment Solutions License</span>
+                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Payment Solutions License...')">Payment Solutions License</span>
                         </a>
                     </div>
                 </div>
@@ -1811,8 +1811,8 @@ include ROOT_PATH . '/elements/map-animate.php';
 
             <!-- CTA Buttons -->
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
-            <a href="#" class="btn btn-register-primary shadow-sm">Start your Company</a>
-            <a href="#" class="btn btn-register-secondary shadow-sm">Get in Touch</a>
+            <a href="#" class="btn btn-register-primary shadow-sm" onclick="handleToastAction(event, 'Redirecting to Company Registration...')">Start your Company</a>
+            <a href="#" class="btn btn-register-secondary shadow-sm" onclick="handleToastAction(event, 'Redirecting to Contact Us...')">Get in Touch</a>
             </div>
         </div>
 
@@ -1992,7 +1992,7 @@ include ROOT_PATH . '/elements/map-animate.php';
 
                 <!-- CTA Button -->
                 <div class="pt-2">
-                    <a href="#inquiry" class="btn-gold-hero">
+                    <a href="#inquiry" class="btn-gold-hero" onclick="handleToastAction(event, 'Redirecting to Contact Form...')">
                         Talk to US <i class="fa-solid fa-arrow-right ms-1"></i>
                     </a>
                 </div>

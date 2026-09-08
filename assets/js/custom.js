@@ -39,3 +39,12 @@ if( $('.offshoreSwiper').length > 0 ) {
         },
     });
 }
+
+// Button click handler showing a non-disruptive feedback message
+function handleToastAction(event, toastMessage) {
+    event.preventDefault();
+    const toastEl = document.getElementById('actionToast');
+    document.getElementById('toastMessage').textContent = toastMessage || 'Action completed successfully!';
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}

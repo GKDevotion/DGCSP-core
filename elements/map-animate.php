@@ -13,7 +13,7 @@
     #canvas.map-animate {
         display: block;
         width: 100%;
-        height: 70vh;
+        height: 72vh;
         min-height: 420px;
     }
 
