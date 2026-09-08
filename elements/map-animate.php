@@ -14,14 +14,18 @@
         display: block;
         width: 100%;
         height: 72vh;
-        min-height: 420px;
+        /* min-height: 420px; */
     }
 
     @media (max-width: 768px) {
         canvas.map-animate,
         #canvas.map-animate {
-            height: 45vh;
-            min-height: 320px;
+            height: 35vh;
+            /* min-height: 320px; */
+        }
+        
+        .glassmorphism-card{
+            display: flex !important;
         }
     }
 
@@ -130,7 +134,7 @@
 
     <div class="container-xl cards-wrapper-relative mb-4">
         <!-- Bootstrap 5 Grid for 6 Glass Cards -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch">
             
             <!-- Card 1: 10+ Countries -->
             <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
