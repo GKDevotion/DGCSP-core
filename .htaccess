@@ -8,7 +8,7 @@ RewriteEngine On
 # --------------------------------------------
 # 1. Force HTTPS (skipped on localhost/127.0.0.1 for local WAMP/XAMPP testing)
 # --------------------------------------------
-RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1|192\.168\.2\.113)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https//%{HTTP_HOST}/$1 [L,R=301]
 
@@ -16,7 +16,7 @@ RewriteRule ^(.*)$ https//%{HTTP_HOST}/$1 [L,R=301]
 # 2. Force non-www (canonical single domain) - also skipped locally
 #    NOTE: If you prefer www, flip this block (see comment).
 # --------------------------------------------
-RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1|192\.168\.2\.113)
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^(.*)$ https//%1/$1 [L,R=301]
 

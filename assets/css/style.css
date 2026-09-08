@@ -14,6 +14,7 @@
     --shadow-card: 0 12px 35px rgba(184, 150, 85, 0.08);
     --shadow-hover: 0 20px 45px rgba(184, 150, 85, 0.18);
     --bg-light: #faf8f5;
+    --golden-gradient-background: radial-gradient(circle at 50% 1%, rgba(184, 150, 85, 0.1) 0%, transparent 100%), linear-gradient(180deg, #ffffff 0%, var(--gold-light) 100%);
 }
 
 * {
@@ -39,6 +40,10 @@ body, html {
 
 .bg-gray {
     background-color: var(--gray-color) !important;
+}
+
+.bg-golden-gradient {
+    background: var(--golden-gradient-background) !important;
 }
 
 .bg-antiquewhite {

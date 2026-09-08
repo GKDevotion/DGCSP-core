@@ -52,170 +52,173 @@ include ROOT_PATH . '/elements/map-animate.php';
 
 </section>
 
-<!-- License Pill Buttons Section -->
-<style>
-    :root {
-        --ticker-bg: var(--white); /* Dark navy background matching uploaded screenshot */
-        --ticker-speed: 20s;  /* Adjust duration to speed up/slow down scrolling */
-        --logo-width: 250px;
-        --logo-gap: 0px;
-    }
 
-    /* Container for the logo ticker section */
-    .logo-ticker-section {
-        background-color: var(--ticker-bg);
-        padding: 20px 0;
-        overflow: hidden;
-        position: relative;
-    }
-
-    /* Fade Overlay Effects on Left and Right Edges */
-    .logo-ticker-section::before,
-    .logo-ticker-section::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 91px;
-        height: 100%;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .logo-ticker-section::before {
-        left: 0;
-        background: linear-gradient(to right, var(--ticker-bg), transparent);
-    }
-
-    .logo-ticker-section::after {
-        right: 0;
-        background: linear-gradient(to left, var(--ticker-bg), transparent);
-    }
-
-    /* Ticker Wrapper & Rows */
-    .ticker-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .ticker-row {
-        display: flex;
-        width: max-content;
-        user-select: none;
-    }
-
-    .ticker-track {
-        display: flex;
-        align-items: center;
-        gap: var(--logo-gap);
-        padding-right: var(--logo-gap);
-        white-space: nowrap;
-    }
-
-    /* Logo Box Styling */
-    .logo-item {
-        width: var(--logo-width);
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 1s ease;
-    }
-
-    .logo-item img {
-        /* filter: brightness(1) invert(0); */
-        opacity: 0.5;
-        width: 200px;
-    }
-
-    .logo-item:hover img {
-        filter: brightness(1) invert(0);
-        opacity: 1;
-    }
-
-    /* Animation 1: Left to Right */
-    .scroll-left-to-right {
-        animation: scrollRight var(--ticker-speed) linear infinite;
-    }
-
-    /* Animation 2: Right to Left */
-    .scroll-right-to-left {
-        animation: scrollLeft var(--ticker-speed) linear infinite;
-    }
-
-    /* Keyframes */
-    @keyframes scrollLeft {
-        0% {
-            transform: translateX(0);
+<?php if( isset($_GET['is_show_logo_ticker']) && $_GET['is_show_logo_ticker'] == 1 ) { ?>
+    <!-- License Pill Buttons Section -->
+    <style>
+        :root {
+            --ticker-bg: var(--white); /* Dark navy background matching uploaded screenshot */
+            --ticker-speed: 20s;  /* Adjust duration to speed up/slow down scrolling */
+            --logo-width: 250px;
+            --logo-gap: 0px;
         }
-        100% {
-            transform: translateX(-50%);
+
+        /* Container for the logo ticker section */
+        .logo-ticker-section {
+            background-color: var(--ticker-bg);
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
         }
-    }
 
-    @keyframes scrollRight {
-        0% {
-            transform: translateX(-50%);
+        /* Fade Overlay Effects on Left and Right Edges */
+        .logo-ticker-section::before,
+        .logo-ticker-section::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 91px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
         }
-        100% {
-            transform: translateX(0);
+
+        .logo-ticker-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--ticker-bg), transparent);
         }
-    }
 
-    /* Pause animation on hover */
-    .ticker-row:hover .scroll-left-to-right,
-    .ticker-row:hover .scroll-right-to-left {
-        animation-play-state: paused;
-    }
-</style>
+        .logo-ticker-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--ticker-bg), transparent);
+        }
 
-<section class="logo-ticker-section">
-    <div class="ticker-wrapper">
-      
-      <div class="ticker-row">
-        <div class="ticker-track scroll-left-to-right">
-            <?php
-            $leftToRightLogos = [
-                'adbookee.png', 'adhera-tech.png', 'crest-view-tech.png', 'divaine-tech.png', 'euphoria-group.png', 'Gurve-tech.png', 'innotell-tech.png'
-            ];
-            foreach ($leftToRightLogos as $logo) {
-                echo '<div class="logo-item">
-                    <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
-                </div>';
+        /* Ticker Wrapper & Rows */
+        .ticker-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ticker-row {
+            display: flex;
+            width: max-content;
+            user-select: none;
+        }
+
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            gap: var(--logo-gap);
+            padding-right: var(--logo-gap);
+            white-space: nowrap;
+        }
+
+        /* Logo Box Styling */
+        .logo-item {
+            width: var(--logo-width);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease;
+        }
+
+        .logo-item img {
+            /* filter: brightness(1) invert(0); */
+            opacity: 0.5;
+            width: 200px;
+        }
+
+        .logo-item:hover img {
+            filter: brightness(1) invert(0);
+            opacity: 1;
+        }
+
+        /* Animation 1: Left to Right */
+        .scroll-left-to-right {
+            animation: scrollRight var(--ticker-speed) linear infinite;
+        }
+
+        /* Animation 2: Right to Left */
+        .scroll-right-to-left {
+            animation: scrollLeft var(--ticker-speed) linear infinite;
+        }
+
+        /* Keyframes */
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
             }
-
-            foreach ($leftToRightLogos as $logo) {
-                echo '<div class="logo-item">
-                    <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
-                </div>';
+            100% {
+                transform: translateX(-50%);
             }
-            ?>
-         </div>
+        }
 
-      </div>
-
-      <div class="ticker-row">
-        <div class="ticker-track scroll-right-to-left">
-            <?php
-            $rightToLeftLogos = [
-                'jjr-tech.png', 'keshav-tech.png', 'pvl-tourism.png', 'rishaan-tech.png', 'select-stock.png', 'wealth-bridge.png', 'zedcapital.png'
-            ];
-            foreach ($rightToLeftLogos as $logo) {
-                echo '<div class="logo-item">
-                    <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
-                </div>';
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(-50%);
             }
-
-            foreach ($rightToLeftLogos as $logo) {
-                echo '<div class="logo-item">
-                    <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
-                </div>';
+            100% {
+                transform: translateX(0);
             }
-            ?>
-      </div>
+        }
 
-    </div>
-</section>
+        /* Pause animation on hover */
+        .ticker-row:hover .scroll-left-to-right,
+        .ticker-row:hover .scroll-right-to-left {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <section class="logo-ticker-section">
+        <div class="ticker-wrapper">
+        
+        <div class="ticker-row">
+            <div class="ticker-track scroll-left-to-right">
+                <?php
+                $leftToRightLogos = [
+                    'adbookee.png', 'adhera-tech.png', 'crest-view-tech.png', 'divaine-tech.png', 'euphoria-group.png', 'Gurve-tech.png', 'innotell-tech.png'
+                ];
+                foreach ($leftToRightLogos as $logo) {
+                    echo '<div class="logo-item">
+                        <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
+                    </div>';
+                }
+
+                foreach ($leftToRightLogos as $logo) {
+                    echo '<div class="logo-item">
+                        <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
+                    </div>';
+                }
+                ?>
+            </div>
+
+        </div>
+
+        <div class="ticker-row">
+            <div class="ticker-track scroll-right-to-left">
+                <?php
+                $rightToLeftLogos = [
+                    'jjr-tech.png', 'keshav-tech.png', 'pvl-tourism.png', 'rishaan-tech.png', 'select-stock.png', 'wealth-bridge.png', 'zedcapital.png'
+                ];
+                foreach ($rightToLeftLogos as $logo) {
+                    echo '<div class="logo-item">
+                        <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
+                    </div>';
+                }
+
+                foreach ($rightToLeftLogos as $logo) {
+                    echo '<div class="logo-item">
+                        <img src="' . BASE_URL . '/assets/images/brand/' . $logo . '" alt="' . pathinfo($logo, PATHINFO_FILENAME) . '">
+                    </div>';
+                }
+                ?>
+        </div>
+
+        </div>
+    </section>
+<?php } ?>
 
 <!-- Interactive Services Grid Section -->
 <section class="services-showcase-section py-5 bg-white d-none">
@@ -392,7 +395,7 @@ include ROOT_PATH . '/elements/map-animate.php';
     }
 
     .service-tile:hover {
-      transform: translateY(-6px);
+      transform: translateY(5px);
       box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12) !important;
     }
 
@@ -482,6 +485,16 @@ include ROOT_PATH . '/elements/map-animate.php';
     <!-- Top Row Layout -->
     <div class="row g-4 mb-4">
       
+        <div class="col-12 col-lg-7 mt-5">
+            <h1 class="section-title mb-3">
+                Our <span>Services</span>
+            </h1>
+            
+            <p class="section-desc">
+                We make registering a new company effortless and fast. Our Singapore & regional expert support team guides you through every step of incorporation, licensing, and compliance with top-rated efficiency.
+            </p>
+        </div>
+        
         <!-- Global Entity Management (Large Card) -->
         <div class="col-12 col-lg-6">
             <a href="#" class="service-tile tile-global shadow-sm h-100 theme-border">
@@ -597,67 +610,271 @@ include ROOT_PATH . '/elements/map-animate.php';
 
 </div>
 
-<!-- Adviser Banner Section -->
-<style>
-    /* Reference Banner Styling */
-    .adviser-banner {
-        background: linear-gradient(150deg, #b88a38 0%, #956a22 50%);
-        border-radius: 16px;
-        padding: 40px;
-        color: var(--white);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(11, 25, 46, 0.2);
-    }
-    .adviser-banner::after {
-        content: '';
-        position: absolute;
-        right: -50px;
-        bottom: -50px;
-        width: 250px;
-        height: 250px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-    .banner-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: var(--text-dark);
-        font-weight: 600;
-    }
-    .btn-adviser {
-        background-color: var(--white);
-        color: var(--text-dark);
-        font-weight: 600;
-        padding: 12px 28px;
-        border-radius: 8px;
-        border: none;
-        transition: var(--transition);
-    }
-        .btn-adviser:hover {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        transform: translateY(-2px);
+<?php if( isset($_GET['is_show_adviser_banner']) && $_GET['is_show_adviser_banner'] == 1 ) { ?>
+    <!-- Adviser Banner Section -->
+    <style>
+        /* Reference Banner Styling */
+        .adviser-banner {
+            background: linear-gradient(150deg, #b88a38 0%, #956a22 50%);
+            border-radius: 16px;
+            padding: 40px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(11, 25, 46, 0.2);
         }
-</style>
-<section class="pb-5">
-    <div class="container" data-aos="zoom-in">
-        <div class="adviser-banner">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mb-3 mb-lg-0">
-                    <div class="banner-subtitle mb-2">NOT SURE WHERE TO START?</div>
-                    <h3 class="fw-bold mb-2">Tell us the country, owners and business activity.</h3>
-                    <p class="mb-0 text-white-50">We help you identify mandatory corporate requirements versus optional services, finalizing a clear scope before you get started.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="#inquiry" class="btn btn-adviser">Talk to an adviser <i class="fa-solid fa-arrow-right ms-2"></i></a>
+        .adviser-banner::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+            width: 250px;
+            height: 250px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .banner-subtitle {
+            font-size: 1rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .btn-adviser {
+            background-color: var(--white);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            border: none;
+            transition: var(--transition);
+        }
+            .btn-adviser:hover {
+            background-color: var(--gold-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            }
+    </style>
+    <section class="pb-5">
+        <div class="container" data-aos="zoom-in">
+            <div class="adviser-banner">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-3 mb-lg-0">
+                        <div class="banner-subtitle mb-2">NOT SURE WHERE TO START?</div>
+                        <h3 class="fw-bold mb-2">Tell us the country, owners and business activity.</h3>
+                        <p class="mb-0 text-white-50">We help you identify mandatory corporate requirements versus optional services, finalizing a clear scope before you get started.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#inquiry" class="btn btn-adviser">Talk to an adviser <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php } else { ?>
+    <style>
+        /* Full-width Belt Container */
+        .belt-section {
+            position: relative;
+            width: 100%;
+            min-height: 280px;
+            background-image: linear-gradient(
+                to right,
+                rgba(15, 10, 8, 0.92) 0%,
+                rgba(22, 18, 25, 0.75) 50%,
+                rgba(10, 15, 25, 0.88) 100%
+                ),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 3.5rem 0;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        /* Inner Glow & Overlay Vignette */
+        .belt-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                circle at 20% 50%,
+                rgba(235, 94, 40, 0.15) 0%,
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+
+        /* Left Section Content */
+        .belt-heading {
+            font-weight: 600;
+            font-size: clamp(2.1rem, 4vw, 2.2rem);
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+
+        .belt-subtitle {
+            font-size: clamp(0.95rem, 1.5vw, 1rem);
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+            max-width: 520px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Glassmorphism Card Box */
+        .glassmorphism-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 28px;
+            padding: 2.2rem 2.5rem;
+            display: -webkit-box;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glassmorphism-card:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .glassmorphism-card-text {
+            color: #000;
+            font-size: clamp(1.05rem, 1.8vw, 1rem);
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+            max-width: 320px;
+        }
+
+        /* Custom Pill Button */
+        .btn-pill-action {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-pill-action i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-pill-action:hover {
+            background-color: #f8f9fa;
+            color: #000000;
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25);
+            transform: scale(1.03);
+        }
+
+        .btn-pill-action:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Media Queries for Fine-Tuned Responsiveness */
+        @media (max-width: 1199.98px) {
+            .glassmorphism-card {
+                padding: 1.8rem 2rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .belt-section {
+                padding: 3rem 0;
+            }
+            .belt-heading-col {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            .belt-subtitle {
+                margin: 0 auto;
+            }
+            .glassmorphism-card {
+                max-width: 650px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .glassmorphism-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.25rem;
+                padding: 1.75rem 1.5rem;
+            }
+            .glassmorphism-card-text {
+                max-width: 100%;
+            }
+            .btn-pill-action {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+    <main class="pt-5">
+        <section class="belt-section" id="beltSection">
+            <div class="container position-relative z-1">
+                <div class="row align-items-center">
+                
+                    <!-- Left Section: Headline & Description -->
+                    <div class="col-lg-5 belt-heading-col" data-aos="fade-right" data-aos-duration="1000" data-aos-once="false">
+                        <h1 class="belt-heading">
+                            Let's grow, together.
+                        </h1>
+                        <p class="belt-subtitle">
+                            Connect with our experts to explore how Devotion can help your company or fund scale globally.
+                        </p>
+                    </div>
+
+                    <!-- Right Section: Glassmorphism Card -->
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" data-aos-once="false">
+                        <div class="glassmorphism-card">
+                            <p class="glassmorphism-card-text">
+                                Choose a unique name and bring your company to life with Devotion.
+                            </p>
+                            <a href="#" class="btn-pill-action" onclick="handleAction(event)">
+                                <span>Start your growth journey</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+<?php } ?>
 
 <!-- Jurisdictions Banner Section -->
 <section class="d-none jurisdictions-section position-relative py-5">
@@ -740,7 +957,7 @@ include ROOT_PATH . '/elements/map-animate.php';
     
     .post-reg-section {
       padding: 100px 0;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
+      background: var(--golden-gradient-background);
       position: relative;
     }
 
@@ -1327,7 +1544,7 @@ include ROOT_PATH . '/elements/map-animate.php';
     }
 </style>
 
-<section class="py-5 position-relative overflow-visible bg-gray">
+<section class="py-5 position-relative overflow-visible bg-golden-gradient">
     <div class="container py-5">
         
         <div class="blue-ring d-none d-lg-bloc">

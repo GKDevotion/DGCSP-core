@@ -56,9 +56,9 @@
 
     .glass-card:hover {
         transform: translateY(-8px);
-        border-color: rgba(171, 129, 57, 0.6);
+        border-color: var(--text-dark);
         box-shadow: 
-            0 20px 40px -10px rgba(171, 129, 57, 0.3),
+            0 20px 40px -10px rgba(171, 129, 57, 0.6),
             0 8px 20px -4px rgba(0, 0, 0, 0.1),
             inset 0 1px 2px 0 rgba(255, 255, 255, 1);
     }
@@ -75,7 +75,7 @@
 
     /* Icon Container */
     .icon-container {
-        height: 110px;
+        height: 130px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,7 +83,7 @@
     }
 
     .card-icon {
-        width: 4.3rem;
+        width: 5rem;
         height: auto;
         color: #1a1a1a;
         transition: transform 0.3s ease, color 0.3s ease;
@@ -92,7 +92,7 @@
     /* Gold Divider Bar */
     .gold-divider {
         height: 3px;
-        width: 2.2rem;
+        width: 3rem;
         background-color: var(--gold-primary);
         border-radius: 2px;
         margin: 0.75rem auto;

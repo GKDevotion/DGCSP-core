@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css?v=0.01">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css?v=0.011">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/responsive.css?v=0.01">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/keyframe.css?v=0.01">
 
