@@ -258,7 +258,7 @@
         <!-- Swiper JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
+        <script src="<?= BASE_URL ?>/assets/js/custom.js?v=0.1"></script>
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
