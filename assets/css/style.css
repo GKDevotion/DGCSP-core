@@ -23,6 +23,30 @@
     box-sizing: border-box;
 }
 
+html {
+      /* Modern standard approach */
+      scrollbar-color: var(--gold-primary) transparent;
+      scrollbar-width: thin;
+}
+
+/* Webkit custom scrollbar approach for finer design control */
+::-webkit-scrollbar {
+      width: 5px;
+}
+
+::-webkit-scrollbar-track {
+      background: transparent; /* Makes track background transparent */
+}
+
+::-webkit-scrollbar-thumb {
+      background-color: #888888; /* Scrollbar color */
+      border-radius: 4px;       /* Optional: rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+      background-color: var(--gold-hover); /* Hover color */
+}
+
 body, html {
     font-family: var(--font-family);
     color: var(--text-dark);
