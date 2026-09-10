@@ -103,7 +103,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
         <section class="sg-hero-section">
             <div class="container">
                 <div class="row align-items-center gy-4">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7" data-aos="fade-right" data-aos-duration="300">
                         <span class="badge-gold"><i class="fa-solid fa-shield-halved me-1"></i> Singapore Jurisdiction Excellence</span>
                         <h1 class="display-6 fw-bold text-dark mb-3">Enterprise-Grade Customer Experience Hubs in Singapore</h1>
                         <p class="lead text-muted mb-4">Empowering global financial institutions, SaaS platforms, and e-commerce leaders with ACRA-compliant, multilingual customer service solutions operated out of Asia's premier business hub.</p>
@@ -126,7 +126,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5" data-aos="fade-left" data-aos-duration="500">
                         <div class="card-custom p-4 border-2">
                             <h4 class="fw-bold mb-3"><i class="fa-solid fa-briefcase text-warning me-2"></i> Singapore Quick Setup</h4>
                             <ul class="list-unstyled mb-4">
@@ -174,7 +174,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-income" class="page-view">
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="600">
                     <span class="badge-gold">Revenue Models & Services</span>
                     <h2 class="section-title">Types of Customer Service Income Sources</h2>
                     <div class="gold-divider"></div>
@@ -183,7 +183,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
 
                 <div class="row g-4">
                     <!-- Revenue Model 1 -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4">
                             <div class="d-flex align-items-center gap-3 mb-3">
                                 <div class="icon-box mb-0"><i class="fa-solid fa-repeat"></i></div>
@@ -202,7 +202,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Revenue Model 2 -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4">
                             <div class="d-flex align-items-center gap-3 mb-3">
                                 <div class="icon-box mb-0"><i class="fa-solid fa-layer-group"></i></div>
@@ -221,7 +221,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Revenue Model 3 -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4">
                             <div class="d-flex align-items-center gap-3 mb-3">
                                 <div class="icon-box mb-0"><i class="fa-solid fa-language"></i></div>
@@ -240,7 +240,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Revenue Model 4 -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4">
                             <div class="d-flex align-items-center gap-3 mb-3">
                                 <div class="icon-box mb-0"><i class="fa-solid fa-robot"></i></div>
@@ -266,7 +266,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-markets" class="page-view">
         <section class="py-5">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="800">
                     <span class="badge-gold">Target Industry Vertical Markets</span>
                     <h2 class="section-title">Singapore & APAC Investment Markets</h2>
                     <div class="gold-divider"></div>
@@ -274,7 +274,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-coins"></i></div>
                             <h4>FinTech & Financial Services</h4>
@@ -283,7 +283,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-cart-shopping"></i></div>
                             <h4>E-Commerce & Retail APAC</h4>
@@ -292,7 +292,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-laptop-code"></i></div>
                             <h4>SaaS & Enterprise Tech Hubs</h4>
@@ -301,7 +301,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-right" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-notes-medical"></i></div>
                             <h4>HealthTech & MedTech</h4>
@@ -310,7 +310,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-ship"></i></div>
                             <h4>Maritime & Logistics</h4>
@@ -319,7 +319,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="1000">
                         <div class="card-custom p-4 text-center">
                             <div class="icon-box mx-auto"><i class="fa-solid fa-plane-departure"></i></div>
                             <h4>Luxury Travel & Concierge</h4>
@@ -354,7 +354,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-rules" class="page-view">
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="1200">
                     <span class="badge-gold">Singapore Governance & Real Estate</span>
                     <h2 class="section-title">Office Locations, Rules & Regulations</h2>
                     <div class="gold-divider"></div>
@@ -362,7 +362,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                 </div>
 
                 <!-- Interactive Nav Tabs for Office vs Regulations -->
-                <ul class="nav nav-pills nav-pills-custom justify-content-center mb-4" id="rulesTabs" role="tablist">
+                <ul class="nav nav-pills nav-pills-custom justify-content-center mb-4" id="rulesTabs" role="tablist" data-aos="fade-up" data-aos-duration="1400">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="tab-offices" data-bs-toggle="pill" data-bs-target="#content-offices" type="button">Strategic SG Office Hubs</button>
                     </li>
@@ -376,7 +376,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
 
                 <div class="tab-content" id="rulesTabsContent">
                     <!-- Office Locations Content -->
-                    <div class="tab-pane fade show active" id="content-offices" role="tabpanel">
+                    <div class="tab-pane fade show active" id="content-offices" role="tabpanel" data-aos="fade-up" data-aos-duration="1600">
                         <div class="row g-4">
                             <div class="col-md-4">
                                 <div class="card-custom p-4">
@@ -415,7 +415,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- ACRA & PDPA Laws Content -->
-                    <div class="tab-pane fade" id="content-acra" role="tabpanel">
+                    <div class="tab-pane fade" id="content-acra" role="tabpanel" data-aos="fade-up" data-aos-duration="1600">
                         <div class="card-custom p-4">
                             <h3><i class="fa-solid fa-shield-cat text-warning me-2"></i> ACRA & Data Protection Regulations</h3>
                             <hr class="my-3">
@@ -441,7 +441,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- MOM Regulations Content -->
-                    <div class="tab-pane fade" id="content-mom" role="tabpanel">
+                    <div class="tab-pane fade" id="content-mom" role="tabpanel" data-aos="fade-up" data-aos-duration="1600">
                         <div class="card-custom p-4">
                             <h3><i class="fa-solid fa-users-gear text-warning me-2"></i> MOM Employment & Pass Framework</h3>
                             <hr class="my-3">
@@ -489,7 +489,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-investment" class="page-view">
         <section class="py-5">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="1000">
                     <span class="badge-gold">Capital & Timeline Requirements</span>
                     <h2 class="section-title">Minimum Setup Investment & Cost Calculator</h2>
                     <div class="gold-divider"></div>
@@ -498,7 +498,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
 
                 <div class="row g-4 align-items-start">
                     <!-- Cost Calculator Column -->
-                    <div class="col-lg-7">
+                    <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
                         <div class="calc-card">
                             <h4 class="fw-bold mb-3"><i class="fa-solid fa-sliders text-warning me-2"></i> Singapore Setup Cost Estimator</h4>
                             <p class="text-muted small mb-4">Adjust parameters to compute estimated setup capital and monthly operational costs in Singapore Dollars (S$).</p>
@@ -552,7 +552,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Timeline & Roadmap Column -->
-                    <div class="col-lg-5">
+                    <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
                         <div class="card-custom p-4">
                             <h4 class="fw-bold mb-3"><i class="fa-solid fa-clock-rotate-left text-warning me-2"></i> Fast-Track Setup Duration (2-4 Weeks)</h4>
                             <div class="timeline-wrap pt-2">
@@ -604,7 +604,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-proscons" class="page-view">
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="1000">
                     <span class="badge-gold">Strategic Evaluation</span>
                     <h2 class="section-title">Pros & Cons of Singapore Customer Service Setup</h2>
                     <div class="gold-divider"></div>
@@ -613,7 +613,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
 
                 <div class="row g-4">
                     <!-- Pros Card -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
                         <div class="card-custom p-4 border-success border-2">
                             <h3 class="text-success fw-bold mb-3"><i class="fa-solid fa-thumbs-up me-2"></i> Key Advantages (Pros)</h3>
                             <div class="d-flex align-items-start mb-3">
@@ -648,7 +648,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Cons Card -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
                         <div class="card-custom p-4 border-danger border-2">
                             <h3 class="text-danger fw-bold mb-3"><i class="fa-solid fa-thumbs-down me-2"></i> Considerations & Challenges (Cons)</h3>
                             <div class="d-flex align-items-start mb-3">
@@ -690,7 +690,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-cases" class="page-view">
         <section class="py-5">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="800">
                     <span class="badge-gold">Proven Track Record</span>
                     <h2 class="section-title">Client Case Studies & Testimonials</h2>
                     <div class="gold-divider"></div>
@@ -698,7 +698,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                 </div>
 
                 <!-- Filter Buttons -->
-                <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+                <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap" data-aos="fade-up" data-aos-duration="800">
                     <button class="btn btn-sm btn-gold filter-btn active" onclick="filterCases('all', this)">All Sectors</button>
                     <button class="btn btn-sm btn-outline-gold filter-btn" onclick="filterCases('fintech', this)">FinTech</button>
                     <button class="btn btn-sm btn-outline-gold filter-btn" onclick="filterCases('ecom', this)">E-Commerce</button>
@@ -707,7 +707,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
 
                 <div class="row g-4" id="caseStudiesGrid">
                     <!-- Case Study 1 -->
-                    <div class="col-md-6 col-lg-4 case-item fintech">
+                    <div class="col-md-6 col-lg-4 case-item fintech" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-dark text-warning">FinTech</span>
@@ -732,7 +732,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Case Study 2 -->
-                    <div class="col-md-6 col-lg-4 case-item ecom">
+                    <div class="col-md-6 col-lg-4 case-item ecom" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-dark text-warning">E-Commerce</span>
@@ -757,7 +757,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                     </div>
 
                     <!-- Case Study 3 -->
-                    <div class="col-md-6 col-lg-4 case-item saas">
+                    <div class="col-md-6 col-lg-4 case-item saas" data-aos="fade-up" data-aos-duration="800">
                         <div class="card-custom p-4 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="badge bg-dark text-warning">SaaS</span>
@@ -789,7 +789,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
     <div id="page-inquiry" class="page-view">
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" data-aos="fade-up" data-aos-duration="1000">
                     <span class="badge-gold">Get Started in Singapore</span>
                     <h2 class="section-title">Request a Tailored Singapore Proposal</h2>
                     <div class="gold-divider"></div>
@@ -797,23 +797,23 @@ include ROOT_PATH . '/singapore/elements/header.php';
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000">
                         <div class="card-custom p-4 p-md-5">
                             <form id="proposalForm" onsubmit="handleFormSubmit(event)">
                                 <div class="row g-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Company Name *</label>
                                         <input type="text" class="form-control" placeholder="e.g. Apex Global Solutions" required>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Business Email *</label>
                                         <input type="email" class="form-control" placeholder="name@company.com" required>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Phone Number / WhatsApp *</label>
                                         <input type="tel" class="form-control" placeholder="+65 8123 4567" required>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Primary Industry *</label>
                                         <select class="form-select" required>
                                             <option value="" selected disabled>Select Industry Sector</option>
@@ -825,7 +825,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                                             <option value="other">Other</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Desired Team Scale</label>
                                         <select class="form-select" id="formTeamSize">
                                             <option value="1-4">Boutique (1 - 4 Agents)</option>
@@ -834,7 +834,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                                             <option value="50+">Custom Regional Hub (50+ Agents)</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Target Setup Timeline</label>
                                         <select class="form-select">
                                             <option value="immediate">Immediate (Within 2 Weeks)</option>
@@ -842,7 +842,7 @@ include ROOT_PATH . '/singapore/elements/header.php';
                                             <option value="quarter">Next Quarter</option>
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Language & Operational Requirements</label>
                                         <div class="d-flex flex-wrap gap-3 p-3 bg-light rounded border">
                                             <div class="form-check">
@@ -867,11 +867,11 @@ include ROOT_PATH . '/singapore/elements/header.php';
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" data-aos="fade-up" data-aos-duration="1200">
                                         <label class="form-label fw-semibold">Additional Details / Specific SLA Requirements</label>
                                         <textarea class="form-control" rows="4" placeholder="Mention specific ACRA compliance needs, CRM systems, or call volume expectations..."></textarea>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12" data-aos="fade-up" data-aos-duration="1200">
                                         <button type="submit" class="btn btn-gold btn-lg w-100 py-3">Submit Singapore Proposal Request <i class="fa-solid fa-paper-plane ms-2"></i></button>
                                     </div>
                                 </div>
