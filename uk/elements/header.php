@@ -18,9 +18,9 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/singapore/assets/css/sg-style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/sg-responsive.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/sg-keyframe.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/uk/assets/css/uk-style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/responsive.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/keyframe.css">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,4 +42,4 @@
 </head>
 <body>
 
-    <?php include ROOT_PATH . '/singapore/elements/header-menu.php'; ?>
+    <?php include ROOT_PATH . '/uk/elements/header-menu.php'; ?>
