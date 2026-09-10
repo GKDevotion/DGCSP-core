@@ -55,10 +55,10 @@
                     <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-0 py-2 jurisdiction-menu">
                         <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/singapore"><span class="fi fi-sg rounded-1"></span>Singapore</a></li>
                         <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/hongkong"><span class="fi fi-hk rounded-1"></span>Hongkong</a></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span class="fi fi-ae rounded-1"></span>UAE</a></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span class="fi fi-gb rounded-1"></span>United Kingdom</a></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span class="fi fi-in rounded-1"></span>India</a></li>
-                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="#"><span class="fi fi-mu rounded-1"></span>Mauritius</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/mauritius"><span class="fi fi-mu rounded-1"></span>Mauritius</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/india"><span class="fi fi-in rounded-1"></span>India</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/uae"><span class="fi fi-ae rounded-1"></span>UAE</a></li>
+                        <li><a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/uk"><span class="fi fi-gb rounded-1"></span>United Kingdom</a></li>
                     </ul>
                 </div>
             </div>
