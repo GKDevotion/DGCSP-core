@@ -147,7 +147,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="news-circle d-none d-lg-block">
+                    <div class="news-circle d-none d-lg-bloc">
                         <img src="assets/images/objects/news-circle.png" alt="Decorative Shape" class="img-fluid">
                     </div>
                 </div>

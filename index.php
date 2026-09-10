@@ -1295,7 +1295,7 @@ include ROOT_PATH . '/elements/map-animate.php';
 <!-- OffShore Jurisdictions Slider Section -->
 <section class="offshore-jurisdictions-section position-relative py-5 bg-gray d-none">
     <!-- OffShore 3D Geometric Objects -->
-    <div class="offshore-3d-triangle d-none d-lg-block">
+    <div class="offshore-3d-triangle d-none d-lg-bloc">
         <img src="assets/images/objects/triangle.png" alt="Triangle Shape" class="img-fluid">
     </div>
 
@@ -1437,15 +1437,15 @@ include ROOT_PATH . '/elements/map-animate.php';
 <section class="licensing-section position-relative py-5 overflow-visible bg-white">
     
     <!-- Floating 3D Geometric Objects -->
-     <div class="blue-square d-none d-lg-block">
+     <div class="blue-square d-none d-lg-bloc">
         <img src="assets/images/objects/blue-square.png" alt="Decorative Shape" class="img-fluid">
     </div>
 
-    <div class="yellow-square d-none d-lg-block">
+    <div class="yellow-square d-none d-lg-bloc">
         <img src="assets/images/objects/yellow-square.png" alt="Decorative Shape" class="img-fluid">
     </div>
     
-    <div class="golden-square d-none d-lg-block">
+    <div class="golden-square d-none d-lg-bloc">
         <img src="assets/images/objects/golden-square.png" alt="Decorative Shape" class="img-fluid">
     </div>
 
