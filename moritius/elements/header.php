@@ -18,7 +18,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/moritius/assets/css/mu-style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/mauritius/assets/css/mu-style.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/responsive.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/keyframe.css">
 
@@ -42,4 +42,4 @@
 </head>
 <body>
 
-    <?php include ROOT_PATH . '/moritius/elements/header-menu.php'; ?>
+    <?php include ROOT_PATH . '/mauritius/elements/header-menu.php'; ?>

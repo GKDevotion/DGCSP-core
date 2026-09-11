@@ -252,7 +252,7 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <script src="<?= BASE_URL ?>/assets/js/custom.js"></script>
-        <script src="<?= BASE_URL ?>/moritius/assets/js/mu-custom.js"></script>
+        <script src="<?= BASE_URL ?>/mauritius/assets/js/mu-custom.js"></script>
 
     </body>
 </html>

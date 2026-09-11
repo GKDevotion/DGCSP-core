@@ -8,10 +8,10 @@ include ROOT_PATH . '/india/elements/header.php';
     <div class="container">
         <div class="row align-items-center gy-5">
             <div class="col-lg-7" data-aos="fade-right">
-                <div class="section-title-badge mb-3">Singapore Incorporation Portal</div>
-                <h1 class="hero-title mb-4">Establish Your Regional Hub in <span class="text-gold">Singapore</span></h1>
+                <div class="section-title-badge mb-3">India Incorporation Portal</div>
+                <h1 class="hero-title mb-4">Establish Your Regional Hub in <span class="text-gold">India</span></h1>
                 <p class="hero-subtitle mb-4">
-                    Navigate global expansion with Singapore's premier corporate structuring specialists. From LLC formation to offshore holdings and global LP structures, we deliver end-to-end entity setup and advisory.
+                    Navigate global expansion with India's premier corporate structuring specialists. From Private Limited Company formation to GIFT City offshore structures and AIF fund vehicles, we deliver end-to-end entity setup and advisory.
                 </p>
                 <div class="d-flex flex-wrap gap-3 mb-5">
                     <a href="#14-steps" class="btn btn-gold btn-lg"><i class="fa-solid fa-rocket me-2"></i>Explore 14 Setup Steps</a>
@@ -22,26 +22,26 @@ include ROOT_PATH . '/india/elements/header.php';
                 <div class="row g-3">
                     <div class="col-6">
                         <div class="hero-stat-card">
-                            <div class="hero-stat-number">17%</div>
-                            <div class="text-light small fw-medium mt-1">Flat Corporate Tax Rate</div>
+                            <div class="hero-stat-number">25%</div>
+                            <div class="text-light small fw-medium mt-1">Standard Corporate Tax Rate</div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="hero-stat-card">
                             <div class="hero-stat-number">100%</div>
-                            <div class="text-light small fw-medium mt-1">Foreign Ownership Allowed</div>
+                            <div class="text-light small fw-medium mt-1">FDI Allowed (Automatic Route)</div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="hero-stat-card">
-                            <div class="hero-stat-number">#1</div>
-                            <div class="text-light small fw-medium mt-1">Ease of Doing Business in Asia</div>
+                            <div class="hero-stat-number">5th</div>
+                            <div class="text-light small fw-medium mt-1">Largest Global Economy</div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="hero-stat-card">
-                            <div class="hero-stat-number">95+</div>
-                            <div class="text-light small fw-medium mt-1">Double Tax Agreements (DTAs)</div>
+                            <div class="hero-stat-number">90+</div>
+                            <div class="text-light small fw-medium mt-1">Double Tax Avoidance Agreements</div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ include ROOT_PATH . '/india/elements/header.php';
     <div class="container">
         <div class="text-center max-w-800 mx-auto mb-5" data-aos="fade-up">
             <h2 class="section-heading">Company Setup Strategy</h2>
-            <p class="text-muted">Aligning your corporate structure with global tax efficiency, operational agility, and long-term asset protection in Singapore.</p>
+            <p class="text-muted">Aligning your corporate structure with global tax efficiency, operational agility, and long-term asset protection in India.</p>
         </div>
         
         <div class="row g-4">
@@ -80,7 +80,7 @@ include ROOT_PATH . '/india/elements/header.php';
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <h4>Tax Optimization Roadmap</h4>
-                    <p class="text-muted">Leverage Singapore's partial tax exemptions and pioneer status incentives to maximize profit retention across borders.</p>
+                    <p class="text-muted">Leverage India's concessional corporate tax regimes and GIFT City IFSC incentives to maximize profit retention across borders.</p>
                 </div>
             </div>
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -98,7 +98,7 @@ include ROOT_PATH . '/india/elements/header.php';
                         <i class="fa-solid fa-expand"></i>
                     </div>
                     <h4>Regional Expansion Hub</h4>
-                    <p class="text-muted">Utilize Singapore as the ultimate launching pad into Southeast Asia, benefiting from ASEAN free trade agreements.</p>
+                    <p class="text-muted">Utilize India as the ultimate launching pad into South Asia and the Middle East, benefiting from the India-UAE CEPA and SAFTA trade agreements.</p>
                 </div>
             </div>
         </div>
@@ -125,28 +125,28 @@ include ROOT_PATH . '/india/elements/header.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="fw-bold">Private Limited Company (Pte Ltd)</td>
+                        <td class="fw-bold">Private Limited Company (Pvt Ltd)</td>
                         <td><span class="badge bg-success">100% Allowed</span></td>
                         <td>Limited to share capital</td>
                         <td>Full Tax Incentives</td>
                         <td>SMEs, Startups & Global Multinationals</td>
                     </tr>
                     <tr>
-                        <td class="fw-bold">Sole Proprietorship</td>
-                        <td>Requires Resident Director</td>
-                        <td>Unlimited Personal Liability</td>
-                        <td>Personal Income Rates</td>
-                        <td>Single Owner / Small Local Businesses</td>
+                        <td class="fw-bold">One Person Company (OPC)</td>
+                        <td>Indian Resident Only</td>
+                        <td>Limited to share capital</td>
+                        <td>Corporate Tax Rates</td>
+                        <td>Single Founder / Small Businesses</td>
                     </tr>
                     <tr>
-                        <td class="fw-bold">Singapore Branch Office</td>
+                        <td class="fw-bold">India Branch Office</td>
                         <td>100% Foreign Parent</td>
                         <td>Parent Company Liable</td>
                         <td>Non-Resident Tax Rates</td>
                         <td>Established Foreign Corporations</td>
                     </tr>
                     <tr>
-                        <td class="fw-bold">Representative Office (RO)</td>
+                        <td class="fw-bold">Liaison Office (LO)</td>
                         <td>100% Foreign Parent</td>
                         <td>No Commercial Operations</td>
                         <td>N/A (Non-trading)</td>
@@ -161,49 +161,49 @@ include ROOT_PATH . '/india/elements/header.php';
 <section id="14-steps" class="section-padding bg-gold-light">
     <div class="container">
         <div class="text-center max-w-800 mx-auto mb-5" data-aos="fade-up">
-            <h2 class="section-heading">14 Steps to Register an LLC in Singapore</h2>
-            <p class="text-muted">A step-by-step roadmap from ACRA name reservation to bank opening and corporate governance.</p>
+            <h2 class="section-heading">14 Steps to Register a Company in India</h2>
+            <p class="text-muted">A step-by-step roadmap from MCA name reservation to bank opening and corporate governance.</p>
         </div>
 
         <div class="row g-3">
             <!-- Step 1 to 14 Grid -->
             <script>
                 const steps = [
-                    { num: 1, title: "Company Name Reservation", desc: "Submit and approve entity name via BizFile+." },
-                    { num: 2, title: "Appoint Resident Director", desc: "Ensure compliance with 1 Singapore resident director." },
-                    { num: 3, title: "Appoint Company Secretary", desc: "Appoint qualified secretary within 6 months." },
-                    { num: 4, title: "Define Share Capital", desc: "Minimum S$1 paid-up capital required." },
-                    { num: 5, title: "Local Registered Address", desc: "Provide valid commercial or physical address." },
-                    { num: 6, title: "Draft M&A Documents", desc: "Prepare Constitution & Articles of Association." },
+                    { num: 1, title: "Company Name Reservation", desc: "Reserve name via SPICe+ Part A / RUN service on the MCA21 portal." },
+                    { num: 2, title: "Obtain DIN & DSC", desc: "Secure Director Identification Number & Digital Signature Certificate for all directors." },
+                    { num: 3, title: "Appoint Company Secretary", desc: "Mandatory where paid-up capital exceeds ₹10 Crore, or for public companies." },
+                    { num: 4, title: "Define Share Capital", desc: "Minimum ₹1 nominal paid-up capital required." },
+                    { num: 5, title: "Local Registered Address", desc: "Provide valid commercial or physical address within 30 days." },
+                    { num: 6, title: "Draft MOA & AOA", desc: "Prepare Memorandum & Articles of Association." },
                     { num: 7, title: "KYC & Due Diligence", desc: "Complete Passport & Proof of Address verification." },
-                    { num: 8, title: "ACRA Incorporation Filing", desc: "Execute official registration with authorities." },
-                    { num: 9, title: "Issue Certificate of Registration", desc: "Receive UEN (Unique Entity Number)." },
-                    { num: 10, title: "Corporate Bank Opening", desc: "Set up account with DBS, OCBC, or global banks." },
+                    { num: 8, title: "SPICe+ Filing with MCA", desc: "Execute official registration with the Registrar of Companies." },
+                    { num: 9, title: "Certificate of Incorporation & CIN", desc: "Receive CIN (Corporate Identification Number)." },
+                    { num: 10, title: "Corporate Bank Opening", desc: "Set up account with HDFC, ICICI, SBI, or global banks." },
                     { num: 11, title: "GST Registration Assessment", desc: "Evaluate for mandatory or voluntary GST filing." },
                     { num: 12, title: "Business Licenses & Permits", desc: "Acquire sector-specific licenses if operating regulated trade." },
-                    { num: 13, title: "Work Visa / Employment Pass", desc: "Apply for EP/EntrePass for foreign directors." },
-                    { num: 14, title: "Annual Ongoing Compliance", desc: "Maintain AGM & ACRA annual return schedules." }
+                    { num: 13, title: "Work Visa / Employment Visa", desc: "Apply for Employment Visa or Business Visa for foreign directors." },
+                    { num: 14, title: "Annual Ongoing Compliance", desc: "Maintain AGM & MCA Annual Return (MGT-7) schedules." }
                 ];
             </script>
             
             <!-- Generating 14 Steps Cards -->
-            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">1</div><h5>Name Reservation</h5><p class="text-muted small mb-0">Submit and approve entity name via ACRA BizFile+ portal.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="step-card"><div class="step-number-badge">2</div><h5>Resident Director</h5><p class="text-muted small mb-0">Appoint at least one Singapore resident director.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number-badge">3</div><h5>Company Secretary</h5><p class="text-muted small mb-0">Appoint a qualified company secretary within 6 months.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">4</div><h5>Paid-up Capital</h5><p class="text-muted small mb-0">Minimum S$1 initial paid-up share capital requirement.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">1</div><h5>Name Reservation</h5><p class="text-muted small mb-0">Reserve name via SPICe+ Part A / RUN service on the MCA21 portal.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="step-card"><div class="step-number-badge">2</div><h5>DIN & DSC</h5><p class="text-muted small mb-0">Obtain Director Identification Number & Digital Signature Certificate.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number-badge">3</div><h5>Company Secretary</h5><p class="text-muted small mb-0">Mandatory for public companies or paid-up capital over ₹10 Crore.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">4</div><h5>Paid-up Capital</h5><p class="text-muted small mb-0">Minimum ₹1 nominal paid-up share capital requirement.</p></div></div>
             
-            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">5</div><h5>Registered Address</h5><p class="text-muted small mb-0">Provide valid local physical address in Singapore.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="step-card"><div class="step-number-badge">6</div><h5>Draft Constitution</h5><p class="text-muted small mb-0">Prepare Articles of Association and Shareholder rules.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">5</div><h5>Registered Address</h5><p class="text-muted small mb-0">Provide valid local physical address in India within 30 days.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="step-card"><div class="step-number-badge">6</div><h5>Draft MOA & AOA</h5><p class="text-muted small mb-0">Prepare Memorandum & Articles of Association.</p></div></div>
             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number-badge">7</div><h5>KYC Clearance</h5><p class="text-muted small mb-0">Complete AML/KYC background verification checks.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">8</div><h5>ACRA Filing</h5><p class="text-muted small mb-0">Submit final incorporation package to ACRA.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">8</div><h5>SPICe+ / MCA Filing</h5><p class="text-muted small mb-0">Submit final incorporation package to the Registrar of Companies.</p></div></div>
 
-            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">9</div><h5>UEN Issuance</h5><p class="text-muted small mb-0">Receive official Unique Entity Number & Business Profile.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="step-card"><div class="step-number-badge">9</div><h5>CIN Issuance</h5><p class="text-muted small mb-0">Receive Certificate of Incorporation with Corporate Identification Number.</p></div></div>
             <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="step-card"><div class="step-number-badge">10</div><h5>Bank Account Setup</h5><p class="text-muted small mb-0">Open corporate accounts with premier tier-1 banks.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number-badge">11</div><h5>GST Registration</h5><p class="text-muted small mb-0">Assess & register for 9% GST if turnover exceeds S$1M.</p></div></div>
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">12</div><h5>Special Licenses</h5><p class="text-muted small mb-0">Apply for MAS, FinTech, or Trade licenses if applicable.</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number-badge">11</div><h5>GST Registration</h5><p class="text-muted small mb-0">Assess & register if turnover exceeds ₹20 Lakh (services) / ₹40 Lakh (goods).</p></div></div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="step-card"><div class="step-number-badge">12</div><h5>Special Licenses</h5><p class="text-muted small mb-0">Apply for RBI, SEBI, or Import-Export Code (IEC) if applicable.</p></div></div>
 
-            <div class="col-lg-6" data-aos="fade-up"><div class="step-card d-flex align-items-center gap-3"><div class="step-number-badge flex-shrink-0">13</div><div><h5>Work Visa / Employment Pass</h5><p class="text-muted small mb-0">Secure EP or ONE Pass for foreign executives relocated to Singapore HQ.</p></div></div></div>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50"><div class="step-card d-flex align-items-center gap-3"><div class="step-number-badge flex-shrink-0">14</div><div><h5>Annual Compliance Setup</h5><p class="text-muted small mb-0">Implement automated tax filing, audit exemptions & annual return schedules.</p></div></div></div>
+            <div class="col-lg-6" data-aos="fade-up"><div class="step-card d-flex align-items-center gap-3"><div class="step-number-badge flex-shrink-0">13</div><div><h5>Work Visa / Employment Visa</h5><p class="text-muted small mb-0">Secure an Employment Visa or Business Visa for foreign executives relocated to India HQ.</p></div></div></div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50"><div class="step-card d-flex align-items-center gap-3"><div class="step-number-badge flex-shrink-0">14</div><div><h5>Annual Compliance Setup</h5><p class="text-muted small mb-0">Implement automated tax filing, audit & MCA Annual Return (MGT-7) schedules.</p></div></div></div>
         </div>
     </div>
 </section>
@@ -212,8 +212,8 @@ include ROOT_PATH . '/india/elements/header.php';
     <div class="container">
         <div class="row align-items-center gy-5">
             <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="section-heading">Offshore Company Formation</h2>
-                <p class="text-muted mb-4">Combine Singapore's reputational excellence with offshore tax efficiency. Foreign income non-remitted to Singapore qualifies for zero tax exposure while maintaining access to world-class banking systems.</p>
+                <h2 class="section-heading">GIFT City IFSC Structuring</h2>
+                <p class="text-muted mb-4">Combine India's economic scale with GIFT City's International Financial Services Centre (IFSC) tax efficiency. Qualifying units can access a 100% profit-linked tax holiday for 10 consecutive years out of 15, while maintaining access to global banking and capital markets.</p>
                 
                 <div class="d-flex align-items-start gap-3 mb-3">
                     <div class="feature-icon-box fs-5" style="width:40px; height:40px;"><i class="fa-solid fa-check"></i></div>
@@ -234,7 +234,7 @@ include ROOT_PATH . '/india/elements/header.php';
                 <div class="p-4 bg-gray border-radius-12 border">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-3 shadow-sm mb-4" alt="Offshore Structure">
                     <h5>Whitelisted Global Structuring</h5>
-                    <p class="text-muted small mb-0">Maintain full compliance with CRS and FATCA while protecting international investments under Singapore law.</p>
+                    <p class="text-muted small mb-0">Maintain full compliance with FEMA, CRS, and FATCA while structuring international investments under Indian and IFSCA regulations.</p>
                 </div>
             </div>
         </div>
@@ -246,12 +246,12 @@ include ROOT_PATH . '/india/elements/header.php';
     <div class="container">
         <div class="row align-items-center gy-5 flex-lg-row-reverse">
             <div class="col-lg-6" data-aos="fade-left">
-                <h2 class="section-heading">Company Transfer-IN (Re-domiciliation)</h2>
-                <p class="text-muted mb-4">Relocate your foreign business entity to Singapore seamlessly without dissolving corporate history, existing contracts, or brand goodwill.</p>
+                <h2 class="section-heading">Company Transfer-IN (Cross-Border Merger)</h2>
+                <p class="text-muted mb-4">Merge your foreign business entity into an Indian company under RBI's Cross-Border Merger Regulations, preserving corporate history, existing contracts, and brand goodwill.</p>
                 <ul class="list-unstyled">
                     <li class="mb-3"><i class="fa-solid fa-circle-check text-gold me-2"></i> Preserve existing corporate identity and track record</li>
-                    <li class="mb-3"><i class="fa-solid fa-circle-check text-gold me-2"></i> Smooth transition of existing bank accounts and IP rights</li>
-                    <li class="mb-3"><i class="fa-solid fa-circle-check text-gold me-2"></i> Full access to Singapore tax concessions post transfer</li>
+                    <li class="mb-3"><i class="fa-solid fa-circle-check text-gold me-2"></i> Smooth transition of existing bank accounts and IP rights, subject to FEMA approval</li>
+                    <li class="mb-3"><i class="fa-solid fa-circle-check text-gold me-2"></i> Full access to India's growing consumer market and tax treaty network post-merger</li>
                 </ul>
             </div>
             <div class="col-lg-6" data-aos="fade-right">
@@ -261,14 +261,14 @@ include ROOT_PATH . '/india/elements/header.php';
                         <i class="fa-solid fa-1 text-gold fs-4"></i>
                         <div>
                             <h6>Asset Threshold</h6>
-                            <p class="text-muted small mb-0">Total asset value of at least S$10 Million across group entities.</p>
+                            <p class="text-muted small mb-0">Total asset value of at least ₹10 Crore across group entities.</p>
                         </div>
                     </div>
                     <div class="d-flex gap-3 mb-3">
                         <i class="fa-solid fa-2 text-gold fs-4"></i>
                         <div>
                             <h6>Revenue Scale</h6>
-                            <p class="text-muted small mb-0">Annual revenue exceeding S$10 Million in previous financial year.</p>
+                            <p class="text-muted small mb-0">Annual revenue exceeding ₹10 Crore in previous financial year.</p>
                         </div>
                     </div>
                     <div class="d-flex gap-3">
@@ -296,7 +296,7 @@ include ROOT_PATH . '/india/elements/header.php';
                 <div class="feature-card">
                     <div class="feature-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
                     <h4>Tax Transparency Status</h4>
-                    <p class="text-muted">LLPs are tax transparent in Singapore. Profits are passed through directly to partners and taxed at individual or corporate partner rates, preventing double taxation.</p>
+                    <p class="text-muted">LLPs in India are taxed at a flat rate at the entity level; profit distributions to partners are then exempt in their hands, avoiding double taxation on the same income.</p>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -316,12 +316,12 @@ include ROOT_PATH . '/india/elements/header.php';
         <div class="row align-items-center gy-4">
             <div class="col-lg-6" data-aos="fade-right">
                 <h2 class="section-heading">Registered Holding Company</h2>
-                <p class="text-muted">Consolidate investments, intellectual property, and subsidiary real estate under a single, highly respected Singapore holding structure.</p>
+                <p class="text-muted">Consolidate investments, intellectual property, and subsidiary real estate under a single, highly respected India holding structure.</p>
                 <div class="row g-3 mt-2">
                     <div class="col-6">
                         <div class="p-3 bg-white rounded shadow-sm border">
                             <h6 class="text-gold">Dividend Flow</h6>
-                            <p class="small text-muted mb-0">Tax-exempt dividend payouts from foreign subsidiaries under Section 13(8).</p>
+                            <p class="small text-muted mb-0">Concessional tax treatment available on qualifying dividend income from specified foreign subsidiaries.</p>
                         </div>
                     </div>
                     <div class="col-6">
@@ -334,14 +334,14 @@ include ROOT_PATH . '/india/elements/header.php';
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="p-4 bg-white rounded-4 border shadow-md">
-                    <h4 class="mb-3">Singapore Holding Tier</h4>
+                    <h4 class="mb-3">India Holding Tier</h4>
                     <div class="border-start border-3 border-warning ps-3 my-3">
-                        <h6 class="mb-0">Top Tier: Ultimate Holding Co. (Singapore)</h6>
+                        <h6 class="mb-0">Top Tier: Ultimate Holding Co. (India)</h6>
                         <p class="small text-muted">Owns shares, IP & holds global bank treasury</p>
                     </div>
                     <div class="border-start border-3 border-secondary ps-3 my-3 ms-4">
-                        <h6 class="mb-0">Mid Tier: Asian Regional Operating Hubs</h6>
-                        <p class="small text-muted">Vietnam, Indonesia, Thailand, Malaysia</p>
+                        <h6 class="mb-0">Mid Tier: South Asia & Middle East Operating Hubs</h6>
+                        <p class="small text-muted">Bangladesh, Sri Lanka, UAE, Nepal</p>
                     </div>
                     <div class="border-start border-3 border-dark ps-3 my-3 ms-5">
                         <h6 class="mb-0">Base Tier: Local Commercial Operations</h6>

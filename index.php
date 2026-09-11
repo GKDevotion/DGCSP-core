@@ -939,7 +939,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                         </li>
                         <li>
                             <a href="#" class="jurisdiction-link">
-                                <span>Moritius</span>
+                                <span>mauritius</span>
                                 <i class="bi bi-arrow-right list-arrow"></i>
                             </a>
                         </li>
