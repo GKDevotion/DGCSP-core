@@ -1,28 +1,4 @@
 <style>
-
-    /* Fixed Canvas Container for Page Background */
-    .gdb-constellation-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1; /* Keep strictly behind all body content */
-        overflow: hidden;
-        background: radial-gradient(circle at 50% 30%, #fdfbf7 0%, #f4ebd9 100%);
-        pointer-events: none;
-    }
-
-    /* Background Canvas */
-    .gdb-constellation-canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
     /* --- Canvas Interactive Map Banner Styling --- */
     .canvas-section {
         position: relative;
@@ -107,7 +83,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 0rem;
+        padding-top: 0.5rem;
     }
 
     .card-icon {
@@ -123,9 +99,8 @@
         width: 3rem;
         background-color: var(--gold-primary);
         border-radius: 2px;
-        margin: 0.8rem auto;
+        margin: 0.75rem auto;
         transition: width 0.35s ease, background-color 0.35s ease;
-        margin-bottom: 1rem;
     }
 
     /* Text Content in lower gold tint block */
@@ -162,7 +137,7 @@
         <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch">
             
             <!-- Card 1: 10+ Countries -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('10+ Countries & Global Coverage')">
                     <div class="icon-container">
                         <img src="assets/images/icons/country.png" alt="Globe Icon" class="card-icon">
@@ -177,7 +152,7 @@
             </div>
 
             <!-- Card 2: Transparent Pricing -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('Transparent Pricing')">
                     <div class="icon-container">
                         <img src="assets/images/icons/best-price.png" alt="Best Pricing" class="card-icon">
@@ -192,7 +167,7 @@
             </div>
 
             <!-- Card 3: Fast Company Setup -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('Fast Company Setup')">
                     <div class="icon-container">
                         <img src="assets/images/icons/clock.png" alt="Clock Icon" class="card-icon">
@@ -207,7 +182,7 @@
             </div>
 
             <!-- Card 4: Secure & Confidential -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('Secure & Confidential')">
                     <div class="icon-container">
                         <img src="assets/images/icons/cyber-security.png" alt="Globe Icon" class="card-icon">
@@ -222,7 +197,7 @@
             </div>
 
             <!-- Card 5: Expert Business Support -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('Expert Business Support')">
                     <div class="icon-container">
                         <img src="assets/images/icons/customer-support.png" alt="Customer Support Icon" class="card-icon">
@@ -237,7 +212,7 @@
             </div>
 
             <!-- Card 6: 24x7 Support Center -->
-            <div class="col mt-0" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700">
+            <div class="col" data-aos="fade-up" data-aos-delay="600" data-aos-duration="700">
                 <div class="glass-card text-center" onclick="handleCardClick('24 x 7 Support Center')">
                     <div class="icon-container">
                         <img src="assets/images/icons/24-hours-support.png" alt="24 Hours Support" class="card-icon">
@@ -324,9 +299,6 @@
         return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
 
-    const defaultWidth = 0.16; // Default width ratio for countries
-    const defaultHeight = 0.0; // Default height ratio for countries
-
     // Map layout definitions using proportional width/height ratios (wRatio & hRatio)
     const countryData = [
         // { name: "Mauritius", xRatio: 0.18, yRatio: 0.35, wRatio: 0.12, hRatio: 0.32, url: "#mauritius", imgSrc: createCountrySvgDataUrl("Mauritius", "#ab8139") },
@@ -335,12 +307,12 @@
         // { name: "Singapore", xRatio: 0.32, yRatio: 0.72, wRatio: 0.13, hRatio: 0.32, url: "#singapore", imgSrc: createCountrySvgDataUrl("Singapore", "#ab8139") },
         // { name: "India",     xRatio: 0.54, yRatio: 0.52, wRatio: 0.13, hRatio: 0.35, url: "#india",     imgSrc: createCountrySvgDataUrl("India", "#ab8139") },
         // { name: "UK",        xRatio: 0.82, yRatio: 0.68, wRatio: 0.12, hRatio: 0.32, url: "#uk",        imgSrc: createCountrySvgDataUrl("UK", "#ab8139") }
-        { name: "Mauritius", xRatio: 0.20, yRatio: 0.25, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/Mauritius.svg", url: "<?= BASE_URL ?>/mauritius" },
-        { name: "UAE",       xRatio: 0.40, yRatio: 0.18, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/UAE.svg",       url: "<?= BASE_URL ?>/uae" },
-        { name: "Hongkong",  xRatio: 0.72, yRatio: 0.20, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/HongKong.svg",  url: "<?= BASE_URL ?>/hongkong" },
-        { name: "Singapore", xRatio: 0.32, yRatio: 0.75, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/Singapore.svg", url: "<?= BASE_URL ?>/singapore" },
-        { name: "India",     xRatio: 0.55, yRatio: 0.58, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/India.svg",     url: "<?= BASE_URL ?>/india" },
-        { name: "UK",        xRatio: 0.78, yRatio: 0.63, wRatio: defaultWidth, hRatio: defaultHeight, imgSrc: "assets/images/Jurisdictions/UK.svg",        url: "<?= BASE_URL ?>/uk" }
+        { name: "Mauritius", xRatio: 0.20, yRatio: 0.25, wRatio: 0.13, hRatio: 0.45, imgSrc: "assets/images/Jurisdictions/Mauritius.svg", url: "<?= BASE_URL ?>/mauritius" },
+        { name: "UAE",       xRatio: 0.40, yRatio: 0.18, wRatio: 0.13, hRatio: 0.32, imgSrc: "assets/images/Jurisdictions/UAE.svg",       url: "<?= BASE_URL ?>/uae" },
+        { name: "Hongkong",  xRatio: 0.72, yRatio: 0.20, wRatio: 0.13, hRatio: 0.35, imgSrc: "assets/images/Jurisdictions/HongKong.svg",  url: "<?= BASE_URL ?>/hongkong" },
+        { name: "Singapore", xRatio: 0.32, yRatio: 0.75, wRatio: 0.16, hRatio: 0.33, imgSrc: "assets/images/Jurisdictions/Singapore.svg", url: "<?= BASE_URL ?>/singapore" },
+        { name: "India",     xRatio: 0.55, yRatio: 0.58, wRatio: 0.16, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/India.svg",     url: "<?= BASE_URL ?>/india" },
+        { name: "UK",        xRatio: 0.78, yRatio: 0.63, wRatio: 0.12, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/UK.svg",        url: "<?= BASE_URL ?>/uk" }
     ].map(country => ({
         ...country,
         offsetX: 0,
@@ -390,19 +362,11 @@
         "rgba(236, 253, 245, 0.95)"
     ];
 
-    // --- UPDATED: Dynamic Jurisdiction Dimensions (Preserves Aspect Ratio) ---
     function getCountryDimensions(country) {
-        // Determine base scale multiplier based on screen width
-        let scaleMultiplier = width < 576 ? 0.7 : (width < 992 ? 0.85 : 1.0);
-        const w = width * country.wRatio * country.scale * scaleMultiplier;
-        
-        // Maintain native SVG aspect ratio so images never stretch vertically/horizontally
-        let h = w; 
-        if (country.img && country.img.naturalWidth && country.img.naturalHeight) {
-            const aspectRatio = country.img.naturalHeight / country.img.naturalWidth;
-            h = w * aspectRatio;
-        }
-        return { w, h };
+        return {
+            w: (width * country.wRatio) * country.scale,
+            h: (height * country.hRatio) * country.scale
+        };
     }
 
     const mouse = {
@@ -529,15 +493,12 @@
         }
     }
 
-    // --- UPDATED: ServiceBadge Class ---
+    // Floating Service Badge Class
     class ServiceBadge {
-        constructor(text, posX = null, posY = null) {
+        constructor(text) {
             this.text = text;
-            
-            // Use custom coordinates if passed, otherwise default to random canvas positions
-            const padding = 60;
-            this.x = posX !== null ? posX : Math.random() * (width - padding * 4) + padding * 2;
-            this.y = posY !== null ? posY : Math.random() * (height - padding * 4) + padding * 2;
+            this.x = Math.random() * (width - 260) + 130;
+            this.y = Math.random() * (height - 180) + 90;
 
             this.bgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
             this.alpha = 0;
@@ -574,14 +535,14 @@
             ctx.save();
             ctx.globalAlpha = this.alpha;
 
-            const fontSize = width < 768 ? 17 : 19; 
-            ctx.font = `500 ${fontSize}px poppins, sans-serif`;
+            const fontSize = width < 768 ? 15 : 18; 
+            ctx.font = `500 ${fontSize}px Poppins, sans-serif`;
 
             const textMetrics = ctx.measureText(this.text);
-            const paddingX = 16;
+            const paddingX = 20;
             
             const badgeWidth = textMetrics.width + paddingX * 2;
-            const badgeHeight = fontSize + 16;
+            const badgeHeight = fontSize + 20;
 
             const rectX = this.x - badgeWidth / 2;
             const rectY = drawY - badgeHeight / 2;
@@ -618,56 +579,16 @@
     let currentServiceIndex = 0;
 
     function triggerSequentialBadges() {
-        // Fade out active badges
         activeBadges.forEach(badge => badge.fadeState = 'out');
 
         setTimeout(() => {
-            // Clear completely faded badges
             activeBadges = activeBadges.filter(b => b.alpha > 0);
-
-            // Fetch two distinct random positions
-            const positions = getRandomNonOverlappingPositions();
-
-            // Pick 1st Service
-            const service1 = servicesList[currentServiceIndex];
+            const serviceText = servicesList[currentServiceIndex];
+            activeBadges.push(new ServiceBadge(serviceText));
             currentServiceIndex = (currentServiceIndex + 1) % servicesList.length;
-
-            // Pick 2nd Service
-            const service2 = servicesList[currentServiceIndex];
-            currentServiceIndex = (currentServiceIndex + 1) % servicesList.length;
-
-            // Push both badges to screen
-            activeBadges.push(new ServiceBadge(service1, positions[0].x, positions[0].y));
-            activeBadges.push(new ServiceBadge(service2, positions[1].x, positions[1].y));
-
         }, 400);
 
-        // Loop interval
-        setTimeout(triggerSequentialBadges, 2000);
-    }
-
-    function getRandomNonOverlappingPositions() {
-        const minDistance = 180; // Distance required between two badges
-        const margin = 80;
-
-        let x1 = Math.random() * (width - margin * 2) + margin;
-        let y1 = Math.random() * (height - margin * 2) + margin;
-
-        let x2, y2, dist;
-        let attempts = 0;
-
-        // Retry until the second position is far enough from the first
-        do {
-            x2 = Math.random() * (width - margin * 2) + margin;
-            y2 = Math.random() * (height - margin * 2) + margin;
-            
-            const dx = x1 - x2;
-            const dy = y1 - y2;
-            dist = Math.sqrt(dx * dx + dy * dy);
-            attempts++;
-        } while (dist < minDistance && attempts < 50);
-
-        return [{ x: x1, y: y1 }, { x: x2, y: y2 }];
+        setTimeout(triggerSequentialBadges, 1500);
     }
 
     function resize() {
@@ -850,107 +771,4 @@
         triggerSequentialBadges();
         animate();
     };
-
-    //Constellation Canvas Animation Logic -->
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.querySelector('.gdb-constellation-canvas');
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let nodes = [];
-        
-        // Interactive mouse target
-        const mouse = { x: null, y: null, radius: 180 };
-
-        // Configurable Theme Options
-        const options = {
-            nodeColor: '#ab8139',        // Golden accent color
-            lineRGB: '171, 129, 57',     // RGB values for gradient alpha lines
-            maxDistance: 160,            // Max connection distance
-            speed: 0.8                   // Slow drifting speed
-        };
-
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initNodes();
-        }
-
-        function initNodes() {
-            nodes = [];
-            // Dynamically scale node count according to viewport area
-            const area = width * height;
-            const nodeCount = Math.floor(area / 18000); 
-
-            for (let i = 0; i < nodeCount; i++) {
-                nodes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * options.speed,
-                vy: (Math.random() - 0.5) * options.speed,
-                radius: Math.random() * 2 + 1.2
-                });
-            }
-        }
-
-        function render() {
-            ctx.clearRect(0, 0, width, height);
-
-            // Update and draw nodes
-            for (let i = 0; i < nodes.length; i++) {
-                const node = nodes[i];
-
-                // Movement
-                node.x += node.vx;
-                node.y += node.vy;
-
-                // Boundary bouncing
-                if (node.x < 0 || node.x > width) node.vx *= -1;
-                if (node.y < 0 || node.y > height) node.vy *= -1;
-
-                // Gentle mouse displacement
-                if (mouse.x !== null && mouse.y !== null) {
-                const dx = mouse.x - node.x;
-                const dy = mouse.y - node.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < mouse.radius) {
-                    const force = (mouse.radius - dist) / mouse.radius;
-                    node.x -= (dx / dist) * force * 1.5;
-                    node.y -= (dy / dist) * force * 1.5;
-                }
-                }
-
-                // Render node circle
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fillStyle = options.nodeColor;
-                ctx.fill();
-            }
-
-            // Connect adjacent nodes
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                const dx = nodes[i].x - nodes[j].x;
-                const dy = nodes[i].y - nodes[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < options.maxDistance) {
-                    const alpha = (1 - dist / options.maxDistance) * 0.28;
-                    ctx.beginPath();
-                    ctx.moveTo(nodes[i].x, nodes[i].y);
-                    ctx.lineTo(nodes[j].x, nodes[j].y);
-                    ctx.strokeStyle = `rgba(${options.lineRGB}, ${alpha})`;
-                    ctx.lineWidth = 0.85;
-                    ctx.stroke();
-                }
-                }
-            }
-
-            requestAnimationFrame(render);
-        }
-        
-        resize();
-        render();
-    });
 </script>

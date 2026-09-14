@@ -480,135 +480,139 @@ include ROOT_PATH . '/elements/map-animate.php';
     }
 </style>
 
-<div class="container py-5 pt-3">
-    
-    <!-- Top Row Layout -->
-    <div class="row g-4 mb-4">
-      
-        <div class="col-12 col-lg-7 mt-5">
-            <h1 class="section-title mb-3">
-                Our <span>Services</span>
-            </h1>
-            
-            <p class="section-desc">
-                We make registering a new company effortless and fast. Our Singapore & regional expert support team guides you through every step of incorporation, licensing, and compliance with top-rated efficiency.
-            </p>
-        </div>
+<section class="constellation-canvas-right-wrapper position-relative overflow-hidden">
+    <div class="container py-5 pt-3">
         
-        <!-- Global Entity Management (Large Card) -->
-        <div class="col-12 col-lg-6">
-            <a href="#" class="service-tile tile-global shadow-sm h-100 theme-border">
-                <div class="tile-content max-w-md">
-                    <h3 class="fw-bold fs-3 mb-2">Global Entity Management</h3>
-                    <p class="text-black-50 small mb-0 lh-sm w-75 mt-4">
-                        Our experts are here to help you explore options, answer questions, and guide you to the perfect solution for your business.
-                    </p>
-                </div>
-                <div class="tile-content pt-4">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Global Entity Management...')">View all Global Entity Management</span>
-                </div>
-            </a>
-        </div>
+        <canvas class="constellation-canvas-right" id="topRightOurServicesCanvas"></canvas>
 
-        <!-- Accounting & Tax -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <a href="#" class="service-tile tile-accounting shadow-sm h-100 theme-border">
-                <div class="tile-content">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Accounting<br />& Tax</h4>
-                    <p class="text-secondary small mb-0 lh-sm">
-                    Our experts are here to help you explore options, answer questions
-                    </p>
-                </div>
-                <div class="tile-content pt-4">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Accounting & Tax...')">Learn more</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Fund Services -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <a href="#" class="service-tile tile-fund shadow-sm h-100 theme-border">
-                <div class="tile-content">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Fund<br />Services</h4>
-                    <p class="text-secondary small mb-0 lh-sm">
-                    Our experts are here to help you explore options, answer questions
-                    </p>
-                </div>
-                <div class="tile-content pt-4">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Fund Services...')">Learn more</span>
-                </div>
-            </a>
-        </div>
-
-    </div>
-
-    <!-- Bottom Asymmetric Row Layout -->
-    <div class="row g-4">
-      
-        <!-- Private Wealth & Family Offices (Tall Card) -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <a href="#" class="service-tile tile-wealth shadow-sm h-100 theme-border">
-                <div class="tile-content">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Private Wealth<br />& Family<br />Offices</h4>
-                    <p class="text-secondary small mb-0 lh-sm">
-                    Our experts are here to help you explore options, answer questions
-                    </p>
-                </div>
-                <div class="tile-content pt-4">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Private Wealth & Family Offices...')">Learn more</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Mergers & Acquisitions (Tall Card) -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <a href="#" class="service-tile tile-mergers shadow-sm h-100 theme-border">
-                <div class="tile-content">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Mergers &<br />Acquisitions</h4>
-                    <p class="text-secondary small mb-0 lh-sm">
-                    Our experts are here to help you explore options, answer questions
-                    </p>
-                </div>
-                <div class="tile-content pt-4">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Mergers & Acquisitions...')">Learn more</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Right Column Staked Cards -->
-        <div class="col-12 col-lg-6 d-flex flex-column gap-4">
+        <!-- Top Row Layout -->
+        <div class="row g-4 mb-4">
+        
+            <div class="col-12 col-lg-7 mt-5">
+                <h1 class="section-title mb-3">
+                    Our <span>Services</span>
+                </h1>
+                
+                <p class="section-desc">
+                    We make registering a new company effortless and fast. Our Singapore & regional expert support team guides you through every step of incorporation, licensing, and compliance with top-rated efficiency.
+                </p>
+            </div>
             
-            <!-- Corporate Advisory -->
-            <a href="#" class="service-tile tile-advisory shadow-sm flex-fill theme-border">
+            <!-- Global Entity Management (Large Card) -->
+            <div class="col-12 col-lg-6">
+                <a href="#" class="service-tile tile-global shadow-sm h-100 theme-border">
+                    <div class="tile-content max-w-md">
+                        <h3 class="fw-bold fs-3 mb-2">Global Entity Management</h3>
+                        <p class="text-black-50 small mb-0 lh-sm w-75 mt-4">
+                            Our experts are here to help you explore options, answer questions, and guide you to the perfect solution for your business.
+                        </p>
+                    </div>
+                    <div class="tile-content pt-4">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Global Entity Management...')">View all Global Entity Management</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Accounting & Tax -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="#" class="service-tile tile-accounting shadow-sm h-100 theme-border">
+                    <div class="tile-content">
+                        <h4 class="fw-bold text-dark fs-4 mb-2">Accounting<br />& Tax</h4>
+                        <p class="text-secondary small mb-0 lh-sm">
+                        Our experts are here to help you explore options, answer questions
+                        </p>
+                    </div>
+                    <div class="tile-content pt-4">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Accounting & Tax...')">Learn more</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Fund Services -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="#" class="service-tile tile-fund shadow-sm h-100 theme-border">
+                    <div class="tile-content">
+                        <h4 class="fw-bold text-dark fs-4 mb-2">Fund<br />Services</h4>
+                        <p class="text-secondary small mb-0 lh-sm">
+                        Our experts are here to help you explore options, answer questions
+                        </p>
+                    </div>
+                    <div class="tile-content pt-4">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Fund Services...')">Learn more</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Bottom Asymmetric Row Layout -->
+        <div class="row g-4">
+        
+            <!-- Private Wealth & Family Offices (Tall Card) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="#" class="service-tile tile-wealth shadow-sm h-100 theme-border">
+                    <div class="tile-content">
+                        <h4 class="fw-bold text-dark fs-4 mb-2">Private Wealth<br />& Family<br />Offices</h4>
+                        <p class="text-secondary small mb-0 lh-sm">
+                        Our experts are here to help you explore options, answer questions
+                        </p>
+                    </div>
+                    <div class="tile-content pt-4">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Private Wealth & Family Offices...')">Learn more</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mergers & Acquisitions (Tall Card) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="#" class="service-tile tile-mergers shadow-sm h-100 theme-border">
+                    <div class="tile-content">
+                        <h4 class="fw-bold text-dark fs-4 mb-2">Mergers &<br />Acquisitions</h4>
+                        <p class="text-secondary small mb-0 lh-sm">
+                        Our experts are here to help you explore options, answer questions
+                        </p>
+                    </div>
+                    <div class="tile-content pt-4">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Mergers & Acquisitions...')">Learn more</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Right Column Staked Cards -->
+            <div class="col-12 col-lg-6 d-flex flex-column gap-4">
+                
+                <!-- Corporate Advisory -->
+                <a href="#" class="service-tile tile-advisory shadow-sm flex-fill theme-border">
+                    <div class="tile-content max-w-sm">
+                        <h4 class="fw-bold text-dark fs-4 mb-2">Corporate Advisory</h4>
+                        <p class="text-secondary small mb-0 lh-sm w-50 mt-3">
+                            Our experts are here to help you explore options, answer questions
+                        </p>
+                    </div>
+                    <div class="tile-content pt-3">
+                        <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Corporate Advisory...')">Learn more</span>
+                    </div>
+                </a>
+
+                <!-- Banking Solutions -->
+                <a href="#" class="service-tile tile-banking shadow-sm flex-fill">
                 <div class="tile-content max-w-sm">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Corporate Advisory</h4>
-                    <p class="text-secondary small mb-0 lh-sm w-50 mt-3">
+                    <h4 class="fw-bold text-dark fs-4 mb-2">Banking Solutions</h4>
+                    <p class="text-black-50 small mb-0 lh-sm w-50 mt-3">
                         Our experts are here to help you explore options, answer questions
                     </p>
                 </div>
                 <div class="tile-content pt-3">
-                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Corporate Advisory...')">Learn more</span>
+                    <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Banking Solutions...')">Learn more</span>
                 </div>
-            </a>
+                </a>
 
-            <!-- Banking Solutions -->
-            <a href="#" class="service-tile tile-banking shadow-sm flex-fill">
-            <div class="tile-content max-w-sm">
-                <h4 class="fw-bold text-dark fs-4 mb-2">Banking Solutions</h4>
-                <p class="text-black-50 small mb-0 lh-sm w-50 mt-3">
-                    Our experts are here to help you explore options, answer questions
-                </p>
             </div>
-            <div class="tile-content pt-3">
-                <span class="btn-pill-learn" onclick="handleToastAction(event, 'Redirecting to Banking Solutions...')">Learn more</span>
-            </div>
-            </a>
 
         </div>
 
     </div>
-
-</div>
+</section>
 
 <?php if( isset($_GET['is_show_adviser_banner']) && $_GET['is_show_adviser_banner'] == 1 ) { ?>
     <!-- Adviser Banner Section -->
@@ -1505,6 +1509,1184 @@ include ROOT_PATH . '/elements/map-animate.php';
     </div>
 </section>
 
+<!-- -->
+<style>
+    /* Hero Banner Container */
+    .partner-section {
+        background-color: var(--gold-primary);
+        position: relative;
+        /* overflow: hidden; */
+        min-height: 400px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Top Left Geometric Abstract Pattern Canvas */
+    .geometric-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 420px;
+        height: 320px;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.65;
+    }
+
+    /* Content Container Layering */
+    .content-wrap {
+        position: relative;
+        z-index: 5;
+        padding: 0;
+    }
+
+    .partner-section .section-desc {
+        font-size: 1.05rem;
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        padding-left: 0 !important;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* Logo Slider Container */
+    .slider-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        position: relative;
+    }
+
+    .carousel-btn {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 2px;
+        transition: all 0.3s ease;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-btn:hover {
+        color: #ffffff;
+        transform: scale(1.15);
+    }
+
+    /* Individual Card Container */
+    .logo-cards-viewport {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        /* Added smooth gradient mask on edge fades for seamless look */
+        /* mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); */
+    }
+
+    .logo-cards-track {
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        /* Continuous infinite right-to-left marquee animation */
+        animation: infiniteSlide 20s linear infinite;
+        will-change: transform;
+    }
+
+    /* Pause animation on hover for accessibility and interaction */
+    .slider-wrapper:hover .logo-cards-track {
+        animation-play-state: paused;
+    }
+
+    @keyframes infiniteSlide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            /* Shifts exactly half the duplicated track length */
+            transform: translateX(-50%);
+        }
+    }
+
+    .logo-card {
+        background: #ffffff;
+        border-radius: var(--card-radius);
+        padding: 16px 20px;
+        min-width: 130px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .logo-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .logo-card img, .logo-card svg {
+        max-height: 42px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Pagination Indicators */
+    .pagination-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 1.5rem;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .dot.active {
+        background-color: #ffffff;
+    }
+
+    /* Floating Background Graphic Shapes (Right Side) */
+    .graphics-container {
+        position: relative;
+        height: 100%;
+        /* min-height: 480px; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    /* Large Rounded Soft Card Shape Behind Model */
+    .bg-shape-large {
+        position: absolute;
+        bottom: 10px;
+        right: 5%;
+        width: 413px;
+        height: 320px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(4px);
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+    /* Small Outline Box Top Right */
+    .bg-shape-outline {
+        position: absolute;
+        top: 10%;
+        right: -3%;
+        width: 100px;
+        height: 100px;
+        border: 2px solid rgba(255, 235, 170, 0.8);
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    /* Floating Bottom Left Card Shape Overlay */
+    .bg-shape-small {
+        position: absolute;
+        bottom: 40px;
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 18px;
+        z-index: 3;
+        border: 1px solid #fff;
+    }
+
+    /* Professional Model Image */
+    .model-img {
+        position: relative;
+        z-index: 4;
+        /* max-height: 400px;
+        object-fit: contain; */
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
+        margin-bottom: 0;
+        margin-top: -100px;
+        width: 75%;
+        left: 12%;
+    }
+
+    /* Responsive Breakpoints Adjustment */
+    @media (max-width: 991.98px) {
+        .partner-section {
+            padding-top: 2rem;
+        }
+        .partner-section .section-title {
+            font-size: 2.2rem;
+        }
+        .graphics-container {
+            min-height: 380px;
+            margin-top: 2rem;
+        }
+        .bg-shape-large {
+            width: 340px;
+            height: 340px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        .bg-shape-outline {
+            right: 15%;
+        }
+        .model-img {
+            max-height: 400px;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .partner-section .section-title {
+            font-size: 1.85rem;
+        }
+        .partner-section .section-desc {
+            font-size: 0.95rem;
+        }
+        .logo-card {
+            min-width: 105px;
+            height: 65px;
+            padding: 10px 12px;
+        }
+        .logo-card img, .logo-card svg {
+            max-height: 32px;
+        }
+        .carousel-btn {
+            padding: 4px;
+            font-size: 1.25rem;
+        }
+    }
+</style>
+<section class="partner-section">
+    <!-- Animated Constellation Network Canvas in Top Left Corner -->
+    <canvas class="geometric-bg" id="constellationCanvas"></canvas>
+
+    <div class="container content-wrap">
+        <div class="row align-items-center">
+            
+            <!-- Left Column: Headline, Text & Interactive Carousel -->
+            <div class="col-lg-6 col-md-12 text-center text-lg-start">
+                <h2 class="section-title text-white">Try us today!</h2>
+                <p class="section-desc ms-auto ms-lg-0 me-auto me-lg-0 text-white">
+                    Let's Devotion and our Partners do the rest. We are working with global Banks in both traditional and digital type, the Lawyers, local Experts
+                </p>
+
+                <!-- Partner Logo Carousel Area -->
+                <div class="slider-wrapper my-3">
+                    <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous Slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="logo-cards-viewport">
+                        <!-- Dual duplicated logo set inside track for seamless infinite looping -->
+                        <div class="logo-cards-track" id="logoTrack">
+                            
+                            <!-- Original Logo Set -->
+                            <div class="logo-card">
+                                <svg viewBox="0 0 140 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="5" y="16" font-family="Arial, sans-serif" font-size="10" fill="#002a54" font-weight="bold">بنك أبوظبي الأول</text>
+                                    <text x="5" y="36" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#002a54">FAB</text>
+                                    <path d="M60 10 L85 22 L70 38 Z" fill="#e31837" />
+                                    <path d="M72 15 L95 28 L80 40 Z" fill="#002a54" opacity="0.8" />
+                                    <text x="98" y="24" font-family="Arial, sans-serif" font-size="7" fill="#002a54">First Abu Dhabi Bank</text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card">
+                                <svg viewBox="0 0 100 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="10" y="30" font-family="'Poppins', sans-serif" font-size="32" font-weight="800" fill="#4d148c">liv<tspan fill="#ff007a">.</tspan></text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card">
+                                <svg viewBox="0 0 60 60" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="30" cy="30" r="26" fill="#007a3d" />
+                                    <path d="M30 6 L36 20 L50 20 L38 29 L43 43 L30 34 L17 43 L22 29 L10 20 L24 20 Z" fill="#b08332" />
+                                    <circle cx="30" cy="30" r="8" fill="#a01830" />
+                                </svg>
+                            </div>
+
+                            <div class="logo-card">
+                                <svg viewBox="0 0 120 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="translate(45, 14)">
+                                        <path d="M0 0 L12 -8 L10 4 Z" fill="#ff5000" />
+                                        <path d="M0 0 L15 -2 L8 8 Z" fill="#ff7800" />
+                                        <path d="M0 0 L14 6 L4 11 Z" fill="#ffa000" />
+                                        <path d="M0 0 L8 12 L-2 10 Z" fill="#ffc107" />
+                                    </g>
+                                    <text x="10" y="28" font-family="Arial, sans-serif" font-size="11" fill="#002a54" font-weight="bold">المشرق</text>
+                                    <text x="10" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#002a54">mashreq</text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card">
+                                <svg viewBox="0 0 110 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="5" y="8" width="24" height="24" rx="4" fill="#107c41" />
+                                    <text x="12" y="25" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-weight="bold">C</text>
+                                    <text x="36" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#002a54">CBD</text>
+                                </svg>
+                            </div>
+
+                            <!-- Duplicated Logo Set (For smooth infinite recursive right-to-left marquee) -->
+                            <div class="logo-card" aria-hidden="true">
+                                <svg viewBox="0 0 140 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="5" y="16" font-family="Arial, sans-serif" font-size="10" fill="#002a54" font-weight="bold">بنك أبوظبي الأول</text>
+                                    <text x="5" y="36" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#002a54">FAB</text>
+                                    <path d="M60 10 L85 22 L70 38 Z" fill="#e31837" />
+                                    <path d="M72 15 L95 28 L80 40 Z" fill="#002a54" opacity="0.8" />
+                                    <text x="98" y="24" font-family="Arial, sans-serif" font-size="7" fill="#002a54">First Abu Dhabi Bank</text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card" aria-hidden="true">
+                                <svg viewBox="0 0 100 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="10" y="30" font-family="'Poppins', sans-serif" font-size="32" font-weight="800" fill="#4d148c">liv<tspan fill="#ff007a">.</tspan></text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card" aria-hidden="true">
+                                <svg viewBox="0 0 60 60" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="30" cy="30" r="26" fill="#007a3d" />
+                                    <path d="M30 6 L36 20 L50 20 L38 29 L43 43 L30 34 L17 43 L22 29 L10 20 L24 20 Z" fill="#b08332" />
+                                    <circle cx="30" cy="30" r="8" fill="#a01830" />
+                                </svg>
+                            </div>
+
+                            <div class="logo-card" aria-hidden="true">
+                                <svg viewBox="0 0 120 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="translate(45, 14)">
+                                        <path d="M0 0 L12 -8 L10 4 Z" fill="#ff5000" />
+                                        <path d="M0 0 L15 -2 L8 8 Z" fill="#ff7800" />
+                                        <path d="M0 0 L14 6 L4 11 Z" fill="#ffa000" />
+                                        <path d="M0 0 L8 12 L-2 10 Z" fill="#ffc107" />
+                                    </g>
+                                    <text x="10" y="28" font-family="Arial, sans-serif" font-size="11" fill="#002a54" font-weight="bold">المشرق</text>
+                                    <text x="10" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#002a54">mashreq</text>
+                                </svg>
+                            </div>
+
+                            <div class="logo-card" aria-hidden="true">
+                                <svg viewBox="0 0 110 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="5" y="8" width="24" height="24" rx="4" fill="#107c41" />
+                                    <text x="12" y="25" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-weight="bold">C</text>
+                                    <text x="36" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#002a54">CBD</text>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next Slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Pagination Dot Indicators -->
+                <div class="pagination-dots" id="dotsContainer">
+                    <button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
+                    <button class="dot" data-index="1" aria-label="Go to slide 2"></button>
+                    <button class="dot" data-index="2" aria-label="Go to slide 3"></button>
+                    <button class="dot" data-index="3" aria-label="Go to slide 4"></button>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Model cutout overlay with geometric background elements -->
+            <div class="col-lg-6 col-md-12">
+                <div class="graphics-container">
+                    <!-- Abstract Soft Transparent Cards Behind Model -->
+                    <div class="bg-shape-large"></div>
+                    <div class="bg-shape-outline"></div>
+                    <div class="bg-shape-small"></div>
+
+                    <!-- Professional Business Woman Image Cutout -->
+                    <img src="assets/images/try-us-today-girl.png" 
+                            alt="Professional Business Expert holding tablet" 
+                            class="model-img img-fluid"
+                            onerror="this.src='assets/images/favicon.png';">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('constellationCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = Math.min(window.innerWidth, 500);
+            canvas.height = 350;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Constellation Nodes Setup
+        const numNodes = 7;
+        const nodes = [];
+
+        for (let i = 0; i < numNodes; i++) {
+            nodes.push({
+                x: Math.random() * (canvas.width * 0.8) + 20,
+                y: Math.random() * (canvas.height * 0.7) + 20,
+                vx: (Math.random() - 0.5) * 0.4, // Slow floating velocity X
+                vy: (Math.random() - 0.5) * 0.4, // Slow floating velocity Y
+                radius: Math.random() * 2 + 2.5
+            });
+        }
+
+        // Draw and update node positions recursively
+        function animateConstellation() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Update positions & boundary check
+            for (let i = 0; i < nodes.length; i++) {
+                let node = nodes[i];
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 15 || node.x > canvas.width - 20) node.vx *= -1;
+                if (node.y < 15 || node.y > canvas.height - 20) node.vy *= -1;
+
+                // Draw node point
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.fill();
+            }
+
+            // Draw connecting network lines between points
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    let dx = nodes[i].x - nodes[j].x;
+                    let dy = nodes[i].y - nodes[j].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 180) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.25 * (1 - dist / 180)})`;
+                        ctx.lineWidth = 0.95;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateConstellation);
+        }
+        animateConstellation();
+
+        const track = document.getElementById('logoTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+        const totalDots = dots.length;
+
+        let dotIndex = 0;
+
+        // Update active dot in sync with continuous infinite loop
+        setInterval(() => {
+            dots[dotIndex].classList.remove('active');
+            dotIndex = (dotIndex + 1) % totalDots;
+            dots[dotIndex].classList.add('active');
+        }, 5000);
+
+        // Button Click Handler to scroll track manually on button press
+        prevBtn.addEventListener('click', () => {
+            track.style.animationPlayState = 'paused';
+            track.scrollBy({ left: -160, behavior: 'smooth' });
+            setTimeout(() => {
+                track.style.animationPlayState = 'running';
+            }, 2000);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.style.animationPlayState = 'paused';
+            track.scrollBy({ left: 160, behavior: 'smooth' });
+            setTimeout(() => {
+                track.style.animationPlayState = 'running';
+            }, 2000);
+        });
+
+        // Dot Click Events
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                dotIndex = idx;
+            });
+        });
+    });
+</script>
+
+<!-- why go with devotion -->
+<style>
+    /* Main Section Container */
+    .why-devotion-section {
+        position: relative;
+        padding: 5rem 0 6rem 0;
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+
+    /* Top-Right Animated Constellation Canvas */
+    .constellation-canvas-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 480px;
+        height: 380px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Section Content Layer */
+    .section-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Section Header Styling */
+    .why-devotion-section .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        letter-spacing: -0.5px;
+        margin-bottom: 0.5rem;
+    }
+
+    .why-devotion-section .section-subtitle {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        font-weight: 400;
+        margin-bottom: 4rem;
+    }
+
+    /* Feature Card Container & Hover Effects */
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.25rem;
+        border-radius: 12px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        height: 100%;
+    }
+
+    .feature-item:hover {
+        background-color: #f9fafb;
+        transform: translateY(-2px);
+    }
+
+    /* Icon Container Box */
+    .feature-icon-wrapper {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Inline SVG Styling */
+    .feature-icon-wrapper svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--text-dark);
+        fill: none;
+        stroke-width: 1.75;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.3s ease, stroke 0.3s ease;
+    }
+
+    .feature-item:hover .feature-icon-wrapper svg {
+        transform: scale(1.08);
+        stroke: #000000;
+    }
+
+    /* Feature Text Details */
+    .why-devotion-section .feature-title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.35;
+    }
+
+    .why-devotion-section .feature-description {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 0;
+        font-weight: 400;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 991.98px) {
+        .why-devotion-section {
+            padding: 3.5rem 0 4rem 0;
+        }
+        .why-devotion-section .section-title {
+            font-size: 2rem;
+        }
+        .why-devotion-section .section-subtitle {
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+        .constellation-canvas-right {
+            width: 320px;
+            height: 280px;
+            opacity: 0.7;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .feature-item {
+            padding: 0.75rem 0.5rem;
+        }
+        .feature-icon-wrapper svg {
+            width: 34px;
+            height: 34px;
+        }
+        .why-devotion-section .feature-title {
+            font-size: 1.1rem;
+        }
+        .why-devotion-section .feature-description {
+            font-size: 0.9rem;
+        }
+        .constellation-canvas-right {
+            width: 240px;
+            height: 220px;
+            opacity: 0.5;
+        }
+    }
+</style>
+
+<section class="why-devotion-section">
+    <!-- Top-Right Animated Dynamic Network Canvas -->
+    <canvas class="constellation-canvas-right" id="topRightWhyWithDevotionCanvas"></canvas>
+
+    <div class="container section-content">
+        
+        <!-- Section Header -->
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="section-title">Why go with Devotion</h2>
+                <p class="section-subtitle">1,000+ business company doing Company services with us.</p>
+            </div>
+        </div>
+
+        <!-- Features Grid (2 Columns on Desktop, 1 Column on Mobile/Tablet) -->
+        <div class="row g-4 lg:g-5">
+            
+            <!-- Feature 1: Transparent & Optimize Workflow (SVG Book/Workflow) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <line x1="8" y1="6" x2="16" y2="6"></line>
+                            <line x1="8" y1="10" x2="16" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Transparent and Optimize Workflow</h3>
+                        <p class="feature-description">
+                            Easing complex paperwork burden with a transparent &amp; streamlined business process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Dedicated Lifetime Support (SVG Smiling Face) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Dedicated Lifetime Support</h3>
+                        <p class="feature-description">
+                            Our helpful and experienced staff is happy to assist you throughout the life of your company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Extensive Network of Professionals Affiliates (SVG Globe) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Extensive Network of Professionals Affiliates</h3>
+                        <p class="feature-description">
+                            Our connection with key service providers and banking institutions enable our clients a one-stop service experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Integrated Customized Solutions (SVG Puzzle Piece) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.439 7.85c-.049-.322.059-.648.289-.878l1.568-1.568a2.121 2.121 0 0 0-2.999-3l-1.568 1.568a.862.862 0 0 1-.878.289 4.965 4.965 0 0 0-2.7.409.865.865 0 0 1-.951-.194L11.03 3.307a2.121 2.121 0 0 0-3 2.999l1.169 1.169a.864.864 0 0 1 .194.951 4.964 4.964 0 0 0-.409 2.7.863.863 0 0 1-.289.878L7.127 13.58a2.121 2.121 0 0 0 3 3l1.568-1.568c.23-.23.556-.338.878-.289a4.964 4.964 0 0 0 2.7-.409c.334-.146.721-.077.951.194l1.169 1.169a2.121 2.121 0 0 0 3-3l-1.169-1.169a.864.864 0 0 1-.194-.951 4.965 4.965 0 0 0 .409-2.7z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Integrated Customized Solutions</h3>
+                        <p class="feature-description">
+                            We have the most knowledgeable customer service team with effective networks to integrate the best solutions for your industry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 5: Transparent in Cost (SVG Wallet) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+                            <path d="M16 3H4a2 2 0 0 0-2 2v2"></path>
+                            <circle cx="16" cy="14" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Transparent in Cost</h3>
+                        <p class="feature-description">
+                            All inclusive, we guarantee that there is no hidden fee.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 6: Compliance Notices (SVG Speech Bubbles) -->
+            <div class="col-lg-6 col-md-12 mt-1">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            <line x1="8" y1="9" x2="16" y2="9"></line>
+                            <line x1="8" y1="13" x2="14" y2="13"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="feature-title">Compliance Notices</h3>
+                        <p class="feature-description">
+                            We keep track of filing deadlines and keep you posted. Your deadlines are our deadlines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Select all canvases with the class
+        const canvases = document.querySelectorAll('.constellation-canvas-right');
+        
+        // Safety check: Exit if no canvas is found
+        if (!canvases.length) return;
+
+        // 2. Loop through each canvas element independently
+        canvases.forEach((canvas) => {
+            const ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width || 480;
+                canvas.height = rect.height || 380;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Create constellation network nodes specifically for this canvas instance
+            const nodeCount = 9;
+            const nodes = [];
+
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * canvas.width * 0.75 + canvas.width * 0.2, // Focus towards upper-right
+                    y: Math.random() * canvas.height * 0.75,
+                    vx: (Math.random() - 0.5) * 0.35, // Slow, elegant drifting velocity
+                    vy: (Math.random() - 0.5) * 0.35,
+                    radius: Math.random() * 2 + 1.8
+                });
+            }
+
+            // Continuous animation loop for this specific canvas
+            function renderNetwork() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Update node positions and handle subtle bouncing boundaries
+                for (let i = 0; i < nodes.length; i++) {
+                    const node = nodes[i];
+                    node.x += node.vx;
+                    node.y += node.vy;
+
+                    if (node.x < canvas.width * 0.1 || node.x > canvas.width - 10) node.vx *= -1;
+                    if (node.y < 10 || node.y > canvas.height * 0.85) node.vy *= -1;
+
+                    // Render node dot
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = '#ab8139';
+                    ctx.fill();
+                }
+
+                // Render dynamic connecting lines between adjacent nodes
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 170) {
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            // Subdued line opacity to fit the light background
+                            ctx.strokeStyle = `rgba(0, 0, 0, ${0.18 * (1 - distance / 170)})`;
+                            ctx.lineWidth = 0.85;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(renderNetwork);
+            }
+
+            // Start the animation loop for this instance
+            renderNetwork();
+        });
+    });
+</script>
+
+<!-- -->
+<style>
+
+    /* Main Section Styling */
+    .expansion-section {
+        position: relative;
+        padding: 0 0 3rem;
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+
+    /* Dynamic Animated Constellation Canvas in Bottom-Left */
+    .constellation-canvas-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 420px;
+        height: 320px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .section-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* SVG World Map Container */
+    .map-wrapper {
+        width: 100%;
+        height: auto;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    .map-wrapper svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Right Column Content */
+    .pill-badge {
+        display: inline-block;
+        background-color: var(--gold-primary);
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.45rem 1.25rem;
+        border-radius: 50px;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.2px;
+        box-shadow: 0 4px 12px rgba(179, 136, 59, 0.2);
+    }
+
+    .main-heading {
+        font-size: 2.3rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+        /* margin-bottom: 1.25rem; */
+    }
+
+    .expansion-section .description-text {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 1.75rem;
+        max-width: 500px;
+    }
+
+    .location-link {
+        display: inline-block;
+        color: var(--text-dark);
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .location-link:hover {
+        color: var(--gold-primary);
+        transform: translateX(3px);
+    }
+
+    /* Bottom Counter Stats Row */
+    .stats-row {
+        margin-top: 5rem;
+        padding-top: 1rem;
+    }
+
+    .stat-item {
+        padding: 0.5rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        line-height: 1.1;
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+
+    .stat-label {
+        font-size: 1.4rem;
+        color: var(--text-muted);
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 991.98px) {
+        .expansion-section {
+            padding: 3.5rem 0 3rem 0;
+        }
+        .main-heading {
+            font-size: 1.95rem;
+        }
+        .stats-row {
+            margin-top: 3.5rem;
+        }
+        .stat-number {
+            font-size: 2.25rem;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+        }
+        .constellation-canvas-left {
+            width: 300px;
+            height: 250px;
+            opacity: 0.7;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .main-heading {
+            font-size: 1.65rem;
+        }
+        .stat-number {
+            font-size: 2rem;
+        }
+        .stats-row {
+            row-gap: 2rem;
+        }
+        .constellation-canvas-left {
+            width: 220px;
+            height: 200px;
+            opacity: 0.5;
+        }
+    }
+</style>
+
+<section class="expansion-section">
+    <!-- Bottom-Left Dynamic Constellation Network Canvas -->
+    <canvas class="constellation-canvas-left" id="bottomLeftCanvas"></canvas>
+
+    <div class="container section-content">
+        <div class="row align-items-center g-4 lg:g-5">
+            
+            <!-- Left Column: SVG Dotted World Map -->
+            <div class="col-lg-7 col-md-12">
+                <div class="map-wrapper">
+                    <!-- SVG -->
+                     <img src="assets/images/svg/dotted-expand-asia-map.svg" 
+                            alt="Dotted World Map Illustration" 
+                            class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Right Column: Heading & Content -->
+            <div class="col-lg-5 col-md-12">
+                <div>
+                    <span class="pill-badge">Regional onshore expansion</span>
+                    
+                    <h2 class="main-heading">
+                        Expand &amp; operate in Asia-Pacific under one invoice
+                    </h2>
+                    
+                    <p class="description-text">
+                        Thanks to our on-the-ground presence in Asia's hard-to-navigate markets and a secure client platform, you can expand your offshore business into other markets in Asia-Pacific with ease and confidence.
+                    </p>
+                    
+                    <a href="#" class="location-link">View all Locations</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Counter Stats Row -->
+        <div class="row stats-row justify-content-between align-items-center text-start">
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <p class="stat-label">Markets</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">29</div>
+                    <p class="stat-label">Offices</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">22,000+</div>
+                    <p class="stat-label">Active Client</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-6">
+                <div class="stat-item">
+                    <div class="stat-number">2,000+</div>
+                    <p class="stat-label">Employees</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('bottomLeftCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width || 420;
+            canvas.height = rect.height || 320;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Create network nodes for bottom-left corner constellation
+        const nodeCount = 8;
+        const nodes = [];
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width * 0.7,
+                y: canvas.height * 0.3 + Math.random() * canvas.height * 0.7,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                radius: Math.random() * 2 + 1.6
+            });
+        }
+
+        // Continuous animation loop for dynamic dynamic constellation network
+        function renderNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < nodes.length; i++) {
+                const node = nodes[i];
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 10 || node.x > canvas.width * 0.8) node.vx *= -1;
+                if (node.y < canvas.height * 0.2 || node.y > canvas.height - 10) node.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#ab8139';
+                ctx.fill();
+            }
+
+            // Render dynamic connecting lines between nearby nodes
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 160) {
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(0, 0, 0, ${0.16 * (1 - distance / 160)})`;
+                        ctx.lineWidth = 0.85;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(renderNetwork);
+        }
+
+        renderNetwork();
+    });
+</script>
+
 <!-- Testimonials Section -->
 <style>
     .text-gold {
@@ -1544,7 +2726,7 @@ include ROOT_PATH . '/elements/map-animate.php';
     }
 </style>
 
-<section class="py-5 position-relative overflow-visible bg-golden-gradient">
+<section class="py-5 position-relative overflow-visible bg-golden-gradient d-none">
     <div class="container py-5">
         
         <div class="blue-ring d-none d-lg-bloc">
@@ -1657,169 +2839,6 @@ include ROOT_PATH . '/elements/map-animate.php';
     </div>
 </section>
 
-<!-- Speak with Experts Section -->
-<style>
-   
-    .badge-gold {
-      background-color: #a38240;
-      color: #ffffff;
-      border-radius: 50px;
-      padding: 6px 20px;
-      font-weight: 500;
-      font-size: 0.875rem;
-    }
-
-    .action-icon-btn {
-      width: 48px;
-      height: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease;
-    }
-
-    .action-icon-btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .action-icon-btn img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    /* Styling for Section 2: Ready to Register */
-    .ready-register-section {
-        background-image: url('assets/images/ready-register.png');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: cover;
-        position: relative;
-        padding-top: 16rem;
-        padding-bottom: 5rem;
-    }
-
-    .btn-register-primary {
-        background-color: #a38240;
-        color: #ffffff;
-        border-radius: 50px;
-        padding: 10px 24px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        border: none;
-        transition: all 0.3s ease;
-        text-decoration: none;
-    }
-
-    .btn-register-primary:hover {
-      background-color: #8a6c32;
-      color: #ffffff;
-    }
-
-    .btn-register-secondary {
-      background-color: #ffffff;
-      color: #a38240;
-      border-radius: 50px;
-      padding: 10px 24px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1px solid #ffffff;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    /* Responsive background positioning for mobile */
-    @media (max-width: 991.98px) {
-        .ready-register-section {
-            background-position: center bottom;
-            background-size: 260px auto; /* Adjust height for mobile screens */
-            padding-bottom: 240px !important; /* Leaves room so text doesn't overlap person image */
-        }
-    }
-    
-    .btn-register-secondary:hover {
-      background-color: #f8f9fa;
-      color: #8a6c32;
-    }
-
-    .person-img-wrapper {
-      position: relative;
-      margin-bottom: -3rem; /* Extends person image naturally out of section bottom */
-    }
-
-    .person-img-wrapper img {
-      max-height: 380px;
-      width: auto;
-      object-fit: contain;
-    }
-</style>
-
-<!-- Section 1: Speak with our Experts -->
-<section class="pt-5 bg-white position-relative">
-<div class="container pt-4">
-    <div class="row align-items-center g-4">
-    
-    <!-- Left Content -->
-    <div class="col-lg-5 text-center text-lg-start">
-        <span class="badge badge-gold mb-3 shadow-sm">Webinar</span>
-        
-        <h2 class="display-5 fw-bold text-gold mb-3">
-        Speak with<br class="d-none d-lg-inline" /> our Experts
-        </h2>
-        
-        <p class="text-muted fs-5 mb-4">
-        We're here for all your offshore business needs
-        </p>
-
-        <!-- Communication Icons Row -->
-        <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-3">
-        <a href="#" class="action-icon-btn" title="Video Call">
-            <img src="assets/images/video-calling.png" alt="Video Calling" />
-        </a>
-        <a href="#" class="action-icon-btn" title="Email Message">
-            <img src="assets/images/email-message.png" alt="Email Message" />
-        </a>
-        <a href="#" class="action-icon-btn" title="Scan QR Code">
-            <img src="assets/images/scan-code.png" alt="Scan Code" />
-        </a>
-        </div>
-    </div>
-
-    <!-- Right Device Graphics Image -->
-    <div class="col-lg-7 text-center">
-        <img src="assets/images/speech-expert.png" alt="Speak with Experts Devices" class="img-fluid" style="max-height: 420px; width: auto;" />
-    </div>
-
-    </div>
-</div>
-</section>
-
-<!-- Section 2: Ready to Register Section -->
-<section class="ready-register-section">
-    <div class="container">
-        <div class="row justify-content-end align-items-center">
-        
-        <!-- Right Text & Call-to-Actions (Shifted to right via offset/grid) -->
-        <div class="col-lg-7 text-center text-lg-start">
-            <h2 class="display-6 fw-bold text-gold mb-3">
-            Ready to register?
-            </h2>
-            
-            <p class="fs-5 mb-4">
-            Start your company registration today through our secure simple online form which will take you less than 5 minutes
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
-            <a href="#" class="btn btn-register-primary shadow-sm" onclick="handleToastAction(event, 'Redirecting to Company Registration...')">Start your Company</a>
-            <a href="#" class="btn btn-register-secondary shadow-sm" onclick="handleToastAction(event, 'Redirecting to Contact Us...')">Get in Touch</a>
-            </div>
-        </div>
-
-        </div>
-    </div>
-</section>
-
 <!-- Company Formation Experts Section (Light/White Theme) -->
 <style>
    
@@ -1849,19 +2868,7 @@ include ROOT_PATH . '/elements/map-animate.php';
       margin-bottom: 1.25rem;
     }
 
-    .section-title {
-      font-size: 2.85rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-      color: var(--text-dark);
-    }
-
-    .section-title span {
-      color: var(--gold-primary);
-    }
-
-    .section-desc {
+    .experts-section .section-desc {
       font-size: 0.975rem;
       color: var(--text-muted);
       line-height: 1.75;
@@ -1916,7 +2923,7 @@ include ROOT_PATH . '/elements/map-animate.php';
       background: var(--white);
       border: 1px solid var(--gold-border);
       border-radius: 16px;
-      padding: 22px;
+      padding: 15px;
       height: 100%;
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
@@ -2001,7 +3008,7 @@ include ROOT_PATH . '/elements/map-animate.php';
             <!-- Right Representative Image Column -->
             <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
                 <!-- Testimonial Cards Carousel Row -->
-                <div class="row g-3 mt-5 pt-3">
+                <div class="row g-3 mt-2 pt-1">
                     <div class="col-md-12" data-aos="fade-down" data-aos-delay="100">
                         <div class="testimonial-card">
                             <div class="star-rating mb-2">
@@ -2043,6 +3050,98 @@ include ROOT_PATH . '/elements/map-animate.php';
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row g-4 mt-1">
+        
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="testimonial-card bg-white p-4 position-relative h-100 d-flex flex-column justify-content-between">
+                    <div class="quote-watermark">“</div>
+                    <div class="position-relative z-1">
+                        <h6 class="fw-bold text-dark mb-0 fs-5">Goutam Kakdiya</h6>
+                        <p class="text-secondary small mb-3">Dubai</p>
+                        <p class="text-muted small lh-base mb-4">
+                        Very friendly, client oriented service. Proactive and very supportive at all times. Proactive and very supportive at all times.
+                        </p>
+                    </div>
+                    <div class="stars text-warning d-flex gap-1 fs-6">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="text-muted small">Aug 3, 2026</div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="testimonial-card bg-white p-4 position-relative h-100 d-flex flex-column justify-content-between">
+                    <div class="quote-watermark">“</div>
+                    <div class="position-relative z-1">
+                        <h6 class="fw-bold text-dark mb-0 fs-5">Moin Shaikh</h6>
+                        <p class="text-secondary small mb-3">India</p>
+                        <p class="text-muted small lh-base mb-4">
+                        Highly recommend global entity setup services. Their team is professional, knowledgeable, and cost-effective compared to other providers offering similar services.
+                        </p>
+                    </div>
+                    <div class="stars text-warning d-flex gap-1 fs-6">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="text-muted small">Aug 3, 2026</div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="testimonial-card bg-white p-4 position-relative h-100 d-flex flex-column justify-content-between">
+                    <div class="quote-watermark">“</div>
+                    <div class="position-relative z-1">
+                        <h6 class="fw-bold text-dark mb-0 fs-5">Goutam Kakdiya</h6>
+                        <p class="text-secondary small mb-3">Dubai</p>
+                        <p class="text-muted small lh-base mb-4">
+                        Very friendly, client oriented service. Proactive and very supportive at all times. Proactive and very supportive at all times.
+                        </p>
+                    </div>
+                    <div class="stars text-warning d-flex gap-1 fs-6">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="text-muted small">Aug 3, 2026</div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="testimonial-card bg-white p-4 position-relative h-100 d-flex flex-column justify-content-between">
+                    <div class="quote-watermark">“</div>
+                    <div class="position-relative z-1">
+                        <h6 class="fw-bold text-dark mb-0 fs-5">Moin Shaikh</h6>
+                        <p class="text-secondary small mb-3">India</p>
+                        <p class="text-muted small lh-base mb-4">
+                        Highly recommend global entity setup services. Their team is professional, knowledgeable, and cost-effective compared to other providers offering similar services.
+                        </p>
+                    </div>
+                    <div class="stars text-warning d-flex gap-1 fs-6">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="text-muted small">Aug 3, 2026</div>
                 </div>
             </div>
 

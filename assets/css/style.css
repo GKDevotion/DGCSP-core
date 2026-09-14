@@ -1,12 +1,15 @@
 :root {
     --gold-primary: #ab8139;
     --gold-hover: #96783d;
-    --text-dark: #333333;
+    --dark-gold: #966e27;
+    --gold-light: #f9f5ed;
     --gold-banner-bg: #ab8139;
+    --overlay-gold: rgba(220, 185, 120, 0.25);
+    --text-dark: #333333;
+    --text-muted: #6b7280;
     --gray-color: #f5f6f8;
     --font-family: 'Poppins';
     --gold-border: rgba(163, 130, 64, 0.2);
-    --gold-light: #f9f5ed;
     --white: #ffffff;
     --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 10px 30px rgba(184, 150, 85, 0.15);
@@ -15,6 +18,7 @@
     --shadow-hover: 0 20px 45px rgba(184, 150, 85, 0.18);
     --bg-light: #faf8f5;
     --golden-gradient-background: radial-gradient(circle at 50% 1%, rgba(184, 150, 85, 0.1) 0%, transparent 100%), linear-gradient(180deg, #ffffff 0%, var(--gold-light) 100%);
+    --card-radius: 16px;
 }
 
 * {
