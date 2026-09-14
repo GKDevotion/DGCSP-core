@@ -34,7 +34,7 @@
     .cards-wrapper-relative {
         position: relative;
         z-index: 2;
-        margin-top: -4rem;
+        margin-top: -3rem;
     }
 
     /* --- Glassmorphism Card Styling matching Reference Image --- */
@@ -79,11 +79,11 @@
 
     /* Icon Container */
     .icon-container {
-        height: 130px;
+        height: 100px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .card-icon {
@@ -105,7 +105,7 @@
 
     /* Text Content in lower gold tint block */
     .card-body-content {
-        padding: 0.75rem 0.75rem 1.25rem 0.75rem;
+        padding: 0 0.75rem 0.75rem 0.75rem;
     }
 
     .brand-font{
@@ -117,7 +117,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 7.5rem;
+        height: 6rem;
         background-color: var(--gold-banner-bg);
         z-index: 1;
         box-shadow: 0 -4px 20px rgba(171, 129, 57, 0.2);
@@ -307,12 +307,12 @@
         // { name: "Singapore", xRatio: 0.32, yRatio: 0.72, wRatio: 0.13, hRatio: 0.32, url: "#singapore", imgSrc: createCountrySvgDataUrl("Singapore", "#ab8139") },
         // { name: "India",     xRatio: 0.54, yRatio: 0.52, wRatio: 0.13, hRatio: 0.35, url: "#india",     imgSrc: createCountrySvgDataUrl("India", "#ab8139") },
         // { name: "UK",        xRatio: 0.82, yRatio: 0.68, wRatio: 0.12, hRatio: 0.32, url: "#uk",        imgSrc: createCountrySvgDataUrl("UK", "#ab8139") }
-        { name: "Mauritius", xRatio: 0.20, yRatio: 0.25, wRatio: 0.13, hRatio: 0.45, imgSrc: "assets/images/Jurisdictions/Mauritius.svg", url: "https://example.com/mauritius" },
-        { name: "UAE",       xRatio: 0.40, yRatio: 0.18, wRatio: 0.13, hRatio: 0.32, imgSrc: "assets/images/Jurisdictions/UAE.svg",       url: "https://example.com/uae" },
+        { name: "Mauritius", xRatio: 0.20, yRatio: 0.25, wRatio: 0.13, hRatio: 0.45, imgSrc: "assets/images/Jurisdictions/Mauritius.svg", url: "<?= BASE_URL ?>/mauritius" },
+        { name: "UAE",       xRatio: 0.40, yRatio: 0.18, wRatio: 0.13, hRatio: 0.32, imgSrc: "assets/images/Jurisdictions/UAE.svg",       url: "<?= BASE_URL ?>/uae" },
         { name: "Hongkong",  xRatio: 0.72, yRatio: 0.20, wRatio: 0.13, hRatio: 0.35, imgSrc: "assets/images/Jurisdictions/HongKong.svg",  url: "<?= BASE_URL ?>/hongkong" },
         { name: "Singapore", xRatio: 0.32, yRatio: 0.75, wRatio: 0.16, hRatio: 0.33, imgSrc: "assets/images/Jurisdictions/Singapore.svg", url: "<?= BASE_URL ?>/singapore" },
-        { name: "India",     xRatio: 0.55, yRatio: 0.58, wRatio: 0.16, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/India.svg",     url: "https://example.com/india" },
-        { name: "UK",        xRatio: 0.78, yRatio: 0.63, wRatio: 0.12, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/UK.svg",        url: "https://example.com/uk" }
+        { name: "India",     xRatio: 0.55, yRatio: 0.58, wRatio: 0.16, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/India.svg",     url: "<?= BASE_URL ?>/india" },
+        { name: "UK",        xRatio: 0.78, yRatio: 0.63, wRatio: 0.12, hRatio: 0.60, imgSrc: "assets/images/Jurisdictions/UK.svg",        url: "<?= BASE_URL ?>/uk" }
     ].map(country => ({
         ...country,
         offsetX: 0,
@@ -529,20 +529,20 @@
         draw() {
             if (this.alpha <= 0) return;
 
-            const floatY = Math.sin(this.floatOffset) * 6;
+            const floatY = Math.sin(this.floatOffset) * 5;
             const drawY = this.y + floatY;
 
             ctx.save();
             ctx.globalAlpha = this.alpha;
 
-            const fontSize = width < 768 ? 12 : 13; 
-            ctx.font = `600 ${fontSize}px Poppins, sans-serif`;
+            const fontSize = width < 768 ? 15 : 18; 
+            ctx.font = `500 ${fontSize}px Poppins, sans-serif`;
 
             const textMetrics = ctx.measureText(this.text);
-            const paddingX = 18;
+            const paddingX = 20;
             
             const badgeWidth = textMetrics.width + paddingX * 2;
-            const badgeHeight = fontSize + 18;
+            const badgeHeight = fontSize + 20;
 
             const rectX = this.x - badgeWidth / 2;
             const rectY = drawY - badgeHeight / 2;
@@ -588,7 +588,7 @@
             currentServiceIndex = (currentServiceIndex + 1) % servicesList.length;
         }, 400);
 
-        setTimeout(triggerSequentialBadges, 2800);
+        setTimeout(triggerSequentialBadges, 1500);
     }
 
     function resize() {
