@@ -79,6 +79,10 @@
             </div>
 
         </div>
+
+        <p class="hero-subtitle mx-auto mt-4">
+            Global Business Consulting & Company Formation Services
+        </p>
     </div>
 
     <div class="gold-accent-banner"></div>
