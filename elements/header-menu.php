@@ -26,6 +26,18 @@
                     <!-- Main Primary Navigation -->
                     <ul class="navbar-nav ms-auto align-items-lg-center">
                         
+                        <!-- Our Company -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Our Company
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/about-us">About Us</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/contact-us">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/faqs">FAQs</a></li>
+                            </ul>
+                        </li>
+
                         <!-- Main Navigation Items -->
                         <li class="nav-item dropdown">
                             <a class="nav-link text-gold dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,17 +91,6 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="<?= BASE_URL ?>/our-client">Our Client</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Our Company
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/about-us">About Us</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/contact-us">Contact Us</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/faqs">FAQs</a></li>
-                            </ul>
                         </li>
 
                         <li class="nav-item dropdown dropdown-hover ms-lg-2">

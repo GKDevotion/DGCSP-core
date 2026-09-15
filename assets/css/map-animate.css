@@ -1,0 +1,130 @@
+/* --- Canvas Interactive Map Banner Styling --- */
+.canvas-section {
+    position: relative;
+    width: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(171, 129, 57, 0.08) 0%, transparent 70%),
+                linear-gradient(180deg, #ffffff 0%, var(--bg-light, #fdfbf7) 100%);
+    overflow: hidden;
+    border-bottom: 1px solid rgba(171, 129, 57, 0.1);
+}
+
+canvas.map-animate,
+#canvas.map-animate {
+    display: block;
+    width: 100%;
+    height: 65vh;
+    min-height: 480px;
+}
+
+/* Tablet Layout */
+@media (max-width: 992px) {
+    canvas.map-animate,
+    #canvas.map-animate {
+        height: 50vh;
+        min-height: 400px;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 576px) {
+    canvas.map-animate,
+    #canvas.map-animate {
+        height: 380px; /* Fixed height stops canvas distortion on small viewports */
+        min-height: 380px;
+    }
+
+    .glassmorphism-card {
+        display: flex !important;
+    }
+}
+
+/* --- Feature Section Below Canvas --- */
+.cards-wrapper-relative {
+    position: relative;
+    z-index: 2;
+    margin-top: -3rem;
+}
+
+/* Glassmorphism Card Styling */
+.glass-card {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 1.25rem;
+    box-shadow: 
+        0 10px 30px -5px rgba(0, 0, 0, 0.2),
+        0 4px 12px 0 rgba(171, 129, 57, 0.5),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--text-dark, #1a1a1a);
+    box-shadow: 
+        0 20px 40px -10px rgba(171, 129, 57, 0.6),
+        0 8px 20px -4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+.glass-card:hover .card-icon {
+    transform: scale(1.12);
+}
+
+.glass-card:hover .gold-divider {
+    width: 3.2rem;
+    background-color: var(--gold-primary, #ab8139);
+}
+
+.icon-container {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+.card-icon {
+    width: 4.5rem;
+    height: auto;
+    color: #1a1a1a;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gold-divider {
+    height: 3px;
+    width: 3rem;
+    background-color: var(--gold-primary, #ab8139);
+    border-radius: 2px;
+    margin: 0.75rem auto;
+    transition: width 0.35s ease, background-color 0.35s ease;
+}
+
+.card-body-content {
+    padding: 0 0.75rem 0.75rem 0.75rem;
+}
+
+.brand-font {
+    line-height: 1.3;
+}
+
+.gold-accent-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background-color: var(--gold-banner-bg, rgba(171, 129, 57, 0.05));
+    z-index: 1;
+    box-shadow: 0 -4px 20px rgba(171, 129, 57, 0.2);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.2px, transparent 1.2px);
+    background-size: 16px 16px;
+}

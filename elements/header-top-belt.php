@@ -9,9 +9,9 @@
             <!-- Contact Links & Dropdowns -->
             <div class="d-flex align-items-center flex-wrap gap-2 gap-lg-3">
                 <!-- Email 1 -->
-                <a href="mailto:sales@farahatco.com" class="belt-link">
+                <a href="mailto:support@devotionglobalcsp.com" class="belt-link">
                     <i class="bi bi-envelope-fill"></i>
-                    <span class="">sales@farahatco.com</span>
+                    <span class="">support@devotionglobalcsp.com</span>
                 </a>
                 <span class="belt-divider">|</span>
                 <!-- Phone 1 -->
