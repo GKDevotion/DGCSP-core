@@ -7,7 +7,7 @@
         <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch">
             
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-container">
                         <img src="assets/images/icons/country.png" alt="Globe Icon" class="card-icon">
                     </div>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon-container">
                         <img src="assets/images/icons/best-price.png" alt="Pricing Icon" class="card-icon">
                     </div>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="600">
                     <div class="icon-container">
                         <img src="assets/images/icons/clock.png" alt="Clock Icon" class="card-icon">
                     </div>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="800">
                     <div class="icon-container">
                         <img src="assets/images/icons/cyber-security.png" alt="Security Icon" class="card-icon">
                     </div>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1000">
                     <div class="icon-container">
                         <img src="assets/images/icons/customer-support.png" alt="Support Icon" class="card-icon">
                     </div>
@@ -67,7 +67,7 @@
             </div>
 
             <div class="col">
-                <div class="glass-card text-center">
+                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1200">
                     <div class="icon-container">
                         <img src="assets/images/icons/24-hours-support.png" alt="24/7 Icon" class="card-icon">
                     </div>
