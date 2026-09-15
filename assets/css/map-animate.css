@@ -85,7 +85,7 @@ canvas.map-animate,
 }
 
 .icon-container {
-    height: 90px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@ canvas.map-animate,
 }
 
 .card-icon {
-    width: 4.5rem;
+    width: 5rem;
     height: auto;
     color: #1a1a1a;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -104,7 +104,7 @@ canvas.map-animate,
     width: 3rem;
     background-color: var(--gold-primary, #ab8139);
     border-radius: 2px;
-    margin: 0.75rem auto;
+    margin: 0.9rem auto;
     transition: width 0.35s ease, background-color 0.35s ease;
 }
 
