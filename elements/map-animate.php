@@ -80,7 +80,7 @@
 
         </div>
 
-        <p class="hero-subtitle mx-auto mt-4">
+        <p class="hero-subtitle mx-auto mt-2">
             Global Business Consulting & Company Formation Services
         </p>
     </div>

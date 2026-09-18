@@ -988,7 +988,7 @@ include ROOT_PATH . '/elements/map-animate.php';
 
     .section-title {
       font-size: 2.6rem;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--navy-dark);
       line-height: 1.2;
       letter-spacing: -0.5px;
