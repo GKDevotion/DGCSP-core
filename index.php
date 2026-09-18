@@ -502,7 +502,7 @@ include ROOT_PATH . '/elements/map-animate.php';
             <div class="col-12 col-lg-6">
                 <a href="#" class="service-tile tile-global shadow-sm h-100 theme-border">
                     <div class="tile-content max-w-md">
-                        <h3 class="fw-bold fs-3 mb-2">Global Entity Management</h3>
+                        <h3 class="fw-semibold fs-3 mb-2">Global Entity Management</h3>
                         <p class="text-black-50 small mb-0 lh-sm w-75 mt-4">
                             Our experts are here to help you explore options, answer questions, and guide you to the perfect solution for your business.
                         </p>
@@ -517,8 +517,8 @@ include ROOT_PATH . '/elements/map-animate.php';
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="#" class="service-tile tile-accounting shadow-sm h-100 theme-border">
                     <div class="tile-content">
-                        <h4 class="fw-bold text-dark fs-4 mb-2">Accounting<br />& Tax</h4>
-                        <p class="text-secondary small mb-0 lh-sm">
+                        <h4 class="fw-semibold text-dark fs-4 mb-2">Accounting<br />& Tax</h4>
+                        <p class="text-secondary small mb-0 lh-sm w-50">
                         Our experts are here to help you explore options, answer questions
                         </p>
                     </div>
@@ -532,8 +532,8 @@ include ROOT_PATH . '/elements/map-animate.php';
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="#" class="service-tile tile-fund shadow-sm h-100 theme-border">
                     <div class="tile-content">
-                        <h4 class="fw-bold text-dark fs-4 mb-2">Fund<br />Services</h4>
-                        <p class="text-secondary small mb-0 lh-sm">
+                        <h4 class="fw-semibold text-dark fs-4 mb-2">Fund<br />Services</h4>
+                        <p class="text-secondary small mb-0 lh-sm w-50">
                         Our experts are here to help you explore options, answer questions
                         </p>
                     </div>
@@ -552,7 +552,7 @@ include ROOT_PATH . '/elements/map-animate.php';
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="#" class="service-tile tile-wealth shadow-sm h-100 theme-border">
                     <div class="tile-content">
-                        <h4 class="fw-bold text-dark fs-4 mb-2">Private Wealth<br />& Family<br />Offices</h4>
+                        <h4 class="fw-semibold text-dark fs-4 mb-2">Private Wealth<br />& Family<br />Offices</h4>
                         <p class="text-secondary small mb-0 lh-sm">
                         Our experts are here to help you explore options, answer questions
                         </p>
@@ -567,7 +567,7 @@ include ROOT_PATH . '/elements/map-animate.php';
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="#" class="service-tile tile-mergers shadow-sm h-100 theme-border">
                     <div class="tile-content">
-                        <h4 class="fw-bold text-dark fs-4 mb-2">Mergers &<br />Acquisitions</h4>
+                        <h4 class="fw-semibold text-dark fs-4 mb-2">Mergers &<br />Acquisitions</h4>
                         <p class="text-secondary small mb-0 lh-sm">
                         Our experts are here to help you explore options, answer questions
                         </p>
@@ -584,7 +584,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                 <!-- Corporate Advisory -->
                 <a href="#" class="service-tile tile-advisory shadow-sm flex-fill theme-border">
                     <div class="tile-content max-w-sm">
-                        <h4 class="fw-bold text-dark fs-4 mb-2">Corporate Advisory</h4>
+                        <h4 class="fw-semibold text-dark fs-4 mb-2">Corporate Advisory</h4>
                         <p class="text-secondary small mb-0 lh-sm w-50 mt-3">
                             Our experts are here to help you explore options, answer questions
                         </p>
@@ -597,7 +597,7 @@ include ROOT_PATH . '/elements/map-animate.php';
                 <!-- Banking Solutions -->
                 <a href="#" class="service-tile tile-banking shadow-sm flex-fill">
                 <div class="tile-content max-w-sm">
-                    <h4 class="fw-bold text-dark fs-4 mb-2">Banking Solutions</h4>
+                    <h4 class="fw-semibold text-dark fs-4 mb-2">Banking Solutions</h4>
                     <p class="text-black-50 small mb-0 lh-sm w-50 mt-3">
                         Our experts are here to help you explore options, answer questions
                     </p>
@@ -988,7 +988,7 @@ include ROOT_PATH . '/elements/map-animate.php';
 
     .section-title {
       font-size: 2.6rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--navy-dark);
       line-height: 1.2;
       letter-spacing: -0.5px;
@@ -1440,67 +1440,374 @@ include ROOT_PATH . '/elements/map-animate.php';
 <!-- Licensing Section -->
 <section class="licensing-section position-relative py-5 overflow-visible bg-white">
     
-    <!-- Floating 3D Geometric Objects -->
-     <div class="blue-square d-none d-lg-bloc">
-        <img src="assets/images/objects/blue-square.png" alt="Decorative Shape" class="img-fluid">
-    </div>
+    <style>
+        /* Licensing Section Wrapper */
+        .licensing-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
 
-    <div class="yellow-square d-none d-lg-bloc">
-        <img src="assets/images/objects/yellow-square.png" alt="Decorative Shape" class="img-fluid">
-    </div>
-    
-    <div class="golden-square d-none d-lg-bloc">
-        <img src="assets/images/objects/golden-square.png" alt="Decorative Shape" class="img-fluid">
-    </div>
+        /* SVG Network Styling */
+        .network-svg {
+            width: 100%;
+            height: auto;
+            max-height: 580px;
+            overflow: visible;
+        }
 
-    <div class="container py-md-4 position-relative z-2">
+        /* Interactive SVG Nodes & Connections */
+        .svg-node-group {
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+            transform-origin: center;
+        }
+
+        .svg-node-group:hover, .svg-node-group.is-active {
+            transform: scale(1.1);
+            filter: drop-shadow(0px 8px 16px rgba(179, 131, 43, 0.3));
+        }
+
+        .svg-node-group .node-pulse {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform-origin: center;
+        }
+
+        .svg-node-group:hover .node-pulse, .svg-node-group.is-active .node-pulse {
+            opacity: 1;
+            animation: pulseGlow 1.8s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.25); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+
+        .network-line {
+            stroke: #d8d8d8;
+            stroke-width: 2;
+            stroke-linecap: round;
+            transition: stroke 0.3s ease, stroke-width 0.3s ease;
+        }
+
+        /* Right Side Content Styling */
+        .licensing-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: #111111;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .licensing-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2.25rem;
+            font-weight: 400;
+        }
+
+        /* Animated Chevron Links */
+        .licensing-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .licensing-link-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            transition: all 0.25s ease-in-out;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .licensing-link-item .chevron-icon {
+            color: var(--gold-primary);
+            font-size: 1rem;
+            margin-right: 14px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+        }
+
+        .licensing-link-item .link-text {
+            position: relative;
+            text-decoration: underline;
+            text-decoration-color: #d1d5db;
+            text-underline-offset: 5px;
+            transition: color 0.25s ease, text-decoration-color 0.25s ease;
+        }
+
+        /* Hover & Active Syncing States */
+        .licensing-link-item:hover,
+        .licensing-link-item.is-active {
+            background-color: rgba(179, 131, 43, 0.05);
+        }
+
+        .licensing-link-item:hover .chevron-icon,
+        .licensing-link-item.is-active .chevron-icon {
+            transform: translateX(6px);
+            color: var(--gold-hover);
+        }
+
+        .licensing-link-item:hover .link-text,
+        .licensing-link-item.is-active .link-text {
+            color: var(--gold-hover);
+            text-decoration-color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* Modal Customizations */
+        .modal-content {
+            border-radius: 20px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1.5rem 1.75rem 1rem 1.75rem;
+        }
+
+        .badge-gold {
+            background-color: #fef8ec;
+            color: var(--gold-hover);
+            border: 1px solid #f6e6c6;
+            font-weight: 600;
+        }
+    </style>
+
+    <div class="container">
         <div class="row align-items-center g-5">
             
-            <!-- Left Column: Pixel-Perfect Venn Graphic -->
-            <div class="col-12 col-lg-6 d-flex justify-content-center">
-                <div class="venn-container">
-                    
-                    <!-- SVG Overlay for Crisp White Intersection Borders & Icons -->
-                    <div class="venn-svg-overlay position-absolute top-0 start-0 w-100 h-100">
-                        <img src="assets/images/licensing.png" alt="Decorative Shape" class="img-fluid">
-                    </div>
+            <!-- Top-Right Animated Dynamic Network Canvas -->
+            <canvas class="constellation-canvas-right" id="topRightLicensingCanvas"></canvas>
 
-                </div>
+            <!-- LEFT COLUMN: Exact Match Vector Graphic SVG Diagram -->
+            <div class="col-12 col-lg-6 text-center">
+                <svg class="network-svg" viewBox="0 0 540 500" preserveAspectRatio="xMidYMid meet" id="licensing-network-svg">
+                    
+                    <defs>
+                        <radialGradient id="pulseGlowBg" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#b3832b" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#b3832b" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Connecting Lines Network (Exact diagram paths from image) -->
+                    <g id="network-lines">
+                        <!-- Top Gold Dot to Top Light Grey Joint -->
+                        <line x1="126" y1="22" x2="225" y2="22" class="network-line" />
+                        <line x1="225" y1="22" x2="280" y2="105" class="network-line" />
+                        <!-- Top Left Gold Node connections -->
+                        <line x1="80" y1="120" x2="126" y2="22" class="network-line" />
+                        <line x1="80" y1="120" x2="128" y2="195" class="network-line" />
+                        <!-- Holding Companies Node connection -->
+                        <line x1="280" y1="105" x2="368" y2="105" class="network-line" />
+                        <!-- Middle Banking Hub connections -->
+                        <line x1="128" y1="195" x2="225" y2="195" class="network-line" />
+                        <line x1="225" y1="195" x2="260" y2="280" class="network-line" />
+                        <line x1="260" y1="280" x2="300" y2="280" class="network-line" />
+                        <line x1="300" y1="280" x2="418" y2="195" class="network-line" />
+                        <line x1="300" y1="280" x2="418" y2="365" class="network-line" />
+                        <!-- Lower left Payment Node connections -->
+                        <line x1="260" y1="280" x2="225" y2="365" class="network-line" />
+                        <line x1="225" y1="365" x2="130" y2="365" class="network-line" />
+                        <line x1="130" y1="365" x2="80" y2="455" class="network-line" />
+                        <line x1="80" y1="455" x2="225" y2="525" class="network-line" />
+                        <line x1="225" y1="365" x2="280" y2="455" class="network-line" />
+                        <line x1="280" y1="455" x2="395" y2="455" class="network-line" />
+                    </g>
+
+                    <!-- Structural Neutral Grey & Gold Accent Dots -->
+                    <g id="network-joints">
+                        <!-- Top Small Gold Dot -->
+                        <circle cx="126" cy="22" r="7" fill="#b3832b"/>
+                        <!-- Light Grey Joints -->
+                        <circle cx="225" cy="22" r="16" fill="#e1e1e1"/>
+                        <circle cx="280" cy="105" r="11" fill="#e1e1e1"/>
+                        <circle cx="128" cy="195" r="9" fill="#e1e1e1"/>
+                        <circle cx="225" cy="195" r="12" fill="#e1e1e1"/>
+                        <circle cx="418" cy="195" r="12" fill="#e1e1e1"/>
+                        <circle cx="225" cy="365" r="14" fill="#e1e1e1"/>
+                        <circle cx="130" cy="365" r="14" fill="#e1e1e1"/>
+                        <circle cx="418" cy="365" r="11" fill="#e1e1e1"/>
+                        <circle cx="280" cy="455" r="13" fill="#e1e1e1"/>
+                        <!-- Middle Right Gold Accent Dot -->
+                        <circle cx="365" cy="280" r="8" fill="#b3832b"/>
+                        <!-- Bottom Accent Gold Dot -->
+                        <circle cx="225" cy="525" r="7" fill="#b3832b"/>
+                    </g>
+
+                    <!-- INTERACTIVE SVG NODES LAYER -->
+                    <g id="network-nodes">
+                        
+                        <!-- 1. Financial Companies Node -->
+                        <g class="svg-node-group" id="svg-node-financial" data-key="financial">
+                            <circle class="node-pulse" cx="80" cy="120" r="55" fill="url(#pulseGlowBg)"/>
+                            <circle cx="80" cy="120" r="40" fill="#b3832b"/>
+                            <!-- Custom SVG Icon matching financial chart hand -->
+                            <g transform="translate(63, 103) scale(1.1)" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 24h26"/>
+                                <path d="M6 18l5-5 4 4 8-9"/>
+                                <path d="M17 8h6v6"/>
+                                <circle cx="12" cy="7" r="2.5" fill="#ffffff"/>
+                            </g>
+                            <text x="140" y="108" font-size="16" font-weight="700" fill="#b3832b">Financial</text>
+                            <text x="140" y="128" font-size="16" font-weight="700" fill="#b3832b">companies</text>
+                        </g>
+
+                        <!-- 2. Holding Companies Node -->
+                        <g class="svg-node-group" id="svg-node-holding" data-key="holding">
+                            <circle class="node-pulse" cx="368" cy="105" r="48" fill="url(#pulseGlowBg)"/>
+                            <circle cx="368" cy="105" r="32" fill="#2b2b2b"/>
+                            <!-- Custom holding hands icon -->
+                            <g transform="translate(353, 90) scale(0.9)" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round">
+                                <rect x="3" y="3" width="26" height="26" rx="4"/>
+                                <path d="M10 12h12M12 16h8M14 20h4"/>
+                            </g>
+                            <text x="368" y="42" text-anchor="middle" font-size="15" font-weight="600" fill="#333333">Holding</text>
+                            <text x="368" y="60" text-anchor="middle" font-size="15" font-weight="600" fill="#333333">Companies</text>
+                        </g>
+
+                        <!-- 3. Banking Central Node -->
+                        <g class="svg-node-group" id="svg-node-banking" data-key="banking">
+                            <circle class="node-pulse" cx="260" cy="280" r="55" fill="url(#pulseGlowBg)"/>
+                            <circle cx="260" cy="280" r="38" fill="#2b2b2b"/>
+                            <g transform="translate(245, 265) scale(1.1)" stroke="#ffffff" stroke-width="1.5" fill="none">
+                                <path d="M3 10L14 3L25 10V12H3V10Z"/>
+                                <path d="M5 12V21M10 12V21M18 12V21M23 12V21"/>
+                                <path d="M2 21H26V24H2V21Z"/>
+                            </g>
+                            <text x="275" y="200" font-size="22" font-weight="700" fill="#8c8c8c">Banking</text>
+                        </g>
+
+                        <!-- 4. Crypto Currency License Node -->
+                        <g class="svg-node-group" id="svg-node-crypto" data-key="crypto">
+                            <circle class="node-pulse" cx="95" cy="280" r="45" fill="url(#pulseGlowBg)"/>
+                            <g transform="translate(75, 260) scale(1.1)">
+                                <!-- Bitcoin & Coin graphic -->
+                                <circle cx="16" cy="18" r="14" fill="none" stroke="#b3832b" stroke-width="2"/>
+                                <text x="12" y="23" font-size="14" font-weight="bold" fill="#b3832b">₿</text>
+                                <circle cx="26" cy="10" r="8" fill="none" stroke="#b3832b" stroke-width="1.8"/>
+                                <text x="23" y="14" font-size="9" font-weight="bold" fill="#b3832b">$</text>
+                            </g>
+                            <text x="60" y="270" text-anchor="end" font-size="14" font-weight="500" fill="#555555">Crypto</text>
+                            <text x="60" y="288" text-anchor="end" font-size="14" font-weight="500" fill="#555555">Currency</text>
+                            <text x="60" y="306" text-anchor="end" font-size="14" font-weight="500" fill="#555555">License</text>
+                        </g>
+
+                        <!-- 5. E-Money Institution License Node -->
+                        <g class="svg-node-group" id="svg-node-emoney" data-key="emoney">
+                            <circle class="node-pulse" cx="420" cy="275" r="45" fill="url(#pulseGlowBg)"/>
+                            <g transform="translate(400, 255) scale(1.1)" stroke="#b3832b" stroke-width="1.8" fill="none">
+                                <rect x="6" y="2" width="16" height="26" rx="3"/>
+                                <path d="M10 20h8"/>
+                                <path d="M12 10h4M10 14h6"/>
+                                <path d="M2 6c2-2 4-2 4 0M2 10c3-2 5-2 5 0"/>
+                            </g>
+                            <text x="450" y="265" font-size="14" font-weight="500" fill="#555555">E-Money</text>
+                            <text x="450" y="283" font-size="14" font-weight="500" fill="#555555">Institution</text>
+                            <text x="450" y="301" font-size="14" font-weight="500" fill="#555555">License</text>
+                        </g>
+
+                        <!-- 6. Payment Service Provider License Node -->
+                        <g class="svg-node-group" id="svg-node-payment" data-key="payment">
+                            <circle class="node-pulse" cx="80" cy="455" r="55" fill="url(#pulseGlowBg)"/>
+                            <circle cx="80" cy="455" r="42" fill="#e1e1e1"/>
+                            <g transform="translate(65, 440) scale(1.1)" stroke="#333333" stroke-width="1.8" fill="none">
+                                <rect x="2" y="5" width="22" height="15" rx="3"/>
+                                <path d="M2 10h22"/>
+                                <circle cx="18" cy="15" r="1.5" fill="#333333"/>
+                                <path d="M6 22l4 3 6-5"/>
+                            </g>
+                            <text x="135" y="448" font-size="13" font-weight="700" fill="#2c2c2c">Payment Service</text>
+                            <text x="135" y="468" font-size="13" font-weight="700" fill="#2c2c2c">Provider License</text>
+                        </g>
+
+                        <!-- 7. E-Gaming License Center Text & Node -->
+                        <g class="svg-node-group" id="svg-node-egaming" data-key="egaming">
+                            <!-- Center Label -->
+                            <text x="325" y="380" text-anchor="middle" font-size="16" font-weight="600" fill="#b3832b">E-Gaming</text>
+                            <text x="325" y="400" text-anchor="middle" font-size="16" font-weight="600" fill="#b3832b">License</text>
+                            
+                            <!-- Bottom Right Game Controller Node -->
+                            <circle class="node-pulse" cx="395" cy="455" r="55" fill="url(#pulseGlowBg)"/>
+                            <circle cx="395" cy="455" r="42" fill="#b3832b"/>
+                            <g transform="translate(378, 438) scale(1.1)" stroke="#ffffff" stroke-width="1.8" fill="none" stroke-linecap="round">
+                                <path d="M6 11c0-3 3-5 7-5s7 2 7 5v5c0 3-1 5-3 5l-2-3H11l-2 3c-2 0-3-2-3-5v-5z"/>
+                                <path d="M9 11h3M10.5 9.5v3"/>
+                                <circle cx="16" cy="10.5" r="0.5" fill="#ffffff"/>
+                                <circle cx="17.5" cy="12" r="0.5" fill="#ffffff"/>
+                            </g>
+                        </g>
+
+                    </g>
+                </svg>
             </div>
 
-            <!-- Right Column: Content & Buttons -->
+            <!-- RIGHT COLUMN: Title, Subtitle, and Interactive Chevron Links -->
             <div class="col-12 col-lg-6 ps-lg-5">
                 
-                <!-- Licensing Header Block -->
-                <div class="mb-4">
-                    <h2 class="section-title text-gold fw-bold mb-2">Licensing</h2>
-                    <p class="section-subtitle text-secondary mb-4 fs-5">
-                        Secure the Right Licence.<br>Build Your Business with Confidence.
-                    </p>
+                <h2 class="licensing-title">Licensing</h2>
+                
+                <p class="licensing-subtitle">
+                    Secure the Right Licence.<br>
+                    Build Your Business with Confidence.
+                </p>
 
-                    <!-- Interactive License Pill Buttons -->
-                    <div class="d-flex flex-column gap-3 max-width-pills">
-                        <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="fade-left" data-aos-delay="200">
-                            <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Forex Broker License...')">Forex Broker License</span>
-                        </a>
-
-                        <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="zoom-in" data-aos-delay="550">
-                            <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Crypto Currency License...')">Crypto Currency License</span>
-                        </a>
-
-                        <a href="#" class="license-pill-btn d-flex align-items-center gap-3 p-2 pe-4 rounded-pill shadow-sm" data-aos="fade-right" data-aos-delay="400">
-                            <span class="arrow-badge"><i class="bi bi-arrow-up-right"></i></span>
-                            <span class="fw-bold text-dark fs-6" onclick="handleToastAction(event, 'Redirecting to Payment Solutions License...')">Payment Solutions License</span>
-                        </a>
+                <div class="licensing-list" id="licensing-links-container">
+                    
+                    <!-- Link 1 -->
+                    <div class="licensing-link-item" data-key="financial">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">Financial companies</span>
                     </div>
-                </div>
 
-                <!-- Ready-Made Licenses Callout -->
-                <div class="mt-5 pt-2 d-none">
-                    <h2 class="section-title text-gold fw-bold mb-3">Ready-Made Licenses</h2>
-                    <a href="#" class="btn btn-gold-pill rounded-pill text-white fw-semibold px-4 py-2">Learn More</a>
+                    <!-- Link 2 -->
+                    <div class="licensing-link-item" data-key="holding">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">Holding Companies</span>
+                    </div>
+
+                    <!-- Link 3 -->
+                    <div class="licensing-link-item" data-key="crypto">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">Crypto Currency License</span>
+                    </div>
+
+                    <!-- Link 4 -->
+                    <div class="licensing-link-item" data-key="payment">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">Payment Service Provider License</span>
+                    </div>
+
+                    <!-- Link 5 -->
+                    <div class="licensing-link-item" data-key="emoney">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">E-Money Institution License</span>
+                    </div>
+
+                    <!-- Link 6 -->
+                    <div class="licensing-link-item" data-key="egaming">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">E-Gaming License</span>
+                    </div>
+
+                    <!-- Link 7 -->
+                    <div class="licensing-link-item" data-key="banking">
+                        <i class="fa-solid fa-chevron-right chevron-icon"></i>
+                        <span class="link-text">Banking</span>
+                    </div>
+
                 </div>
 
             </div>
@@ -2424,7 +2731,7 @@ include ROOT_PATH . '/elements/map-animate.php';
     .map-wrapper {
         width: 100%;
         height: auto;
-        max-width: 620px;
+        /* max-width: 620px; */
         margin: 0 auto;
     }
 

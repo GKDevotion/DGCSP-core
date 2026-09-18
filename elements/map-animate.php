@@ -4,7 +4,7 @@
     <canvas id="canvas" class="map-animate"></canvas>
 
     <div class="container-xl cards-wrapper-relative mb-4">
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch pb-2">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch pb-0">
             
             <div class="col">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="200">
@@ -85,7 +85,7 @@
         </p>
     </div>
 
-    <div class="gold-accent-banner"></div>
+    <div class="gold-accent-banner" id="goldBanner"></div>
 </section>
 
 <script src="<?= BASE_URL ?>/assets/js/map-animate.js?v=<?= FILE_VERSISON ?>"></script>

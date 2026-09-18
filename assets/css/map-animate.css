@@ -12,7 +12,7 @@ canvas.map-animate,
 #canvas.map-animate {
     display: block;
     width: 100%;
-    height: 70vh;
+    height: 76vh;
     min-height: 480px;
 }
 
@@ -116,15 +116,39 @@ canvas.map-animate,
     line-height: 1.3;
 }
 
-.gold-accent-banner {
+._gold-accent-banner {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 6rem;
+    height: 7rem;
     background-color: var(--gold-banner-bg, rgba(171, 129, 57, 0.05));
     z-index: 1;
     box-shadow: 0 -4px 20px rgba(171, 129, 57, 0.2);
     background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.2px, transparent 1.2px);
     background-size: 16px 16px;
+}
+
+.gold-accent-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+    background-color: var(--gold-banner-bg, rgba(171, 129, 57, 0.05));
+    z-index: 1;
+    box-shadow: 0 -4px 20px rgba(171, 129, 57, 0.2);
+    /* Removed the static background-image gradient */
+    overflow: hidden; /* Keeps the moving dots inside the banner */
+}
+
+.moving-dot {
+    position: absolute;
+    width: 7px; /* Matches the 1.2px radius (2.4px diameter) from your gradient */
+    height: 7px;
+    background-color: rgba(255, 255, 255, 0.2); /* Matches your gradient color */
+    border-radius: 50%;
+    pointer-events: none; /* Prevents dots from blocking mouse clicks */
+    /* Smooths out the sudden random shifts into a floating drift effect */
+    transition: top 5s ease-in-out, left 5s ease-in-out; 
 }

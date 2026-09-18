@@ -321,3 +321,35 @@ window.onload = function() {
     triggerSequentialBadges();
     animate();
 };
+
+// Target your specific gold accent banner
+const banner = document.getElementById('goldBanner');
+
+// Choose how dense you want the dot field to be
+const totalDots = 30; 
+
+for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('moving-dot');
+    banner.appendChild(dot);
+    
+    // Position the dot randomly right away
+    updatePosition(dot);
+    
+    // Periodically shift each dot to a new random coordinate independently
+    setInterval(() => {
+        updatePosition(dot);
+    }, 1000 + Math.random() * 4000); // Triggers randomly between every 3 to 7 seconds
+}
+
+function updatePosition(dot) {
+    const bannerWidth = banner.offsetWidth;
+    const bannerHeight = banner.offsetHeight;
+    
+    // Calculate random X and Y positions within the exact bounds of the banner
+    const randomX = Math.random() * (bannerWidth - 3);
+    const randomY = Math.random() * (bannerHeight - 3);
+    
+    dot.style.left = `${randomX}px`;
+    dot.style.top = `${randomY}px`;
+}
