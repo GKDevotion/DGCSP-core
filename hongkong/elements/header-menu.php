@@ -26,7 +26,7 @@
                     <ul class="navbar-nav ms-auto align-items-lg-center">
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="<?= BASE_URL ?>">
+                            <a class="nav-link" href="<?= BASE_URL ?>" title="Home Page">
                                 Back
                                 <i class="fa fa-home" aria-hidden="true"></i>
                             </a>
