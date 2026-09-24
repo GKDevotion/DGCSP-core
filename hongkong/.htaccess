@@ -1,117 +1,273 @@
-# ============================================
-# Devotion Global CSP - Hong Kong .htaccess
-# ============================================
+```apache
+# ============================================================
+# Devotion Global CSP - Hong Kong
+# Production .htaccess
+# ============================================================
 
 RewriteEngine On
 
-# --------------------------------------------
-# 1. Force HTTPS
-# --------------------------------------------
+
+# ============================================================
+# 1. FORCE HTTPS
+# ============================================================
+
 RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)$ [NC]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# --------------------------------------------
-# 2. Force non-www
-# --------------------------------------------
+
+# ============================================================
+# 2. FORCE NON-WWW
+# ============================================================
+
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
-# --------------------------------------------
-# 3. Don't rewrite existing files/folders
-# --------------------------------------------
+
+# ============================================================
+# 3. REDIRECT DIRECT .PHP REQUESTS TO CLEAN URL
+#
+# Example:
+# /corporate-structure.php
+#      ↓
+# /corporate-structure
+#
+# THE_REQUEST is used so internal PHP rewrites are NOT
+# redirected back to themselves.
+# ============================================================
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php(?:[\s?]|$) [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L,NE]
+
+
+# ============================================================
+# 4. DON'T REWRITE EXISTING FILES / DIRECTORIES
+# ============================================================
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# --------------------------------------------
-# 4. Clean URL Routes
-# --------------------------------------------
 
+# ============================================================
+# 5. CLEAN URL ROUTES
+# ============================================================
+
+# ------------------------------------------------------------
 # Corporate Structure
+# ------------------------------------------------------------
+
 RewriteRule ^corporate-structure/?$ corporate-structure.php [L,QSA]
-RewriteRule ^corporate-structure/([^/]+)/?$ corporate-structure.php?slug=$1 [L,QSA]
 
+RewriteRule ^corporate-structure/([^/]+)/?$ \
+corporate-structure.php?slug=$1 [L,QSA]
+
+
+# ------------------------------------------------------------
 # Manufacturing
+# ------------------------------------------------------------
+
 RewriteRule ^manufacturing/?$ manufacturing.php [L,QSA]
-RewriteRule ^manufacturing/([^/]+)/?$ manufacturing.php?slug=$1 [L,QSA]
 
+RewriteRule ^manufacturing/([^/]+)/?$ \
+manufacturing.php?slug=$1 [L,QSA]
+
+
+# ------------------------------------------------------------
 # Financial Services
+# ------------------------------------------------------------
+
 RewriteRule ^financial-services/?$ financial-services.php [L,QSA]
-RewriteRule ^financial-services/([^/]+)/?$ financial-services.php?slug=$1 [L,QSA]
 
+RewriteRule ^financial-services/([^/]+)/?$ \
+financial-services.php?slug=$1 [L,QSA]
+
+
+# ------------------------------------------------------------
 # Book Keeping
+# ------------------------------------------------------------
+
 RewriteRule ^book-keeping/?$ book-keeping.php [L,QSA]
-RewriteRule ^book-keeping/([^/]+)/?$ book-keeping.php?slug=$1 [L,QSA]
 
+RewriteRule ^book-keeping/([^/]+)/?$ \
+book-keeping.php?slug=$1 [L,QSA]
+
+
+# ------------------------------------------------------------
 # Business Setup
+# ------------------------------------------------------------
+
 RewriteRule ^business-setup/?$ business-setup.php [L,QSA]
-RewriteRule ^business-setup/([^/]+)/?$ business-setup.php?slug=$1 [L,QSA]
 
+RewriteRule ^business-setup/([^/]+)/?$ \
+business-setup.php?slug=$1 [L,QSA]
+
+
+# ------------------------------------------------------------
 # Cash Flow
-RewriteRule ^cash-flow/?$ cash-flow.php [L,QSA]
-RewriteRule ^cash-flow/([^/]+)/?$ cash-flow.php?slug=$1 [L,QSA]
+# ------------------------------------------------------------
 
-# --------------------------------------------
-# 5. Custom 404
-# --------------------------------------------
+RewriteRule ^cash-flow/?$ cash-flow.php [L,QSA]
+
+RewriteRule ^cash-flow/([^/]+)/?$ \
+cash-flow.php?slug=$1 [L,QSA]
+
+
+# ============================================================
+# 6. GENERIC PHP EXTENSION REMOVAL
+#
+# Allows:
+#
+# /about
+# /contact
+# /services
+#
+# to load:
+#
+# about.php
+# contact.php
+# services.php
+#
+# Existing specific routes above take priority.
+# ============================================================
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+
+# ============================================================
+# 7. CUSTOM 404
+# ============================================================
+
 ErrorDocument 404 /404.php
 
-# --------------------------------------------
-# 6. Compression
-# --------------------------------------------
+
+# ============================================================
+# 8. COMPRESSION - GZIP
+# ============================================================
+
 <IfModule mod_deflate.c>
 
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/xml
     AddOutputFilterByType DEFLATE text/javascript
+
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/json
     AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+
     AddOutputFilterByType DEFLATE image/svg+xml
 
 </IfModule>
 
-# --------------------------------------------
-# 7. Browser Cache
-# --------------------------------------------
+
+# ============================================================
+# 9. BROTLI COMPRESSION
+#
+# Only enabled when mod_brotli is installed.
+# ============================================================
+
+<IfModule mod_brotli.c>
+
+    AddOutputFilterByType BROTLI_COMPRESS text/html
+    AddOutputFilterByType BROTLI_COMPRESS text/plain
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript
+
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/json
+    AddOutputFilterByType BROTLI_COMPRESS application/xml
+
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+
+</IfModule>
+
+
+# ============================================================
+# 10. BROWSER CACHE
+# ============================================================
+
 <IfModule mod_expires.c>
 
     ExpiresActive On
 
+    # --------------------------------------------------------
+    # Images
+    # --------------------------------------------------------
+
     ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
+
+    # --------------------------------------------------------
+    # Fonts
+    # --------------------------------------------------------
 
     ExpiresByType font/ttf "access plus 1 year"
     ExpiresByType font/otf "access plus 1 year"
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
 
+    # --------------------------------------------------------
+    # CSS / JavaScript
+    # --------------------------------------------------------
+
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # --------------------------------------------------------
+    # PDF
+    # --------------------------------------------------------
 
     ExpiresByType application/pdf "access plus 1 month"
+
+    # --------------------------------------------------------
+    # HTML / PHP
+    # --------------------------------------------------------
 
     ExpiresByType text/html "access plus 0 seconds"
 
 </IfModule>
 
-# --------------------------------------------
-# 8. Cache Headers
-# --------------------------------------------
+
+# ============================================================
+# 11. CACHE-CONTROL HEADERS
+# ============================================================
+
 <IfModule mod_headers.c>
 
-    <FilesMatch "\.(jpg|jpeg|png|webp|svg|ico|woff|woff2|ttf|otf)$">
+    # --------------------------------------------------------
+    # Static Assets - 1 Year
+    # --------------------------------------------------------
+
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
+
+
+    # --------------------------------------------------------
+    # CSS / JavaScript - 1 Month
+    # --------------------------------------------------------
 
     <FilesMatch "\.(css|js)$">
         Header set Cache-Control "public, max-age=2592000"
     </FilesMatch>
+
+
+    # --------------------------------------------------------
+    # HTML / PHP - No Browser Cache
+    # --------------------------------------------------------
 
     <FilesMatch "\.(html|php)$">
         Header set Cache-Control "public, max-age=0, must-revalidate"
@@ -119,29 +275,36 @@ ErrorDocument 404 /404.php
 
 </IfModule>
 
-# --------------------------------------------
-# 9. Security Headers
-# --------------------------------------------
+
+# ============================================================
+# 12. SECURITY HEADERS
+# ============================================================
+
 <IfModule mod_headers.c>
 
+    # Prevent MIME type sniffing
     Header always set X-Content-Type-Options "nosniff"
 
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Browser permissions
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # HSTS
+    # Only applied when HTTPS is active.
     Header always set Strict-Transport-Security \
         "max-age=31536000; includeSubDomains; preload" env=HTTPS
 
-    Header always set X-Frame-Options "SAMEORIGIN"
-
-    Header always set Referrer-Policy \
-        "strict-origin-when-cross-origin"
-
-    Header always set Permissions-Policy \
-        "geolocation=(), microphone=(), camera=()"
-
 </IfModule>
 
-# --------------------------------------------
-# 10. Block Sensitive Files
-# --------------------------------------------
+
+# ============================================================
+# 13. BLOCK SENSITIVE FILES
+# ============================================================
 
 <Files "contact.txt">
     Require all denied
@@ -155,8 +318,19 @@ ErrorDocument 404 /404.php
     Require all denied
 </Files>
 
-# --------------------------------------------
-# 11. Disable Directory Listing
-# --------------------------------------------
+
+# ============================================================
+# 14. BLOCK COMMON CONFIG / SOURCE FILES
+# ============================================================
+
+<FilesMatch "^(\.env|\.git|\.gitignore|composer\.json|composer\.lock|package\.json|package-lock\.json)$">
+    Require all denied
+</FilesMatch>
+
+
+# ============================================================
+# 15. DISABLE DIRECTORY LISTING
+# ============================================================
 
 Options -Indexes
+```
