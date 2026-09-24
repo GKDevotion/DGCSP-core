@@ -1,0 +1,439 @@
+:root {
+    --gold: #b38f51;
+    --gold-dark: #8d6a34;
+    --ink: #202a34;
+    --muted: #71808a;
+    --line: #e8e4dc;
+    --soft: #f7f5f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.location-page {
+    width: 100%;
+    padding: 28px 0 32px;
+}
+
+.map-stage {
+    position: relative;
+    height: min(720px, calc(100vh - 60px));
+    min-height: 560px;
+    margin: 0 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #e9e5dc;
+}
+
+.map-header {
+    position: absolute;
+    z-index: 500;
+    top: 28px;
+    left: 32px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: min(600px, calc(100% - 64px));
+    padding: 20px 25px 22px;
+    border-top: 4px solid var(--gold);
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 8px 25px rgba(32, 42, 52, .1);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--gold-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    color: var(--gold);
+    font-size: clamp(24px, 3.3vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -.03em;
+}
+
+.hero-copy {
+    max-width: 550px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.map-total {
+    display: grid;
+    gap: 1px;
+    min-width: 78px;
+    padding-left: 16px;
+    border-left: 1px solid var(--line);
+}
+
+.map-total strong {
+    color: var(--gold);
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.map-total span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.country-filters {
+    position: absolute;
+    z-index: 500;
+    top: 31px;
+    right: 32px;
+    display: flex;
+    gap: 7px;
+    max-width: calc(100% - 680px);
+    padding: 9px;
+    overflow-x: auto;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 8px 25px rgba(32, 42, 52, .1);
+    scrollbar-width: none;
+}
+
+.country-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.country-filter {
+    flex: 0 0 auto;
+    padding: 7px 11px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--muted);
+    background: #fff;
+    font: 500 11px 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.country-filter span {
+    margin-left: 3px;
+    color: var(--gold);
+}
+
+.country-filter:hover,
+.country-filter.active {
+    border-color: var(--gold);
+    color: #fff;
+    background: var(--gold);
+}
+
+.country-filter.active span {
+    color: #fff;
+}
+
+.map-header,
+.map-caption,
+.map-selected-card {
+    display: none;
+}
+
+.country-filters {
+    top: auto;
+    right: 28px;
+    bottom: 175px;
+    left: 28px;
+    justify-content: center;
+    max-width: none;
+    background: rgba(255, 255, 255, .9);
+}
+
+.location-tray {
+    position: absolute;
+    z-index: 500;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 8px;
+    padding: 4px 28px 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+}
+
+.location-tray::-webkit-scrollbar {
+    display: none;
+}
+
+.location-card {
+    flex: 0 0 235px;
+    display: grid;
+    grid-template-columns: 25px minmax(0, 1fr) 20px;
+    gap: 10px;
+    min-height: 135px;
+    padding: 15px 16px;
+    border: 0;
+    border-radius: 7px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 7px 20px rgba(32, 42, 52, .16);
+    scroll-snap-align: start;
+    text-align: left;
+    cursor: pointer;
+    transition: border .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.location-card:hover,
+.location-card.selected {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(32, 42, 52, .22);
+}
+
+.location-card.selected {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+}
+
+.card-marker {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.card-copy {
+    display: grid;
+    align-content: start;
+    gap: 2px;
+    min-width: 0;
+}
+
+.card-copy strong {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-copy small {
+    color: var(--gold-dark);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.card-copy em {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 11px;
+    font-style: normal;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+}
+
+.card-arrow {
+    align-self: start;
+    color: var(--gold);
+    font-size: 19px;
+    opacity: .65;
+}
+
+.location-card.is-hidden {
+    display: none;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.leaflet-tile-pane {
+    filter: saturate(.65) sepia(.1);
+}
+
+.leaflet-control-zoom {
+    border: 0 !important;
+    box-shadow: 0 5px 18px rgba(32, 42, 52, .15) !important;
+}
+
+.leaflet-control-zoom a {
+    color: var(--gold-dark) !important;
+}
+
+.map-caption {
+    position: absolute;
+    z-index: 500;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 13px;
+    border-radius: 6px;
+    color: #fff;
+    background: rgba(32, 42, 52, .8);
+    font-size: 10px;
+}
+
+.pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 5px rgba(179, 143, 81, .2);
+}
+
+.location-pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-pin span {
+    position: relative;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    background: var(--gold);
+    box-shadow: 0 3px 10px rgba(32, 42, 52, .3);
+    transform: rotate(-45deg);
+}
+
+.location-pin span::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.map-selected-card {
+    position: absolute;
+    z-index: 500;
+    top: 22px;
+    left: 22px;
+    max-width: 285px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 10px 30px rgba(32, 42, 52, .14);
+}
+
+.map-selected-card h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.map-selected-card p:last-child {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    width: 230px !important;
+    max-width: calc(100vw - 70px);
+    margin: 15px 17px;
+}
+
+.popup-title {
+    margin-bottom: 4px;
+    color: var(--gold-dark);
+    font: 600 14px 'Poppins', sans-serif;
+}
+
+.popup-address {
+    margin: 0;
+    color: var(--muted);
+    font: 400 11px/1.55 'Poppins', sans-serif;
+    white-space: normal;
+}
+
+@media (max-width: 520px) {
+    .leaflet-popup-content {
+        width: 205px !important;
+        max-width: calc(100vw - 62px);
+    }
+}
+
+@media (max-width: 900px) {
+    .country-filters {
+        right: 18px;
+        bottom: 168px;
+        left: 18px;
+        justify-content: flex-start;
+    }
+
+    .location-tray {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .location-card {
+        flex-basis: 220px;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .map-stage,
+    .leaflet-container {
+        min-height: 560px;
+        height: calc(100vh - 44px);
+    }
+
+    .location-page {
+        padding: 22px 0 22px;
+    }
+
+    .map-stage {
+        margin: 0 12px;
+        border-radius: 6px;
+    }
+
+    .country-filters {
+        bottom: 168px;
+    }
+
+    .location-tray {
+        padding-bottom: 18px;
+    }
+
+    .location-card {
+        flex-basis: 245px;
+    }
+}

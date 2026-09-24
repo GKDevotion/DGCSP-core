@@ -1,0 +1,280 @@
+/* =====================================================
+   Branch Locations Page — Custom Styles
+   Primary Color: #b38f51
+   ===================================================== */
+
+:root {
+  --primary: #b38f51;
+  --primary-dark: #8f6f39;
+  --primary-light: #d3ab6c;
+  --text-navy: #10254a;
+  --text-gray: #5b6b82;
+  --border-color: #e1e5ea;
+  --teal: #00bfa5;
+  --filter-bg: #f1f2f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: var(--text-navy);
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  width: 100%;
+}
+
+.main-container {
+  max-width: 1320px;
+  padding-top: 45px;
+  padding-bottom: 60px;
+}
+
+/* ---------------- Page Heading ---------------- */
+.page-title {
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text-navy);
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 0;
+}
+
+/* ===================================================
+   CITY FILTER BAR
+   =================================================== */
+.city-nav-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.city-nav {
+  background-color: var(--filter-bg);
+  border-radius: 50px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1320px;
+  padding: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.city-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.city-nav-item {
+  flex: 1 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-navy);
+  padding: 10px 22px;
+  border-radius: 50px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.city-nav-item:hover {
+  color: var(--primary-dark);
+}
+
+.city-nav-item.active {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(179, 143, 81, 0.35);
+}
+
+/* ===================================================
+   BRANCH CARD GRID
+   =================================================== */
+.branch-grid {
+  margin-top: 8px;
+}
+
+.branch-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.branch-card:hover {
+  box-shadow: 0 8px 24px rgba(16, 37, 74, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ---------------- Card Header ---------------- */
+.branch-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.branch-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.branch-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.branch-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.branch-city {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin: 2px 0 0 0;
+}
+
+/* ---------------- Address ---------------- */
+.branch-address {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #33445e;
+  margin-bottom: 16px;
+}
+
+/* ---------------- Divider ---------------- */
+.branch-divider {
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 14px;
+}
+
+/* ---------------- Phone ---------------- */
+.branch-phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.branch-phone i {
+  color: var(--teal);
+  font-size: 15px;
+}
+
+.branch-phone-muted,
+.branch-phone-muted i {
+  color: var(--text-gray);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------------- Map Section ---------------- */
+.branch-map {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: auto;
+  background-color: #eef1f4;
+}
+
+.branch-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.open-maps-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background-color: #ffffff;
+  color: #1a73e8;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.open-maps-btn:hover {
+  background-color: #f4f8ff;
+  color: #1a73e8;
+}
+
+.open-maps-btn i {
+  font-size: 11px;
+}
+
+/* ===================================================
+   RESPONSIVE ADJUSTMENTS
+   =================================================== */
+@media (max-width: 767.98px) {
+  .main-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .city-nav-item {
+    padding: 9px 16px;
+  }
+
+  .branch-card {
+    padding: 20px;
+  }
+
+  .branch-map {
+    height: 220px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .page-title {
+    font-size: 22px;
+  }
+
+  .branch-name {
+    font-size: 15px;
+  }
+}

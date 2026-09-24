@@ -1,0 +1,643 @@
+:root {
+    --gold-primary: #b89655;
+    --gold-hover: #96783d;
+    --text-dark: #333333;
+    --gold-banner-bg: #b58d3d;
+    /* Exact gold matching image banner */
+
+    /* Poppins Font Stack */
+    --font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    font-size: 1rem;
+    /* standard 16px baseline */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   STICKY HEADER ENHANCEMENTS
+   ========================================================================== */
+
+.devotion-header.sticky-top {
+    z-index: 1030;
+    /* Ensures navigation stays on top of content */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Optional: Shrink padding slightly when sticky for a cleaner look while scrolling */
+.devotion-header.sticky-top {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Image Logo Styling --- */
+.brand-logo {
+    /* Responsive height for logo */
+    height: clamp(40px, 4vw, 55px);
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-brand:hover .brand-logo {
+    transform: scale(1.02);
+}
+
+/* --- Responsive & Fluid Typography for Logo --- */
+.brand-title {
+    /* Fluid font size scaling from 22px up to 32px based on screen size */
+    font-size: clamp(1.375rem, 2vw + 1rem, 2rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold-primary);
+    line-height: 1.1;
+    display: block;
+}
+
+.brand-subtitle {
+    /* Fluid font size scaling from 10px up to 13px */
+    font-size: clamp(0.625rem, 0.5vw + 0.5rem, 0.8125rem);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--gold-primary);
+}
+
+.brand-subtitle .line {
+    display: inline-block;
+    width: clamp(12px, 1.5vw, 24px);
+    height: 1px;
+    background-color: var(--gold-primary);
+}
+
+/* --- Color Helpers --- */
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.border-gold {
+    border: 1px solid var(--gold-primary) !important;
+}
+
+.bg-gold {
+    background-color: var(--gold-banner-bg) !important;
+}
+
+/* --- Top Pill Navigation --- */
+.top-pill-nav .nav-link {
+    font-size: clamp(0.75rem, 0.4vw + 0.6rem, 0.85rem);
+    font-weight: 500;
+    padding: 0.25rem 0.85rem;
+    color: var(--gold-primary);
+}
+
+.top-pill-nav .nav-link:hover {
+    color: var(--gold-hover);
+}
+
+/* --- Main Navigation Links --- */
+.navbar-nav .nav-link {
+    color: var(--text-dark);
+    /* Fluid font size scaling between 13px and 14.5px */
+    font-size: clamp(0.8125rem, 0.3vw + 0.75rem, 0.90rem);
+    font-weight: 500;
+    padding-left: clamp(0.4rem, 0.6vw, 0.85rem) !important;
+    padding-right: clamp(0.4rem, 0.6vw, 0.85rem) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--gold-primary);
+}
+
+.dropdown-item {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.dropdown-item:active,
+.dropdown-item.active {
+    background-color: var(--gold-primary);
+}
+
+/* Dropdown Arrow Customization */
+.navbar-nav .dropdown-toggle::after,
+.top-pill-nav .dropdown-toggle::after {
+    vertical-align: middle;
+    margin-left: 0.35em;
+}
+
+.dropdown-item {
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #444444;
+    padding: 0.6rem 1.25rem;
+    position: relative;
+    border-left: 3px solid transparent;
+    /* Hidden left border indicator */
+    transition: all 0.25s ease-in-out;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: var(--gold-primary);
+    background-color: rgba(184, 150, 85, 0.06);
+    /* Elegant gold tint background */
+    padding-left: 1.1rem;
+    /* Subtle right indent effect */
+    border-left-color: var(--gold-primary);
+    /* Gold vertical accent line */
+    font-weight: 500;
+}
+
+/* Active State */
+.dropdown-item:active,
+.dropdown-item.active {
+    background-color: var(--gold-primary);
+    color: #ffffff !important;
+    border-left-color: var(--gold-hover);
+}
+
+/* Main Heading: Scales dynamically between 24px and 44px */
+.hero-title {
+    font-size: clamp(1.5rem, 3.5vw + 0.5rem, 2.75rem);
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+/* Main Subtitle: Scales dynamically between 14px and 18px */
+.hero-subtitle {
+    font-size: clamp(0.875rem, 1vw + 0.6rem, 1.125rem);
+    max-width: 680px;
+    line-height: 1.6;
+    color: #666666 !important;
+}
+
+/* Banner Title "OUR SERVICES": Scales between 26px and 40px */
+.services-strip-title {
+    font-size: clamp(1.625rem, 2.5vw + 0.75rem, 2.5rem);
+    letter-spacing: 1.5px;
+}
+
+/* Banner Description Text: Scales between 14px and 18px */
+.services-strip-text {
+    font-size: clamp(0.875rem, 0.8vw + 0.65rem, 1.125rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* --- Geometric Graphic Elements (Matches visual in image) --- */
+.shape-top-left {
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    width: 70px;
+    height: 70px;
+    /* background: #c59f7d; */
+    /* transform: rotate(45deg); */
+    /* opacity: 0.7; */
+    /* clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); */
+}
+
+.shape-mid-left {
+    position: absolute;
+    bottom: 40%;
+    left: 13%;
+    width: 100px;
+    height: 100px;
+    /* background: #bfa192; */
+    /* transform: rotate(15deg); */
+    /* opacity: 0.85; */
+    /* clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); */
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); */
+}
+
+/* ==========================================================================
+   SERVICES SHOWCASE GRID STYLES
+   ========================================================================== */
+
+/* Container Box Sizing */
+.service-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Style for Option 1: Video Tag --- */
+.service-animated-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Blends nicely with bg-light background */
+}
+
+.service-animated-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Blends white/transparent GIF background seamlessly with light cards */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Featured Right Column Background Image (Fallback pattern if no image) */
+.featured-image-bg {
+    background: linear-gradient(135deg, rgba(16, 32, 54, 0.85), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+    min-height: 340px;
+}
+
+/* Glass Overlay Card */
+.overlay-glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    max-width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.overlay-glass-card h4 {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    line-height: 1.2;
+}
+
+.overlay-glass-card p {
+    font-size: 0.825rem;
+    line-height: 1.4;
+}
+
+/* Featured Title Text */
+.featured-service-title {
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    line-height: 1.2;
+}
+
+/* Pill Call-To-Action Button */
+.btn-pill-action {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222222;
+    padding: 0.4rem 1.25rem 0.4rem 0.5rem;
+    border-radius: 50rem;
+    font-size: clamp(0.75rem, 0.8vw, 0.875rem);
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.btn-pill-action .arrow-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--gold-primary);
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-pill-action:hover {
+    background-color: #ffffff;
+    color: var(--gold-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pill-action:hover .arrow-circle {
+    transform: rotate(45deg);
+}
+
+/* Grid Cards & Active Border Styling */
+.service-grid-card {
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.service-grid-card:hover,
+.service-grid-card.border-gold-active {
+    border-color: var(--gold-primary) !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(184, 150, 85, 0.12);
+    transform: translateY(-3px);
+}
+
+.service-card-title {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   EXACT MATCH JURISDICTIONS SECTION & ANIMATIONS
+   ========================================================================== */
+
+/* Main Section Canvas */
+.jurisdictions-section {
+    background-color: #b58d3d;
+    /* Exact gold tone */
+    overflow: visible !important;
+    /* Prevents 3D shapes from being cut off */
+}
+
+/* Curved Top-Left / Bottom-Right & Square Corner Frame Box */
+.jurisdictions-frame-box {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.03);
+    /* Asymmetric Corner Curve Effect (Curved TL and BR, Square TR and BL) */
+    border-radius: 28px 0px 28px 0px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Dotted World Map Background Pattern */
+.world-map-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    z-index: 1;
+    pointer-events: none;
+    /* High-density dotted grid background mimicking world continent dots */
+    background-image: radial-gradient(#ffffff 1.8px, transparent 1.8px);
+    background-size: 10px 10px;
+}
+
+/* Dynamic Typography */
+.jurisdiction-title {
+    font-size: clamp(2rem, 3.2vw, 2.85rem);
+    letter-spacing: -0.5px;
+}
+
+.jurisdiction-description {
+    font-size: clamp(0.875rem, 0.8vw + 0.65rem, 1.05rem);
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* List Items with Underlines */
+.jurisdiction-list li {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.jurisdiction-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.jurisdiction-list li::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.35s ease-in-out;
+}
+
+.jurisdiction-link .list-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.jurisdiction-list li:hover::after {
+    width: 100%;
+}
+
+.jurisdiction-link:hover {
+    padding-left: 0.6rem;
+}
+
+.jurisdiction-link:hover .list-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- OVERFLOWING 3D SHAPES (HIGH Z-INDEX) --- */
+
+/* Pink Cone Floating on Top Right */
+.geo-cone-3d {
+    position: absolute;
+    top: -50px;
+    /* Overlaps top of section */
+    right: 7%;
+    width: 100px;
+    height: 100px;
+    /* border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    border-bottom: 55px solid #e091a9;
+    filter: drop-shadow(4px 10px 12px rgba(0, 0, 0, 0.25)); */
+    z-index: 10;
+    animation: floatTop 5s ease-in-out infinite alternate;
+}
+
+/* Blue Isometric Cube Floating on Bottom Left */
+.geo-cube-3d {
+    position: absolute;
+    bottom: -50px;
+    /* Overlaps bottom of section */
+    left: 12%;
+    width: 120px;
+    height: 120px;
+    /* background: #62bfe6;
+    border-top: 6px solid #82cfef;
+    border-left: 6px solid #4baed7;
+    box-shadow: -8px 12px 18px rgba(0, 0, 0, 0.22); */
+    z-index: 10;
+    /* transform: rotate(-12deg); */
+    animation: floatBottom 6s ease-in-out infinite alternate;
+}
+
+/* ==========================================================================
+   OFFSHORE JURISDICTIONS SLIDER STYLES
+   ========================================================================== */
+
+/* Typography */
+.offshore-title {
+    font-size: clamp(1.85rem, 3vw, 2.75rem);
+}
+
+.offshore-subtitle {
+    font-size: clamp(0.875rem, 0.8vw + 0.65rem, 1.05rem);
+    line-height: 1.6;
+}
+
+/* Arrow Navigation Buttons */
+.offshore-nav-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--gold-primary);
+    color: #ffffff;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.offshore-nav-btn:hover {
+    background-color: var(--gold-hover);
+    transform: scale(1.08);
+}
+
+/* Offshore Card Customization */
+.offshore-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #f8f9fa !important;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.offshore-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-wrapper {
+    height: 170px;
+    position: relative;
+}
+
+/* Zoom Hover Animation */
+.card-zoom-img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.offshore-card:hover .card-zoom-img {
+    transform: scale(1.08);
+}
+
+.card-title {
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
+    line-height: 1.3;
+}
+
+.card-text {
+    font-size: 0.825rem;
+    line-height: 1.45;
+}
+
+/* Learn More Pill Button */
+.btn-gold-pill {
+    background-color: var(--gold-primary);
+    font-size: 0.8rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-gold-pill:hover {
+    background-color: var(--gold-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PERFECT MATCH LICENSING & VENN DIAGRAM SECTION
+   ========================================================================== */
+
+/* Main Venn Graphic Frame Wrapper */
+.venn-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+    margin: 0 auto;
+}
+
+.venn-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+}
+
+/* Pill Action Buttons Styling */
+.max-width-pills {
+    max-width: 380px;
+}
+
+.license-pill-btn {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.license-pill-btn .arrow-badge {
+    width: 38px;
+    height: 38px;
+    background-color: #b88a38;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.license-pill-btn:hover {
+    border-color: #b88a38;
+    transform: translateX(6px);
+    box-shadow: 0 8px 20px rgba(184, 138, 56, 0.18) !important;
+}
+
+.license-pill-btn:hover .arrow-badge {
+    transform: rotate(45deg);
+    background-color: #a0752a;
+}
+
+/* --- OVERFLOWING 3D GEOMETRIC OBJECTS --- */
+
+/* Top Right Soft Pink Cone */
+.licensing-3d-cone {
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    /* border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 45px solid #f2b09b; */
+    /* filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.15)); */
+    animation: floatCone 6s ease-in-out infinite alternate;
+}
+
+/* Bottom Left Copper/Rose Torus (Donut) */
+.licensing-3d-torus {
+    position: absolute;
+    bottom: -10px;
+    left: 5%;
+    /* width: 80px;
+    height: 150px; */
+    /* border: 15px solid #d9917d; */
+    /* border-radius: 50%; */
+    /* box-shadow: -4px 10px 18px rgba(0, 0, 0, 0.2); */
+    /* transform: rotateX(60deg) rotateY(-15deg); */
+    animation: floatTorus 7s ease-in-out infinite alternate;
+}
+.licensing-3d-torus img{
+    width: 80px;
+    height: 150px;
+}
+

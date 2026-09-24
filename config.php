@@ -62,12 +62,12 @@ define('ASSETS_PATH', ROOT_PATH . '/assets');
  */
 function getJurisditionLink( $jurisdiction="" ){
     $jurisdictionArr = [
-        'singapore' => ( MODE == "local" ) ? BASE_URL.'/singapore' : 'singapore.devotionglobalcsp.com',
-        'hongkong' => ( MODE == "local" ) ? BASE_URL.'/hongkong' : 'hongkong.devotionglobalcsp.com',
-        'mauritius' => ( MODE == "local" ) ? BASE_URL.'/mauritius' : 'mauritius.devotionglobalcsp.com',
-        'india' => ( MODE == "local" ) ? BASE_URL.'/india' : 'india.devotionglobalcsp.com',
-        'uae' => ( MODE == "local" ) ? BASE_URL.'/uae' : 'uae.devotionglobalcsp.com',
-        'uk' => ( MODE == "local" ) ? BASE_URL.'/uk' : 'uk.devotionglobalcsp.com',
+        'singapore' => ( MODE == "local" ) ? BASE_URL.'/singapore' : 'https://singapore.devotionglobalcsp.com',
+        'hongkong' => ( MODE == "local" ) ? BASE_URL.'/hongkong' : 'https://hongkong.devotionglobalcsp.com',
+        'mauritius' => ( MODE == "local" ) ? BASE_URL.'/mauritius' : 'https://mauritius.devotionglobalcsp.com',
+        'india' => ( MODE == "local" ) ? BASE_URL.'/india' : 'https://india.devotionglobalcsp.com',
+        'uae' => ( MODE == "local" ) ? BASE_URL.'/uae' : 'https://uae.devotionglobalcsp.com',
+        'uk' => ( MODE == "local" ) ? BASE_URL.'/uk' : 'https://uk.devotionglobalcsp.com',
     ];
 
     return $jurisdictionArr[$jurisdiction];
