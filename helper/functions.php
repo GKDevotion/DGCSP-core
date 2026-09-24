@@ -1,48 +1,17 @@
 <?php
 
-// =====================================================
-// ROOT FILESYSTEM PATH
-// =====================================================
+/**
+ * get dynamic jurisdiction links
+ */
+function getJurisditionLink( $jurisdiction="" ){
+    $jurisdictionArr =[
+        'singapore' => ( MODE == "local" ) ? '/singapore' : 'singapore.devotionglobalcsp.com',
+        'hongkong' => ( MODE == "local" ) ? '/hongkong' : 'hongkong.devotionglobalcsp.com',
+        'mauritius' => ( MODE == "local" ) ? '/mauritius' : 'mauritius.devotionglobalcsp.com',
+        'india' => ( MODE == "local" ) ? '/india' : 'india.devotionglobalcsp.com',
+        'uae' => ( MODE == "local" ) ? '/uae' : 'uae.devotionglobalcsp.com',
+        'uk' => ( MODE == "local" ) ? '/uk' : 'uk.devotionglobalcsp.com',
+    ];
 
-define('ROOT_PATH', __DIR__);
-
-
-// =====================================================
-// DYNAMIC BASE URL
-// =====================================================
-
-$protocol = (
-    !empty($_SERVER['HTTPS']) &&
-    $_SERVER['HTTPS'] !== 'off'
-) ? 'https://' : 'http://';
-
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-
-
-// Local / Live
-if (
-    $host === 'localhost' ||
-    str_starts_with($host, 'localhost:') ||
-    str_starts_with($host, '127.0.0.1:')
-) {
-
-    define(
-        'BASE_URL',
-        $protocol . $host . '/devotion-group-csp'
-    );
-
-} else {
-
-    define(
-        'BASE_URL',
-        $protocol . $host
-    );
+    return $jurisdictionArr[$jurisdiction];
 }
-
-
-// =====================================================
-// COMMON PATHS
-// =====================================================
-
-define('ELEMENTS_PATH', ROOT_PATH . '/elements');
-define('ASSETS_PATH', ROOT_PATH . '/assets');

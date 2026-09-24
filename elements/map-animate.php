@@ -249,32 +249,32 @@
 
         <!-- Interactive Map Items -->
         <div class="jurisdiction-layer">
-            <a href="mauritius" class="country-card pos-mauritius">
+            <a href="<?= getJurisditionLink( 'mauritius' ) ?>" class="country-card pos-mauritius">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/Mauritius.png' ?>" alt="Mauritius">
                 <!-- <span class="country-label">Mauritius</span> -->
             </a>
 
-            <a href="uae" class="country-card pos-uae">
+            <a href="<?= getJurisditionLink( 'uae' ) ?>" class="country-card pos-uae">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/UAE.png' ?>" alt="UAE">
                 <!-- <span class="country-label">UAE</span> -->
             </a>
 
-            <a href="hongkong" class="country-card pos-hongkong">
+            <a href="<?= getJurisditionLink( 'hongkong' ) ?>" class="country-card pos-hongkong">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/HongKong.png' ?>" alt="Hong Kong">
                 <!-- <span class="country-label">Hong Kong</span> -->
             </a>
 
-            <a href="singapore" class="country-card pos-singapore">
+            <a href="<?= getJurisditionLink( 'singapore' ) ?>" class="country-card pos-singapore">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/Singapore.png' ?>" alt="Singapore">
                 <!-- <span class="country-label">Singapore</span> -->
             </a>
 
-            <a href="india" class="country-card pos-india">
+            <a href="<?= getJurisditionLink( 'india' ) ?>" class="country-card pos-india">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/India.png' ?>" alt="India">
                 <!-- <span class="country-label">India</span> -->
             </a>
 
-            <a href="uk" class="country-card pos-uk">
+            <a href="<?= getJurisditionLink( 'uk' ) ?>" class="country-card pos-uk">
                 <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/UK.png' ?>" alt="UK">
                 <!-- <span class="country-label">UK</span> -->
             </a>

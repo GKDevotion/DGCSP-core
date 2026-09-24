@@ -60,12 +60,12 @@
                                 Jurisdictions
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/singapore">Singapore</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/hongkong">Hong Kong</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/mauritius">Mauritius</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/india">India</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/uae">UAE</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/uk">United Kingdom</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'singapore' ) ?>">Singapore</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'hongkong' ) ?>">Hong Kong</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'mauritius' ) ?>">Mauritius</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'india' ) ?>">India</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'uae' ) ?>">UAE</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink( 'uk' ) ?>">United Kingdom</a></li>
                             </ul>
                         </li>
 
