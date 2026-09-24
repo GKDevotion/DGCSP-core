@@ -29,28 +29,28 @@ RewriteRule ^ - [L]
 # --------------------------------------------
 
 # Corporate Structure
-RewriteRule ^corporate-structure/?$ corporate-structure.php [L,QSA]
-RewriteRule ^corporate-structure/([^/]+)/?$ corporate-structure.php?slug=$1 [L,QSA]
+RewriteRule ^corporate-structure/?$ corporate-structure.php [P,L,QSA]
+RewriteRule ^corporate-structure/([^/]+)/?$ corporate-structure.php?slug=$1 [P,L,QSA]
 
 # Manufacturing
-RewriteRule ^manufacturing/?$ manufacturing.php [L,QSA]
-RewriteRule ^manufacturing/([^/]+)/?$ manufacturing.php?slug=$1 [L,QSA]
+RewriteRule ^manufacturing/?$ manufacturing.php [P,L,QSA]
+RewriteRule ^manufacturing/([^/]+)/?$ manufacturing.php?slug=$1 [P,L,QSA]
 
 # Financial Services
-RewriteRule ^financial-services/?$ financial-services.php [L,QSA]
-RewriteRule ^financial-services/([^/]+)/?$ financial-services.php?slug=$1 [L,QSA]
+RewriteRule ^financial-services/?$ financial-services.php [P,L,QSA]
+RewriteRule ^financial-services/([^/]+)/?$ financial-services.php?slug=$1 [P,L,QSA]
 
 # book-keeping
-RewriteRule ^book-keeping/?$ book-keeping.php [L,QSA]
-RewriteRule ^book-keeping/([^/]+)/?$ book-keeping.php?slug=$1 [L,QSA]
+RewriteRule ^book-keeping/?$ book-keeping.php [P,L,QSA]
+RewriteRule ^book-keeping/([^/]+)/?$ book-keeping.php?slug=$1 [P,L,QSA]
 
 # business-setup
-RewriteRule ^business-setup/?$ business-setup.php [L,QSA]
-RewriteRule ^business-setup/([^/]+)/?$ business-setup.php?slug=$1 [L,QSA]
+RewriteRule ^business-setup/?$ business-setup.php [P,L,QSA]
+RewriteRule ^business-setup/([^/]+)/?$ business-setup.php?slug=$1 [P,L,QSA]
 
 # cash-flow
-RewriteRule ^cash-flow/?$ cash-flow.php [L,QSA]
-RewriteRule ^cash-flow/([^/]+)/?$ cash-flow.php?slug=$1 [L,QSA]
+RewriteRule ^cash-flow/?$ cash-flow.php [P,L,QSA]
+RewriteRule ^cash-flow/([^/]+)/?$ cash-flow.php?slug=$1 [P,L,QSA]
 
 # --------------------------------------------
 # 5. Custom 404
