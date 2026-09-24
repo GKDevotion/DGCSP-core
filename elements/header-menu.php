@@ -51,6 +51,7 @@
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/merger-acquisition">Merger & Acquisition</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/corporate-advisory">Corporate Advisory</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL ?>/banking-solution">Banking Solutions</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/citizenship-residency">Citizenship & Residency</a></li>
                             </ul>
                         </li>
 

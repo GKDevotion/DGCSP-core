@@ -285,6 +285,14 @@
                     });
                 });
             }
+
+            $(document).ready(function() {
+                // Get the window width on page load/refresh
+                var currentWidth = $(window).width();
+                
+                // Output the width to the developer console
+                console.log("Page Refreshed. Current Media Width: " + currentWidth + "px");
+            });
         </script>
     </body>
 </html>

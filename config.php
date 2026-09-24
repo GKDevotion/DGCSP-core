@@ -5,7 +5,7 @@
 // =====================================================
 
 define('ROOT_PATH', __DIR__);
-define('FILE_VERSISON', '0.0.3');
+define('FILE_VERSISON', '0.0.4');
 
 
 // =====================================================
@@ -23,7 +23,8 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 if (
     $host === 'localhost' ||
     str_starts_with($host, 'localhost:') ||
-    str_starts_with($host, '127.0.0.1')
+    str_starts_with($host, '127.0.0.1') ||
+    str_starts_with($host, '192.168.2.113')
 ) {
 
     define(

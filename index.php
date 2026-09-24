@@ -1547,11 +1547,6 @@ include ROOT_PATH . '/elements/map-animate.php';
         }
 
         /* Hover & Active Syncing States */
-        .licensing-link-item:hover,
-        .licensing-link-item.is-active {
-            background-color: rgba(179, 131, 43, 0.05);
-        }
-
         .licensing-link-item:hover .chevron-icon,
         .licensing-link-item.is-active .chevron-icon {
             transform: translateX(6px);

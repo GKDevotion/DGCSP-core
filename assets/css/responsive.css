@@ -1,5 +1,78 @@
+/* Between 1680px and 1919px */
+@media (1680px <= width < 1919.9px) { }
+
+/* Between 1600px and 1679px */
+@media (1600px <= width < 1679.9px) {
+    .navbar-nav .nav-link{
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Between 1440px and 1599px */
+@media (1440px <= width < 1599.9px) { }
+
+/* Between 1400px and 1439px */
+@media (1400px <= width < 1440.9px) { 
+    .navbar-nav .nav-link{
+        font-size: 0.83rem !important;
+    }
+}
+
+/* Between 1366px and 1399px */
+@media (1366px <= width < 1399px) {
+    body, html{
+        font-size: 0.88rem !important;
+    }
+    .navbar-nav .nav-link{
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Between 1360px and 1365px */
+@media (1360px <= width < 1365.9px) {
+    body, html{
+        font-size: 0.9rem !important;
+    }
+
+    .navbar-nav .nav-link{
+        font-size: 0.82rem !important;
+    }
+}
+
+/* Between 1280px and 1359px */
+@media (1280px <= width < 1359.9px) { 
+    body, html{
+        font-size: 0.9rem !important;
+    }
+
+    .navbar-nav .nav-link{
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (1025px <= width < 1279.9px) {
+    body, html{
+        font-size: 0.68rem !important;
+    }
+}
+
+@media ( 992px <= width < 1024.9px) {
+    body, html{
+        font-size: 0.68rem !important;
+    }
+
+    .navbar-nav .nav-link{
+        font-size: 0.85rem !important;
+    }
+}
+
 /* --- Mobile Responsive Enhancements --- */
 @media (max-width: 991.98px) {
+
+    body, html{
+        font-size: 0.75rem !important;
+    }
+
     .navbar-collapse {
         margin-top: 1rem;
         background: #ffffff;
@@ -17,42 +90,5 @@
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
         font-size: 0.95rem;
-    }
-}
-
-/* ==========================================================================
-   DROPDOWN & CHILD MENU ANIMATIONS
-   ========================================================================== */
-
-@media (min-width: 992px) {
-
-    /* Show dropdown on parent hover */
-    .navbar-nav .nav-item.dropdown:hover>.dropdown-menu,
-    .top-pill-nav .nav-item.dropdown:hover>.dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    /* Initial hidden state with keyframe-like offset */
-    .dropdown-menu {
-        display: block;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(12px);
-        transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-        border: 1px solid rgba(184, 150, 85, 0.15);
-        /* Soft gold border */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        border-radius: 8px;
-        padding: 0.5rem 0;
-    }
-}
-
-/* Vertical separator line for desktop view */
-@media (min-width: 768px) {
-    .border-md-end {
-        border-right: 2px solid rgba(255, 255, 255, 0.8) !important;
     }
 }
