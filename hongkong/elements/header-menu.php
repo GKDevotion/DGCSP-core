@@ -51,82 +51,82 @@
 
                         <!-- Manufacturing -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>'/manufacturing"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
+                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>/manufacturing"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Manufacturing
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/manufacturing#free-zones">Free Zones?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/manufacturing#compare-free-zones">Compare Free Zone Companies</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/manufacturing#engagement-fees">Engagement Fees?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/manufacturing#timelines">Timelines?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/manufacturing#free-zones">Free Zones?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/manufacturing#compare-free-zones">Compare Free Zone Companies</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/manufacturing#engagement-fees">Engagement Fees?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/manufacturing#timelines">Timelines?</a></li>
                             </ul>
                         </li>
 
                         <!-- Financial Services -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>'/financial-services"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
+                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>/financial-services"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Financial Services
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#svf">Stored Value Facility</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#crypto-solution">Crypto Currency Solution</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#cms-license">CMS License?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#fintech-business">FinTech Businss?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#nft-business">NFT Business Setup</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#crypto-wallet">Crypto Wallet & Exchange Activity</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#resident-director">Resident Director</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#corporate-finance-query">Corporate Finance Solutions?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#sgx-listing">Listing on Stock Exchange?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#financial-company">Financial Company</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#crypto-solutions-adv">Crypto Currency Solutions</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#money-remittance">Money Remmittance Business</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/financial-services#corporate-finance-solutions">Corporate Fianance Solutions</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#svf">Stored Value Facility</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#crypto-solution">Crypto Currency Solution</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#cms-license">CMS License?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#fintech-business">FinTech Businss?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#nft-business">NFT Business Setup</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#crypto-wallet">Crypto Wallet & Exchange Activity</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#resident-director">Resident Director</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#corporate-finance-query">Corporate Finance Solutions?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#sgx-listing">Listing on Stock Exchange?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#financial-company">Financial Company</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#crypto-solutions-adv">Crypto Currency Solutions</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#money-remittance">Money Remmittance Business</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/financial-services#corporate-finance-solutions">Corporate Fianance Solutions</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
+                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>/cash-flow"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Cash Flow
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow#government-incentives">Government Incentives?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow#family-asset-companies">Family Aset companies?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow#merchant-accounts">Mercent Accounts?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow#ecommerce-sales">E-Commerce Sales?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/cash-flow#market-penetration">Market Penetration Stategies?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/cash-flow#government-incentives">Government Incentives?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/cash-flow#family-asset-companies">Family Aset companies?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/cash-flow#merchant-accounts">Mercent Accounts?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/cash-flow#ecommerce-sales">E-Commerce Sales?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/cash-flow#market-penetration">Market Penetration Stategies?</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>'/business-setup"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
+                            <a class="nav-link dropdown-toggle" href="<?= getJurisditionLink('hongkong') ?>/business-setup"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Business Setup
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#employment-visa">Employeement & Residence Visa?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#hr-services">Human Resource Service?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#employee-considerations">Employee Considerations?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#virtual-office">Virtual Office Services?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#office-premises">Find Office Premises?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#trademark-registration">Trademark Registration?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#startup-guides">Enterpenuer Startup Guides?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#business-support">Business Support Services?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#llc-transfer">LLC Transfer Solutions?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#ship-registration">Ship Registration?</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/business-setup#company-deregistration">Company D-Registration?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#employment-visa">Employeement & Residence Visa?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#hr-services">Human Resource Service?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#employee-considerations">Employee Considerations?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#virtual-office">Virtual Office Services?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#office-premises">Find Office Premises?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#trademark-registration">Trademark Registration?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#startup-guides">Enterpenuer Startup Guides?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#business-support">Business Support Services?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#llc-transfer">LLC Transfer Solutions?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#ship-registration">Ship Registration?</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/business-setup#company-deregistration">Company D-Registration?</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown dropdown-hover ms-lg-2">
-                            <a class="nav-link dropdown-toggle resources-pill-btn px-3" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
+                            <a class="nav-link dropdown-toggle resources-pill-btn px-3" href="<?= getJurisditionLink('hongkong') ?>/book-keeping"><!-- role="button" data-bs-toggle="dropdown" aria-expanded="false" -->
                                 Book Keeping
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#accounting-tax">Accounting & Tax</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#legal-consideration">Legal Consideration</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#tax-audit">Tax Audit Services</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#residence-director">Residence Sirector</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#withholding-tax">WithHolding TAX</a></li>
-                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>'/book-keeping#asia-tax-rates">ASIA TAX Rates</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#accounting-tax">Accounting & Tax</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#legal-consideration">Legal Consideration</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#tax-audit">Tax Audit Services</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#residence-director">Residence Sirector</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#withholding-tax">WithHolding TAX</a></li>
+                                <li><a class="dropdown-item" href="<?= getJurisditionLink('hongkong') ?>/book-keeping#asia-tax-rates">ASIA TAX Rates</a></li>
                             </ul>
                         </li>
                     </ul>
