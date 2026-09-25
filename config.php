@@ -18,7 +18,10 @@ $protocol = (
 ) ? 'https://' : 'http://';
 
 $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+
+// Initialize with a default value
 $mode = "local";
+$base_folder = ''; 
 
 // Local / Live
 if (
@@ -30,8 +33,10 @@ if (
 
     define(
         'BASE_URL',
-        $protocol . $host . '/core/devotion-group-csp/global'
+        $protocol . $host . '/core/devotion-group-csp'
     );
+
+    $base_folder = '/global';
 
 } else if( str_starts_with($host, 'shreegurve') ){
 
@@ -49,6 +54,7 @@ if (
 }
 
 define( 'MODE', $mode );
+define( 'BASE_FOLDER', $base_folder );
 
 // =====================================================
 // COMMON PATHS

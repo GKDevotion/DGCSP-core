@@ -11,8 +11,8 @@
             <nav class="navbar navbar-expand-lg navbar-light p-0">
     
                 <!-- Brand / Image Logo -->
-                <a class="navbar-brand me-auto py-0" href="<?= BASE_URL ?>">
-                    <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
+                <a class="navbar-brand me-auto py-0" href="<?= BASE_URL.BASE_FOLDER ?>">
+                    <img src="<?= BASE_URL.BASE_FOLDER ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
                 </a>
 
                 <!-- Mobile Toggle Button -->
@@ -32,9 +32,9 @@
                                 Our Company
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/about-us">About Us</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/contact-us">Contact Us</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/faqs">FAQs</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/about-us">About Us</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/contact-us">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/faqs">FAQs</a></li>
                             </ul>
                         </li>
 
@@ -44,14 +44,14 @@
                                 Solutions
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/global-entity-management">Global Entity Management</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/accounting-tax">Accounting & TAX</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/fund-service">Fund Services</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/private-family-wealth">Private Wealth & Family Office</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/merger-acquisition">Merger & Acquisition</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/corporate-advisory">Corporate Advisory</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/banking-solution">Banking Solutions</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/citizenship-residency">Citizenship & Residency</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/global-entity-management">Global Entity Management</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/accounting-tax">Accounting & TAX</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/fund-service">Fund Services</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/private-family-wealth">Private Wealth & Family Office</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/merger-acquisition">Merger & Acquisition</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/corporate-advisory">Corporate Advisory</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/banking-solution">Banking Solutions</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/citizenship-residency">Citizenship & Residency</a></li>
                             </ul>
                         </li>
 
@@ -70,7 +70,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="<?= BASE_URL ?>/offshore-jurisdictions">
+                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/offshore-jurisdictions">
                                 Offshore Jurisdictions
                             </a>
                         </li>
@@ -80,18 +80,18 @@
                                 Licensing
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/forex-broker-license">Forex Broker License</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/crypto-currency-license">Crypto Currency License</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL ?>/payment-solution-license">Payment Solution License</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/forex-broker-license">Forex Broker License</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/crypto-currency-license">Crypto Currency License</a></li>
+                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/payment-solution-license">Payment Solution License</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/ready-made-licenses">Read-Made Licenses</a>
+                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/ready-made-licenses">Read-Made Licenses</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/our-clients">Our Client</a>
+                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/our-clients">Our Client</a>
                         </li>
 
                         <li class="nav-item dropdown dropdown-hover ms-lg-2">
@@ -100,17 +100,17 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-0">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/news-insights">
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL.BASE_FOLDER ?>/news-insights">
                                         <i class="bi bi-newspaper text-gold"></i> News & Insights
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/webinars">
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL.BASE_FOLDER ?>/webinars">
                                         <i class="bi bi-camera-reels text-gold"></i> Webinars
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/resources">
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL.BASE_FOLDER ?>/resources">
                                         <i class="bi bi-folder-symlink text-gold"></i> Resources
                                     </a>
                                 </li>

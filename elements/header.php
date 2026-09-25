@@ -17,9 +17,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css?v=<?= FILE_VERSISON ?>">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/responsive.css?v=<?= FILE_VERSISON ?>">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/keyframe.css?v=<?= FILE_VERSISON ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/style.css?v=<?= FILE_VERSISON ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/responsive.css?v=<?= FILE_VERSISON ?>">
+    <link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/keyframe.css?v=<?= FILE_VERSISON ?>">
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -37,7 +37,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script>
-        base_url = "<?= BASE_URL ?>/";
+        base_url = "<?= BASE_URL.BASE_FOLDER ?>/";
     </script>
 </head>
 <body>

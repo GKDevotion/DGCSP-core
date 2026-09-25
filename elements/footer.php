@@ -9,7 +9,7 @@
     
                             <!-- Brand Logo Header -->
                             <div class="mb-4">
-                                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
+                                <img src="<?= BASE_URL.BASE_FOLDER ?>/assets/images/logo.png" alt="Devotion Global CSP" class="img-fluid brand-logo">
                             </div>
 
                             <!-- Updated Catchy Heading & Content -->
@@ -258,7 +258,7 @@
         <!-- Swiper JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <script src="<?= BASE_URL ?>/assets/js/custom.js?v=<?= FILE_VERSISON ?>"></script>
+        <script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/custom.js?v=<?= FILE_VERSISON ?>"></script>
         
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

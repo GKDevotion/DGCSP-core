@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/map-animate.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/map-animate.css?v=<?= FILE_VERSISON ?>">
 
 <style>
     .gdb-constellation-canvas {
@@ -250,32 +250,32 @@
         <!-- Interactive Map Items -->
         <div class="jurisdiction-layer">
             <a href="<?= getJurisditionLink( 'mauritius' ) ?>" class="country-card pos-mauritius">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/Mauritius.png' ?>" alt="Mauritius">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/Mauritius.png' ?>" alt="Mauritius">
                 <!-- <span class="country-label">Mauritius</span> -->
             </a>
 
             <a href="<?= getJurisditionLink( 'uae' ) ?>" class="country-card pos-uae">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/UAE.png' ?>" alt="UAE">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/UAE.png' ?>" alt="UAE">
                 <!-- <span class="country-label">UAE</span> -->
             </a>
 
             <a href="<?= getJurisditionLink( 'hongkong' ) ?>" class="country-card pos-hongkong">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/HongKong.png' ?>" alt="Hong Kong">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/HongKong.png' ?>" alt="Hong Kong">
                 <!-- <span class="country-label">Hong Kong</span> -->
             </a>
 
             <a href="<?= getJurisditionLink( 'singapore' ) ?>" class="country-card pos-singapore">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/Singapore.png' ?>" alt="Singapore">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/Singapore.png' ?>" alt="Singapore">
                 <!-- <span class="country-label">Singapore</span> -->
             </a>
 
             <a href="<?= getJurisditionLink( 'india' ) ?>" class="country-card pos-india">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/India.png' ?>" alt="India">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/India.png' ?>" alt="India">
                 <!-- <span class="country-label">India</span> -->
             </a>
 
             <a href="<?= getJurisditionLink( 'uk' ) ?>" class="country-card pos-uk">
-                <img src="<?=  BASE_URL.'/assets/images/Jurisdictions/UK.png' ?>" alt="UK">
+                <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/Jurisdictions/UK.png' ?>" alt="UK">
                 <!-- <span class="country-label">UK</span> -->
             </a>
         </div>
@@ -292,7 +292,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/emerging-industries.gif' ?>" alt="Globe Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/emerging-industries.gif' ?>" alt="Globe Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
@@ -304,7 +304,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/transparent-pricing.gif' ?>" alt="Pricing Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/transparent-pricing.gif' ?>" alt="Pricing Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
@@ -316,7 +316,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="600">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/clock-icon.gif' ?>" alt="Clock Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/clock-icon.gif' ?>" alt="Clock Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
@@ -328,7 +328,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="800">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/secure-confidential.gif' ?>" alt="Security Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/secure-confidential.gif' ?>" alt="Security Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
@@ -340,7 +340,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1000">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/expert-support.gif' ?>" alt="Support Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/expert-support.gif' ?>" alt="Support Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
@@ -352,7 +352,7 @@
             <div class="col mt-0">
                 <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1200">
                     <div class="icon-container">
-                        <img src="<?=  BASE_URL.'/assets/images/gif/24-7-support.gif' ?>" alt="24/7 Icon" class="card-icon">
+                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/24-7-support.gif' ?>" alt="24/7 Icon" class="card-icon">
                     </div>
                     <div class="card-body-content w-100">
                         <div class="gold-divider"></div>
