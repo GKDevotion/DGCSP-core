@@ -91,7 +91,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/our-client">Our Client</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>/our-clients">Our Client</a>
                         </li>
 
                         <li class="nav-item dropdown dropdown-hover ms-lg-2">
@@ -100,7 +100,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-0">
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/news-insight">
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="<?= BASE_URL ?>/news-insights">
                                         <i class="bi bi-newspaper text-gold"></i> News & Insights
                                     </a>
                                 </li>

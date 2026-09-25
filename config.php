@@ -30,7 +30,7 @@ if (
 
     define(
         'BASE_URL',
-        $protocol . $host . '/core/devotion-group-csp'
+        $protocol . $host . '/core/devotion-group-csp/global'
     );
 
 } else if( str_starts_with($host, 'shreegurve') ){
