@@ -54,6 +54,7 @@ RewriteRule ^private-family-wealth$ private-family-wealth.php?slug=$1 [L,QSA]
 RewriteRule ^merger-acquisition$ merger-acquisition.php?slug=$1 [L,QSA]
 RewriteRule ^corporate-advisory$ corporate-advisory.php?slug=$1 [L,QSA]
 RewriteRule ^banking-solution$ banking-solution.php?slug=$1 [L,QSA]
+RewriteRule ^citizenship-residency$ citizenship-residency.php?slug=$1 [L,QSA]
 
 RewriteRule ^crypto-currency-license$ crypto-currency-license.php?slug=$1 [L,QSA]
 RewriteRule ^payment-solution-license$ payment-solution-license.php?slug=$1 [L,QSA]
