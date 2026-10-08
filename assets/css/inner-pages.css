@@ -1,0 +1,362 @@
+/* ==========================================================================
+   INNER PAGES THEME  (shared by every service page, prefix: ip-)
+   Matches the index look: gold #ab8139, Poppins, glass/soft-gold cards,
+   AOS fade-ups, floating objects, corner constellation, gold pulse/line.
+   Header/footer are NOT touched here.
+   ========================================================================== */
+
+:root {
+    --ip-gray-bg: #eef0f4;
+    --ip-muted: #6b7280;
+    --ip-soft: #8a8f98;
+    --ip-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ip-gold { color: var(--gold-primary); }
+
+/* ---------- Buttons ---------- */
+.ip-btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background: var(--gold-primary);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 0.6rem 1.35rem;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 0;
+    transition: transform 0.35s var(--ip-ease), box-shadow 0.35s var(--ip-ease), background 0.3s ease;
+}
+.ip-btn--pill { border-radius: 999px; padding: 0.65rem 1.7rem; }
+.ip-btn::after {            /* light sweep */
+    content: "";
+    position: absolute;
+    top: 0; left: -80%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+.ip-btn:hover {
+    color: #fff;
+    background: var(--gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(171, 129, 57, 0.38);
+}
+.ip-btn:hover::after { left: 130%; }
+
+/* ---------- Pill badge ---------- */
+.ip-pill {
+    display: inline-block;
+    background: var(--gold-primary);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.45rem 1.5rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(171, 129, 57, 0.28);
+}
+
+/* ---------- Gold line (grows in) ---------- */
+.ip-line {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--gold-primary);
+    border-radius: 2px;
+}
+.ip-line--grow { width: 0; animation: ipLineGrow 0.9s 0.35s var(--ip-ease) forwards; }
+@keyframes ipLineGrow { to { width: 48px; } }
+
+/* ---------- Section headings ---------- */
+.ip-title {
+    font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+}
+.ip-sub {
+    color: var(--ip-soft);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 560px;
+}
+
+/* ---------- Hero ---------- */
+.ip-hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: clamp(380px, 34.6vw, 560px);
+    background: #f3f4f7;
+}
+.ip-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    z-index: 0;
+    transform-origin: 80% 60%;
+    animation: ipKenBurns 20s ease-in-out infinite alternate;
+}
+@keyframes ipKenBurns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.05); }
+}
+.ip-hero__content { position: relative; z-index: 2; padding-top: 3rem; padding-bottom: 3rem; }
+.ip-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    color: #222;
+    margin: 0;
+}
+.ip-hero h1 {
+    font-size: clamp(2rem, 3.3vw, 3.3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #111;
+    margin: 0 0 1.1rem;
+}
+.ip-hero h1 .ip-gold { font-weight: 700; }
+.ip-hero p {
+    color: var(--ip-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 470px;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- About (sketch left, text right) ---------- */
+.ip-about { position: relative; padding: 5rem 0; background: #fff; overflow: hidden; }
+.ip-about__img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    display: block;
+    animation: floatTop 5.5s ease-in-out infinite alternate;
+}
+.ip-about .ip-title { font-size: clamp(1.6rem, 2.4vw, 2.3rem); font-weight: 600; text-align: right; }
+.ip-about .ip-line { margin: 1.4rem 0 1.6rem auto; }
+.ip-about p {
+    text-align: right;
+    margin: 0 0 0 auto;
+    max-width: 540px;
+    color: #555;
+    font-size: 0.92rem;
+    line-height: 1.95;
+}
+
+/* ---------- Floating decorative objects ---------- */
+.ip-float { position: absolute; pointer-events: none; z-index: 1; opacity: 0.9; }
+.ip-float img { display: block; width: 100%; height: auto; }
+.ip-float--a { animation: floatTop 6s ease-in-out infinite alternate; }
+.ip-float--b { animation: floatBottom 7s ease-in-out infinite alternate; }
+.ip-float--c { animation: floatCone 6.5s ease-in-out infinite alternate; }
+
+/* ---------- Corner constellation canvas ---------- */
+.ip-constellation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 480px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 1;
+}
+.ip-constellation--left { right: auto; left: 0; }
+
+/* ---------- Service cards section ---------- */
+.ip-suite {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 5.5rem;
+    background: var(--ip-gray-bg);
+}
+.ip-suite .container { position: relative; z-index: 2; max-width: 1100px; }
+.ip-suite__head { text-align: center; margin-bottom: 3rem; }
+.ip-suite__head .ip-title { margin: 1.1rem 0 0.6rem; }
+.ip-suite__head .ip-sub { margin: 0 auto; }
+
+.ip-card {
+    position: relative;
+    height: 100%;
+    background: #fff;
+    border: 1px solid rgba(171, 129, 57, 0.16);
+    border-radius: 16px;
+    padding: 1.6rem 1.6rem 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s var(--ip-ease), box-shadow 0.4s var(--ip-ease), border-color 0.3s ease;
+}
+.ip-card::before {          /* gold top bar reveal */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--gold-primary), #d9b66b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ip-ease);
+}
+.ip-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 20px 40px -10px rgba(171, 129, 57, 0.4), 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+}
+.ip-card:hover::before { transform: scaleX(1); }
+
+.ip-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.ip-card__title { font-size: 1.12rem; font-weight: 600; line-height: 1.55; color: #111; margin: 0; }
+.ip-card__icon {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    transition: transform 0.45s var(--ip-ease);
+}
+.ip-card:hover .ip-card__icon { transform: scale(1.14) rotate(-5deg); }
+
+.ip-card__divider {
+    display: block;
+    width: 2.2rem;
+    height: 2px;
+    margin: 0.75rem 0 1.1rem;
+    background: var(--gold-primary);
+    border-radius: 2px;
+    transition: width 0.4s var(--ip-ease);
+}
+.ip-card:hover .ip-card__divider { width: 3.6rem; }
+
+.ip-card__desc { color: #666; font-size: 0.8rem; line-height: 1.65; margin: 0 0 0.5rem; }
+.ip-card__list { margin: 0; padding-left: 1.1rem; font-size: 0.78rem; color: #555; line-height: 1.7; }
+.ip-card__list li::marker { color: var(--gold-primary); }
+.ip-card__list li { transition: transform 0.35s var(--ip-ease); }
+.ip-card:hover .ip-card__list li { transform: translateX(4px); }
+.ip-card:hover .ip-card__list li:nth-child(2) { transition-delay: 0.05s; }
+.ip-card:hover .ip-card__list li:nth-child(3) { transition-delay: 0.1s; }
+
+/* ---------- FAQ ---------- */
+.ip-faq { position: relative; padding: 5rem 0; background: #fff; overflow: hidden; }
+.ip-faq .container { position: relative; z-index: 2; }
+.ip-faq__art { width: 100%; max-width: 360px; display: block; animation: floatTop 5s ease-in-out infinite alternate; }
+.ip-faq__tag { display: flex; align-items: center; gap: 0.9rem; margin: 1.2rem 0 0.6rem; }
+.ip-faq__tag i { font-size: 2.1rem; color: var(--gold-primary); }
+.ip-faq h2 { font-size: clamp(1.6rem, 2.3vw, 2.1rem); font-weight: 700; color: #111; margin: 0.4rem 0 0.6rem; }
+.ip-faq__lead { color: var(--ip-soft); font-size: 1.12rem; line-height: 1.7; max-width: 440px; }
+
+.ip-acc-item {
+    background: #fff;
+    border: 1px solid #e3ddd0;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.35s var(--ip-ease), background 0.3s ease, transform 0.35s var(--ip-ease);
+}
+.ip-acc-item:hover { border-color: rgba(171, 129, 57, 0.6); transform: translateX(4px); }
+.ip-acc-item.is-open {
+    border-color: var(--gold-primary);
+    background: #fffdf8;
+    box-shadow: 0 12px 30px rgba(171, 129, 57, 0.14);
+    transform: none;
+}
+.ip-acc-btn {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+    background: none;
+    border: 0;
+    text-align: left;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+}
+.ip-acc-btn:focus-visible { outline: 2px solid var(--gold-primary); outline-offset: -2px; }
+.ip-acc-icon { position: relative; flex: 0 0 14px; width: 14px; height: 14px; margin-top: 5px; transition: transform 0.4s var(--ip-ease); }
+.ip-acc-icon::before, .ip-acc-icon::after {
+    content: "";
+    position: absolute;
+    background: var(--gold-primary);
+    border-radius: 1px;
+}
+.ip-acc-icon::before { top: 6px; left: 0; width: 14px; height: 2px; }
+.ip-acc-icon::after  { top: 0; left: 6px; width: 2px; height: 14px; }
+.ip-acc-item.is-open .ip-acc-icon { transform: rotate(45deg); }
+
+.ip-acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s var(--ip-ease); }
+.ip-acc-item.is-open .ip-acc-panel { grid-template-rows: 1fr; }
+.ip-acc-panel > div { overflow: hidden; }
+.ip-acc-panel p { margin: 0; padding: 0 1.4rem 1.2rem; font-size: 0.83rem; line-height: 1.75; color: #777; }
+
+/* ---------- CTA ---------- */
+.ip-cta {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: clamp(340px, 34.6vw, 540px);
+    background: #f3f4f7;
+}
+.ip-cta__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    z-index: 0;
+    transform-origin: 20% 60%;
+    animation: ipKenBurns 22s ease-in-out infinite alternate;
+}
+.ip-cta__content { position: relative; z-index: 2; text-align: right; padding-top: 3rem; padding-bottom: 3rem; }
+.ip-cta__content p { color: #777; font-size: 1.1rem; line-height: 1.8; margin: 0.9rem 0 1.8rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+    .ip-about .ip-title, .ip-about p { text-align: left; margin-left: 0; }
+    .ip-about .ip-line { margin-left: 0; }
+    .ip-faq__art { margin: 0 auto; }
+    .ip-constellation { width: 320px; height: 260px; opacity: 0.7; }
+}
+@media (max-width: 767.98px) {
+    .ip-float { display: none; }
+    .ip-hero { min-height: 0; }
+    .ip-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0.3) 100%);
+    }
+    .ip-hero__bg { object-position: 75% center; }
+    .ip-cta { min-height: 0; }
+    .ip-cta::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.85) 100%);
+    }
+    .ip-cta__content, .ip-cta__content p { text-align: left; }
+    .ip-suite, .ip-about, .ip-faq { padding: 3.5rem 0; }
+    .ip-acc-item:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ip-hero__bg, .ip-cta__bg, .ip-about__img, .ip-faq__art, .ip-float { animation: none; }
+    .ip-line--grow { animation: none; width: 48px; }
+    .ip-card, .ip-card::before, .ip-card__icon, .ip-card__divider, .ip-card__list li,
+    .ip-acc-item, .ip-acc-panel, .ip-acc-icon, .ip-btn, .ip-btn::after { transition: none; }
+}
+
+/* Content width matches the reference (~1100-1180px centred) */
+.ip-hero .container, .ip-about .container, .ip-faq .container, .ip-cta .container { max-width: 1180px; }

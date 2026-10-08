@@ -2,6 +2,8 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$img = BASE_URL . BASE_FOLDER . '/assets/images/accounting-tax';
+$obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 ?>
 
 <!-- AEO / SEO / GEO JSON-LD Structured Data -->
@@ -9,643 +11,453 @@ include ROOT_PATH . '/elements/header.php';
 {
     "@context": "https://schema.org",
     "@graph": [
-    {
-        "@type": "Organization",
-        "@id": "https://www.devotioncsp.com/#organization",
-        "name": "Devotion Global CSP",
-        "url": "https://www.devotioncsp.com",
-        "logo": "https://www.devotioncsp.com/logo.png"
-    },
-    {
-        "@type": "Service",
-        "@id": "https://www.devotioncsp.com/accounting-tax-services/#service",
-        "name": "Accounting, Tax & Financial Services",
-        "provider": { "@id": "https://www.devotioncsp.com/#organization" },
-        "serviceType": "Financial & Tax Advisory Services",
-        "description": "Full-spectrum accounting, bookkeeping, VAT filing, corporate tax compliance, transfer pricing, and fractional CFO advisory services for global enterprises.",
-        "areaServed": "Global",
-        "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Accounting & Tax Catalog",
-        "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bookkeeping Services" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Financial Reporting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Payroll Processing" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "VAT / GST Registration & Filing" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Tax Compliance" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tax Advisory" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "International Tax Planning" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transfer Pricing" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Audit Support" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CFO Services" } }
-        ]
-        }
-    },
-    {
-        "@type": "FAQPage",
-        "@id": "https://www.devotioncsp.com/accounting-tax-services/#faq",
-        "mainEntity": [
         {
-            "@type": "Question",
-            "name": "What comprehensive tax and accounting services does Devotion Global CSP offer?",
-            "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Devotion Global CSP provides ten core financial service modules: Bookkeeping Services, Financial Reporting, Payroll Processing, VAT/GST Filings, Corporate Tax Compliance, Tax Advisory, International Tax Planning, Transfer Pricing, Audit Support, and Strategic CFO Services."
+            "@type": "Organization",
+            "@id": "https://www.devotioncsp.com/#organization",
+            "name": "Devotion Global CSP",
+            "url": "https://www.devotioncsp.com",
+            "logo": "https://www.devotioncsp.com/logo.png"
+        },
+        {
+            "@type": "Service",
+            "@id": "https://www.devotioncsp.com/accounting-tax-services/#service",
+            "name": "Accounting, Tax & Financial Services",
+            "provider": {
+                "@id": "https://www.devotioncsp.com/#organization"
+            },
+            "serviceType": "Financial & Tax Advisory Services",
+            "description": "Full-spectrum accounting, bookkeeping, VAT filing, corporate tax compliance, transfer pricing, and fractional CFO advisory services for global enterprises.",
+            "areaServed": "Global",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Accounting & Tax Catalog",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Bookkeeping Services"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Financial Reporting"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Payroll Processing"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "VAT / GST Registration & Filing"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Corporate Tax Compliance"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Tax Advisory"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "International Tax Planning"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Transfer Pricing"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Audit Support"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "CFO Services"
+                        }
+                    }
+                ]
             }
         },
         {
-            "@type": "Question",
-            "name": "How does cross-border tax advisory benefit multinational entities?",
-            "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cross-border tax planning optimizes double-taxation treaties, ensures BEPS and transfer pricing compliance, minimizes tax exposure, and harmonizes financial reporting across regional subsidiaries."
-            }
+            "@type": "FAQPage",
+            "@id": "https://www.devotioncsp.com/accounting-tax-services/#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does Devotion Global CSP handle multi-jurisdictional tax filings?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Devotion Global CSP leverages localized tax experts across major financial hubs to ensure all statutory income tax returns, VAT/GST filings, and financial reports strictly comply with regional tax authority mandates."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is Transfer Pricing documentation and why is it mandatory?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Transfer pricing documentation proves that transactions between associated corporate entities occur at arm's length. Multinational firms require it to comply with OECD rules and prevent heavy tax penalties."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does cross-border tax advisory benefit multinational entities?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Cross-border tax planning optimizes double-taxation treaties, ensures BEPS and transfer pricing compliance, minimizes tax exposure, and harmonizes financial reporting across regional subsidiaries."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What comprehensive tax and accounting services does Devotion Global CSP offer?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Devotion Global CSP provides ten core financial service modules: Bookkeeping Services, Financial Reporting, Payroll Processing, VAT/GST Filings, Corporate Tax Compliance, Tax Advisory, International Tax Planning, Transfer Pricing, Audit Support, and Strategic CFO Services."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you manage VAT / GST registration and returns in several countries?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Devotion Global CSP handles cross-border VAT / GST registration, periodical return preparation, input tax credit optimization, and tax authority query resolution for multinational entities."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you support statutory audits and external auditor requests?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Our audit support covers audit file preparation, documentation aggregation, liaison with external statutory auditors, internal control evaluations, and remediation of audit findings."
+                    }
+                }
+            ]
         }
-        ]
-    }
     ]
 }
 </script>
 
-<style>
-    :root {
-        --gold-primary: #b89655;
-        --gold-hover: #96783d;
-        --text-dark: #333333;
-        --gold-banner-bg: #b58d3d;
-        --gray-color: #f5f6f8;
-        --font-family: 'Poppins', sans-serif;
-        --gold-border: rgba(184, 150, 85, 0.25);
-        --gold-light: #f9f5ed;
-        --white: #ffffff;
-        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
-        --shadow-md: 0 10px 30px rgba(184, 150, 85, 0.12);
-        --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+<!-- Shared inner-page theme (same look & animation set as index) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<main>
 
-    body {
-        font-family: var(--font-family);
-        color: var(--text-dark);
-        background-color: var(--white);
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    .container {
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 0 24px;
-    }
-
-    /* Typography & Badges */
-    .badge {
-        display: inline-block;
-        padding: 6px 18px;
-        background: var(--gold-light);
-        border: 1px solid var(--gold-border);
-        color: var(--gold-primary);
-        border-radius: 50px;
-        font-size: 0.82rem;
-        font-weight: 600;
-        margin-bottom: 16px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-    }
-
-    .section-padding {
-        padding: 90px 0;
-        position: relative;
-    }
-
-    .section-title {
-        font-size: 2.4rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 16px;
-        text-align: center;
-        letter-spacing: -0.5px;
-    }
-
-    .section-subtitle {
-        text-align: center;
-        color: #666;
-        max-width: 720px;
-        margin: 0 auto 60px auto;
-        font-size: 1.05rem;
-    }
-
-    /* 1. HERO SECTION (White Background) */
-    .hero {
-        position: relative;
-        padding: 110px 0 90px 0;
-        background-color: var(--white);
-        border-bottom: 1px solid var(--gold-border);
-    }
-
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
-        align-items: center;
-    }
-
-    .hero-content h1 {
-        color: var(--text-dark);
-        font-size: 3.2rem;
-        line-height: 1.25;
-        margin-bottom: 20px;
-        font-weight: 800;
-    }
-
-    .hero-content h1 span {
-        color: var(--gold-primary);
-    }
-
-    .hero-content p.lead {
-        color: #555;
-        font-size: 1.15rem;
-        margin-bottom: 35px;
-    }
-
-    .btn-primary {
-        display: inline-block;
-        padding: 16px 38px;
-        background-color: var(--gold-primary);
-        color: var(--white);
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: var(--transition);
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(184, 150, 85, 0.25);
-    }
-
-    .btn-primary:hover {
-        background-color: var(--gold-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(150, 120, 61, 0.35);
-    }
-
-    /* Hero Light Visual Orb */
-    .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .light-orb {
-        position: relative;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        background: radial-gradient(circle, var(--gold-light) 0%, var(--white) 80%);
-        border: 2px dashed var(--gold-primary);
-        box-shadow: var(--shadow-md);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .orbit-ring {
-        position: absolute;
-        width: 115%;
-        height: 115%;
-        border-radius: 50%;
-        border: 1px solid var(--gold-border);
-        animation: spin 35s linear infinite;
-    }
-
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-
-    /* 2. AEO DIRECT ANSWER SECTION (Gold Banner Background) */
-    .aeo-banner {
-        background-color: var(--gold-banner-bg);
-        color: var(--white);
-        padding: 55px 0;
-    }
-
-    .aeo-content {
-        max-width: 980px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .aeo-content h2 {
-        color: var(--white);
-        font-size: 1.6rem;
-        margin-bottom: 12px;
-        font-weight: 600;
-    }
-
-    .aeo-content p {
-        font-size: 1.12rem;
-        color: #f3f4f6;
-        line-height: 1.75;
-        font-weight: 300;
-    }
-
-    /* 3. SERVICES SECTION (Gray Background) */
-    .services-section {
-        background-color: var(--gray-color);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .grid-2col {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
-
-    .service-card {
-        background: var(--white);
-        border: 1px solid var(--gold-border);
-        border-radius: 16px;
-        padding: 38px;
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-sm);
-    }
-
-    .service-card:hover {
-        transform: translateY(-6px);
-        border-color: var(--gold-primary);
-        box-shadow: var(--shadow-md);
-    }
-
-    .service-title {
-        font-size: 1.45rem;
-        color: var(--text-dark);
-        margin-bottom: 12px;
-        font-weight: 600;
-    }
-
-    .direct-answer {
-        font-size: 0.96rem;
-        color: #555;
-        margin-bottom: 20px;
-        line-height: 1.6;
-    }
-
-    .feature-list {
-        list-style: none;
-        margin: 20px 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-        padding-top: 18px;
-    }
-
-    .feature-list li {
-        position: relative;
-        padding-left: 26px;
-        margin-bottom: 10px;
-        font-size: 0.92rem;
-        color: #444;
-    }
-
-    .feature-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--gold-primary);
-        font-weight: bold;
-        font-size: 0.9rem;
-    }
-
-    /* Light Graphic Elements */
-    .anim-box {
-        height: 95px;
-        background: var(--gold-light);
-        border-radius: 10px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px dashed var(--gold-border);
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Custom Motion Elements */
-    .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 45px; }
-    .bar { width: 14px; background: var(--gold-primary); border-radius: 3px; animation: pulseBar 2s infinite alternate ease-in-out; }
-    .bar:nth-child(1) { height: 45%; animation-delay: 0.2s; }
-    .bar:nth-child(2) { height: 85%; animation-delay: 0.4s; }
-    .bar:nth-child(3) { height: 60%; animation-delay: 0.6s; }
-    @keyframes pulseBar { 0% { opacity: 0.5; } 100% { opacity: 1; transform: scaleY(1.08); } }
-
-    .line-graph { width: 70%; height: 3px; background: var(--gold-primary); position: relative; animation: lineGrow 2.5s infinite ease-in-out; }
-    @keyframes lineGrow { 0% { width: 0%; } 50%, 100% { width: 70%; } }
-
-    .anim-pulse-ring { width: 36px; height: 36px; border: 2px solid var(--gold-primary); border-radius: 50%; animation: pulseRing 2s infinite; }
-    @keyframes pulseRing { 0% { transform: scale(0.8); opacity: 0.3; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(0.8); opacity: 0.3; } }
-
-    /* 4. GEO SEARCH ENGINE FAQ SECTION (White Background) */
-    .faq-section {
-        background-color: var(--white);
-        border-bottom: 1px solid var(--gold-border);
-    }
-
-    .faq-grid {
-        max-width: 920px;
-        margin: 0 auto;
-    }
-
-    .faq-item {
-        background: var(--gold-light);
-        border: 1px solid var(--gold-border);
-        padding: 28px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        transition: var(--transition);
-    }
-
-    .faq-item:hover {
-        border-color: var(--gold-primary);
-    }
-
-    .faq-item h3 {
-        font-size: 1.18rem;
-        color: var(--text-dark);
-        margin-bottom: 12px;
-    }
-
-    .faq-item p {
-        color: #555;
-        font-size: 0.98rem;
-        line-height: 1.7;
-    }
-
-    /* 5. CALL TO ACTION SECTION (Gray Background) */
-    .cta-section {
-        background-color: var(--gray-color);
-        text-align: center;
-    }
-
-    .cta-box {
-        background: var(--white);
-        border: 1px solid var(--gold-border);
-        padding: 70px 30px;
-        border-radius: 20px;
-        box-shadow: var(--shadow-sm);
-    }
-
-    /* Responsive Breakpoints */
-    @media (max-width: 992px) {
-        .hero-grid { grid-template-columns: 1fr; text-align: center; }
-        .hero-content h1 { font-size: 2.5rem; }
-        .grid-2col { grid-template-columns: 1fr; }
-    }
-</style>
-
-
-<!-- 1. HERO SECTION (White Background) -->
-<header class="hero">
-    <div class="container hero-grid">
-        <div class="hero-content">
-            <span class="badge">Devotion Global CSP Solutions</span>
-            <h1>Global Accounting & <span>Tax Advisory</span></h1>
-            <p class="lead">Streamline global financial reporting, ensure multi-jurisdictional tax compliance, and optimize international enterprise operations under one unified platform.</p>
-            <a href="#contact" class="btn-primary">Request Consultation</a>
-        </div>
-        <div class="hero-visual">
-            <div class="light-orb">
-                <div class="orbit-ring"></div>
-                <div style="color: var(--gold-primary); font-size: 2.2rem; font-weight: 800;">CSP</div>
+<!-- 1. HERO -->
+<header class="ip-hero">
+    <img src="<?= $img ?>/hero-bg.webp" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" data-aos="fade-right">Devotion Global CSP Solutions</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Global Accounting &amp;<br><span class="ip-gold">Tax Advisory</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Streamline global financial reporting, ensure multi-jurisdictional tax compliance, and optimize international enterprise operations under one unified platform.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Request Consultation</a>
             </div>
         </div>
     </div>
 </header>
 
-<!-- 2. AEO DIRECT ANSWER SECTION (Gold Banner Background) -->
-<section class="aeo-banner">
-    <div class="container aeo-content">
-        <h2>What are Global Accounting & Corporate Tax Services?</h2>
-        <p><strong>Global Accounting & Tax Advisory</strong> encompasses multi-currency bookkeeping, statutory financial reporting, international payroll processing, corporate tax compliance, transfer pricing, and fractional CFO advisory, ensuring international entities remain legally compliant across every operational jurisdiction.</p>
+<!-- 2. WHAT ARE GLOBAL ACCOUNTING & CORPORATE TAX SERVICES -->
+<section class="ip-about">
+    <div class="ip-float ip-float--a d-none d-md-block" style="top: 12%; left: 3%; width: 70px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 90px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="<?= $img ?>/accounting-sketch.webp" alt="Accounting, audit, report, calculation, balance, analyze and consult workflow" class="ip-about__img" width="2488" height="1660" loading="lazy">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                <h2 class="ip-title">What are Global Accounting &amp; Corporate Tax Services?</h2>
+                <span class="ip-line"></span>
+                <p><strong>Global Accounting &amp; Tax Advisory</strong> encompasses multi-currency bookkeeping, statutory financial reporting, international payroll processing, corporate tax compliance, transfer pricing, and fractional CFO advisory, ensuring international entities remain legally compliant across every operational jurisdiction.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- 3. SERVICES MODULES (Gray Background) -->
-<section class="services-section section-padding" id="services">
+<!-- 3. SERVICES MODULES -->
+<section class="ip-suite" id="services">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 6%; left: 3%; width: 80px;"><img src="<?= $obj ?>/cap-triangle.png" alt=""></div>
     <div class="container">
-        <span class="badge" style="display: table; margin: 0 auto 16px auto;">Solutions Suite</span>
-        <h2 class="section-title">Comprehensive Financial & Tax Services</h2>
-        <p class="section-subtitle">Tailored corporate finance and regulatory tax advisory modules designed for multinational holdings and cross-border expansion.</p>
+        <div class="ip-suite__head" data-aos="fade-up">
+            <span class="ip-pill">Solutions Suite</span>
+            <h2 class="ip-title">Comprehensive Financial &amp; Tax Services</h2>
+            <p class="ip-sub">Tailored corporate finance and regulatory tax advisory modules designed for multinational holdings and cross-border expansion.</p>
+        </div>
 
-        <div class="grid-2col">
+        <div class="row g-4">
 
-            <!-- 1. Bookkeeping Services -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Bookkeeping Services</h3>
-                    <p class="direct-answer" itemprop="description">Maintain accurate multi-currency financial ledgers aligned with local and international accounting standards.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Bookkeeping Services</h3>
+                        <img src="<?= $img ?>/bookkeeping-service.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Maintain accurate multi-currency financial ledgers aligned with local and international accounting standards.</p>
+                    <ul class="ip-card__list">
                         <li>General ledger management</li>
-                        <li>Accounts payable & receivable</li>
+                        <li>Accounts payable &amp; receivable</li>
                         <li>Bank reconciliations</li>
-                        <li>Multi-currency journal entries</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="bar-chart"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 2. Financial Reporting -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Financial Reporting</h3>
-                    <p class="direct-answer" itemprop="description">Consolidated balance sheets, income statements, and management accounts optimized for stakeholders and audits.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Financial Reporting</h3>
+                        <img src="<?= $img ?>/financial-report.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Consolidated balance sheets, income statements, and management accounts optimized for stakeholders and audits.</p>
+                    <ul class="ip-card__list">
                         <li>IFRS / GAAP financial statements</li>
-                        <li>Profit & Loss statement generation</li>
+                        <li>Profit &amp; Loss statement generation</li>
                         <li>Management reporting packs</li>
-                        <li>Cash flow statement analysis</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="line-graph"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 3. Payroll Processing -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Payroll Processing</h3>
-                    <p class="direct-answer" itemprop="description">Compliant multi-country payroll calculations, statutory social security deductions, and direct employee disbursements.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Payroll Processing</h3>
+                        <img src="<?= $img ?>/payroll-procesing.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Compliant multi-country payroll calculations, statutory social security deductions, and direct employee disbursements.</p>
+                    <ul class="ip-card__list">
                         <li>Gross-to-net pay calculations</li>
-                        <li>Statutory withholding & tax filings</li>
+                        <li>Statutory withholding &amp; tax filings</li>
                         <li>Direct wage disbursements</li>
-                        <li>Payslip distribution portals</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-pulse-ring"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 4. VAT / GST Registration & Filing -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">VAT / GST Registration & Filing</h3>
-                    <p class="direct-answer" itemprop="description">End-to-end indirect tax registration, return preparations, and cross-border value-added tax compliance.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">VAT / GST Registration</h3>
+                        <img src="<?= $img ?>/vat-gst.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">End-to-end indirect tax registration, return preparations, and cross-border value-added tax compliance.</p>
+                    <ul class="ip-card__list">
                         <li>Cross-border VAT / GST registration</li>
                         <li>Periodical return preparations</li>
                         <li>Input tax credit optimization</li>
-                        <li>Tax authority query resolution</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="bar-chart"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 5. Corporate Tax Compliance -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Corporate Tax Compliance</h3>
-                    <p class="direct-answer" itemprop="description">Annual corporate income tax calculations, filing submissions, and proactive local tax liability management.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Corporate Tax Compliance</h3>
+                        <img src="<?= $img ?>/corporate-tax.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Annual corporate income tax calculations, filing submissions, and proactive local tax liability management.</p>
+                    <ul class="ip-card__list">
                         <li>Annual corporate tax returns</li>
                         <li>Tax provision calculations</li>
                         <li>Local tax authority filings</li>
-                        <li>Compliance risk assessments</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="line-graph"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 6. Tax Advisory -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Tax Advisory</h3>
-                    <p class="direct-answer" itemprop="description">Strategic tax guidance designed to minimize global liabilities while remaining fully compliant with regional tax codes.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Tax Advisory</h3>
+                        <img src="<?= $img ?>/tax-advisory.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Strategic tax guidance designed to minimize global liabilities while remaining fully compliant with regional tax codes.</p>
+                    <ul class="ip-card__list">
                         <li>Cross-border tax optimization</li>
                         <li>Double taxation treaty planning</li>
-                        <li>Merger & acquisition tax structuring</li>
-                        <li>Tax risk mitigation strategies</li>
+                        <li>Merger &amp; acquisition tax structuring</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-pulse-ring"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 7. International Tax Planning -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">International Tax Planning</h3>
-                    <p class="direct-answer" itemprop="description">Holistic multinational tax structure design to protect international revenue streams and holdings.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">International Tax Planning</h3>
+                        <img src="<?= $img ?>/international-tax.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Holistic multinational tax structure design to protect international revenue streams and holdings.</p>
+                    <ul class="ip-card__list">
                         <li>Holding company tax structuring</li>
                         <li>BEPS regulations alignment</li>
                         <li>Profit repatriation strategies</li>
-                        <li>Foreign tax credit management</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="bar-chart"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 8. Transfer Pricing -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Transfer Pricing</h3>
-                    <p class="direct-answer" itemprop="description">Arm's-length documentation, intercompany pricing policies, and compliance with OECD guidelines.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Transfer Pricing</h3>
+                        <img src="<?= $img ?>/transfer-pricing.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Arm's-length documentation, intercompany pricing policies, and compliance with OECD guidelines.</p>
+                    <ul class="ip-card__list">
                         <li>Transfer pricing documentation</li>
                         <li>Intercompany agreement review</li>
-                        <li>Master & Local file preparation</li>
-                        <li>Benchmarking study analysis</li>
+                        <li>Master &amp; Local file preparation</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="line-graph"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 9. Audit Support -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Audit Support</h3>
-                    <p class="direct-answer" itemprop="description">Audit readiness preparation, documentation aggregation, and liaison with external statutory auditors.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Audit Support</h3>
+                        <img src="<?= $img ?>/audit-support.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Audit readiness preparation, documentation aggregation, and liaison with external statutory auditors.</p>
+                    <ul class="ip-card__list">
                         <li>Audit file preparation</li>
                         <li>Auditor liaison management</li>
                         <li>Internal control evaluations</li>
-                        <li>Audit finding remediation</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-pulse-ring"></div>
-                </div>
-            </article>
-
-            <!-- 10. CFO Services -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">CFO Services</h3>
-                    <p class="direct-answer" itemprop="description">Fractional executive guidance, cash flow forecasting, budgeting, and high-level strategic financial planning.</p>
-                    <ul class="feature-list">
-                        <li>Fractional CFO advisory</li>
-                        <li>Budgeting & financial forecasting</li>
-                        <li>Working capital optimization</li>
-                        <li>Board-level financial presentations</li>
-                    </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="bar-chart"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- 4. GEO SEARCH ENGINE FAQ SECTION (White Background) -->
-<section class="faq-section section-padding">
-    <div class="container">
-        <span class="badge" style="display: table; margin: 0 auto 16px auto;">AI & Discovery FAQ</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Structured answers engineered for decision-makers and AI conversational search engines.</p>
-
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>How does Devotion Global CSP handle multi-jurisdictional tax filings?</h3>
-                <p>Devotion Global CSP leverages localized tax experts across major financial hubs to ensure all statutory income tax returns, VAT/GST filings, and financial reports strictly comply with regional tax authority mandates.</p>
+                </article>
             </div>
-            <div class="faq-item">
-                <h3>What is Transfer Pricing documentation and why is it mandatory?</h3>
-                <p>Transfer pricing documentation proves that transactions between associated corporate entities occur at arm's length. Multinational firms require it to comply with OECD rules and prevent heavy tax penalties.</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- 4. FAQ -->
+<section class="ip-faq">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <!-- FAQ illustration (inline SVG, brand gold) -->
+                <svg class="ip-faq__art" viewBox="0 0 360 300" role="img" aria-label="FAQ">
+                    <defs>
+                        <linearGradient id="ipGold" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#f3d78a"/><stop offset="0.55" stop-color="#d4a548"/><stop offset="1" stop-color="#ab8139"/>
+                        </linearGradient>
+                        <linearGradient id="ipDark" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#5b5e63"/><stop offset="1" stop-color="#34363a"/>
+                        </linearGradient>
+                        <filter id="ipShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity="0.28"/></filter>
+                    </defs>
+                    <g filter="url(#ipShadow)">
+                        <path d="M70 90 Q70 62 98 62 H300 Q330 62 330 90 V190 Q330 218 300 218 H190 L140 262 L146 218 H98 Q70 218 70 190 Z" fill="url(#ipDark)"/>
+                    </g>
+                    <text x="200" y="176" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="84" fill="url(#ipGold)" stroke="#8a6a2c" stroke-width="1.5">FAQ</text>
+                    <g filter="url(#ipShadow)">
+                        <path d="M18 70 Q18 24 62 24 H92 Q134 24 134 68 Q134 106 96 112 L86 132 L76 112 Q18 112 18 70 Z" fill="url(#ipGold)"/>
+                    </g>
+                    <text x="76" y="92" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="64" fill="#5a3f10">?</text>
+                    <g stroke="url(#ipGold)" stroke-width="7" stroke-linecap="round">
+                        <line x1="268" y1="22" x2="280" y2="44"/><line x1="298" y1="38" x2="322" y2="52"/><line x1="304" y1="72" x2="334" y2="74"/>
+                    </g>
+                </svg>
+                <div class="ip-faq__tag">
+                    <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+                    <span class="ip-pill">AI &amp; Search Insights</span>
+                </div>
+                <h2>Frequently Asked Questions</h2>
+                <p class="ip-faq__lead">Clear answers to global entity management queries for decision-makers and automated search engines.</p>
+            </div>
+            <div class="col-lg-7">
+                <div class="ip-acc">
+                <div class="ip-acc-item is-open" data-aos="fade-left" data-aos-delay="0">
+                    <button class="ip-acc-btn" type="button" aria-expanded="true" aria-controls="ipFaq0" id="ipFaqBtn0">
+                        <span>How does Devotion Global CSP handle multi-jurisdictional tax filings?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq0" role="region" aria-labelledby="ipFaqBtn0"><div><p>Devotion Global CSP leverages localized tax experts across major financial hubs to ensure all statutory income tax returns, VAT/GST filings, and financial reports strictly comply with regional tax authority mandates.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="80">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq1" id="ipFaqBtn1">
+                        <span>What is Transfer Pricing documentation and why is it mandatory?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq1" role="region" aria-labelledby="ipFaqBtn1"><div><p>Transfer pricing documentation proves that transactions between associated corporate entities occur at arm's length. Multinational firms require it to comply with OECD rules and prevent heavy tax penalties.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="160">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq2" id="ipFaqBtn2">
+                        <span>How does cross-border tax advisory benefit multinational entities?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq2" role="region" aria-labelledby="ipFaqBtn2"><div><p>Cross-border tax planning optimizes double-taxation treaties, ensures BEPS and transfer pricing compliance, minimizes tax exposure, and harmonizes financial reporting across regional subsidiaries.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="240">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq3" id="ipFaqBtn3">
+                        <span>What comprehensive tax and accounting services does Devotion Global CSP offer?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq3" role="region" aria-labelledby="ipFaqBtn3"><div><p>Devotion Global CSP provides ten core financial service modules: Bookkeeping Services, Financial Reporting, Payroll Processing, VAT/GST Filings, Corporate Tax Compliance, Tax Advisory, International Tax Planning, Transfer Pricing, Audit Support, and Strategic CFO Services.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="320">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq4" id="ipFaqBtn4">
+                        <span>Can you manage VAT / GST registration and returns in several countries?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq4" role="region" aria-labelledby="ipFaqBtn4"><div><p>Yes. Devotion Global CSP handles cross-border VAT / GST registration, periodical return preparation, input tax credit optimization, and tax authority query resolution for multinational entities.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="400">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq5" id="ipFaqBtn5">
+                        <span>Do you support statutory audits and external auditor requests?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq5" role="region" aria-labelledby="ipFaqBtn5"><div><p>Yes. Our audit support covers audit file preparation, documentation aggregation, liaison with external statutory auditors, internal control evaluations, and remediation of audit findings.</p></div></div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 5. CALL TO ACTION SECTION (Gray Background) -->
-<section class="cta-section section-padding" id="contact">
-    <div class="container">
-        <div class="cta-box">
-            <h2 style="color: var(--text-dark); font-size: 2.2rem; margin-bottom: 16px;">Elevate Your Global Financial Operations</h2>
-            <p style="color: #666; margin-bottom: 30px; font-size: 1.1rem;">Schedule a strategic consultation with Devotion Global CSP's tax and accounting advisors.</p>
-            <a href="mailto:contact@devotioncsp.com" class="btn-primary">Request Consultation</a>
+<!-- 5. CALL TO ACTION -->
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/cta-bg.webp" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Optimize Your Global Entity<br>Governance Today</h2>
+                <p>Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
+                <a href="mailto:contact@devotioncsp.com" class="ip-btn ip-btn--pill">Speak with a CSP Advisor</a>
+            </div>
         </div>
     </div>
 </section>
+
+</main>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
+
 <?php include ROOT_PATH . '/elements/footer.php'; ?>
