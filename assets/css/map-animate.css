@@ -146,7 +146,7 @@ canvas.map-animate,
     position: absolute;
     width: 7px; /* Matches the 1.2px radius (2.4px diameter) from your gradient */
     height: 7px;
-    background-color: rgba(255, 255, 255, 0.2); /* Matches your gradient color */
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     pointer-events: none; /* Prevents dots from blocking mouse clicks */
     /* Smooths out the sudden random shifts into a floating drift effect */
