@@ -2,6 +2,14 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/fund-service';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+$faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
     <!-- JSON-LD Structured Data (SEO, AEO, GEO Optimization) -->
@@ -60,359 +68,249 @@ include ROOT_PATH . '/elements/header.php';
     }
     </script>
 
-    <style>
-        /* Banner Section */
-        .banner {
-            background-color: var(--gold-banner-bg);
-            color: var(--white);
-            padding: 110px 0 90px;
-            text-align: center;
-        }
+<!-- Shared inner-page theme (same look & animation set as index) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
 
-        .banner h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
+<main>
 
-        .banner p {
-            font-size: 1.15rem;
-            max-width: 750px;
-            margin: 0 auto 25px;
-            opacity: 0.95;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        /* Section Styling */
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold-primary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Layout Grids */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        /* Card Styles */
-        .service-card {
-            background-color: var(--white);
-            border: 1px solid var(--gold-border);
-            border-radius: 8px;
-            padding: 35px 25px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--gold-primary);
-        }
-
-        .icon-box {
-            width: 55px;
-            height: 55px;
-            background-color: var(--gold-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--gold-primary);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* Section Padding */
-        .py-80 { padding: 80px 0; }
-        .bg-gray { background-color: var(--gray-color); }
-        .bg-light-gold { background-color: var(--gold-light); }
-
-        /* Stats */
-        .stat-card {
-            text-align: center;
-            padding: 25px;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--gold-border);
-        }
-
-        .stat-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--gold-primary);
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        /* FAQ Accordion Styling */
-        .faq-item {
-            background-color: var(--white);
-            border: 1px solid var(--gold-border);
-            border-radius: 6px;
-            margin-bottom: 15px;
-            padding: 20px;
-        }
-
-        .faq-item h3 {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        /* Compliance Badges */
-        .badge-card {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid var(--gold-border);
-            border-radius: 6px;
-            background: var(--white);
-            font-weight: 600;
-            color: var(--gold-hover);
-        }
-
-        /* CTA Button */
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--gold-primary);
-            color: var(--white);
-            padding: 14px 36px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: var(--transition);
-        }
-
-        .cta-btn:hover {
-            background-color: var(--gold-hover);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .banner h1 { font-size: 2.1rem; }
-            .section-header h2 { font-size: 1.8rem; }
-            .py-80 { padding: 50px 0; }
-        }
-    </style>
-    
-
-    <!-- 1. Hero / Banner Section -->
-    <header class="banner">
-        <div class="container" data-aos="fade-down" data-aos-duration="1000">
-            <span class="badge">Institutional Grade Support</span>
-            <h1>Devotion Global Fund Services</h1>
-            <p>Empowering investment managers, private equity funds, and venture firms with seamless global customer service, investor administration, and regulatory compliance solutions.</p>
-        </div>
-    </header>
-
-    <!-- 2. Core Fund Services Section (AEO Structured) -->
-    <section class="py-80">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our Comprehensive Fund Solutions</h2>
+<!-- 1. HERO -->
+<header class="ip-hero">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Institutional Grade Support</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Devotion Global<br><span class="ip-gold">Fund Services</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Empowering investment managers, private equity funds, and venture firms with seamless global customer service, investor administration, and regulatory compliance solutions.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Request a Consultation</a>
             </div>
-            
-            <div class="grid-3">
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">01</div>
-                    <h3>24/7 Investor Desk Support</h3>
-                    <p>Multilingual, round-the-clock helpdesk providing rapid inquiry resolution for institutional and retail limited partners (LPs).</p>
-                </article>
+        </div>
+    </div>
+</header>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">02</div>
-                    <h3>Fund Accounting & NAV Assistance</h3>
-                    <p>Operational support for daily/monthly Net Asset Value (NAV) reconciliations, fee calculations, and reporting verification.</p>
-                </article>
+<!-- 2. CORE SERVICES -->
+<section class="ip-suite" id="services">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 6%; left: 3%; width: 70px;"><img src="<?= $obj ?>/yellow-square.png" alt=""></div>
+    <div class="container">
+        <div class="ip-suite__head" data-aos="fade-up">
+            <span class="ip-pill">Our Services</span>
+            <h2 class="ip-title">Our Comprehensive Fund Solutions</h2>
+        </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box">03</div>
-                    <h3>KYC / AML Onboarding</h3>
-                    <p>Automated and manual Identity Verification (IDV), Anti-Money Laundering screening, and continuous investor compliance checkups.</p>
-                </article>
+        <div class="row g-4">
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">04</div>
-                    <h3>Capital Call & Distribution Desk</h3>
-                    <p>Precision management of capital call notifications, wire confirmation follow-ups, and dividend payout communication.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">24/7 Investor Desk Support</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-headset"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Multilingual, round-the-clock helpdesk providing rapid inquiry resolution for institutional and retail limited partners (LPs).</p>
                 </article>
+            </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">05</div>
-                    <h3>Digital LP Portal Management</h3>
-                    <p>Dedicated technical assistance guiding fund clients through reporting portal access, multi-factor authentication, and statement retrieval.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Fund Accounting &amp; NAV Assistance</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Operational support for daily/monthly Net Asset Value (NAV) reconciliations, fee calculations, and reporting verification.</p>
                 </article>
+            </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box">06</div>
-                    <h3>Escrow & Settlement Operations</h3>
-                    <p>Direct assistance with transaction reconciliation, subscription tracking, and escrow confirmation workflows.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">KYC / AML Onboarding</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-user-check"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Automated and manual Identity Verification (IDV), Anti-Money Laundering screening, and continuous investor compliance checkups.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Capital Call &amp; Distribution Desk</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-money-bill-transfer"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Precision management of capital call notifications, wire confirmation follow-ups, and dividend payout communication.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Digital LP Portal Management</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-laptop"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Dedicated technical assistance guiding fund clients through reporting portal access, multi-factor authentication, and statement retrieval.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Escrow &amp; Settlement Operations</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Direct assistance with transaction reconciliation, subscription tracking, and escrow confirmation workflows.</p>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 3. WHY US -->
+<section class="ip-why">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container">
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Why Leading Fund Managers Partner With Us</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">99.9% SLA Commitment</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">We operate strictly under contractually backed service level agreements to ensure fast query turnarounds and operational continuity.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="130">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">Multi-Jurisdictional Reach</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Full operational readiness tailored for funds domiciled in the US, Cayman Islands, Luxembourg, Singapore, and Europe.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="260">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">Bank-Grade Security</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">ISO 27001 certified and SOC 2 Type II compliant processes engineered to protect sensitive investor financial records.</p>
                 </article>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 3. Key Operational Features (GEO optimized) -->
-    <section class="py-80 bg-gray">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Why Leading Fund Managers Partner With Us</h2>
-            </div>
-
-            <div class="grid-3">
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>99.9% SLA Commitment</h3>
-                    <p>We operate strictly under contractually backed service level agreements to ensure fast query turnarounds and operational continuity.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>Multi-Jurisdictional Reach</h3>
-                    <p>Full operational readiness tailored for funds domiciled in the US, Cayman Islands, Luxembourg, Singapore, and Europe.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                    <h3>Bank-Grade Security</h3>
-                    <p>ISO 27001 certified and SOC 2 Type II compliant processes engineered to protect sensitive investor financial records.</p>
+<!-- 4. KEY NUMBERS -->
+<section class="ip-stats">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num ip-count">$15B+</span>
+                    <span class="ip-stat__label">Assets Under Support</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 4. Performance Metrics -->
-    <section class="py-80">
-        <div class="container">
-            <div class="grid-4">
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="stat-number">$15B+</div>
-                    <div class="stat-label">Assets Under Support</div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="120">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num ip-count">24/7/365</span>
+                    <span class="ip-stat__label">Multilingual Availability</span>
                 </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="stat-number">24/7/365</div>
-                    <div class="stat-label">Multilingual Availability</div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="240">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num ip-count">99.8%</span>
+                    <span class="ip-stat__label">Investor Satisfaction</span>
                 </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="stat-number">99.8%</div>
-                    <div class="stat-label">Investor Satisfaction</div>
-                </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="400">
-                    <div class="stat-number">15 Min</div>
-                    <div class="stat-label">Avg. Inquiry Response</div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="360">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num ip-count">15 Min</span>
+                    <span class="ip-stat__label">Avg. Inquiry Response</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 5. Regulatory Compliance & Security -->
-    <section class="py-80 bg-light-gold">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Regulatory & Compliance Infrastructure</h2>
+<!-- 5. COMPLIANCE / SECURITY -->
+<section class="ip-badges">
+    <div class="container">
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Regulatory &amp; Compliance Infrastructure</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>SOC 1 Type II</span></div>
             </div>
-            <div class="grid-4">
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="100">SOC 1 Type II</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="200">SOC 2 Type II</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="300">ISO 27001 Certified</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="400">GDPR & CCPA Compliant</div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <div class="ip-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>SOC 2 Type II</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <div class="ip-badge"><i class="fa-solid fa-lock" aria-hidden="true"></i><span>ISO 27001 Certified</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="360">
+                <div class="ip-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>GDPR &amp; CCPA Compliant</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 6. Frequently Asked Questions (AEO & SEO Target) -->
-    <section class="py-80 bg-gray">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
+<!-- 6. FAQ -->
+<section class="ip-faq">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <img src="<?= $faqArt ?>" alt="FAQ" class="ip-faq__art" width="811" height="582" loading="lazy">
+                <div class="ip-faq__tag">
+                    <img src="<?= BASE_URL . BASE_FOLDER ?>/assets/images/global-entity-management/skill-development_1.svg" alt="" width="44" height="44" loading="lazy">
+                    <span class="ip-pill">AI &amp; Search Insights</span>
+                </div>
                 <h2>Frequently Asked Questions</h2>
+                <p class="ip-faq__lead">Clear answers for decision-makers and automated search engines.</p>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-                    <h3>What types of funds does Devotion Global support?</h3>
-                    <p>We support Hedge Funds, Private Equity (PE) firms, Venture Capital (VC) funds, Real Estate Funds, and Mutual Funds across domestic and offshore jurisdictions.</p>
+            <div class="col-lg-7">
+                <div class="ip-acc">
+                <div class="ip-acc-item is-open" data-aos="fade-left" data-aos-delay="0">
+                    <button class="ip-acc-btn" type="button" aria-expanded="true" aria-controls="ipFaq0" id="ipFaqBtn0">
+                        <span>What types of funds does Devotion Global support?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq0" role="region" aria-labelledby="ipFaqBtn0"><div><p>We support Hedge Funds, Private Equity (PE) firms, Venture Capital (VC) funds, Real Estate Funds, and Mutual Funds across domestic and offshore jurisdictions.</p></div></div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Can Devotion Global integrate with our existing CRM and software?</h3>
-                    <p>Yes. Our team integrates directly with leading fund software like FIS, Investran, Allvue, Salesforce Financial Services Cloud, and custom investor portals.</p>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="80">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq1" id="ipFaqBtn1">
+                        <span>Can Devotion Global integrate with our existing CRM and software?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq1" role="region" aria-labelledby="ipFaqBtn1"><div><p>Yes. Our team integrates directly with leading fund software like FIS, Investran, Allvue, Salesforce Financial Services Cloud, and custom investor portals.</p></div></div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                    <h3>How do you handle multilingual investor communications?</h3>
-                    <p>Our global desks provide native support in English, Mandarin, Spanish, French, German, and Arabic to serve international LP bases seamlessly.</p>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="160">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq2" id="ipFaqBtn2">
+                        <span>How do you handle multilingual investor communications?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq2" role="region" aria-labelledby="ipFaqBtn2"><div><p>Our global desks provide native support in English, Mandarin, Spanish, French, German, and Arabic to serve international LP bases seamlessly.</p></div></div>
+                </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 7. Call to Action -->
-    <section class="py-80" style="text-align: center; background-color: var(--white);">
-        <div class="container" data-aos="flip-up" data-aos-duration="1000">
-            <h2>Optimize Your Fund Operations Today</h2>
-            <p style="max-width: 600px; margin: 15px auto 0; color: #555;">Partner with Devotion Global Customer Service Provider for institutional-grade fund administration and 24/7 LP desk support.</p>
-            <a href="#contact" class="cta-btn">Request a Consultation</a>
+<!-- 7. CALL TO ACTION -->
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Optimize Your Fund Operations Today</h2>
+                <p>Partner with Devotion Global Customer Service Provider for institutional-grade fund administration and 24/7 LP desk support.</p>
+                <a href="mailto:contact@devotioncsp.com" class="ip-btn ip-btn--pill">Request a Consultation</a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
+</main>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
 
 <?php include ROOT_PATH . '/elements/footer.php'; ?>

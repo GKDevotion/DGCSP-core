@@ -364,3 +364,117 @@
 
 /* FAQ lightbulb icon (svg) */
 .ip-faq__tag img { width: 44px; height: 44px; flex: 0 0 auto; }
+
+/* ==========================================================================
+   Extra blocks for service pages without a reference screenshot
+   (FA icon in cards, why-cards, steps, colour stat tiles, badges)
+   ========================================================================== */
+
+/* FA icon in card (same slot as the SVG icon) */
+.ip-card__fa {
+    flex: 0 0 auto;
+    width: 56px; height: 56px;
+    display: grid; place-items: center;
+    font-size: 1.45rem;
+    color: var(--gold-primary);
+    background: var(--gold-light, #f9f5ed);
+    border: 1px solid rgba(171, 129, 57, 0.28);
+    border-radius: 14px;
+    transition: transform 0.45s var(--ip-ease), background 0.3s ease, color 0.3s ease;
+}
+.ip-card:hover .ip-card__fa { transform: scale(1.12) rotate(-6deg); background: var(--gold-primary); color: #fff; }
+
+/* Section title block (centered) */
+.ip-head { text-align: center; margin-bottom: 3rem; }
+.ip-head .ip-title { margin: 1.1rem 0 0.6rem; }
+.ip-head .ip-sub { margin: 0 auto; }
+
+/* Why-us section (white) */
+.ip-why { position: relative; overflow: hidden; padding: 5rem 0; background: #fff; }
+.ip-why .container, .ip-steps .container, .ip-badges .container { position: relative; z-index: 2; max-width: 1100px; }
+.ip-why .ip-card { text-align: left; }
+.ip-why .ip-card__title { font-size: 1.15rem; }
+.ip-why .ip-card__desc { font-size: 0.86rem; line-height: 1.75; }
+
+/* Steps / phases */
+.ip-steps { position: relative; overflow: hidden; padding: 5rem 0; background: #fff; }
+.ip-steps__row { position: relative; }
+.ip-steps__row::before {                         /* dashed connector that draws in */
+    content: "";
+    position: absolute;
+    top: 29px; left: 12%; right: 12%;
+    border-top: 2px dashed rgba(171, 129, 57, 0.45);
+    transform-origin: left;
+    animation: ipStepLine 1.6s 0.3s var(--ip-ease) both;
+}
+@keyframes ipStepLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.ip-step { position: relative; text-align: center; padding: 0 0.6rem; }
+.ip-step__num {
+    position: relative; z-index: 2;
+    display: inline-grid; place-items: center;
+    width: 60px; height: 60px;
+    margin-bottom: 1.2rem;
+    border-radius: 50%;
+    background: var(--gold-primary);
+    color: #fff;
+    font-weight: 600; font-size: 1.05rem;
+    box-shadow: 0 0 0 8px rgba(171, 129, 57, 0.14), 0 10px 22px rgba(171, 129, 57, 0.35);
+    transition: transform 0.4s var(--ip-ease), box-shadow 0.4s var(--ip-ease);
+}
+.ip-step:hover .ip-step__num { transform: scale(1.1); box-shadow: 0 0 0 12px rgba(171, 129, 57, 0.18), 0 14px 26px rgba(171, 129, 57, 0.4); }
+.ip-step__label { display: block; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-primary); font-weight: 600; margin-bottom: 0.35rem; }
+.ip-step h3 { font-size: 1.08rem; font-weight: 600; color: #111; margin: 0 0 0.5rem; }
+.ip-step p { font-size: 0.82rem; line-height: 1.7; color: #666; margin: 0; }
+
+/* Colour stat tiles (same palette as index "How we are different") */
+.ip-stats {
+    position: relative; overflow: hidden; padding: 4.5rem 0;
+    background: radial-gradient(circle at 12% 0%, rgba(171, 129, 57, 0.10) 0%, transparent 55%), linear-gradient(180deg, #fffdf9 0%, var(--bg-light, #faf8f5) 100%);
+}
+.ip-stats .container { position: relative; z-index: 2; max-width: 1100px; }
+.ip-stat {
+    height: 100%;
+    padding: 1.8rem 1.4rem;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.25);
+    animation: floatTop 6s ease-in-out infinite alternate;
+    transition: transform 0.4s var(--ip-ease), box-shadow 0.4s ease;
+}
+.ip-stat:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 24px 44px -12px rgba(171, 129, 57, 0.5); animation-play-state: paused; }
+.ip-stat__num { display: block; font-size: clamp(1.7rem, 2.6vw, 2.4rem); font-weight: 600; line-height: 1.2; margin-bottom: 0.4rem; }
+.ip-stat__label { font-size: 0.82rem; line-height: 1.5; opacity: 0.92; }
+.ip-stat--gold  { background: var(--gold-primary); color: #fff; animation-delay: -1s; }
+.ip-stat--dark  { background: rgba(86, 88, 92, 0.94); color: #fff; animation-delay: -3s; }
+.ip-stat--tan   { background: #dfc593; color: #1d1d1d; animation-delay: -2s; }
+.ip-stat--grey  { background: #c7c8cc; color: #1d1d1d; animation-delay: -4s; }
+
+/* Compliance badges */
+.ip-badges { position: relative; overflow: hidden; padding: 5rem 0; background: var(--ip-gray-bg); }
+.ip-badge {
+    display: flex; align-items: center; gap: 0.9rem;
+    height: 100%;
+    padding: 1.15rem 1.3rem;
+    background: #fff;
+    border: 1px solid rgba(171, 129, 57, 0.2);
+    border-radius: 14px;
+    font-weight: 600; font-size: 0.92rem; color: #222;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s var(--ip-ease), box-shadow 0.4s var(--ip-ease), border-color 0.3s ease;
+}
+.ip-badge i { flex: 0 0 auto; font-size: 1.5rem; color: var(--gold-primary); transition: transform 0.4s var(--ip-ease); }
+.ip-badge:hover { transform: translateY(-6px); border-color: var(--gold-primary); box-shadow: 0 18px 36px -10px rgba(171, 129, 57, 0.4); }
+.ip-badge:hover i { transform: scale(1.18) rotate(-8deg); }
+
+@media (max-width: 991.98px) {
+    .ip-steps__row::before { display: none; }
+    .ip-step { margin-bottom: 1.5rem; }
+}
+@media (max-width: 767.98px) {
+    .ip-why, .ip-steps, .ip-badges { padding: 3.5rem 0; }
+    .ip-stats { padding: 3rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ip-stat, .ip-steps__row::before { animation: none; }
+    .ip-stat, .ip-badge, .ip-badge i, .ip-step__num, .ip-card__fa { transition: none; }
+}

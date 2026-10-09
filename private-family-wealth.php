@@ -2,6 +2,14 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/private-family-wealth';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+$faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
     <!-- JSON-LD Structured Data (SEO, AEO, GEO Optimization) -->
@@ -60,358 +68,249 @@ include ROOT_PATH . '/elements/header.php';
     }
     </script>
 
-    <style>
+<!-- Shared inner-page theme (same look & animation set as index) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
 
-        /* Banner Section */
-        .banner {
-            background-color: var(--gold-banner-bg);
-            color: var(--white);
-            padding: 110px 0 90px;
-            text-align: center;
-        }
+<main>
 
-        .banner h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .banner p {
-            font-size: 1.15rem;
-            max-width: 750px;
-            margin: 0 auto 25px;
-            opacity: 0.95;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        /* Section Styling */
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold-primary);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Layout Grids */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        /* Card Styles */
-        .service-card {
-            background-color: var(--white);
-            border: 1px solid var(--gold-border);
-            border-radius: 8px;
-            padding: 35px 25px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--gold-primary);
-        }
-
-        .icon-box {
-            width: 55px;
-            height: 55px;
-            background-color: var(--gold-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--gold-primary);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* Section Padding */
-        .py-80 { padding: 80px 0; }
-        .bg-gray { background-color: var(--gray-color); }
-        .bg-light-gold { background-color: var(--gold-light); }
-
-        /* Stats */
-        .stat-card {
-            text-align: center;
-            padding: 25px;
-            background: var(--white);
-            border-radius: 8px;
-            border: 1px solid var(--gold-border);
-        }
-
-        .stat-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--gold-primary);
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        /* FAQ Accordion Styling */
-        .faq-item {
-            background-color: var(--white);
-            border: 1px solid var(--gold-border);
-            border-radius: 6px;
-            margin-bottom: 15px;
-            padding: 20px;
-        }
-
-        .faq-item h3 {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .faq-item p {
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        /* Compliance Badges */
-        .badge-card {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid var(--gold-border);
-            border-radius: 6px;
-            background: var(--white);
-            font-weight: 600;
-            color: var(--gold-hover);
-        }
-
-        /* CTA Button */
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--gold-primary);
-            color: var(--white);
-            padding: 14px 36px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: var(--transition);
-        }
-
-        .cta-btn:hover {
-            background-color: var(--gold-hover);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr; }
-            .banner h1 { font-size: 2.1rem; }
-            .section-header h2 { font-size: 1.8rem; }
-            .py-80 { padding: 50px 0; }
-        }
-    </style>
-
-    <!-- 1. Hero / Banner Section -->
-    <header class="banner">
-        <div class="container" data-aos="fade-down" data-aos-duration="1000">
-            <span class="badge">Bespoke Wealth Operations</span>
-            <h1>Private Wealth & Family Office Services</h1>
-            <p>Delivering white-glove client support, consolidated asset reporting, and administrative infrastructure tailored exclusively for family offices, wealth managers, and Ultra-HNW families worldwide.</p>
-        </div>
-    </header>
-
-    <!-- 2. Core Services Section (Private Wealth Focused) -->
-    <section class="py-80">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our Bespoke Family Office Solutions</h2>
+<!-- 1. HERO -->
+<header class="ip-hero">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Bespoke Wealth Operations</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Private Wealth &amp;<br><span class="ip-gold">Family Office Services</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Delivering white-glove client support, consolidated asset reporting, and administrative infrastructure tailored exclusively for family offices, wealth managers, and Ultra-HNW families worldwide.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Request Private Consultation</a>
             </div>
-            
-            <div class="grid-3">
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">01</div>
-                    <h3>Dedicated Wealth Desk Support</h3>
-                    <p>24/7 direct-access support desk offering high-touch, confidential assistance for principal family members and wealth advisors.</p>
-                </article>
+        </div>
+    </div>
+</header>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">02</div>
-                    <h3>Consolidated Asset Reporting</h3>
-                    <p>Aggregated operational reporting across multi-bank accounts, liquid investments, private equity holdings, real estate, and passion assets.</p>
-                </article>
+<!-- 2. CORE SERVICES -->
+<section class="ip-suite" id="services">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 6%; left: 3%; width: 70px;"><img src="<?= $obj ?>/yellow-square.png" alt=""></div>
+    <div class="container">
+        <div class="ip-suite__head" data-aos="fade-up">
+            <span class="ip-pill">Our Services</span>
+            <h2 class="ip-title">Our Bespoke Family Office Solutions</h2>
+        </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box">03</div>
-                    <h3>Cross-Border Compliance & KYC</h3>
-                    <p>Streamlined identity verification, source of wealth (SoW) documentation support, and international regulatory alignment.</p>
-                </article>
+        <div class="row g-4">
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">04</div>
-                    <h3>Trust & Estate Administration Desk</h3>
-                    <p>Administrative coordination for fiduciary distributions, estate document maintenance, and multi-generational trust communication.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Dedicated Wealth Desk Support</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">24/7 direct-access support desk offering high-touch, confidential assistance for principal family members and wealth advisors.</p>
                 </article>
+            </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">05</div>
-                    <h3>Family Portal Tech Concierge</h3>
-                    <p>Personalized technical onboarding and continuous support for private family portals, vault storage, and secure communications.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Consolidated Asset Reporting</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-chart-pie"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Aggregated operational reporting across multi-bank accounts, liquid investments, private equity holdings, real estate, and passion assets.</p>
                 </article>
+            </div>
 
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box">06</div>
-                    <h3>Lifestyle & Administrative Concierge</h3>
-                    <p>Specialized middle-office execution for capital wire authorizations, bill pay tracking, and discrete administrative requests.</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Cross-Border Compliance &amp; KYC</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-user-shield"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Streamlined identity verification, source of wealth (SoW) documentation support, and international regulatory alignment.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Trust &amp; Estate Administration Desk</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-file-contract"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Administrative coordination for fiduciary distributions, estate document maintenance, and multi-generational trust communication.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Family Portal Tech Concierge</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-laptop"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Personalized technical onboarding and continuous support for private family portals, vault storage, and secure communications.</p>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Lifestyle &amp; Administrative Concierge</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-concierge-bell"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Specialized middle-office execution for capital wire authorizations, bill pay tracking, and discrete administrative requests.</p>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 3. WHY US -->
+<section class="ip-why">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container">
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Built for Uncompromised Discretion &amp; Precision</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">Absolute Confidentiality</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Rigorous NDAs and zero-trust protocol access ensure family assets and identity remain completely protected.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="130">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">Multi-Generational Continuity</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Support workflows structured to seamlessly transition knowledge and portal navigation across family generations.</p>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="260">
+                <article class="ip-card">
+                    <h3 class="ip-card__title">Institutional Safeguards</h3>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Combining the intimacy of a single-family office with bank-grade security and SOC-certified operational redundancy.</p>
                 </article>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 3. Operational Advantages (GEO optimized) -->
-    <section class="py-80 bg-gray">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Built for Uncompromised Discretion & Precision</h2>
-            </div>
-
-            <div class="grid-3">
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>Absolute Confidentiality</h3>
-                    <p>Rigorous NDAs and zero-trust protocol access ensure family assets and identity remain completely protected.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>Multi-Generational Continuity</h3>
-                    <p>Support workflows structured to seamlessly transition knowledge and portal navigation across family generations.</p>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                    <h3>Institutional Safeguards</h3>
-                    <p>Combining the intimacy of a single-family office with bank-grade security and SOC-certified operational redundancy.</p>
+<!-- 4. KEY NUMBERS -->
+<section class="ip-stats">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num ip-count">$25B+</span>
+                    <span class="ip-stat__label">Family Wealth Supported</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 4. Performance Metrics -->
-    <section class="py-80">
-        <div class="container">
-            <div class="grid-4">
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="stat-number">$25B+</div>
-                    <div class="stat-label">Family Wealth Supported</div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="120">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num ip-count">24/7</span>
+                    <span class="ip-stat__label">Private Desk Access</span>
                 </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Private Desk Access</div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="240">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num ip-count">100%</span>
+                    <span class="ip-stat__label">Confidentiality Guarantee</span>
                 </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Confidentiality Guarantee</div>
-                </div>
-                <div class="stat-card" data-aos="flip-left" data-aos-delay="400">
-                    <div class="stat-number">5 Min</div>
-                    <div class="stat-label">Priority Escalation SLA</div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="360">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num ip-count">5 Min</span>
+                    <span class="ip-stat__label">Priority Escalation SLA</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 5. Security & Regulatory Compliance -->
-    <section class="py-80 bg-light-gold">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Security & Governance Framework</h2>
+<!-- 5. COMPLIANCE / SECURITY -->
+<section class="ip-badges">
+    <div class="container">
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Security &amp; Governance Framework</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>SOC 2 Type II Certified</span></div>
             </div>
-            <div class="grid-4">
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="100">SOC 2 Type II Certified</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="200">ISO 27001 Data Vault</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="300">Zero-Trust Data Policy</div>
-                <div class="badge-card" data-aos="fade-up" data-aos-delay="400">GDPR & Global Privacy</div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <div class="ip-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>ISO 27001 Data Vault</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <div class="ip-badge"><i class="fa-solid fa-lock" aria-hidden="true"></i><span>Zero-Trust Data Policy</span></div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="360">
+                <div class="ip-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>GDPR &amp; Global Privacy</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 6. Frequently Asked Questions (AEO & SEO Target) -->
-    <section class="py-80 bg-gray">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
+<!-- 6. FAQ -->
+<section class="ip-faq">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <img src="<?= $faqArt ?>" alt="FAQ" class="ip-faq__art" width="811" height="582" loading="lazy">
+                <div class="ip-faq__tag">
+                    <img src="<?= BASE_URL . BASE_FOLDER ?>/assets/images/global-entity-management/skill-development_1.svg" alt="" width="44" height="44" loading="lazy">
+                    <span class="ip-pill">AI &amp; Search Insights</span>
+                </div>
                 <h2>Frequently Asked Questions</h2>
+                <p class="ip-faq__lead">Clear answers for decision-makers and automated search engines.</p>
             </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-                    <h3>How does Devotion Global work alongside our existing Family Office staff?</h3>
-                    <p>We act as an extension of your team, handling 24/7 client desk coverage, routine reporting aggregation, and administrative tasks so your core advisors can focus on strategic wealth preservation.</p>
+            <div class="col-lg-7">
+                <div class="ip-acc">
+                <div class="ip-acc-item is-open" data-aos="fade-left" data-aos-delay="0">
+                    <button class="ip-acc-btn" type="button" aria-expanded="true" aria-controls="ipFaq0" id="ipFaqBtn0">
+                        <span>How does Devotion Global work alongside our existing Family Office staff?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq0" role="region" aria-labelledby="ipFaqBtn0"><div><p>We act as an extension of your team, handling 24/7 client desk coverage, routine reporting aggregation, and administrative tasks so your core advisors can focus on strategic wealth preservation.</p></div></div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Do you support Multi-Family Offices (MFOs) as well as Single Family Offices (SFOs)?</h3>
-                    <p>Yes. We offer scalable multi-tenant operations for MFOs managing dozens of families, as well as dedicated white-glove pod teams for Single Family Offices.</p>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="80">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq1" id="ipFaqBtn1">
+                        <span>Do you support Multi-Family Offices (MFOs) as well as Single Family Offices (SFOs)?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq1" role="region" aria-labelledby="ipFaqBtn1"><div><p>Yes. We offer scalable multi-tenant operations for MFOs managing dozens of families, as well as dedicated white-glove pod teams for Single Family Offices.</p></div></div>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                    <h3>How do you handle sensitive communication with family members?</h3>
-                    <p>All client team members complete specialized family communication training, adhering strictly to pre-approved family communication guidelines and secure encrypted messaging channels.</p>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="160">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq2" id="ipFaqBtn2">
+                        <span>How do you handle sensitive communication with family members?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq2" role="region" aria-labelledby="ipFaqBtn2"><div><p>All client team members complete specialized family communication training, adhering strictly to pre-approved family communication guidelines and secure encrypted messaging channels.</p></div></div>
+                </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 7. Call to Action -->
-    <section class="py-80" style="text-align: center; background-color: var(--white);">
-        <div class="container" data-aos="flip-up" data-aos-duration="1000">
-            <h2>Elevate Your Family Office Operations</h2>
-            <p style="max-width: 600px; margin: 15px auto 0; color: #555;">Schedule a private consultation with Devotion Global to establish your custom family wealth customer service desk.</p>
-            <a href="#contact" class="cta-btn">Request Private Consultation</a>
+<!-- 7. CALL TO ACTION -->
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Elevate Your Family Office Operations</h2>
+                <p>Schedule a private consultation with Devotion Global to establish your custom family wealth customer service desk.</p>
+                <a href="mailto:contact@devotioncsp.com" class="ip-btn ip-btn--pill">Request Private Consultation</a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+</main>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
 
 <?php include ROOT_PATH . '/elements/footer.php'; ?>

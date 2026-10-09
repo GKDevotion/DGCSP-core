@@ -103,9 +103,37 @@
         });
     }
 
+    /* ---------------- Count-up for .ip-count (e.g. "$15B+", "99.8%", "15 Min") ---------------- */
+    function initCountUp(el) {
+        const raw = el.textContent.trim();
+        const m = raw.match(/^([^\d]*)(\d[\d,]*\.?\d*)(.*)$/);
+        if (!m || raw.indexOf('/') !== -1 || reduceMotion) return;     // skip "24/7/365" etc.
+        const prefix = m[1], numStr = m[2], suffix = m[3];
+        const dec = (numStr.split('.')[1] || '').length;
+        const to = parseFloat(numStr.replace(/,/g, ''));
+        const useComma = numStr.indexOf(',') !== -1;
+        let done = false;
+        function run() {
+            if (done) return; done = true;
+            const start = performance.now(), dur = 1500;
+            (function tick(now) {
+                const t = Math.min((now - start) / dur, 1), e = 1 - Math.pow(1 - t, 3);
+                let v = (to * e).toFixed(dec);
+                if (useComma) v = Number(v).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+                el.textContent = prefix + v + suffix;
+                if (t < 1) requestAnimationFrame(tick);
+            })(start);
+        }
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(e => { if (e[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: 0.4 });
+            io.observe(el);
+        } else run();
+    }
+
     function boot() {
         document.querySelectorAll('canvas.ip-constellation').forEach(initConstellation);
         document.querySelectorAll('.ip-acc').forEach(initAccordion);
+        document.querySelectorAll('.ip-count').forEach(initCountUp);
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
     else boot();
