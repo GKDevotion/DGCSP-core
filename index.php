@@ -1656,21 +1656,19 @@ include ROOT_PATH . '/elements/map-animate.php';
     </div>
 </section>
 
-<!-- -->
+<!-- how we are different -->
 <style>
-    /* Hero Banner Container */
-    .partner-section {
-        background-color: var(--gold-primary);
+    .diff-section {
         position: relative;
-        /* overflow: hidden; */
-        min-height: 400px;
-        color: #ffffff;
-        display: flex;
-        align-items: center;
+        overflow: hidden;
+        padding: 5.5rem 0;
+        background:
+            radial-gradient(circle at 12% 0%, rgba(171, 129, 57, 0.10) 0%, transparent 55%),
+            linear-gradient(180deg, #fffdf9 0%, var(--bg-light) 100%);
     }
 
-    /* Top Left Geometric Abstract Pattern Canvas */
-    .geometric-bg {
+    /* Top-left animated constellation (kept from previous section, gold on cream) */
+    .diff-constellation {
         position: absolute;
         top: 0;
         left: 0;
@@ -1678,389 +1676,138 @@ include ROOT_PATH . '/elements/map-animate.php';
         height: 320px;
         pointer-events: none;
         z-index: 1;
-        opacity: 0.65;
+        opacity: 0.75;
     }
 
-    /* Content Container Layering */
-    .content-wrap {
-        position: relative;
-        z-index: 5;
-        padding: 0;
+    .diff-section .container { position: relative; z-index: 2; }
+
+    .diff-title {
+        font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.35;
+        color: var(--text-dark, #111);
+        letter-spacing: -0.4px;
+        margin-bottom: 1.4rem;
+    }
+    .diff-title::after {
+        content: "";
+        display: block;
+        width: 48px;
+        height: 2px;
+        margin-top: 1.1rem;
+        background: var(--gold-primary);
+        border-radius: 2px;
+    }
+    .diff-text {
+        color: #8a8f98;
+        font-size: 0.98rem;
+        line-height: 1.95;
+        max-width: 430px;
+        margin: 0;
     }
 
-    .partner-section .section-desc {
-        font-size: 1.05rem;
-        font-weight: 300;
-        line-height: 1.6;
-        margin-bottom: 2.5rem;
-        padding-left: 0 !important;
-        color: rgba(255, 255, 255, 0.92);
-    }
+    /* Card cluster (positions follow the reference design) */
+    .diff-cluster { position: relative; width: 100%; max-width: 560px; height: 385px; margin: 0 auto; }
 
-    /* Logo Slider Container */
-    .slider-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        position: relative;
-    }
-
-    .carousel-btn {
-        background: transparent;
-        border: none;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 2px;
-        transition: all 0.3s ease;
-        outline: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .carousel-btn:hover {
-        color: #ffffff;
-        transform: scale(1.15);
-    }
-
-    /* Individual Card Container */
-    .logo-cards-viewport {
-        overflow: hidden;
-        width: 100%;
-        position: relative;
-        /* Added smooth gradient mask on edge fades for seamless look */
-        /* mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); */
-    }
-
-    .logo-cards-track {
-        display: flex;
-        gap: 16px;
-        width: max-content;
-        /* Continuous infinite right-to-left marquee animation */
-        animation: infiniteSlide 20s linear infinite;
+    .diff-card {
+        position: absolute;
+        padding: 1.15rem 1.35rem;
+        border-radius: 12px;
+        box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.22);
+        animation: diffFloat 6s ease-in-out infinite alternate;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
         will-change: transform;
     }
-
-    /* Pause animation on hover for accessibility and interaction */
-    .slider-wrapper:hover .logo-cards-track {
+    .diff-card:hover {
         animation-play-state: paused;
+        transform: translateY(-8px) scale(1.04);
+        box-shadow: 0 24px 44px -12px rgba(171, 129, 57, 0.5);
+        z-index: 6 !important;
+    }
+    .diff-card h3 { font-size: 1.25rem; font-weight: 500; line-height: 1.3; margin: 0 0 0.45rem; }
+    .diff-card p  { font-size: 0.74rem; line-height: 1.5; margin: 0; }
+
+    .diff-card--experts { left: 214px; top: 0;     width: 215px; min-height: 118px; background: rgba(86, 88, 92, 0.92); color: #fff; z-index: 4; animation-delay: -1s; }
+    .diff-card--all     { left: 0;     top: 92px;  width: 246px; min-height: 112px; background: var(--gold-primary);      color: #fff; z-index: 3; animation-delay: -3s; }
+    .diff-card--due     { left: 336px; top: 138px; width: 226px; min-height: 118px; background: #dfc593;                   color: #1d1d1d; z-index: 3; animation-delay: -2s; }
+    .diff-card--conf    { left: 100px; top: 226px; width: 232px; min-height: 120px; background: #c7c8cc;                   color: #1d1d1d; z-index: 5; animation-delay: -4s; }
+
+    /* uses the independent `translate` property so it never fights AOS / hover transforms */
+    @keyframes diffFloat {
+        from { translate: 0 0; }
+        to   { translate: 0 -9px; }
     }
 
-    @keyframes infiniteSlide {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            /* Shifts exactly half the duplicated track length */
-            transform: translateX(-50%);
-        }
-    }
+    /* Small decorative shapes */
+    .diff-deco { position: absolute; pointer-events: none; z-index: 1; }
+    .diff-deco--ring   { left: 196px; top: 66px;  width: 9px;  height: 9px;  border: 1px solid var(--gold-primary); border-radius: 50%; animation: floatTop 5s ease-in-out infinite alternate; }
+    .diff-deco--square { left: 448px; top: 100px;  width: 15px; height: 15px; border: 1px solid #b9b9b9; border-radius: 3px; animation: floatBottom 6s ease-in-out infinite alternate; }
+    .diff-deco--dark   { left: 56px;  top: 250px; width: 21px; height: 21px; background: #77777a; border-radius: 4px; animation: floatTop 6s ease-in-out infinite alternate; }
+    .diff-deco--gold   { left: 372px; top: 310px; width: 10px; height: 10px; background: var(--gold-primary); border-radius: 2px; animation: floatBottom 5s ease-in-out infinite alternate; }
 
-    .logo-card {
-        background: #ffffff;
-        border-radius: var(--card-radius);
-        padding: 16px 20px;
-        min-width: 130px;
-        height: 75px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        flex-shrink: 0;
-    }
-
-    .logo-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-
-    .logo-card img, .logo-card svg {
-        max-height: 42px;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    /* Pagination Indicators */
-    .pagination-dots {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 1.5rem;
-    }
-
-    .dot {
-        width: 12px;
-        height: 12px;
-        border: 2px solid #ffffff;
-        border-radius: 50%;
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding: 0;
-    }
-
-    .dot.active {
-        background-color: #ffffff;
-    }
-
-    /* Floating Background Graphic Shapes (Right Side) */
-    .graphics-container {
-        position: relative;
-        height: 100%;
-        /* min-height: 480px; */
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-    }
-
-    /* Large Rounded Soft Card Shape Behind Model */
-    .bg-shape-large {
-        position: absolute;
-        bottom: 10px;
-        right: 5%;
-        width: 413px;
-        height: 320px;
-        background: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(4px);
-        border-radius: 50px;
-        z-index: 2;
-    }
-
-    /* Small Outline Box Top Right */
-    .bg-shape-outline {
-        position: absolute;
-        top: 10%;
-        right: -3%;
-        width: 100px;
-        height: 100px;
-        border: 2px solid rgba(255, 235, 170, 0.8);
-        border-radius: 10px;
-        z-index: 2;
-    }
-
-    /* Floating Bottom Left Card Shape Overlay */
-    .bg-shape-small {
-        position: absolute;
-        bottom: 40px;
-        left: 25%;
-        width: 80px;
-        height: 80px;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: 18px;
-        z-index: 3;
-        border: 1px solid #fff;
-    }
-
-    /* Professional Model Image */
-    .model-img {
-        position: relative;
-        z-index: 4;
-        /* max-height: 400px;
-        object-fit: contain; */
-        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
-        margin-bottom: 0;
-        margin-top: -100px;
-        width: 75%;
-        left: 12%;
-    }
-
-    /* Responsive Breakpoints Adjustment */
+    /* Tablet / mobile: cards flow into a grid */
     @media (max-width: 991.98px) {
-        .partner-section {
-            padding-top: 2rem;
+        .diff-section { padding: 3.5rem 0; }
+        .diff-text { max-width: 100%; }
+        .diff-cluster {
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
         }
-        .partner-section .section-title {
-            font-size: 2.2rem;
-        }
-        .graphics-container {
-            min-height: 380px;
-            margin-top: 2rem;
-        }
-        .bg-shape-large {
-            width: 340px;
-            height: 340px;
-            right: 50%;
-            transform: translateX(50%);
-        }
-        .bg-shape-outline {
-            right: 15%;
-        }
-        .model-img {
-            max-height: 400px;
-        }
+        .diff-card { position: static; width: auto !important; min-height: 0 !important; }
+        .diff-deco { display: none; }
     }
-
     @media (max-width: 575.98px) {
-        .partner-section .section-title {
-            font-size: 1.85rem;
-        }
-        .partner-section .section-desc {
-            font-size: 0.95rem;
-        }
-        .logo-card {
-            min-width: 105px;
-            height: 65px;
-            padding: 10px 12px;
-        }
-        .logo-card img, .logo-card svg {
-            max-height: 32px;
-        }
-        .carousel-btn {
-            padding: 4px;
-            font-size: 1.25rem;
-        }
+        .diff-cluster { grid-template-columns: 1fr; }
+        .diff-constellation { width: 280px; height: 220px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .diff-card, .diff-deco { animation: none; }
     }
 </style>
-<section class="partner-section">
-    <!-- Animated Constellation Network Canvas in Top Left Corner -->
-    <canvas class="geometric-bg" id="constellationCanvas"></canvas>
 
-    <div class="container content-wrap">
-        <div class="row align-items-center">
-            
-            <!-- Left Column: Headline, Text & Interactive Carousel -->
-            <div class="col-lg-6 col-md-12 text-center text-lg-start">
-                <h2 class="section-title text-white">Try us today!</h2>
-                <p class="section-desc ms-auto ms-lg-0 me-auto me-lg-0 text-white">
-                    Let's Devotion and our Partners do the rest. We are working with global Banks in both traditional and digital type, the Lawyers, local Experts
-                </p>
+<section class="diff-section" id="how-we-are-different">
+    <!-- Animated constellation network, top-left corner -->
+    <canvas class="diff-constellation" id="diffConstellation" aria-hidden="true"></canvas>
 
-                <!-- Partner Logo Carousel Area -->
-                <div class="slider-wrapper my-3">
-                    <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous Slide">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
+    <div class="container">
+        <div class="row align-items-center g-5">
 
-                    <div class="logo-cards-viewport">
-                        <!-- Dual duplicated logo set inside track for seamless infinite looping -->
-                        <div class="logo-cards-track" id="logoTrack">
-                            
-                            <!-- Original Logo Set -->
-                            <div class="logo-card">
-                                <svg viewBox="0 0 140 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <text x="5" y="16" font-family="Arial, sans-serif" font-size="10" fill="#002a54" font-weight="bold">بنك أبوظبي الأول</text>
-                                    <text x="5" y="36" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#002a54">FAB</text>
-                                    <path d="M60 10 L85 22 L70 38 Z" fill="#e31837" />
-                                    <path d="M72 15 L95 28 L80 40 Z" fill="#002a54" opacity="0.8" />
-                                    <text x="98" y="24" font-family="Arial, sans-serif" font-size="7" fill="#002a54">First Abu Dhabi Bank</text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card">
-                                <svg viewBox="0 0 100 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <text x="10" y="30" font-family="'Poppins', sans-serif" font-size="32" font-weight="800" fill="#4d148c">liv<tspan fill="#ff007a">.</tspan></text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card">
-                                <svg viewBox="0 0 60 60" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="30" cy="30" r="26" fill="#007a3d" />
-                                    <path d="M30 6 L36 20 L50 20 L38 29 L43 43 L30 34 L17 43 L22 29 L10 20 L24 20 Z" fill="#b08332" />
-                                    <circle cx="30" cy="30" r="8" fill="#a01830" />
-                                </svg>
-                            </div>
-
-                            <div class="logo-card">
-                                <svg viewBox="0 0 120 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <g transform="translate(45, 14)">
-                                        <path d="M0 0 L12 -8 L10 4 Z" fill="#ff5000" />
-                                        <path d="M0 0 L15 -2 L8 8 Z" fill="#ff7800" />
-                                        <path d="M0 0 L14 6 L4 11 Z" fill="#ffa000" />
-                                        <path d="M0 0 L8 12 L-2 10 Z" fill="#ffc107" />
-                                    </g>
-                                    <text x="10" y="28" font-family="Arial, sans-serif" font-size="11" fill="#002a54" font-weight="bold">المشرق</text>
-                                    <text x="10" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#002a54">mashreq</text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card">
-                                <svg viewBox="0 0 110 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="5" y="8" width="24" height="24" rx="4" fill="#107c41" />
-                                    <text x="12" y="25" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-weight="bold">C</text>
-                                    <text x="36" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#002a54">CBD</text>
-                                </svg>
-                            </div>
-
-                            <!-- Duplicated Logo Set (For smooth infinite recursive right-to-left marquee) -->
-                            <div class="logo-card" aria-hidden="true">
-                                <svg viewBox="0 0 140 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <text x="5" y="16" font-family="Arial, sans-serif" font-size="10" fill="#002a54" font-weight="bold">بنك أبوظبي الأول</text>
-                                    <text x="5" y="36" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#002a54">FAB</text>
-                                    <path d="M60 10 L85 22 L70 38 Z" fill="#e31837" />
-                                    <path d="M72 15 L95 28 L80 40 Z" fill="#002a54" opacity="0.8" />
-                                    <text x="98" y="24" font-family="Arial, sans-serif" font-size="7" fill="#002a54">First Abu Dhabi Bank</text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card" aria-hidden="true">
-                                <svg viewBox="0 0 100 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <text x="10" y="30" font-family="'Poppins', sans-serif" font-size="32" font-weight="800" fill="#4d148c">liv<tspan fill="#ff007a">.</tspan></text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card" aria-hidden="true">
-                                <svg viewBox="0 0 60 60" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="30" cy="30" r="26" fill="#007a3d" />
-                                    <path d="M30 6 L36 20 L50 20 L38 29 L43 43 L30 34 L17 43 L22 29 L10 20 L24 20 Z" fill="#b08332" />
-                                    <circle cx="30" cy="30" r="8" fill="#a01830" />
-                                </svg>
-                            </div>
-
-                            <div class="logo-card" aria-hidden="true">
-                                <svg viewBox="0 0 120 45" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <g transform="translate(45, 14)">
-                                        <path d="M0 0 L12 -8 L10 4 Z" fill="#ff5000" />
-                                        <path d="M0 0 L15 -2 L8 8 Z" fill="#ff7800" />
-                                        <path d="M0 0 L14 6 L4 11 Z" fill="#ffa000" />
-                                        <path d="M0 0 L8 12 L-2 10 Z" fill="#ffc107" />
-                                    </g>
-                                    <text x="10" y="28" font-family="Arial, sans-serif" font-size="11" fill="#002a54" font-weight="bold">المشرق</text>
-                                    <text x="10" y="38" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#002a54">mashreq</text>
-                                </svg>
-                            </div>
-
-                            <div class="logo-card" aria-hidden="true">
-                                <svg viewBox="0 0 110 40" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="5" y="8" width="24" height="24" rx="4" fill="#107c41" />
-                                    <text x="12" y="25" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-weight="bold">C</text>
-                                    <text x="36" y="24" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#002a54">CBD</text>
-                                </svg>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next Slide">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <!-- Pagination Dot Indicators -->
-                <div class="pagination-dots" id="dotsContainer">
-                    <button class="dot active" data-index="0" aria-label="Go to slide 1"></button>
-                    <button class="dot" data-index="1" aria-label="Go to slide 2"></button>
-                    <button class="dot" data-index="2" aria-label="Go to slide 3"></button>
-                    <button class="dot" data-index="3" aria-label="Go to slide 4"></button>
-                </div>
-
+            <!-- Left: heading + text -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <h2 class="diff-title">How we are<br>different</h2>
+                <p class="diff-text">We provide a streamlined, tailored approach to offshore company incorporation, combining global expertise with end-to-end support. From selecting the right jurisdiction and preparing documentation to incorporation and ongoing compliance, we simplify the process.</p>
             </div>
 
-            <!-- Right Column: Model cutout overlay with geometric background elements -->
-            <div class="col-lg-6 col-md-12">
-                <div class="graphics-container">
-                    <!-- Abstract Soft Transparent Cards Behind Model -->
-                    <div class="bg-shape-large"></div>
-                    <div class="bg-shape-outline"></div>
-                    <div class="bg-shape-small"></div>
+            <!-- Right: card cluster -->
+            <div class="col-lg-7">
+                <div class="diff-cluster">
+                    <span class="diff-deco diff-deco--ring"></span>
+                    <span class="diff-deco diff-deco--square"></span>
+                    <span class="diff-deco diff-deco--dark"></span>
+                    <span class="diff-deco diff-deco--gold"></span>
 
-                    <!-- Professional Business Woman Image Cutout -->
-                    <img src="assets/images/try-us-today-girl.png" 
-                            alt="Professional Business Expert holding tablet" 
-                            class="model-img img-fluid"
-                            onerror="this.src='assets/images/favicon.png';">
+                    <div class="diff-card diff-card--experts" data-aos="zoom-in" data-aos-delay="100">
+                        <h3><span class="diff-count" data-to="50" data-suffix="+">50+</span> Experts</h3>
+                        <p>We partner up with unrivaled experts from all over the globe to deliver efficient services to SMEs</p>
+                    </div>
+
+                    <div class="diff-card diff-card--all" data-aos="zoom-in" data-aos-delay="250">
+                        <h3><span class="diff-count" data-to="100" data-suffix="%">100%</span> All inclusive</h3>
+                        <p>We offer the most competitive price and guarantee that all inclusive, there is no hidden fee</p>
+                    </div>
+
+                    <div class="diff-card diff-card--due" data-aos="zoom-in" data-aos-delay="400">
+                        <h3><span class="diff-count" data-to="99.99" data-dec="2" data-suffix="%">99,99%</span> Due diligence</h3>
+                        <p>Strict due diligence procedures to provide business standards that are legal, safe, and transparent</p>
+                    </div>
+
+                    <div class="diff-card diff-card--conf" data-aos="zoom-in" data-aos-delay="550">
+                        <h3><span class="diff-count" data-to="100" data-suffix="%">100%</span> Confident</h3>
+                        <p>We encrypt the transmission of information using SSL technology to keep your data secure</p>
+                    </div>
                 </div>
             </div>
 
@@ -2070,112 +1817,90 @@ include ROOT_PATH . '/elements/map-animate.php';
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('constellationCanvas');
+        const section = document.getElementById('how-we-are-different');
+        const canvas = document.getElementById('diffConstellation');
+        if (!section || !canvas) return;
         const ctx = canvas.getContext('2d');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function resizeCanvas() {
-            canvas.width = Math.min(window.innerWidth, 500);
-            canvas.height = 350;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Constellation Nodes Setup
-        const numNodes = 7;
+        /* ---- Constellation (gold nodes), pauses when off-screen / tab hidden ---- */
+        let w = 0, h = 0, rafId = null, visible = true;
         const nodes = [];
 
-        for (let i = 0; i < numNodes; i++) {
-            nodes.push({
-                x: Math.random() * (canvas.width * 0.8) + 20,
-                y: Math.random() * (canvas.height * 0.7) + 20,
-                vx: (Math.random() - 0.5) * 0.4, // Slow floating velocity X
-                vy: (Math.random() - 0.5) * 0.4, // Slow floating velocity Y
-                radius: Math.random() * 2 + 2.5
-            });
-        }
-
-        // Draw and update node positions recursively
-        function animateConstellation() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Update positions & boundary check
-            for (let i = 0; i < nodes.length; i++) {
-                let node = nodes[i];
-                node.x += node.vx;
-                node.y += node.vy;
-
-                if (node.x < 15 || node.x > canvas.width - 20) node.vx *= -1;
-                if (node.y < 15 || node.y > canvas.height - 20) node.vy *= -1;
-
-                // Draw node point
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.fill();
+        function resize() {
+            const r = canvas.getBoundingClientRect();
+            if (!r.width) return;
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            w = r.width; h = r.height;
+            canvas.width = w * dpr; canvas.height = h * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            if (!nodes.length) {
+                for (let i = 0; i < 7; i++) {
+                    nodes.push({
+                        x: Math.random() * w * 0.8 + 20, y: Math.random() * h * 0.7 + 20,
+                        vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                        r: Math.random() * 2 + 2.5
+                    });
+                }
             }
-
-            // Draw connecting network lines between points
+            draw();
+        }
+        function draw() {
+            ctx.clearRect(0, 0, w, h);
+            ctx.fillStyle = 'rgba(171, 129, 57, 0.85)';
+            nodes.forEach(n => { ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill(); });
+            ctx.lineWidth = 0.95;
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
-                    let dx = nodes[i].x - nodes[j].x;
-                    let dy = nodes[i].y - nodes[j].y;
-                    let dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 180) {
-                        ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.25 * (1 - dist / 180)})`;
-                        ctx.lineWidth = 0.95;
-                        ctx.stroke();
+                    const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 180) {
+                        ctx.strokeStyle = 'rgba(171, 129, 57,' + (0.35 * (1 - d / 180)) + ')';
+                        ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
                     }
                 }
             }
-
-            requestAnimationFrame(animateConstellation);
         }
-        animateConstellation();
-
-        const track = document.getElementById('logoTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dots = document.querySelectorAll('.dot');
-        const totalDots = dots.length;
-
-        let dotIndex = 0;
-
-        // Update active dot in sync with continuous infinite loop
-        setInterval(() => {
-            dots[dotIndex].classList.remove('active');
-            dotIndex = (dotIndex + 1) % totalDots;
-            dots[dotIndex].classList.add('active');
-        }, 5000);
-
-        // Button Click Handler to scroll track manually on button press
-        prevBtn.addEventListener('click', () => {
-            track.style.animationPlayState = 'paused';
-            track.scrollBy({ left: -160, behavior: 'smooth' });
-            setTimeout(() => {
-                track.style.animationPlayState = 'running';
-            }, 2000);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            track.style.animationPlayState = 'paused';
-            track.scrollBy({ left: 160, behavior: 'smooth' });
-            setTimeout(() => {
-                track.style.animationPlayState = 'running';
-            }, 2000);
-        });
-
-        // Dot Click Events
-        dots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
-                dots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-                dotIndex = idx;
+        function loop() {
+            if (!visible || document.hidden) { rafId = null; return; }
+            nodes.forEach(n => {
+                n.x += n.vx; n.y += n.vy;
+                if (n.x < 15 || n.x > w - 20) n.vx *= -1;
+                if (n.y < 15 || n.y > h - 20) n.vy *= -1;
             });
-        });
+            draw();
+            rafId = requestAnimationFrame(loop);
+        }
+        function kick() { if (!rafId && !reduce) rafId = requestAnimationFrame(loop); }
+
+        resize();
+        window.addEventListener('resize', resize);
+        document.addEventListener('visibilitychange', kick);
+
+        /* ---- Count-up numbers when section scrolls into view ---- */
+        const counters = section.querySelectorAll('.diff-count');
+        let counted = false;
+        function countUp() {
+            if (counted || reduce) return;
+            counted = true;
+            const start = performance.now(), dur = 1600;
+            (function tick(now) {
+                const t = Math.min((now - start) / dur, 1);
+                const e = 1 - Math.pow(1 - t, 3);
+                counters.forEach(el => {
+                    const to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10);
+                    el.textContent = (to * e).toFixed(dec).replace('.', ',') + (el.dataset.suffix || '');
+                });
+                if (t < 1) requestAnimationFrame(tick);
+            })(start);
+        }
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(entries => {
+                visible = entries[0].isIntersecting;
+                if (visible) { kick(); countUp(); }
+            }).observe(section);
+        } else { kick(); countUp(); }
     });
 </script>
 

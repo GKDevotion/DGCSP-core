@@ -2,6 +2,9 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$img = BASE_URL . BASE_FOLDER . '/assets/images/global-entity-management';
+$obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+$faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
 ?>
 
 <!-- JSON-LD Structured Data for SEO / AEO / GEO -->
@@ -9,644 +12,385 @@ include ROOT_PATH . '/elements/header.php';
 {
     "@context": "https://schema.org",
     "@graph": [
-    {
-        "@type": "Organization",
-        "@id": "https://www.devotioncsp.com/#organization",
-        "name": "Devotion Global CSP",
-        "url": "https://www.devotioncsp.com",
-        "logo": "https://www.devotioncsp.com/logo.png",
-        "sameAs": [
-        "https://www.linkedin.com/company/devotion-global-csp"
-        ]
-    },
-    {
-        "@type": "Service",
-        "@id": "https://www.devotioncsp.com/global-entity-management/#service",
-        "name": "Global Entity Management",
-        "provider": {
-        "@id": "https://www.devotioncsp.com/#organization"
-        },
-        "serviceType": "Corporate Services Provider",
-        "description": "Comprehensive global entity management, multi-jurisdictional incorporation, annual compliance filings, and statutory record governance.",
-        "areaServed": "Global",
-        "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Global Corporate Services",
-        "itemListElement": [
-            {
-            "@type": "Offer",
-            "itemOffered": {
-                "@type": "Service",
-                "name": "Company Incorporation"
-            }
-            },
-            {
-            "@type": "Offer",
-            "itemOffered": {
-                "@type": "Service",
-                "name": "Corporate Secretarial Services"
-            }
-            },
-            {
-            "@type": "Offer",
-            "itemOffered": {
-                "@type": "Service",
-                "name": "Annual Compliance & Filings"
-            }
-            }
-        ]
-        }
-    },
-    {
-        "@type": "FAQPage",
-        "@id": "https://www.devotioncsp.com/global-entity-management/#faq",
-        "mainEntity": [
         {
-            "@type": "Question",
-            "name": "What is Global Entity Management?",
-            "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Global Entity Management is a centralized service provided by Corporate Service Providers (CSPs) to oversee, maintain, and ensure local legal compliance for a multinational enterprise's subsidiaries, branches, and affiliates across different jurisdictions."
+            "@type": "Organization",
+            "@id": "https://www.devotioncsp.com/#organization",
+            "name": "Devotion Global CSP",
+            "url": "https://www.devotioncsp.com",
+            "logo": "https://www.devotioncsp.com/logo.png",
+            "sameAs": [
+                "https://www.linkedin.com/company/devotion-global-csp"
+            ]
+        },
+        {
+            "@type": "Service",
+            "@id": "https://www.devotioncsp.com/global-entity-management/#service",
+            "name": "Global Entity Management",
+            "provider": {
+                "@id": "https://www.devotioncsp.com/#organization"
+            },
+            "serviceType": "Corporate Services Provider",
+            "description": "Comprehensive global entity management, multi-jurisdictional incorporation, annual compliance filings, and statutory record governance.",
+            "areaServed": "Global",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Global Corporate Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Company Incorporation"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Corporate Secretarial Services"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Annual Compliance & Filings"
+                        }
+                    }
+                ]
             }
         },
         {
-            "@type": "Question",
-            "name": "Why do expanding companies need centralized corporate secretarial services?",
-            "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Centralized corporate secretarial services mitigate cross-border regulatory risks, prevent missed statutory filing deadlines, lower governance costs, and ensure consistent compliance standards across every global territory."
-            }
+            "@type": "FAQPage",
+            "@id": "https://www.devotioncsp.com/global-entity-management/#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is Global Entity Management?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Global Entity Management is a centralized service provided by Corporate Service Providers (CSPs) to oversee, maintain, and ensure local legal compliance for a multinational enterprise's subsidiaries, branches, and affiliates across different jurisdictions."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Why do expanding companies need centralized corporate secretarial services?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Centralizing corporate secretarial services prevents compliance blind spots, avoids legal penalties due to missed local deadlines, lowers administrative costs, and provides leadership with a transparent overview of all global subsidiaries."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How does Devotion Global CSP handle multi-jurisdictional filings?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Devotion Global CSP combines local jurisdictional expertise with a single point of administrative control, ensuring every statutory return, tax filing, and license renewal adheres precisely to local legislation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can Devotion Global CSP set up a new entity in another jurisdiction?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We fast-track local and cross-border entity setup with complete legal incorporation across premier global financial hubs, including entity classification and structuring, statutory registration filings, and operational setup with local tax IDs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you provide a registered office address and mail handling?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Our registered office services fulfill statutory address obligations using official commercial addresses and local mail processing networks, with mail scanning, legal correspondence routing, and statutory representation support."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do you keep our entities compliant with annual filings and licenses?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We guarantee on-time submission of mandatory annual returns, financial statements, and regulatory declarations with automated filing deadline alerts, and we acquire, track, and renew specialized business licenses and permits automatically."
+                    }
+                }
+            ]
         }
-        ]
-    }
     ]
 }
 </script>
 
-<style>
+<!-- Shared inner-page theme (same look & animation set as index) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
 
-    .section-padding {
-        padding: 90px 0;
-    }
+<main>
 
-    .badge {
-        display: inline-block;
-        padding: 6px 18px;
-        background: var(--gold-light);
-        border: 1px solid var(--gold-border);
-        color: var(--gold-primary);
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .section-title {
-        font-size: 2.4rem;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    .section-subtitle {
-        text-align: center;
-        color: #666;
-        max-width: 700px;
-        margin: 0 auto 50px auto;
-        font-size: 1.05rem;
-    }
-
-    /* Hero Section */
-    .hero {
-        background: radial-gradient(circle at top right, #2c2923 0%, #111111 100%);
-        color: var(--white);
-        padding: 120px 0 100px 0;
-        position: relative;
-    }
-
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .hero-content h1 {
-        color: var(--white);
-        font-size: 3.2rem;
-        line-height: 1.25;
-        margin-bottom: 20px;
-    }
-
-    .hero-content p.lead {
-        color: #dddddd;
-        font-size: 1.15rem;
-        margin-bottom: 30px;
-    }
-
-    .btn-primary {
-        display: inline-block;
-        padding: 15px 36px;
-        background-color: var(--gold-primary);
-        color: var(--white);
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 500;
-        transition: var(--transition);
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(184, 150, 85, 0.3);
-    }
-
-    .btn-primary:hover {
-        background-color: var(--gold-hover);
-        transform: translateY(-2px);
-    }
-
-    /* Hero Canvas / Interactive Globe Graphic */
-    .hero-visual {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .globe-wrapper {
-        position: relative;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        border: 2px dashed var(--gold-primary);
-        animation: spin 30s linear infinite;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .globe-inner {
-        width: 230px;
-        height: 230px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(184,150,85,0.25) 0%, rgba(0,0,0,0) 70%);
-        border: 1px solid var(--gold-border);
-    }
-
-    .node {
-        position: absolute;
-        width: 14px;
-        height: 14px;
-        background-color: var(--gold-primary);
-        border-radius: 50%;
-        box-shadow: 0 0 15px var(--gold-primary);
-    }
-
-    .node::after {
-        content: '';
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        border: 1px solid var(--gold-primary);
-        border-radius: 50%;
-        top: -7px;
-        left: -7px;
-        animation: pulse 2.5s infinite;
-    }
-
-    .node-1 { top: 15%; left: 25%; }
-    .node-2 { top: 75%; left: 75%; }
-    .node-3 { top: 35%; left: 80%; }
-    .node-4 { top: 80%; left: 20%; }
-
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-    @keyframes pulse { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(1.8); opacity: 0; } }
-
-    /* AEO Direct Answer Section */
-    .aeo-banner {
-        background-color: var(--gold-banner-bg);
-        color: var(--white);
-        padding: 50px 0;
-    }
-
-    .aeo-content {
-        max-width: 950px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .aeo-content h2 {
-        color: var(--white);
-        font-size: 1.6rem;
-        margin-bottom: 12px;
-    }
-
-    .aeo-content p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        font-weight: 300;
-    }
-
-    /* Services Section (SEO Structured Grid) */
-    .services-section {
-        background-color: var(--gray-color);
-    }
-
-    .grid-2col {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .service-card {
-        background-color: var(--white);
-        border: 1px solid var(--gold-border);
-        border-radius: 12px;
-        padding: 35px;
-        transition: var(--transition);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-        border-color: var(--gold-primary);
-    }
-
-    .service-title {
-        font-size: 1.4rem;
-        margin-bottom: 12px;
-        color: var(--text-dark);
-    }
-
-    .direct-answer {
-        font-size: 0.95rem;
-        color: #555;
-        margin-bottom: 15px;
-    }
-
-    .feature-list {
-        list-style: none;
-        margin: 15px 0;
-    }
-
-    .feature-list li {
-        position: relative;
-        padding-left: 24px;
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: #444;
-        font-weight: 500;
-    }
-
-    .feature-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--gold-primary);
-        font-weight: bold;
-    }
-
-    /* Animations Canvas Boxes */
-    .anim-box {
-        height: 90px;
-        background-color: var(--gold-light);
-        border-radius: 8px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px dashed var(--gold-border);
-    }
-
-    /* CSS Motion Graphics */
-    .anim-building { display: flex; align-items: flex-end; gap: 5px; height: 45px; }
-    .block { width: 14px; background-color: var(--gold-primary); animation: buildUp 2s infinite alternate; }
-    .block:nth-child(1) { height: 20px; animation-delay: 0.1s; }
-    .block:nth-child(2) { height: 40px; animation-delay: 0.3s; }
-    .block:nth-child(3) { height: 28px; animation-delay: 0.5s; }
-    @keyframes buildUp { 0% { transform: scaleY(0.2); opacity: 0.3; } 100% { transform: scaleY(1); opacity: 1; } }
-
-    .map-line { width: 0%; height: 3px; background-color: var(--gold-primary); animation: expandLine 2s infinite ease-in-out; }
-    @keyframes expandLine { 0% { width: 0%; } 50%, 100% { width: 65%; } }
-
-    .anim-envelope { width: 42px; height: 28px; background: var(--gold-primary); border-radius: 3px; animation: float 3s ease-in-out infinite; }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-
-    .anim-stamp { width: 38px; height: 38px; border: 2px solid var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10px; color: var(--gold-primary); animation: stampPulse 1.5s infinite; }
-    @keyframes stampPulse { 0% { transform: scale(0.85); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.85); opacity: 0.5; } }
-
-    .anim-calendar { width: 34px; height: 38px; background: white; border: 2px solid var(--gold-primary); border-radius: 4px; position: relative; }
-    .anim-calendar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: var(--gold-primary); }
-
-    .anim-shield { width: 32px; height: 38px; background: var(--gold-primary); clip-path: polygon(50% 0%, 100% 20%, 100% 70%, 50% 100%, 0% 70%, 0% 20%); animation: rotateShield 4s linear infinite; }
-    @keyframes rotateShield { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
-
-    .anim-vault { width: 48px; height: 32px; border: 2px solid var(--gold-primary); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-    .vault-door { width: 12px; height: 12px; border: 2px solid var(--gold-primary); border-radius: 50%; }
-
-    .anim-badge { width: 36px; height: 36px; background: var(--gold-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
-
-    .anim-radar { width: 40px; height: 40px; border: 1px solid var(--gold-primary); border-radius: 50%; position: relative; overflow: hidden; }
-    .anim-radar::after { content: ''; position: absolute; width: 50%; height: 50%; background: linear-gradient(45deg, transparent, var(--gold-primary)); top: 0; left: 0; transform-origin: bottom right; animation: radarSweep 2s linear infinite; }
-    @keyframes radarSweep { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-    .anim-nodes { display: flex; gap: 15px; align-items: center; }
-    .node-dot { width: 12px; height: 12px; background: var(--gold-primary); border-radius: 50%; animation: nodeMerge 2s ease-in-out infinite alternate; }
-    @keyframes nodeMerge { 0% { transform: translateX(0); } 100% { transform: translateX(10px); } }
-
-    /* GEO Search Engine FAQ Section */
-    .faq-section {
-        background-color: var(--white);
-    }
-
-    .faq-grid {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .faq-item {
-        border: 1px solid var(--gold-border);
-        background-color: var(--gold-light);
-        padding: 25px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-    .faq-item h3 {
-        font-size: 1.15rem;
-        margin-bottom: 10px;
-        color: var(--text-dark);
-    }
-
-    .faq-item p {
-        color: #555;
-        font-size: 0.98rem;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        background: var(--gray-color);
-        text-align: center;
-    }
-
-    .cta-box {
-        background: var(--white);
-        border: 1px solid var(--gold-border);
-        padding: 60px 20px;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
-    }
-
-    /* Footer */
-    footer {
-        background-color: var(--text-dark);
-        color: #999;
-        padding: 35px 0;
-        text-align: center;
-        font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-        .hero-grid { grid-template-columns: 1fr; text-align: center; }
-        .hero-content h1 { font-size: 2.5rem; }
-        .grid-2col { grid-template-columns: 1fr; }
-    }
-</style>
-
-<!-- HERO SECTION -->
-<header class="hero">
-    <div class="container hero-grid">
-        <div class="hero-content">
-            <span class="badge">Devotion Global CSP Services</span>
-            <h1>Global Entity Management</h1>
-            <p class="lead">Centralize governance, accelerate cross-border expansion, and maintain strict jurisdictional compliance across your international corporate structures.</p>
-            <a href="#contact" class="btn-primary">Consult an Entity Expert</a>
-        </div>
-        <div class="hero-visual">
-            <div class="globe-wrapper">
-                <div class="globe-inner"></div>
-                <div class="node node-1"></div>
-                <div class="node node-2"></div>
-                <div class="node node-3"></div>
-                <div class="node node-4"></div>
+<!-- 1. HERO -->
+<header class="ip-hero">
+    <img src="<?= $img ?>/hero-bg.webp" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Global Entity Services</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Your Global Presence,<br><span class="ip-gold">Our Expertise.</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Centralize governance, accelerate cross-border expansion, and maintain strict jurisdictional compliance across your international corporate structures.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Consult an Entity Expert</a>
             </div>
         </div>
     </div>
 </header>
 
-<!-- AEO DIRECT ANSWER SECTION -->
-<section class="aeo-banner">
-    <div class="container aeo-content">
-        <h2>What is Global Entity Management?</h2>
-        <p><strong>Global Entity Management (GEM)</strong> is a centralized corporate governance framework that ensures a multinational organization's subsidiaries, branches, and legal entities remain fully compliant with regional statutory regulations, annual filings, and corporate secretarial laws worldwide.</p>
+<!-- 2. WHAT IS GLOBAL ENTITY MANAGEMENT -->
+<section class="ip-about">
+    <div class="ip-float ip-float--a d-none d-md-block" style="top: 8%; left: 2%; width: 60px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 90px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="zoom-in">
+                <img src="<?= $img ?>/entity-overview.webp" alt="Global expansion, our expertise: company formation, fund services, corporate advisory, compliance and regulatory support, private wealth and family offices" class="ip-about__img" style="max-width: 600px;" width="1580" height="1012" loading="lazy">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                <h2 class="ip-title">What is Global Entity Management?</h2>
+                <span class="ip-line"></span>
+                <p><strong>Global Entity Management (GEM)</strong> is a centralized corporate governance framework that ensures a multinational organization's subsidiaries, branches, and legal entities remain fully compliant with regional statutory regulations, annual filings, and corporate secretarial laws worldwide.</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- SERVICES MODULES (SEO Structured) -->
-<section class="services-section section-padding" id="services">
+<!-- 3. CORE SERVICES -->
+<section class="ip-suite" id="services">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 6%; left: 3%; width: 70px;"><img src="<?= $obj ?>/yellow-square.png" alt=""></div>
     <div class="container">
-        <span class="badge" style="display: table; margin: 0 auto 15px auto;">Solutions Overview</span>
-        <h2 class="section-title">Core Corporate Entity Services</h2>
-        <p class="section-subtitle">A integrated suite of legal entity management solutions designed for international businesses and holding operations.</p>
+        <div class="ip-suite__head" data-aos="fade-up">
+            <span class="ip-pill">Solutions Overview</span>
+            <h2 class="ip-title">Core Corporate Entity Services</h2>
+            <p class="ip-sub">A integrated suite of legal entity management solutions designed for international businesses and holding operations.</p>
+        </div>
 
-        <div class="grid-2col">
+        <div class="row g-4">
 
-            <!-- 1. Company Incorporation -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Company Incorporation</h3>
-                    <p class="direct-answer" itemprop="description">Fast-track local and cross-border entity setup with complete legal incorporation across premier global financial hubs.</p>
-                    <ul class="feature-list">
-                        <li>Entity classification & structuring</li>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Company Incorporation</h3>
+                        <img src="<?= $img ?>/company-corporation.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Fast-track local and cross-border entity setup with complete legal incorporation across premier global financial hubs.</p>
+                    <ul class="ip-card__list">
+                        <li>Entity classification &amp; structuring</li>
                         <li>Statutory registration filings</li>
-                        <li>Operational setup & local tax IDs</li>
+                        <li>Operational setup &amp; local tax IDs</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-building"><div class="block"></div><div class="block"></div><div class="block"></div></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 2. Global Expansion -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Global Business Expansion</h3>
-                    <p class="direct-answer" itemprop="description">Seamlessly enter target international markets with structured market-entry blueprints and administrative backing.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Global Business Expansion</h3>
+                        <img src="<?= $img ?>/global-business.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Seamlessly enter target international markets with structured market-entry blueprints and administrative backing.</p>
+                    <ul class="ip-card__list">
                         <li>Cross-border legal structuring</li>
                         <li>Jurisdictional readiness audits</li>
                         <li>Operational launch management</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="map-line"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 3. Registered Office Services -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Registered Office Services</h3>
-                    <p class="direct-answer" itemprop="description">Fulfill statutory address obligations using official commercial addresses and local mail processing networks.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Registered Office Services</h3>
+                        <img src="<?= $img ?>/registered.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Fulfill statutory address obligations using official commercial addresses and local mail processing networks.</p>
+                    <ul class="ip-card__list">
                         <li>Official corporate address provision</li>
-                        <li>Mail scan & legal correspondence routing</li>
+                        <li>Mail scan &amp; legal correspondence</li>
                         <li>Statutory representation support</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-envelope"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 4. Corporate Secretarial -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Corporate Secretarial Services</h3>
-                    <p class="direct-answer" itemprop="description">Maintain accurate statutory minute books, board resolutions, and officer appointment registries.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Corporate Secretarial</h3>
+                        <img src="<?= $img ?>/corporate-sacratrail.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Maintain accurate statutory minute books, board resolutions, and officer appointment registries.</p>
+                    <ul class="ip-card__list">
                         <li>Board resolution drafting</li>
-                        <li>Share register & director changes</li>
-                        <li>Statutory minute book management</li>
+                        <li>Share register &amp; director changes</li>
+                        <li>Statutory minute book</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-stamp">SEAL</div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 5. Annual Compliance -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Annual Compliance & Filings</h3>
-                    <p class="direct-answer" itemprop="description">Guarantee on-time submission of mandatory annual returns, financial statements, and regulatory declarations.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Annual Compliance</h3>
+                        <img src="<?= $img ?>/annual-compliance.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Guarantee on-time submission of mandatory annual returns, financial statements, and regulatory declarations.</p>
+                    <ul class="ip-card__list">
                         <li>Automated filing deadline alerts</li>
                         <li>Annual return submissions</li>
                         <li>Regulatory portal synchronization</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-calendar"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 6. Entity Governance -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Entity Governance</h3>
-                    <p class="direct-answer" itemprop="description">Implement unified governance standards across subsidiaries to maintain full visibility and risk control.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Entity Governance</h3>
+                        <img src="<?= $img ?>/entity-governance.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Implement unified governance standards across subsidiaries to maintain full visibility and risk control.</p>
+                    <ul class="ip-card__list">
                         <li>Entity health scoring</li>
                         <li>Cross-border corporate consistency</li>
                         <li>Director oversight management</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-shield"></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 7. Statutory Record Management -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Statutory Record Management</h3>
-                    <p class="direct-answer" itemprop="description">Centralize ownership structures, certificates, and constitutional documents in secure, audit-ready vaults.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Statutory Record Management</h3>
+                        <img src="<?= $img ?>/record-management.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Centralize ownership structures, certificates, and constitutional documents in secure, audit-ready vaults.</p>
+                    <ul class="ip-card__list">
                         <li>Encrypted document repository</li>
                         <li>Real-time audit log tracking</li>
                         <li>Role-based access permissions</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-vault"><div class="vault-door"></div></div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 8. Business License Management -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Business License Management</h3>
-                    <p class="direct-answer" itemprop="description">Acquire, track, and renew specialized industry permits and municipal business licenses automatically.</p>
-                    <ul class="feature-list">
-                        <li>Permit acquisition & renewal</li>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Business License Management</h3>
+                        <img src="<?= $img ?>/contract_1.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Acquire, track, and renew specialized industry permits and municipal business licenses automatically.</p>
+                    <ul class="ip-card__list">
+                        <li>Permit acquisition &amp; renewal</li>
                         <li>Local authority coordination</li>
                         <li>License gap analysis</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-badge">✓</div>
-                </div>
-            </article>
+                </article>
+            </div>
 
-            <!-- 9. Compliance Monitoring -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Compliance Monitoring</h3>
-                    <p class="direct-answer" itemprop="description">Gain active tracking over regulatory changes and corporate status across every region of operation.</p>
-                    <ul class="feature-list">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title" itemprop="name">Compliance Monitoring</h3>
+                        <img src="<?= $img ?>/compliance-monitoring.svg" alt="" class="ip-card__icon" width="56" height="56" loading="lazy">
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc" itemprop="description">Gain active tracking over regulatory changes and corporate status across every region of operation.</p>
+                    <ul class="ip-card__list">
                         <li>Real-time status tracking</li>
                         <li>Jurisdictional law update alerts</li>
                         <li>Interactive compliance dashboards</li>
                     </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-radar"></div>
-                </div>
-            </article>
-
-            <!-- 10. Corporate Restructuring -->
-            <article class="service-card" itemscope itemtype="https://schema.org/Service">
-                <div>
-                    <h3 class="service-title" itemprop="name">Corporate Restructuring</h3>
-                    <p class="direct-answer" itemprop="description">Reorganize, merge, or simplify complex multi-entity legal structures for optimal operational efficiency.</p>
-                    <ul class="feature-list">
-                        <li>Entity rationalization & liquidations</li>
-                        <li>Cross-border merger execution</li>
-                        <li>Capital structure updates</li>
-                    </ul>
-                </div>
-                <div class="anim-box">
-                    <div class="anim-nodes"><div class="node-dot"></div><div class="node-dot"></div></div>
-                </div>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- GEO CONVERSATIONAL FAQ SECTION -->
-<section class="faq-section section-padding">
-    <div class="container">
-        <span class="badge" style="display: table; margin: 0 auto 15px auto;">AI & Search Insights</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Clear answers to global entity management queries for decision-makers and automated search engines.</p>
-
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>Why do expanding companies need centralized corporate secretarial services?</h3>
-                <p>Centralizing corporate secretarial services prevents compliance blind spots, avoids legal penalties due to missed local deadlines, lowers administrative costs, and provides leadership with a transparent overview of all global subsidiaries.</p>
+                </article>
             </div>
-            <div class="faq-item">
-                <h3>How does Devotion Global CSP handle multi-jurisdictional filings?</h3>
-                <p>Devotion Global CSP combines local jurisdictional expertise with a single point of administrative control, ensuring every statutory return, tax filing, and license renewal adheres precisely to local legislation.</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- 4. FAQ -->
+<section class="ip-faq">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <img src="<?= $faqArt ?>" alt="FAQ" class="ip-faq__art" width="811" height="582" loading="lazy">
+                <div class="ip-faq__tag">
+                    <img src="<?= $img ?>/skill-development_1.svg" alt="" width="44" height="44" loading="lazy">
+                    <span class="ip-pill">AI &amp; Search Insights</span>
+                </div>
+                <h2>Frequently Asked Questions</h2>
+                <p class="ip-faq__lead">Clear answers to global entity management queries for decision-makers and automated search engines.</p>
+            </div>
+            <div class="col-lg-7">
+                <div class="ip-acc">
+                <div class="ip-acc-item is-open" data-aos="fade-left" data-aos-delay="0">
+                    <button class="ip-acc-btn" type="button" aria-expanded="true" aria-controls="ipFaq0" id="ipFaqBtn0">
+                        <span>What is Global Entity Management?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq0" role="region" aria-labelledby="ipFaqBtn0"><div><p>Global Entity Management is a centralized service provided by Corporate Service Providers (CSPs) to oversee, maintain, and ensure local legal compliance for a multinational enterprise's subsidiaries, branches, and affiliates across different jurisdictions.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="80">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq1" id="ipFaqBtn1">
+                        <span>Why do expanding companies need centralized corporate secretarial services?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq1" role="region" aria-labelledby="ipFaqBtn1"><div><p>Centralizing corporate secretarial services prevents compliance blind spots, avoids legal penalties due to missed local deadlines, lowers administrative costs, and provides leadership with a transparent overview of all global subsidiaries.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="160">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq2" id="ipFaqBtn2">
+                        <span>How does Devotion Global CSP handle multi-jurisdictional filings?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq2" role="region" aria-labelledby="ipFaqBtn2"><div><p>Devotion Global CSP combines local jurisdictional expertise with a single point of administrative control, ensuring every statutory return, tax filing, and license renewal adheres precisely to local legislation.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="240">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq3" id="ipFaqBtn3">
+                        <span>Can Devotion Global CSP set up a new entity in another jurisdiction?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq3" role="region" aria-labelledby="ipFaqBtn3"><div><p>Yes. We fast-track local and cross-border entity setup with complete legal incorporation across premier global financial hubs, including entity classification and structuring, statutory registration filings, and operational setup with local tax IDs.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="320">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq4" id="ipFaqBtn4">
+                        <span>Do you provide a registered office address and mail handling?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq4" role="region" aria-labelledby="ipFaqBtn4"><div><p>Yes. Our registered office services fulfill statutory address obligations using official commercial addresses and local mail processing networks, with mail scanning, legal correspondence routing, and statutory representation support.</p></div></div>
+                </div>
+                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="400">
+                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq5" id="ipFaqBtn5">
+                        <span>How do you keep our entities compliant with annual filings and licenses?</span><span class="ip-acc-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="ip-acc-panel" id="ipFaq5" role="region" aria-labelledby="ipFaqBtn5"><div><p>We guarantee on-time submission of mandatory annual returns, financial statements, and regulatory declarations with automated filing deadline alerts, and we acquire, track, and renew specialized business licenses and permits automatically.</p></div></div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CALL TO ACTION -->
-<section class="cta-section section-padding" id="contact">
-    <div class="container">
-        <div class="cta-box">
-            <h2 style="margin-bottom: 15px;">Optimize Your Global Entity Governance Today</h2>
-            <p style="color: #666; margin-bottom: 25px;">Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
-            <a href="mailto:contact@devotioncsp.com" class="btn-primary">Speak With a CSP Advisor</a>
+<!-- 5. CALL TO ACTION -->
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/cta-bg.webp" alt="" class="ip-cta__bg" width="2300" height="787" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Optimize Your Global Entity<br>Governance Today</h2>
+                <p>Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
+                <a href="mailto:contact@devotioncsp.com" class="ip-btn ip-btn--pill">Speak with a CSP Advisor</a>
+            </div>
         </div>
     </div>
 </section>
+
+</main>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
 
 <?php include ROOT_PATH . '/elements/footer.php'; ?>

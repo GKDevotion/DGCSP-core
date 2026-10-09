@@ -245,10 +245,10 @@
 /* ---------- FAQ ---------- */
 .ip-faq { position: relative; padding: 5rem 0; background: #fff; overflow: hidden; }
 .ip-faq .container { position: relative; z-index: 2; }
-.ip-faq__art { width: 100%; max-width: 360px; display: block; animation: floatTop 5s ease-in-out infinite alternate; }
+.ip-faq__art { width: 100%; max-width: 360px; height: auto; display: block; animation: floatTop 5s ease-in-out infinite alternate; }
 .ip-faq__tag { display: flex; align-items: center; gap: 0.9rem; margin: 1.2rem 0 0.6rem; }
 .ip-faq__tag i { font-size: 2.1rem; color: var(--gold-primary); }
-.ip-faq h2 { font-size: clamp(1.6rem, 2.3vw, 2.1rem); font-weight: 700; color: #111; margin: 0.4rem 0 0.6rem; }
+.ip-faq h2 { font-size: clamp(1.5rem, 2vw, 1.9rem); white-space: nowrap; font-weight: 700; color: #111; margin: 0.4rem 0 0.6rem; }
 .ip-faq__lead { color: var(--ip-soft); font-size: 1.12rem; line-height: 1.7; max-width: 440px; }
 
 .ip-acc-item {
@@ -328,6 +328,7 @@
     .ip-constellation { width: 320px; height: 260px; opacity: 0.7; }
 }
 @media (max-width: 767.98px) {
+    .ip-faq h2 { white-space: normal; }
     .ip-float { display: none; }
     .ip-hero { min-height: 0; }
     .ip-hero::after {
@@ -360,3 +361,6 @@
 
 /* Content width matches the reference (~1100-1180px centred) */
 .ip-hero .container, .ip-about .container, .ip-faq .container, .ip-cta .container { max-width: 1180px; }
+
+/* FAQ lightbulb icon (svg) */
+.ip-faq__tag img { width: 44px; height: 44px; flex: 0 0 auto; }
