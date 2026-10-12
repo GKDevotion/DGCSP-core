@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2300 795" width="2300" height="795" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="bgcryptoc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa"/><stop offset="0.45" stop-color="#f1f3f7"/><stop offset="1" stop-color="#e9ecf2"/></linearGradient>
+<linearGradient id="goldcryptoc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="0.5" stop-color="#c39a47"/><stop offset="1" stop-color="#96783d"/></linearGradient>
+<linearGradient id="tancryptoc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#d4b57a"/></linearGradient>
+<linearGradient id="darkcryptoc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7d83"/><stop offset="1" stop-color="#3b3d41"/></linearGradient>
+<linearGradient id="greycryptoc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e4e8"/><stop offset="1" stop-color="#bfc1c7"/></linearGradient>
+<radialGradient id="glowcryptoc" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="shcryptoc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2b2410" flood-opacity="0.22"/></filter>
+<filter id="shscryptoc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2b2410" flood-opacity="0.2"/></filter>
+</defs><linearGradient id="veilcryptoc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa" stop-opacity="1"/><stop offset="0.5" stop-color="#f7f8fa" stop-opacity="0.85"/><stop offset="0.7" stop-color="#f7f8fa" stop-opacity="0"/></linearGradient><rect width="2300" height="795" fill="url(#bgcryptoc)"/><ellipse cx="650" cy="400" rx="760" ry="520" fill="url(#glowcryptoc)"/><g transform="translate(-1000 0)"><circle cx="1650" cy="400" r="420" fill="none" stroke="#c39a47" stroke-opacity="0.35" stroke-width="2"/>
+<circle cx="1650" cy="400" r="302" fill="none" stroke="#c39a47" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="6 10"/>
+<ellipse cx="1650" cy="400" rx="470" ry="143" fill="none" stroke="#c39a47" stroke-opacity="0.3" stroke-width="2" transform="rotate(-18 1650 400)"/>
+<line x1="1902" y1="476" x2="1932" y2="353" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1874" y2="510" stroke="#b08a3e" stroke-opacity="0.33" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1863" y2="715" stroke="#b08a3e" stroke-opacity="0.03" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1870" y2="659" stroke="#b08a3e" stroke-opacity="0.11" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1746" y2="683" stroke="#b08a3e" stroke-opacity="0.00" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1921" y2="632" stroke="#b08a3e" stroke-opacity="0.16" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
+<line x1="1902" y1="476" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
+<line x1="1932" y1="353" x2="1874" y2="510" stroke="#b08a3e" stroke-opacity="0.14" stroke-width="1.6"/>
+<line x1="1932" y1="353" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.17" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1863" y2="715" stroke="#b08a3e" stroke-opacity="0.08" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1870" y2="659" stroke="#b08a3e" stroke-opacity="0.17" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1746" y2="683" stroke="#b08a3e" stroke-opacity="0.07" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1921" y2="632" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.23" stroke-width="1.6"/>
+<line x1="1874" y1="510" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.11" stroke-width="1.6"/>
+<line x1="1336" y1="351" x2="1286" y2="207" stroke="#b08a3e" stroke-opacity="0.17" stroke-width="1.6"/>
+<line x1="1336" y1="351" x2="1396" y2="229" stroke="#b08a3e" stroke-opacity="0.19" stroke-width="1.6"/>
+<line x1="1600" y1="122" x2="1707" y2="143" stroke="#b08a3e" stroke-opacity="0.23" stroke-width="1.6"/>
+<line x1="1600" y1="122" x2="1396" y2="229" stroke="#b08a3e" stroke-opacity="0.05" stroke-width="1.6"/>
+<line x1="1863" y1="715" x2="1870" y2="659" stroke="#b08a3e" stroke-opacity="0.31" stroke-width="1.6"/>
+<line x1="1863" y1="715" x2="1746" y2="683" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<line x1="1863" y1="715" x2="1921" y2="632" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
+<line x1="1863" y1="715" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1863" y1="715" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.19" stroke-width="1.6"/>
+<line x1="1870" y1="659" x2="1746" y2="683" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<line x1="1870" y1="659" x2="1921" y2="632" stroke="#b08a3e" stroke-opacity="0.31" stroke-width="1.6"/>
+<line x1="1870" y1="659" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
+<line x1="1870" y1="659" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
+<line x1="1746" y1="683" x2="1921" y2="632" stroke="#b08a3e" stroke-opacity="0.12" stroke-width="1.6"/>
+<line x1="1746" y1="683" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.03" stroke-width="1.6"/>
+<line x1="1921" y1="632" x2="1985" y2="492" stroke="#b08a3e" stroke-opacity="0.16" stroke-width="1.6"/>
+<line x1="1921" y1="632" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.29" stroke-width="1.6"/>
+<line x1="1286" y1="207" x2="1396" y2="229" stroke="#b08a3e" stroke-opacity="0.23" stroke-width="1.6"/>
+<line x1="1985" y1="492" x2="1986" y2="661" stroke="#b08a3e" stroke-opacity="0.14" stroke-width="1.6"/>
+<circle cx="1902" cy="476" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1932" cy="353" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1874" cy="510" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1336" cy="351" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1600" cy="122" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1863" cy="715" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1870" cy="659" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1707" cy="143" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1746" cy="683" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1921" cy="632" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1286" cy="207" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1985" cy="492" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1986" cy="661" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1396" cy="229" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<g stroke="url(#goldcryptoc)" stroke-width="16" stroke-linecap="round"><line x1="1380" y1="430" x2="1650" y2="330"/><line x1="1650" y1="330" x2="1920" y2="430"/></g>
+<rect x="1270" y="320" width="220" height="220" rx="36" fill="url(#darkcryptoc)" filter="url(#shcryptoc)" transform="rotate(45 1380 430)"/>
+<rect x="1328" y="378" width="104" height="104" rx="18" fill="#fff" opacity="0.28" transform="rotate(45 1380 430)"/>
+<rect x="1540" y="220" width="220" height="220" rx="36" fill="url(#goldcryptoc)" filter="url(#shcryptoc)" transform="rotate(45 1650 330)"/>
+<rect x="1598" y="278" width="104" height="104" rx="18" fill="#fff" opacity="0.28" transform="rotate(45 1650 330)"/>
+<rect x="1810" y="320" width="220" height="220" rx="36" fill="url(#greycryptoc)" filter="url(#shcryptoc)" transform="rotate(45 1920 430)"/>
+<rect x="1868" y="378" width="104" height="104" rx="18" fill="#fff" opacity="0.28" transform="rotate(45 1920 430)"/>
+<path d="M1650 270 l60 24 v50 q0 40 -60 66 q-60 -26 -60 -66 v-50 Z" fill="#fff"/><path d="M1620 340 l22 22 l40 -44" fill="none" stroke="#96783d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1960" y="190" width="200" height="120" rx="24" fill="url(#tancryptoc)" filter="url(#shscryptoc)" transform="rotate(6 2060.0 250.0)"/>
+<polygon points="1316,640 1288,688 1232,688 1204,640 1232,592 1288,592" fill="url(#greycryptoc)" filter="url(#shscryptoc)"/></g><rect width="2300" height="795" fill="url(#veilcryptoc)" transform="translate(2300 0) scale(-1 1)"/></svg>

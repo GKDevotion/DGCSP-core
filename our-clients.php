@@ -1,339 +1,66 @@
 <?php 
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
+
+$imgDir = '/assets/images/our-clients';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
-<style>
-    
-    /* Gold Banner Header Section */
-    .gold-hero-banner {
-        background: linear-gradient(135deg, var(--brand-dark) 0%, #1a1a1a 40%, var(--dark-gold) 100%);
-        color: var(--white);
-        padding: 80px 0 70px 0;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 3px solid var(--gold-primary);
-    }
+<!-- Shared theme + app-page components (same look & animation set as the other pages) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/app-pages.css?v=<?= FILE_VERSISON ?>">
+<main>
 
-    .gold-hero-banner::before {
-        content: '';
-        position: absolute;
-        top: -20%;
-        right: -10%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, var(--overlay-gold) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .gold-badge {
-        background-color: rgba(171, 129, 57, 0.2);
-        color: var(--gold-light);
-        border: 1px solid var(--gold-primary);
-        font-size: 0.85rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-    }
-
-    /* Custom Search Box */
-    .search-box-gold {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(12px);
-        border: 1px solid var(--gold-border);
-        border-radius: 50px;
-        padding: 6px 8px 6px 22px;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-    }
-
-    .search-box-gold:focus-within {
-        border-color: var(--gold-primary);
-        box-shadow: 0 0 15px rgba(171, 129, 57, 0.3);
-        background: rgba(255, 255, 255, 0.18);
-    }
-
-    .search-box-gold input {
-        background: transparent;
-        border: none;
-        color: var(--white);
-        font-size: 0.95rem;
-    }
-
-    .search-box-gold input::placeholder {
-        color: rgba(255, 255, 255, 0.65);
-    }
-
-    .search-box-gold input:focus {
-        box-shadow: none;
-        background: transparent;
-        color: var(--white);
-    }
-
-    .btn-gold-action {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        border-radius: 30px;
-        font-weight: 600;
-        padding: 10px 24px;
-        border: none;
-        transition: var(--transition);
-    }
-
-    .btn-gold-action:hover {
-        background-color: var(--gold-hover);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(171, 129, 57, 0.35);
-    }
-
-    /* Hero Stat Counters */
-    .stat-card-gold {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--gold-border);
-        border-radius: var(--card-radius);
-        padding: 20px 15px;
-        text-align: center;
-        backdrop-filter: blur(8px);
-        transition: var(--transition);
-    }
-
-    .stat-card-gold:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.1);
-        border-color: var(--gold-primary);
-    }
-
-    .stat-number-gold {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #e5c07b;
-        line-height: 1.2;
-    }
-
-    /* Filter Tabs */
-    .category-tabs-gold {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 45px;
-    }
-
-    .btn-filter-gold {
-        border-radius: 30px;
-        padding: 10px 24px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        border: 1px solid var(--gold-border);
-        background-color: var(--white);
-        color: var(--text-dark);
-        transition: var(--transition);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .btn-filter-gold:hover, .btn-filter-gold.active {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        border-color: var(--gold-primary);
-        box-shadow: var(--shadow-md);
-    }
-
-    /* Client Grid & Cards */
-    .client-card-gold {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .client-card-gold:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .client-logo-container {
-        height: 110px;
-        background: linear-gradient(180deg, var(--gold-light) 0%, #ffffff 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-bottom: 1px solid var(--gold-border);
-        position: relative;
-    }
-
-    .client-badge-gold {
-        background-color: var(--gold-light);
-        color: var(--dark-gold);
-        border: 1px solid var(--gold-border);
-        font-weight: 600;
-        font-size: 0.75rem;
-        padding: 5px 12px;
-        border-radius: 20px;
-    }
-
-    .tag-pill-gold {
-        font-size: 0.75rem;
-        background: var(--gray-color);
-        color: var(--brand-text-sub);
-        padding: 4px 10px;
-        border-radius: 6px;
-        margin-right: 6px;
-        margin-bottom: 6px;
-        display: inline-block;
-        border: 1px solid var(--brand-grey);
-    }
-
-    .btn-outline-gold {
-        color: var(--gold-primary);
-        border: 1px solid var(--gold-primary);
-        background: transparent;
-        font-weight: 600;
-        border-radius: 30px;
-        transition: var(--transition);
-    }
-
-    .btn-outline-gold:hover {
-        background: var(--gold-primary);
-        color: var(--white);
-        box-shadow: 0 4px 12px rgba(171, 129, 57, 0.25);
-    }
-
-    /* Featured Spotlight */
-    .spotlight-card-gold {
-        background: var(--golden-gradient-background);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        padding: 45px;
-        box-shadow: var(--shadow-md);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .spotlight-metric-box {
-        background: var(--white);
-        border-radius: 12px;
-        padding: 16px;
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-sm);
-        text-align: center;
-    }
-
-    /* Testimonials */
-    .testimonial-card-gold {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        padding: 40px;
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        position: relative;
-    }
-
-    .quote-icon-gold {
-        font-size: 3rem;
-        color: var(--overlay-gold);
-        position: absolute;
-        top: 20px;
-        right: 30px;
-    }
-
-    /* CTA Section */
-    .cta-gold-banner {
-        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--dark-gold) 100%);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-primary);
-        color: var(--white);
-        padding: 60px 40px;
-        box-shadow: var(--shadow-hover);
-    }
-
-    .btn-cta-gold {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        font-weight: 700;
-        padding: 14px 36px;
-        border-radius: 30px;
-        border: 2px solid var(--gold-light);
-        transition: var(--transition);
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .btn-cta-gold:hover {
-        background-color: var(--white);
-        color: var(--dark-gold);
-        border-color: var(--white);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    /* Modal Custom Styling */
-    .modal-content-gold {
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-primary);
-        box-shadow: var(--shadow-hover);
-        background: var(--white);
-    }
-
-    .modal-header-gold {
-        border-bottom: 1px solid var(--gold-border);
-        background: var(--gold-light);
-    }
-</style>
-
-<!-- 1. HEADER BANNER SECTION -->
-<section class="gold-hero-banner" id="client-hero">
-    <div class="container relative-10">
-        <div class="row align-items-center gy-5">
-            <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
-                <span class="badge gold-badge rounded-pill px-3 py-2 mb-3">
-                    <i class="fa-solid fa-crown me-2 text-warning"></i> Premier Partner Network
-                </span>
-                <h1 class="display-4 text-white fw-bold mb-3">Our Valued Clients & Success Partners</h1>
-                <p class="lead text-white-50 mb-4">Empowering global enterprise leaders, innovative startups, and visionary brands through bespoke digital engineering and strategic transformation.</p>
-                
-                <!-- Search Input Filter -->
-                <div class="search-box-gold d-flex align-items-center max-w-lg mb-2">
-                    <i class="fa-solid fa-magnifying-glass text-white-50 me-2"></i>
+<!-- 1. HERO -->
+<header class="ip-hero ip-hero--tall" id="client-hero">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Premier Partner Network</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Our Valued Clients &amp;<br><span class="ip-gold">Success Partners</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Empowering global enterprise leaders, innovative startups, and visionary brands through bespoke digital engineering and strategic transformation.</p>
+                <div class="hero-search-box" data-aos="fade-up" data-aos-delay="450">
                     <input type="text" id="clientSearchInput" class="form-control" placeholder="Search by company name, industry, or key technology...">
-                    <button class="btn btn-gold-action" type="button">Search</button>
+                    <button class="search-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
+        </div>
+    </div>
+</header>
 
-            <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
-                <div class="row g-3">
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="200">0</div>
-                            <div class="text-white-50 small mt-1">Clients Served</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="99">0</div>
-                            <div class="text-white-50 small mt-1">% Success Rate</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="35">0</div>
-                            <div class="text-white-50 small mt-1">Countries Reached</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="15">0</div>
-                            <div class="text-white-50 small mt-1">Years Excellence</div>
-                        </div>
-                    </div>
+<!-- 2. LIVE STATS -->
+<section class="ip-stats ip-stats--pull">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num stat-number-gold" data-target="200">0</span>
+                    <span class="ip-stat__label">Clients Served</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num stat-number-gold" data-target="99">0</span>
+                    <span class="ip-stat__label">% Success Rate</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num stat-number-gold" data-target="35">0</span>
+                    <span class="ip-stat__label">Countries Reached</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num stat-number-gold" data-target="15">0</span>
+                    <span class="ip-stat__label">Years Excellence</span>
                 </div>
             </div>
         </div>
@@ -341,13 +68,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 2. CLIENT GRID & FILTER TABS SECTION -->
-<section class="py-5" id="client-directory">
+<section class="ip-section ip-section--gray" id="client-directory">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container py-4">
-        <div class="text-center max-w-2xl mx-auto mb-4" data-aos="fade-up">
-            <h6 class="text-uppercase fw-bold letter-spacing-1" style="color: var(--gold-primary);">Client Portfolio</h6>
-            <h2 class="fw-bold mb-2">Distinguished Client Network</h2>
-            <p class="text-muted">Explore our track record of collaborative excellence across diverse industries.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Client Portfolio</span><h2 class="ip-title">Distinguished Client Network</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Explore our track record of collaborative excellence across diverse industries.</p></div>
 
         <!-- Filter Buttons -->
         <div class="category-tabs-gold" data-aos="fade-up" data-aos-delay="100">
@@ -571,7 +295,8 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 3. FEATURED CLIENT SPOTLIGHT -->
-<section class="py-5" style="background-color: var(--gold-light);">
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container py-3" data-aos="fade-up">
         <div class="spotlight-card-gold">
             <div class="row align-items-center gy-4">
@@ -617,13 +342,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 4. CLIENT TESTIMONIALS -->
-<section class="py-5">
+<section class="ip-section">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 3%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
     <div class="container py-4">
-        <div class="text-center max-w-2xl mx-auto mb-5" data-aos="fade-up">
-            <h6 class="text-uppercase fw-bold letter-spacing-1" style="color: var(--gold-primary);">Client Endorsements</h6>
-            <h2 class="fw-bold">What Industry Leaders Say</h2>
-            <p class="text-muted">Unfiltered feedback from partners who trust us with their critical platforms.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Client Endorsements</span><h2 class="ip-title">What Industry Leaders Say</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Unfiltered feedback from partners who trust us with their critical platforms.</p></div>
 
         <div id="goldTestimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-delay="100">
             <div class="carousel-inner">
@@ -683,17 +405,20 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 5. PARTNERSHIP CALL TO ACTION -->
-<section class="py-5">
-    <div class="container" data-aos="zoom-in">
-        <div class="cta-gold-banner text-center">
-            <h2 class="display-6 text-white fw-bold mb-3">Ready to Build Your Success Story?</h2>
-            <p class="lead text-white-50 mb-4 max-w-xl mx-auto">Join our ecosystem of industry-leading enterprise partners and elevate your digital engineering capabilities today.</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="#" class="btn-cta-gold">Schedule Executive Consultation</a>
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Ready to Build Your Success Story?</h2>
+                <p>Join our ecosystem of industry-leading enterprise partners and elevate your digital engineering capabilities today.</p>
+                <a href="#" class="ip-btn ip-btn--pill">Schedule Executive Consultation</a>
             </div>
         </div>
     </div>
 </section>
+
+</main>
 
 <!-- 6. CASE STUDY DETAILS MODAL -->
 <div class="modal fade" id="clientModal" tabindex="-1" aria-hidden="true">

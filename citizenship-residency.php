@@ -2,192 +2,75 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/citizenship-residency';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero background: drop your own hero-bg.webp into the folder above and it is used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
 ?>
-<style>
-       
-    .text-gold {
-        color: var(--gold-primary) !important;
-    }
 
-    .bg-gold-light {
-        background-color: var(--gold-light) !important;
-    }
+<!-- Shared theme + app-page components (same look & animation set as the other pages) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/app-pages.css?v=<?= FILE_VERSISON ?>">
+<main>
 
-    .bg-gray-custom {
-        background-color: var(--gray-color) !important;
-    }
+<!-- SECTION 1: HERO -->
+<header class="ip-hero ip-hero--tall">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Private Wealth &amp; Sovereign Advisory</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Strategic Citizenship &amp;<br><span class="ip-gold">Global Residency Optimization</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Protect family capital, acquire sovereign mobility, and legally optimize multi-jurisdictional tax liabilities with tailor-made dual citizenship pathways.</p>
+                <div class="ip-hero__btns" data-aos="fade-up" data-aos-delay="450">
+                    <button type="button" class="ip-btn" data-bs-toggle="modal" data-bs-target="#consultationModal"><i class="fa-solid fa-user-shield me-2"></i>Request Private Assessment</button>
+                    <a href="#estimator" class="ip-btn ip-btn--ghost"><i class="fa-solid fa-calculator me-2"></i>Calculate Investment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-    .btn-gold {
-        background-color: var(--gold-primary);
-        color: #ffffff;
-        border: 1px solid var(--gold-primary);
-        font-weight: 600;
-        padding: 0.75rem 1.75rem;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-gold:hover {
-        background-color: var(--gold-hover);
-        border-color: var(--gold-hover);
-        color: #ffffff;
-        box-shadow: 0 4px 12px rgba(184, 150, 85, 0.25);
-    }
-
-    .btn-outline-gold {
-        background-color: transparent;
-        color: var(--gold-primary);
-        border: 2px solid var(--gold-primary);
-        font-weight: 600;
-        padding: 0.75rem 1.75rem;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline-gold:hover {
-        background-color: var(--gold-primary);
-        color: #ffffff;
-    }
-
-    .card-luxury {
-        border: 1px solid var(--border-light);
-        background: #ffffff;
-        border-radius: 8px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-luxury:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px rgba(0,0,0,0.07);
-    }
-
-    /* Hero Banner */
-    .hero-banner {
-        background: linear-gradient(135deg, #1f1d1a 0%, #362e24 100%);
-        color: #ffffff;
-        padding: 5rem 0 6rem 0;
-        position: relative;
-    }
-
-    .hero-banner::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--gold-primary) 0%, #e3ce9c 50%, var(--gold-primary) 100%);
-    }
-
-    /* Accordion Customization */
-    .accordion-item {
-        border: 1px solid var(--border-light);
-        margin-bottom: 0.75rem;
-        border-radius: 6px !important;
-        overflow: hidden;
-    }
-
-    .accordion-button:not(.collapsed) {
-        background-color: var(--gold-light);
-        color: var(--gold-hover);
-        box-shadow: none;
-        font-weight: 600;
-    }
-
-    .accordion-button:focus {
-        box-shadow: none;
-        border-color: var(--gold-primary);
-    }
-
-    /* Estimator Tool Styling */
-    .estimator-box {
-        background-color: #ffffff;
-        border: 2px solid var(--border-light);
-        border-radius: 12px;
-        padding: 2.5rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    /* Step Timeline */
-    .step-number {
-        width: 48px;
-        height: 48px;
-        background-color: var(--gold-primary);
-        color: #ffffff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-    }
-
-    /* Badges */
-    .badge-gold {
-        background-color: var(--gold-light);
-        color: var(--gold-hover);
-        border: 1px solid var(--gold-primary);
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
-    }
-</style>
-
-<!-- SECTION 1: HERO / BANNER -->
-<section class="hero-banner d-flex align-items-center">
-    <div class="container position-relative z-1">
-        <div class="row align-items-center py-4">
-            <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                <span class="badge badge-gold rounded-pill text-uppercase tracking-wider mb-3 px-3 py-2">Private Wealth & Sovereign Advisory</span>
-                <h1 class="display-4 fw-bold mb-3 text-white">Strategic Citizenship & Global Residency Optimization</h1>
-                <p class="lead text-light opacity-90 mb-4 px-md-4">
-                    Protect family capital, acquire sovereign mobility, and legally optimize multi-jurisdictional tax liabilities with tailor-made dual citizenship pathways.
-                </p>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <button class="btn btn-gold btn-lg shadow-sm" data-bs-toggle="modal" data-bs-target="#consultationModal">
-                        <i class="fa-solid fa-user-shield me-2"></i> Request Private Assessment
-                    </button>
-                    <a href="#estimator" class="btn btn-outline-light btn-lg">
-                        <i class="fa-solid fa-calculator me-2"></i> Calculate Investment
-                    </a>
+<!-- SECTION 2: KEY PERFORMANCE & TRUST METRICS -->
+<section class="ip-stats ip-stats--pull">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num ip-count">$2.4B+</span>
+                    <span class="ip-stat__label">Capital Placement Guided</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num ip-count">100%</span>
+                    <span class="ip-stat__label">Regulatory Compliance Record</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num ip-count">170+</span>
+                    <span class="ip-stat__label">Global Destinations Access</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num ip-count">35+</span>
+                    <span class="ip-stat__label">Sovereign Jurisdictions</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SECTION 2: KEY PERFORMANCE & TRUST METRICS -->
-<section class="py-5 bg-gold-light border-bottom border-top border-warning-subtle">
-    <div class="container">
-        <div class="row g-4 text-center">
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="h1 fw-bold text-gold mb-1">$2.4B+</div>
-                <p class="text-muted small text-uppercase mb-0 fw-semibold">Capital Placement Guided</p>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="h1 fw-bold text-gold mb-1">100%</div>
-                <p class="text-muted small text-uppercase mb-0 fw-semibold">Regulatory Compliance Record</p>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="h1 fw-bold text-gold mb-1">170+</div>
-                <p class="text-muted small text-uppercase mb-0 fw-semibold">Global Destinations Access</p>
-            </div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="h1 fw-bold text-gold mb-1">35+</div>
-                <p class="text-muted small text-uppercase mb-0 fw-semibold">Sovereign Jurisdictions</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- SECTION 3: INTERACTIVE CITIZENSHIP & RESIDENCY ESTIMATOR -->
-<section id="estimator" class="py-5 bg-light">
+<section class="ip-section ip-section--cream" id="estimator">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container py-4">
-        <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Interactive Suite</span>
-            <h2 class="h1 fw-bold mt-1">Residency & Citizenship Investment Estimator</h2>
-            <p class="text-muted">Simulate required capital thresholds, processing lead times, and global mobility advantages based on your strategic sovereign goals.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Interactive Suite</span><h2 class="ip-title">Residency & Citizenship Investment Estimator</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Simulate required capital thresholds, processing lead times, and global mobility advantages based on your strategic sovereign goals.</p></div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10">
@@ -259,7 +142,7 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 4: STRATEGIC PROGRAMS & GLOBAL PATHWAYS -->
-<section class="py-5">
+<section class="ip-section">
     <div class="container py-4">
         <div class="row align-items-end mb-5">
             <div class="col-md-8" data-aos="fade-right">
@@ -342,17 +225,14 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 5: DUAL CITIZENSHIP & TAX OPTIMIZATION MATRIX -->
-<section class="py-5 bg-gray-custom">
+<section class="ip-section ip-section--gray">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container py-4">
-        <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Strategic Comparison</span>
-            <h2 class="h1 fw-bold mt-1">Sovereign Tax & Mobility Matrix</h2>
-            <p class="text-muted">Cross-jurisdictional evaluation of physical residency duties, personal tax structures, and capital safeguards.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Strategic Comparison</span><h2 class="ip-title">Sovereign Tax & Mobility Matrix</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Cross-jurisdictional evaluation of physical residency duties, personal tax structures, and capital safeguards.</p></div>
 
-        <div class="table-responsive bg-white rounded-3 shadow-sm border" data-aos="fade-up" data-aos-delay="100">
-            <table class="table table-hover align-middle mb-0">
-                <thead class="table-dark bg-dark">
+        <div class="ip-table-wrap" data-aos="fade-up" data-aos-delay="100">
+            <table class="ip-table">
+                <thead>
                     <tr>
                         <th scope="col" class="py-3 ps-4">Jurisdiction</th>
                         <th scope="col" class="py-3">Type</th>
@@ -365,7 +245,7 @@ include ROOT_PATH . '/elements/header.php';
                 <tbody>
                     <tr>
                         <td class="ps-4 fw-bold">UAE (Dubai)</td>
-                        <td><span class="badge bg-secondary-subtle text-dark">Golden Visa</span></td>
+                        <td><span class="ip-chip ip-chip--mid">Golden Visa</span></td>
                         <td>None Required</td>
                         <td>0% Personal Income Tax</td>
                         <td>Tax Resident Exempt*</td>
@@ -373,7 +253,7 @@ include ROOT_PATH . '/elements/header.php';
                     </tr>
                     <tr>
                         <td class="ps-4 fw-bold">Malta</td>
-                        <td><span class="badge bg-secondary-subtle text-dark">EU Citizenship</span></td>
+                        <td><span class="ip-chip ip-chip--mid">EU Citizenship</span></td>
                         <td>12 Months (Residency Phase)</td>
                         <td>Remittance Basis Available</td>
                         <td>0% Non-Remitted Foreign</td>
@@ -381,7 +261,7 @@ include ROOT_PATH . '/elements/header.php';
                     </tr>
                     <tr>
                         <td class="ps-4 fw-bold">St. Kitts & Nevis</td>
-                        <td><span class="badge bg-secondary-subtle text-dark">CBI Passport</span></td>
+                        <td><span class="ip-chip ip-chip--mid">CBI Passport</span></td>
                         <td>0 Days</td>
                         <td>No Income / Wealth Tax</td>
                         <td>Exempt</td>
@@ -389,7 +269,7 @@ include ROOT_PATH . '/elements/header.php';
                     </tr>
                     <tr>
                         <td class="ps-4 fw-bold">Monaco</td>
-                        <td><span class="badge bg-secondary-subtle text-dark">Residency</span></td>
+                        <td><span class="ip-chip ip-chip--mid">Residency</span></td>
                         <td>183 Days / Year</td>
                         <td>0% Personal Income Tax</td>
                         <td>Exempt (Non-French)</td>
@@ -402,13 +282,9 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 6: 6-STEP ADVISORY LIFECYCLE -->
-<section class="py-5">
+<section class="ip-section">
     <div class="container py-4">
-        <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Institutional Execution</span>
-            <h2 class="h1 fw-bold mt-1">End-to-End Advisory Lifecycle</h2>
-            <p class="text-muted">A structured, legally audited methodology delivering seamless citizenship and residency acquisition.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Institutional Execution</span><h2 class="ip-title">End-to-End Advisory Lifecycle</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">A structured, legally audited methodology delivering seamless citizenship and residency acquisition.</p></div>
 
         <div class="row g-4">
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -463,7 +339,8 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 7: FAMILY INCLUSION & MULTI-GENERATIONAL WEALTH -->
-<section class="py-5 bg-gold-light border-top border-bottom border-warning-subtle">
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container py-4">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
@@ -527,13 +404,9 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 8: RISK MITIGATION & DUE DILIGENCE -->
-<section class="py-5">
+<section class="ip-section">
     <div class="container py-4">
-        <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Regulatory Governance</span>
-            <h2 class="h1 fw-bold mt-1">Risk Mitigation & Vetting Standards</h2>
-            <p class="text-muted">Our institutional compliance framework guarantees complete legal safety and reputation management.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Regulatory Governance</span><h2 class="ip-title">Risk Mitigation & Vetting Standards</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Our institutional compliance framework guarantees complete legal safety and reputation management.</p></div>
 
         <div class="row g-4 text-center">
             <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
@@ -572,13 +445,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 9: CLIENT CASE STUDIES & TRANSFORMATION OUTCOMES -->
-<section class="py-5 bg-gray-custom">
+<section class="ip-section ip-section--gray">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container py-4">
-        <div class="text-center max-w-xl mx-auto mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Proven Results</span>
-            <h2 class="h1 fw-bold mt-1">Client Transformations</h2>
-            <p class="text-muted">Anonymized case profiles showing how dual citizenship protects wealth and opens global markets.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Proven Results</span><h2 class="ip-title">Client Transformations</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Anonymized case profiles showing how dual citizenship protects wealth and opens global markets.</p></div>
 
         <div class="row g-4">
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -617,13 +487,9 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 10: FREQUENTLY ASKED QUESTIONS (BOOTSTRAP ACCORDION) -->
-<section class="py-5">
+<section class="ip-section">
     <div class="container py-4 max-w-xl">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <span class="text-gold text-uppercase fw-bold small">Clarifications</span>
-            <h2 class="h1 fw-bold mt-1">Frequently Asked Questions</h2>
-            <p class="text-muted">Key details regarding dual citizenship, legality, tax residence, and investment security.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Clarifications</span><h2 class="ip-title">Frequently Asked Questions</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Key details regarding dual citizenship, legality, tax residence, and investment security.</p></div>
 
         <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="100">
             <div class="accordion-item">
@@ -682,7 +548,8 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- SECTION 11: CONFIDENTIAL CONSULTATION FORM SECTION -->
-<section class="py-5 bg-gold-light border-top border-warning-subtle">
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-lg-8" data-aos="zoom-in">
@@ -725,6 +592,8 @@ include ROOT_PATH . '/elements/header.php';
         </div>
     </div>
 </section>
+
+</main>
 
 <!-- MODAL COMPONENT (FOR BUTTON TRIGGERS) -->
 <div class="modal fade" id="consultationModal" tabindex="-1" aria-hidden="true">
@@ -771,6 +640,8 @@ include ROOT_PATH . '/elements/header.php';
         </div>
     </div>
 </div>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
 
 <!-- Custom Interactive Logic -->
 <script>

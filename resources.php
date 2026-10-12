@@ -2,423 +2,78 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/resources';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
-<style>
-    
-    /* Gold Banner Header */
-    .gold-hero-banner {
-        background: linear-gradient(135deg, var(--gold-banner-bg) 0%, var(--dark-gold) 100%);
-        color: var(--white);
-        padding: 70px 0 60px;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 4px solid rgba(255, 255, 255, 0.2);
-    }
+<!-- Shared theme + app-page components (same look & animation set as the other pages) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/app-pages.css?v=<?= FILE_VERSISON ?>">
+<main>
 
-    .gold-hero-banner::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -10%;
-        width: 120%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
-        pointer-events: none;
-    }
-
-    .hero-title {
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        font-size: 2.8rem;
-    }
-
-    .hero-search-box {
-        position: relative;
-        max-width: 650px;
-        margin: 30px auto 0;
-    }
-
-    .hero-search-box input {
-        height: 60px;
-        border-radius: 50px;
-        padding-left: 25px;
-        padding-right: 60px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        font-size: 1.05rem;
-        background: rgba(255, 255, 255, 0.95);
-        transition: var(--transition);
-    }
-
-    .hero-search-box input:focus {
-        background: #ffffff;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        outline: none;
-        border-color: var(--white);
-    }
-
-    .hero-search-box .search-btn {
-        position: absolute;
-        right: 8px;
-        top: 7px;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: var(--gold-primary);
-        color: var(--white);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-    }
-
-    .hero-search-box .search-btn:hover {
-        background: var(--dark-gold);
-        transform: scale(1.05);
-    }
-
-    /* Stat Counter Items */
-    .stat-card {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        padding: 18px 12px;
-        transition: var(--transition);
-    }
-
-    .stat-card:hover {
-        background: rgba(255, 255, 255, 0.22);
-        transform: translateY(-4px);
-    }
-
-    .stat-number {
-        font-size: 2rem;
-        font-weight: 800;
-    }
-
-    .stat-label {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        opacity: 0.9;
-    }
-
-    /* Section Styling */
-    .section-title {
-        font-weight: 700;
-        color: var(--brand-dark);
-        position: relative;
-        display: inline-block;
-        margin-bottom: 12px;
-    }
-
-    .section-title::after {
-        content: '';
-        display: block;
-        width: 50%;
-        height: 3px;
-        background: var(--gold-primary);
-        margin: 8px auto 0;
-        border-radius: 2px;
-    }
-
-    /* Featured Spotlight Card */
-    .spotlight-card {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        overflow: hidden;
-        transition: var(--transition);
-    }
-
-    .spotlight-card:hover {
-        box-shadow: var(--shadow-hover);
-    }
-
-    .spotlight-graphic {
-        background: linear-gradient(135deg, var(--gold-light) 0%, #ede3d1 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        min-height: 280px;
-    }
-
-    .spotlight-badge {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: var(--gold-primary);
-        color: var(--white);
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 6px 14px;
-        border-radius: 30px;
-    }
-
-    /* Badges & Indicators */
-    .badge-format {
-        font-size: 0.75rem;
-        font-weight: 600;
-        padding: 4px 10px;
-        border-radius: 6px;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .badge-pdf { background: #fee2e2; color: #dc2626; }
-    .badge-xlsx { background: #dcfce7; color: #16a34a; }
-    .badge-zip { background: #fef3c7; color: #d97706; }
-
-    /* Navigation Filter Tabs */
-    .filter-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 35px;
-    }
-
-    .filter-btn {
-        background: var(--white);
-        border: 1px solid var(--gold-border);
-        color: var(--text-dark);
-        padding: 10px 22px;
-        border-radius: 30px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: var(--transition);
-        cursor: pointer;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-        background: var(--gold-primary);
-        color: var(--white);
-        border-color: var(--gold-primary);
-        box-shadow: 0 4px 15px rgba(171, 129, 57, 0.3);
-    }
-
-    /* Resource Card */
-    .resource-card {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .resource-card:hover {
-        transform: translateY(-7px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .resource-card .card-body {
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-
-    .resource-icon-wrapper {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        background: var(--gold-light);
-        color: var(--gold-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        margin-bottom: 16px;
-    }
-
-    .rating-stars {
-        color: #f59e0b;
-        font-size: 0.85rem;
-    }
-
-    /* Custom Button Styling */
-    .btn-gold {
-        background: var(--gold-primary);
-        color: var(--white);
-        border: none;
-        border-radius: 8px;
-        padding: 10px 18px;
-        font-weight: 600;
-        transition: var(--transition);
-    }
-
-    .btn-gold:hover {
-        background: var(--gold-hover);
-        color: var(--white);
-        box-shadow: 0 4px 12px rgba(150, 120, 61, 0.3);
-    }
-
-    .btn-gold-outline {
-        background: transparent;
-        color: var(--gold-primary);
-        border: 1.5px solid var(--gold-primary);
-        border-radius: 8px;
-        padding: 9px 18px;
-        font-weight: 600;
-        transition: var(--transition);
-    }
-
-    .btn-gold-outline:hover {
-        background: var(--gold-light);
-        color: var(--dark-gold);
-        border-color: var(--dark-gold);
-    }
-
-    /* Compact Toolkit Cards */
-    .toolkit-card {
-        background: var(--white);
-        border-radius: 12px;
-        border-left: 4px solid var(--gold-primary);
-        padding: 18px;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-    }
-
-    .toolkit-card:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateX(4px);
-    }
-
-    /* CTA Request Banner */
-    .cta-gold-section {
-        background: linear-gradient(135deg, var(--gold-banner-bg) 0%, var(--dark-gold) 100%);
-        border-radius: 20px;
-        color: var(--white);
-        padding: 50px 40px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: var(--shadow-md);
-    }
-
-    .cta-gold-section::after {
-        content: '\f15c';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        position: absolute;
-        right: -20px;
-        bottom: -30px;
-        font-size: 14rem;
-        opacity: 0.08;
-        color: var(--white);
-        pointer-events: none;
-    }
-
-    /* Custom Modal Styling */
-    .modal-content {
-        border-radius: 16px;
-        border: 1px solid var(--gold-border);
-        overflow: hidden;
-    }
-
-    .modal-header {
-        background: var(--gold-light);
-        border-bottom: 1px solid var(--gold-border);
-    }
-
-    .toc-list {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .toc-list li {
-        padding: 8px 0;
-        border-bottom: 1px dashed var(--brand-grey);
-        font-size: 0.9rem;
-        color: var(--brand-dark);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .toc-list li i {
-        color: var(--gold-primary);
-        font-size: 0.8rem;
-    }
-
-    .no-results-msg {
-        display: none;
-        text-align: center;
-        padding: 50px 0;
-    }
-</style>
-
-<!-- 1. Gold Hero Banner with Search & Live Stats -->
-<header class="gold-hero-banner">
-    <div class="container text-center position-relative" style="z-index: 2;">
-        <div data-aos="fade-down">
-            <span class="badge bg-white text-dark fw-bold px-3 py-2 rounded-pill mb-3 text-uppercase shadow-sm" style="font-size: 0.75rem; letter-spacing: 1px;">
-                <i class="fa-solid fa-crown me-1 text-warning"></i> Knowledge Base & Insights
-            </span>
-            <h1 class="hero-title">Enterprise Resource Hub</h1>
-            <p class="lead opacity-90 mx-auto max-w-2xl" style="max-width: 680px; font-weight: 300;">
-                Access world-class research whitepapers, executive frameworks, industry benchmarks, and actionable operational toolkits.
-            </p>
-        </div>
-
-        <!-- Live Search Bar -->
-        <div class="hero-search-box" data-aos="fade-up" data-aos-delay="150">
-            <input type="text" id="resourceSearchInput" class="form-control" placeholder="Search resources by keywords, topic, or format...">
-            <button class="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <!-- 4 Animated Counter Stats -->
-        <div class="row g-3 mt-4 justify-content-center" data-aos="fade-up" data-aos-delay="250">
-            <div class="col-6 col-md-3">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
-                    <div class="stat-label">Verified Assets</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-target="45">0</span>+</div>
-                    <div class="stat-label">Whitepapers</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-target="85">0</span>K+</div>
-                    <div class="stat-label">Active Downloads</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-target="4.9" data-decimals="1">0</span>/5</div>
-                    <div class="stat-label">User Rating</div>
+<!-- 1. HERO -->
+<header class="ip-hero ip-hero--tall">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Knowledge Base &amp; Insights</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Enterprise Resource<br><span class="ip-gold">Hub</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Access world-class research whitepapers, executive frameworks, industry benchmarks, and actionable operational toolkits.</p>
+                <div class="hero-search-box" data-aos="fade-up" data-aos-delay="450">
+                    <input type="text" id="resourceSearchInput" class="form-control" placeholder="Search resources by keywords, topic, or format...">
+                    <button class="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Container -->
-<main class="container py-5">
+<!-- 2. LIVE STATS -->
+<section class="ip-stats ip-stats--pull">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num"><span class="counter" data-target="250">0</span>+</span>
+                    <span class="ip-stat__label">Verified Assets</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num"><span class="counter" data-target="45">0</span>+</span>
+                    <span class="ip-stat__label">Whitepapers</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num"><span class="counter" data-target="85">0</span>K+</span>
+                    <span class="ip-stat__label">Active Downloads</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num"><span class="counter" data-target="4.9" data-decimals="1">0</span>/5</span>
+                    <span class="ip-stat__label">User Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- 2. Featured Spotlight Resource -->
-    <section class="mb-5" data-aos="fade-up">
-        <div class="text-center mb-4">
-            <h2 class="section-title">Featured Publication</h2>
-            <p class="text-muted">Handpicked benchmark study recommended for corporate leaders</p>
-        </div>
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
+    <div class="container">
+    
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Featured Publication</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Handpicked benchmark study recommended for corporate leaders</p></div>
 
         <div class="spotlight-card">
             <div class="row g-0 align-items-center">
@@ -479,14 +134,15 @@ include ROOT_PATH . '/elements/header.php';
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- 3. Interactive Filter Tabs & Resource Grid Section -->
-    <section class="mb-5">
-        <div class="text-center mb-4" data-aos="fade-up">
-            <h2 class="section-title">Resource Library</h2>
-            <p class="text-muted">Filter by content type to access specialized toolkits and publications</p>
         </div>
+</section>
+
+<!-- 3. Interactive Filter Tabs & Resource Grid Section -->
+<section class="ip-section ip-section--gray">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="container">
+    
+        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Resource Library</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Filter by content type to access specialized toolkits and publications</p></div>
 
         <!-- Filter Category Buttons -->
         <div class="filter-nav" data-aos="fade-up" data-aos-delay="100">
@@ -749,10 +405,14 @@ include ROOT_PATH . '/elements/header.php';
             <h4 class="fw-bold text-dark">No matching resources found</h4>
             <p class="text-muted">Try adjusting your search query or switching category filters.</p>
         </div>
-    </section>
+        </div>
+</section>
 
-    <!-- 4. Top Downloaded Toolkits / Quick Access Grid -->
-    <section class="mb-5" data-aos="fade-up">
+<!-- 4. Top Downloaded Toolkits / Quick Access Grid -->
+<section class="ip-section ">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 3%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container">
+    
         <div class="d-flex justify-content-between align-items-end mb-4">
             <div>
                 <h3 class="fw-bold text-dark mb-1">Most Popular Toolkits</h3>
@@ -805,29 +465,23 @@ include ROOT_PATH . '/elements/header.php';
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+</section>
 
-    <!-- 6. Custom Resource Request / CTA Banner -->
-    <section data-aos="zoom-in">
-        <div class="cta-gold-section">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <span class="badge bg-white text-dark fw-bold px-3 py-1 rounded-pill mb-3 text-uppercase" style="font-size: 0.75rem;">
-                        Tailored Research Service
-                    </span>
-                    <h2 class="fw-bold mb-2">Need a Custom Research Paper or Toolkit?</h2>
-                    <p class="opacity-90 mb-4" style="max-width: 600px;">
-                        Our expert research analysts build tailored financial models, enterprise benchmarks, and regulatory compliance kits specific to your business requirements.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <button class="btn btn-light text-dark fw-bold px-4 py-3 shadow-lg rounded-3 hover-lift" data-bs-toggle="modal" data-bs-target="#requestResourceModal">
-                        <i class="fa-solid fa-paper-plane me-2 text-gold" style="color: var(--gold-primary);"></i> Request Custom Resource
-                    </button>
-                </div>
+<!-- 6. CUSTOM RESOURCE REQUEST (CTA) -->
+<section class="ip-cta" id="request">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <span class="ip-pill">Tailored Research Service</span>
+                <h2 class="ip-title" style="margin-top: 1rem;">Need a Custom Research Paper or Toolkit?</h2>
+                <p>Our expert research analysts build tailored financial models, enterprise benchmarks, and regulatory compliance kits specific to your business requirements.</p>
+                <button class="ip-btn ip-btn--pill" data-bs-toggle="modal" data-bs-target="#requestResourceModal"><i class="fa-solid fa-paper-plane me-2"></i>Request Custom Resource</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 </main>
 

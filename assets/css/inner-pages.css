@@ -478,3 +478,163 @@
     .ip-stat, .ip-steps__row::before { animation: none; }
     .ip-stat, .ip-badge, .ip-badge i, .ip-step__num, .ip-card__fa { transition: none; }
 }
+
+/* ==========================================================================
+   Matrix table, tags, checklist (crypto / forex / payment / ready-made pages)
+   ========================================================================== */
+.ip-matrix { position: relative; overflow: hidden; padding: 5rem 0; background: var(--ip-gray-bg); }
+.ip-matrix .container { position: relative; z-index: 2; max-width: 1100px; }
+.ip-table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(171, 129, 57, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 14px 34px -14px rgba(171, 129, 57, 0.35);
+}
+.ip-table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 0.88rem; }
+.ip-table thead th {
+    background: linear-gradient(135deg, var(--gold-primary), #c39a47);
+    color: #fff;
+    text-align: left;
+    padding: 1rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    vertical-align: middle;
+}
+.ip-table tbody td { padding: 1rem 1.2rem; color: #555; border-bottom: 1px solid #eee7d8; transition: background 0.3s ease, color 0.3s ease; }
+.ip-table tbody tr:last-child td { border-bottom: 0; }
+.ip-table tbody tr { transition: transform 0.35s var(--ip-ease); }
+.ip-table tbody tr:hover td { background: #fffaf0; color: #222; }
+.ip-table tbody td:first-child { color: #111; font-weight: 600; border-left: 3px solid transparent; }
+.ip-table tbody tr:hover td:first-child { border-left-color: var(--gold-primary); }
+.ip-chip { display: inline-block; padding: 0.22rem 0.8rem; border-radius: 999px; font-size: 0.74rem; font-weight: 600; }
+.ip-chip--low  { background: #eef6ee; color: #3d7a45; }
+.ip-chip--mid  { background: #f6ecd2; color: #8a6a2c; }
+.ip-chip--high { background: #e6e7ea; color: #3b3d41; }
+
+/* Tags (ideal-for lists) */
+.ip-tags-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-primary); margin: 1rem 0 0.55rem; }
+.ip-tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ip-tags li {
+    padding: 0.28rem 0.75rem;
+    font-size: 0.74rem;
+    color: #5a5a5a;
+    background: var(--gold-light, #f9f5ed);
+    border: 1px solid rgba(171, 129, 57, 0.22);
+    border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s var(--ip-ease);
+}
+.ip-card:hover .ip-tags li { background: var(--gold-primary); color: #fff; }
+.ip-card:hover .ip-tags li:nth-child(odd) { transform: translateY(-2px); }
+
+/* Flag in card head */
+.ip-flag { flex: 0 0 auto; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); transition: transform 0.45s var(--ip-ease); }
+.ip-flag.fi { background-size: cover; background-position: center; line-height: 56px; }
+.ip-card:hover .ip-flag { transform: scale(1.12) rotate(-6deg); }
+
+/* Checklist card (benefits) */
+.ip-about--left .ip-title, .ip-about--left p { text-align: left; margin-left: 0; }
+.ip-about--left .ip-line { margin: 1.4rem 0 1.6rem 0; }
+.ip-about--left p { margin-bottom: 1rem; }
+.ip-check { list-style: none; margin: 0; padding: 0; }
+.ip-check li { position: relative; padding: 0.45rem 0 0.45rem 2rem; font-size: 0.88rem; color: #444; transition: transform 0.35s var(--ip-ease); }
+.ip-check li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: 0.5rem; width: 1.3rem; height: 1.3rem; border-radius: 50%; display: grid; place-items: center; font-size: 0.62rem; color: #fff; background: var(--gold-primary); }
+.ip-card:hover .ip-check li { transform: translateX(4px); }
+
+/* About tiles (2x2 colour tiles replace the image) */
+.ip-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; max-width: 520px; }
+.ip-tiles .ip-stat { padding: 2rem 1.2rem; }
+.ip-tiles .ip-stat__num { font-size: clamp(1.25rem, 1.9vw, 1.75rem); }
+.ip-tiles .ip-stat:nth-child(even) { margin-top: 1.6rem; }
+
+.ip-btn--ghost { background: transparent; color: var(--gold-primary); border: 1.5px solid var(--gold-primary); }
+.ip-btn--ghost:hover { background: var(--gold-primary); color: #fff; }
+
+@media (max-width: 991.98px) {
+    .ip-about--left .ip-title, .ip-about--left p { text-align: left; }
+    .ip-tiles { margin: 0 auto; }
+}
+@media (max-width: 767.98px) { .ip-matrix { padding: 3.5rem 0; } }
+@media (prefers-reduced-motion: reduce) {
+    .ip-table tbody tr, .ip-tags li, .ip-flag, .ip-check li { transition: none; }
+}
+
+/* ==========================================================================
+   Content pages: quote, feature rows, notice, module menu (offshore etc.)
+   ========================================================================== */
+.ip-section { position: relative; overflow: hidden; padding: 4.5rem 0; background: #fff; }
+.ip-section--gray { background: var(--ip-gray-bg); }
+.ip-section--cream { background: radial-gradient(circle at 12% 0%, rgba(171,129,57,0.10) 0%, transparent 55%), linear-gradient(180deg, #fffdf9 0%, var(--bg-light, #faf8f5) 100%); }
+.ip-section .container { position: relative; z-index: 2; max-width: 1100px; }
+
+.ip-quote {
+    position: relative;
+    padding: 2.4rem 2.6rem 2.4rem 3.4rem;
+    background: #fff;
+    border: 1px solid rgba(171, 129, 57, 0.2);
+    border-left: 5px solid var(--gold-primary);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px -18px rgba(171, 129, 57, 0.45);
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    line-height: 1.85;
+    color: #444;
+    font-weight: 300;
+}
+.ip-quote::before {
+    content: "\201C";
+    position: absolute; left: 0.9rem; top: -0.4rem;
+    font-family: Georgia, serif; font-size: 5rem; line-height: 1;
+    color: var(--gold-primary); opacity: 0.45;
+    animation: floatTop 5s ease-in-out infinite alternate;
+}
+.ip-quote strong { color: var(--gold-primary); font-weight: 600; }
+
+.ip-subhead { display: flex; align-items: center; gap: 0.75rem; font-size: 1.35rem; font-weight: 600; color: #111; margin: 0 0 1.4rem; }
+.ip-subhead i { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--gold-primary); color: #fff; font-size: 1rem; box-shadow: 0 8px 18px rgba(171,129,57,0.35); }
+
+.ip-feature {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.15rem 1.3rem; margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid rgba(171, 129, 57, 0.16);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s var(--ip-ease), box-shadow 0.4s var(--ip-ease), border-color 0.3s ease;
+}
+.ip-feature:hover { transform: translateX(8px); border-color: var(--gold-primary); box-shadow: 0 16px 34px -12px rgba(171, 129, 57, 0.4); }
+.ip-feature__icon { flex: 0 0 auto; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; font-size: 1.2rem; color: var(--gold-primary); background: var(--gold-light, #f9f5ed); border: 1px solid rgba(171,129,57,0.28); transition: transform 0.45s var(--ip-ease), background 0.3s ease, color 0.3s ease; }
+.ip-feature:hover .ip-feature__icon { transform: scale(1.1) rotate(-6deg); background: var(--gold-primary); color: #fff; }
+.ip-feature h4 { font-size: 1rem; font-weight: 600; color: #111; margin: 0 0 0.25rem; }
+.ip-feature p { font-size: 0.84rem; line-height: 1.65; color: #666; margin: 0; }
+
+.ip-notice { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.8rem 2rem; background: linear-gradient(135deg, #fffdf9, var(--gold-light, #f9f5ed)); border: 1px solid rgba(171,129,57,0.28); border-left: 5px solid var(--gold-primary); border-radius: 16px; }
+.ip-notice > i { flex: 0 0 auto; font-size: 1.8rem; color: var(--gold-primary); margin-top: 0.15rem; }
+.ip-notice h3 { font-size: 1.1rem; font-weight: 600; color: #111; margin: 0 0 0.5rem; }
+.ip-notice p { font-size: 0.9rem; line-height: 1.75; color: #666; margin: 0 0 0.6rem; }
+.ip-notice a { color: var(--gold-primary); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+.ip-notice a:hover { border-bottom-color: var(--gold-primary); }
+
+/* Module menu (offshore-jurisdiction-menu element) */
+.module-menu-section { position: relative; margin-top: 3.5rem; padding: 2.4rem 2rem; background: #fff; border: 1px solid rgba(171,129,57,0.2); border-radius: 20px; box-shadow: 0 16px 40px -18px rgba(171,129,57,0.4); }
+.menu-title { color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; }
+.module-card { height: 100%; display: flex; align-items: center; gap: 0.9rem; padding: 1.05rem 1.2rem; background: #fff; border: 1px solid rgba(171,129,57,0.2); border-radius: 14px; color: #222; text-decoration: none; transition: transform 0.4s var(--ip-ease), box-shadow 0.4s var(--ip-ease), border-color 0.3s ease, background 0.3s ease; }
+.module-card:hover, .module-card.active { transform: translateY(-6px); border-color: var(--gold-primary); background: #fffaf0; box-shadow: 0 18px 36px -12px rgba(171,129,57,0.45); color: #222; }
+.module-icon { flex: 0 0 auto; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--gold-light, #f9f5ed); color: var(--gold-primary); font-size: 1.15rem; transition: transform 0.4s var(--ip-ease), background 0.3s ease, color 0.3s ease; }
+.module-card:hover .module-icon, .module-card.active .module-icon { background: var(--gold-primary); color: #fff; transform: rotate(-8deg) scale(1.08); }
+.module-name { font-size: 0.93rem; font-weight: 600; margin: 0; line-height: 1.3; }
+.arrow-icon { margin-left: auto; color: var(--gold-primary); font-size: 0.8rem; transition: transform 0.35s var(--ip-ease); }
+.module-card:hover .arrow-icon { transform: translateX(5px); }
+
+@media (max-width: 767.98px) {
+    .ip-section { padding: 3rem 0; }
+    .ip-quote { padding: 1.8rem 1.4rem 1.8rem 2.2rem; }
+    .ip-notice { flex-direction: column; padding: 1.4rem; }
+    .ip-feature:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ip-quote::before { animation: none; }
+    .ip-feature, .ip-feature__icon, .module-card, .module-icon, .arrow-icon { transition: none; }
+}

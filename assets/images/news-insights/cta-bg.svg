@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2300 795" width="2300" height="795" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="bgnewsinc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa"/><stop offset="0.45" stop-color="#f1f3f7"/><stop offset="1" stop-color="#e9ecf2"/></linearGradient>
+<linearGradient id="goldnewsinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="0.5" stop-color="#c39a47"/><stop offset="1" stop-color="#96783d"/></linearGradient>
+<linearGradient id="tannewsinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#d4b57a"/></linearGradient>
+<linearGradient id="darknewsinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7d83"/><stop offset="1" stop-color="#3b3d41"/></linearGradient>
+<linearGradient id="greynewsinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e4e8"/><stop offset="1" stop-color="#bfc1c7"/></linearGradient>
+<radialGradient id="glownewsinc" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="shnewsinc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2b2410" flood-opacity="0.22"/></filter>
+<filter id="shsnewsinc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2b2410" flood-opacity="0.2"/></filter>
+</defs><linearGradient id="veilnewsinc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa" stop-opacity="1"/><stop offset="0.5" stop-color="#f7f8fa" stop-opacity="0.85"/><stop offset="0.7" stop-color="#f7f8fa" stop-opacity="0"/></linearGradient><rect width="2300" height="795" fill="url(#bgnewsinc)"/><ellipse cx="650" cy="400" rx="760" ry="520" fill="url(#glownewsinc)"/><g transform="translate(-1000 0)"><circle cx="1650" cy="400" r="420" fill="none" stroke="#c39a47" stroke-opacity="0.35" stroke-width="2"/>
+<circle cx="1650" cy="400" r="302" fill="none" stroke="#c39a47" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="6 10"/>
+<ellipse cx="1650" cy="400" rx="470" ry="143" fill="none" stroke="#c39a47" stroke-opacity="0.3" stroke-width="2" transform="rotate(-18 1650 400)"/>
+<line x1="1442" y1="251" x2="1410" y2="450" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
+<line x1="1442" y1="251" x2="1352" y2="394" stroke="#b08a3e" stroke-opacity="0.14" stroke-width="1.6"/>
+<line x1="1959" y1="297" x2="1823" y2="174" stroke="#b08a3e" stroke-opacity="0.12" stroke-width="1.6"/>
+<line x1="1959" y1="297" x2="1867" y2="101" stroke="#b08a3e" stroke-opacity="0.07" stroke-width="1.6"/>
+<line x1="1959" y1="297" x2="2022" y2="540" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1299" y1="508" x2="1410" y2="450" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<line x1="1299" y1="508" x2="1380" y2="537" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
+<line x1="1299" y1="508" x2="1454" y2="691" stroke="#b08a3e" stroke-opacity="0.03" stroke-width="1.6"/>
+<line x1="1299" y1="508" x2="1352" y2="394" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<line x1="1616" y1="24" x2="1823" y2="174" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1616" y1="24" x2="1732" y2="7" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
+<line x1="1823" y1="174" x2="1867" y2="101" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
+<line x1="1823" y1="174" x2="1732" y2="7" stroke="#b08a3e" stroke-opacity="0.11" stroke-width="1.6"/>
+<line x1="1867" y1="101" x2="1732" y2="7" stroke="#b08a3e" stroke-opacity="0.15" stroke-width="1.6"/>
+<line x1="1410" y1="450" x2="1380" y2="537" stroke="#b08a3e" stroke-opacity="0.26" stroke-width="1.6"/>
+<line x1="1410" y1="450" x2="1454" y2="691" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
+<line x1="1410" y1="450" x2="1352" y2="394" stroke="#b08a3e" stroke-opacity="0.28" stroke-width="1.6"/>
+<line x1="1380" y1="537" x2="1454" y2="691" stroke="#b08a3e" stroke-opacity="0.14" stroke-width="1.6"/>
+<line x1="1380" y1="537" x2="1352" y2="394" stroke="#b08a3e" stroke-opacity="0.18" stroke-width="1.6"/>
+<line x1="1454" y1="691" x2="1691" y2="765" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
+<line x1="1737" y1="648" x2="1691" y2="765" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
+<circle cx="1442" cy="251" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1959" cy="297" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1299" cy="508" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1616" cy="24" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1823" cy="174" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1867" cy="101" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1410" cy="450" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1380" cy="537" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1454" cy="691" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1737" cy="648" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="2022" cy="540" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1732" cy="7" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1352" cy="394" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1691" cy="765" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<ellipse cx="1650" cy="650" rx="330" ry="34" fill="#000" opacity="0.07"/>
+<g filter="url(#shnewsinc)"><rect x="1360" y="300" width="580" height="340" rx="30" fill="url(#goldnewsinc)"/></g>
+<g filter="url(#shsnewsinc)"><rect x="1420" y="170" width="460" height="330" rx="18" fill="#fff"/></g>
+<rect x="1456" y="206" width="170" height="16" rx="8" fill="url(#goldnewsinc)"/><rect x="1456" y="248" width="380" height="12" rx="6" fill="#d9dce2"/><rect x="1456" y="284" width="340" height="12" rx="6" fill="#d9dce2"/><rect x="1456" y="320" width="360" height="12" rx="6" fill="#d9dce2"/><rect x="1456" y="356" width="250" height="12" rx="6" fill="#d9dce2"/>
+<polygon points="1360,330 1650,520 1940,330 1940,640 1360,640" fill="url(#tannewsinc)"/><polygon points="1360,640 1650,470 1940,640" fill="#fff" opacity="0.28"/>
+<g filter="url(#shsnewsinc)"><circle cx="2000" cy="250" r="60" fill="url(#darknewsinc)"/></g><text x="2000" y="276" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="70" font-weight="700" fill="#fff">@</text>
+<rect x="1170" y="260" width="180" height="110" rx="22" fill="url(#greynewsinc)" filter="url(#shsnewsinc)" transform="rotate(-6 1260.0 315.0)"/></g><rect width="2300" height="795" fill="url(#veilnewsinc)" transform="translate(2300 0) scale(-1 1)"/></svg>

@@ -2,769 +2,69 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/webinars';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
-<style>
-    /* Gold Gradient Utility Elements */
-    .bg-golden-gradient {
-        background: var(--golden-gradient-background);
-    }
-
-    .gold-badge {
-        background-color: rgba(171, 129, 57, 0.12);
-        color: var(--dark-gold);
-        border: 1px solid var(--gold-border);
-        font-weight: 600;
-        padding: 6px 16px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .section-title-wrap {
-        text-align: center;
-        margin-bottom: 3.5rem;
-    }
-
-    .section-title {
-        font-weight: 700;
-        color: var(--brand-dark);
-        font-size: 2.25rem;
-        margin-top: 0.75rem;
-        letter-spacing: -0.5px;
-    }
-
-    .section-subtitle {
-        color: var(--brand-text-sub);
-        max-width: 680px;
-        margin: 0.5rem auto 0;
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    /* Buttons */
-    .btn-gold {
-        background: linear-gradient(135deg, var(--gold-primary) 0%, var(--dark-gold) 100%);
-        color: var(--white);
-        font-weight: 600;
-        border: none;
-        padding: 12px 28px;
-        border-radius: 12px;
-        transition: var(--transition);
-        box-shadow: 0 4px 15px rgba(171, 129, 57, 0.25);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .btn-gold:hover, .btn-gold:focus {
-        background: linear-gradient(135deg, var(--dark-gold) 0%, var(--gold-hover) 100%);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 22px rgba(171, 129, 57, 0.35);
-    }
-
-    .btn-gold-outline {
-        background: transparent;
-        color: var(--gold-primary);
-        border: 1.5px solid var(--gold-primary);
-        font-weight: 600;
-        padding: 11px 26px;
-        border-radius: 12px;
-        transition: var(--transition);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .btn-gold-outline:hover {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(171, 129, 57, 0.2);
-    }
-
-    .hero-banner {
-        position: relative;
-        background: linear-gradient(135deg, #1d1b18 0%, #2b251a 50%, #151310 100%);
-        padding: 5rem 0 7rem;
-        color: var(--white);
-        overflow: hidden;
-        border-bottom: 3px solid var(--gold-primary);
-    }
-
-    .hero-banner::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(171, 129, 57, 0.15) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .hero-banner::after {
-        content: '';
-        position: absolute;
-        bottom: -30%;
-        left: -10%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(171, 129, 57, 0.12) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .search-box-wrap {
-        position: relative;
-        max-width: 680px;
-        margin: 2.2rem auto 0;
-    }
-
-    .search-box-wrap input {
-        width: 100%;
-        padding: 16px 20px 16px 54px;
-        border-radius: 50px;
-        border: 1px solid var(--gold-border);
-        background: rgba(255, 255, 255, 0.95);
-        font-size: 1rem;
-        color: var(--text-dark);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        transition: var(--transition);
-    }
-
-    .search-box-wrap input:focus {
-        outline: none;
-        background: #ffffff;
-        border-color: var(--gold-primary);
-        box-shadow: 0 12px 35px rgba(171, 129, 57, 0.3);
-    }
-
-    .search-box-wrap i {
-        position: absolute;
-        left: 22px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: var(--gold-primary);
-        font-size: 1.25rem;
-    }
-
-    .stats-wrapper {
-        margin-top: -3.5rem;
-        position: relative;
-        z-index: 10;
-    }
-
-    .stat-card {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        padding: 1.75rem 1.25rem;
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        text-align: center;
-        transition: var(--transition);
-        height: 100%;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .stat-card i {
-        font-size: 2rem;
-        color: var(--gold-primary);
-        margin-bottom: 0.75rem;
-    }
-
-    .stat-number {
-        font-size: 2.1rem;
-        font-weight: 700;
-        color: var(--brand-dark);
-        line-height: 1.1;
-    }
-
-    .stat-label {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        font-weight: 500;
-        margin-top: 0.35rem;
-    }
-
-    .spotlight-card {
-        background: linear-gradient(135deg, #ffffff 0%, var(--gold-light) 100%);
-        border: 1px solid var(--gold-border);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: var(--shadow-card);
-        position: relative;
-        transition: var(--transition);
-    }
-
-    .spotlight-card:hover {
-        box-shadow: var(--shadow-hover);
-    }
-
-    .spotlight-badge {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background: #e63946;
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        padding: 6px 14px;
-        border-radius: 50px;
-        box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
-        z-index: 3;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .spotlight-badge .pulse-dot {
-        width: 8px;
-        height: 8px;
-        background: #fff;
-        border-radius: 50%;
-        animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-        70% { transform: scale(1.2); box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
-        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-    }
-
-    .spotlight-img-wrap {
-        position: relative;
-        min-height: 380px;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        border-radius: 20px 0 0 20px;
-    }
-
-    @media (max-width: 991px) {
-        .spotlight-img-wrap {
-            min-height: 260px;
-            border-radius: 20px 20px 0 0;
-        }
-    }
-
-    .spotlight-content {
-        padding: 2.75rem 2.5rem;
-    }
-
-    .timer-box {
-        background: rgba(171, 129, 57, 0.08);
-        border: 1px dashed var(--gold-primary);
-        border-radius: 12px;
-        padding: 12px 18px;
-        display: inline-flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 1.25rem;
-    }
-
-    .timer-unit {
-        text-align: center;
-    }
-
-    .timer-val {
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--dark-gold);
-        line-height: 1;
-    }
-
-    .timer-lbl {
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        letter-spacing: 0.5px;
-    }
-
-    .speaker-avatar-group {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .speaker-avatar-group img {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 2px solid var(--white);
-        margin-right: -12px;
-        object-fit: cover;
-        box-shadow: var(--shadow-sm);
-    }
-
-    .speaker-avatar-group .more-speakers {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--gold-primary);
-        color: #fff;
-        font-size: 0.75rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid var(--white);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .filter-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 3rem;
-    }
-
-    .filter-btn {
-        background: var(--white);
-        color: var(--text-dark);
-        border: 1px solid var(--brand-grey);
-        border-radius: 50px;
-        padding: 8px 22px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: var(--transition);
-        cursor: pointer;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-        background: var(--gold-primary);
-        color: var(--white);
-        border-color: var(--gold-primary);
-        box-shadow: 0 4px 14px rgba(171, 129, 57, 0.25);
-    }
-
-    .webinar-card {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    .webinar-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .webinar-card-img {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-    }
-
-    .webinar-status {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        padding: 4px 12px;
-        border-radius: 50px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .status-live {
-        background: #e63946;
-        color: #ffffff;
-    }
-
-    .status-upcoming {
-        background: #2a9d8f;
-        color: #ffffff;
-    }
-
-    .status-ondemand {
-        background: #4a5568;
-        color: #ffffff;
-    }
-
-    .webinar-topic {
-        position: absolute;
-        bottom: 15px;
-        left: 15px;
-        background: rgba(0, 0, 0, 0.65);
-        backdrop-filter: blur(4px);
-        color: #ffffff;
-        font-size: 0.75rem;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 500;
-    }
-
-    .webinar-body {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-
-    .webinar-meta {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        margin-bottom: 0.75rem;
-    }
-
-    .webinar-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--brand-dark);
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .webinar-desc {
-        font-size: 0.875rem;
-        color: var(--brand-text-sub);
-        margin-bottom: 1.25rem;
-        line-height: 1.5;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .webinar-footer {
-        margin-top: auto;
-        padding-top: 1rem;
-        border-top: 1px solid var(--gray-color);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .speaker-info-mini {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .speaker-info-mini img {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid var(--gold-border);
-    }
-
-    .speaker-name-mini {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--brand-dark);
-        line-height: 1.2;
-    }
-
-    .speaker-role-mini {
-        font-size: 0.7rem;
-        color: var(--text-muted);
-    }
-
-    .speaker-card {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        padding: 1.75rem 1.25rem;
-        text-align: center;
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-    }
-
-    .speaker-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .speaker-img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto 1.2rem;
-        border: 3px solid var(--gold-light);
-        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .speaker-name {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--brand-dark);
-        margin-bottom: 0.25rem;
-    }
-
-    .speaker-title {
-        font-size: 0.8rem;
-        color: var(--gold-primary);
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-    }
-
-    .speaker-company {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-    }
-
-    .speaker-stats-pill {
-        background: var(--gold-light);
-        color: var(--dark-gold);
-        font-size: 0.75rem;
-        font-weight: 600;
-        padding: 4px 12px;
-        border-radius: 50px;
-        display: inline-block;
-        margin-bottom: 1rem;
-    }
-
-    .social-link {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: var(--gray-color);
-        color: var(--brand-dark);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        text-decoration: none;
-    }
-
-    .social-link:hover {
-        background: var(--gold-primary);
-        color: var(--white);
-    }
-
-    .series-card {
-        background: linear-gradient(135deg, #2b251a 0%, #1a1712 100%);
-        border-radius: var(--card-radius);
-        padding: 2.25rem;
-        color: var(--white);
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(171, 129, 57, 0.3);
-        box-shadow: var(--shadow-card);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .series-card::after {
-        content: '';
-        position: absolute;
-        top: -30%;
-        right: -20%;
-        width: 250px;
-        height: 250px;
-        background: radial-gradient(circle, rgba(171, 129, 57, 0.2) 0%, transparent 70%);
-        border-radius: 50%;
-    }
-
-    .series-tag {
-        color: var(--gold-primary);
-        font-weight: 700;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.75rem;
-        display: block;
-    }
-
-    .series-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-        line-height: 1.3;
-    }
-
-    .series-count {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-host-banner {
-        background: linear-gradient(135deg, var(--gold-primary) 0%, var(--dark-gold) 100%);
-        border-radius: 24px;
-        padding: 3.5rem 2.5rem;
-        color: var(--white);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(171, 129, 57, 0.25);
-    }
-
-    .cta-host-banner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        opacity: 0.6;
-    }
-
-    /* Custom Modal Styling */
-    .modal-content {
-        border-radius: 20px;
-        border: 1px solid var(--gold-border);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-    }
-
-    .modal-header {
-        background: linear-gradient(135deg, #2b251a 0%, #1f1b13 100%);
-        color: var(--white);
-        border-bottom: 2px solid var(--gold-primary);
-        padding: 1.5rem 2rem;
-    }
-
-    .modal-header .btn-close {
-        filter: invert(1) grayscale(100%) brightness(200%);
-    }
-
-    .modal-body {
-        padding: 2rem;
-        background-color: #ffffff;
-    }
-
-    .takeaway-list {
-        padding-left: 0;
-        list-style: none;
-    }
-
-    .takeaway-list li {
-        position: relative;
-        padding-left: 28px;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-        color: var(--brand-dark);
-    }
-
-    .takeaway-list li::before {
-        content: '\f00c';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        position: absolute;
-        left: 0;
-        top: 2px;
-        color: var(--gold-primary);
-    }
-
-    .form-control:focus, .form-select:focus {
-        border-color: var(--gold-primary);
-        box-shadow: 0 0 0 0.25rem rgba(171, 129, 57, 0.2);
-    }
-
-    /* Toast notification */
-    .toast-custom {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 9999;
-        background: #2b2b2b;
-        color: #fff;
-        padding: 16px 24px;
-        border-radius: 12px;
-        border-left: 4px solid var(--gold-primary);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        transform: translateY(100px);
-        opacity: 0;
-        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    .toast-custom.show {
-        transform: translateY(0);
-        opacity: 1;
-    }
-</style>
-
-<!-- 1. Header Banner Section -->
-<header class="hero-banner text-center">
-    <div class="container position-relative z-1">
-        <span class="gold-badge bg-dark text-warning border-warning mb-3" data-aos="fade-down">
-            <i class="fa-solid fa-tower-broadcast text-warning"></i> Interactive Masterclasses & Panels
-        </span>
-        <h1 class="display-4 fw-bold mb-3 text-white" data-aos="fade-up" data-aos-delay="100">
-            Executive Webinars & <span style="color: var(--gold-primary);">Thought Leadership</span>
-        </h1>
-        <p class="lead text-light opacity-75 max-w-700 mx-auto" style="max-width: 720px;" data-aos="fade-up" data-aos-delay="200">
-            Explore upcoming live webinars, register for interactive panel discussions, or access our comprehensive library of on-demand expert recordings.
-        </p>
-
-        <!-- Search Input Box -->
-        <div class="search-box-wrap" data-aos="fade-up" data-aos-delay="300">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="liveSearchInput" placeholder="Search by topic, speaker name, or key terms (e.g., AI, Leadership)...">
+<!-- Shared theme + app-page components (same look & animation set as the other pages) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/app-pages.css?v=<?= FILE_VERSISON ?>">
+<main>
+
+<!-- 1. HERO -->
+<header class="ip-hero ip-hero--tall">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Interactive Masterclasses &amp; Panels</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Executive Webinars &amp;<br><span class="ip-gold">Thought Leadership</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Explore upcoming live webinars, register for interactive panel discussions, or access our comprehensive library of on-demand expert recordings.</p>
+                <div class="hero-search-box" data-aos="fade-up" data-aos-delay="450">
+                    <input type="text" id="liveSearchInput" class="form-control" placeholder="Search by topic, speaker name, or key terms (e.g., AI, Leadership)...">
+                    <span class="search-btn" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+            </div>
         </div>
     </div>
 </header>
 
-<!-- Stat Counter Cards -->
-<section class="stats-wrapper">
+<!-- 2. LIVE STATS -->
+<section class="ip-stats ip-stats--pull">
     <div class="container">
         <div class="row g-3">
-            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-                <div class="stat-card">
+            <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="ip-stat ip-stat--gold">
                     <i class="fa-solid fa-video"></i>
-                    <div class="stat-number" data-counter="120">0</div>
-                    <div class="stat-label">Webinars Hosted</div>
+                    <span class="ip-stat__num stat-number" data-counter="120">0</span>
+                    <span class="ip-stat__label">Webinars Hosted</span>
                 </div>
             </div>
-            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-                <div class="stat-card">
+            <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="ip-stat ip-stat--dark">
                     <i class="fa-solid fa-users"></i>
-                    <div class="stat-number" data-counter="45">0</div>
-                    <div class="stat-label">Global Attendees (K+)</div>
+                    <span class="ip-stat__num stat-number" data-counter="45">0</span>
+                    <span class="ip-stat__label">Global Attendees (K+)</span>
                 </div>
             </div>
-            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-                <div class="stat-card">
+            <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="ip-stat ip-stat--tan">
                     <i class="fa-solid fa-star"></i>
-                    <div class="stat-number" data-counter="98">0</div>
-                    <div class="stat-label">Attendee Rating %</div>
+                    <span class="ip-stat__num stat-number" data-counter="98">0</span>
+                    <span class="ip-stat__label">Attendee Rating %</span>
                 </div>
             </div>
-            <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
-                <div class="stat-card">
+            <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                <div class="ip-stat ip-stat--grey">
                     <i class="fa-solid fa-microphone-lines"></i>
-                    <div class="stat-number" data-counter="85">0</div>
-                    <div class="stat-label">Industry Experts</div>
+                    <span class="ip-stat__num stat-number" data-counter="85">0</span>
+                    <span class="ip-stat__label">Industry Experts</span>
                 </div>
             </div>
         </div>
@@ -772,13 +72,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 2. Upcoming Featured Webinar Spotlight Card -->
-<section class="py-5 mt-4">
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container">
-        <div class="section-title-wrap" data-aos="fade-up">
-            <span class="gold-badge"><i class="fa-solid fa-star"></i> Next Featured Live Event</span>
-            <h2 class="section-title">Spotlight Keynote Panel</h2>
-            <p class="section-subtitle">Don't miss our flagship interactive summit featuring C-suite executives discussing the future of enterprise decision making.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill"><i class="fa-solid fa-star"></i> Next Featured Live Event</span><h2 class="ip-title">Spotlight Keynote Panel</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Don't miss our flagship interactive summit featuring C-suite executives discussing the future of enterprise decision making.</p></div>
 
         <div class="spotlight-card" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-0 align-items-center">
@@ -859,13 +156,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 3. Filter Tabs & 4. Webinars Grid Section -->
-<section class="py-5 bg-golden-gradient">
+<section class="ip-section ip-section--gray">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container">
-        <div class="section-title-wrap" data-aos="fade-up">
-            <span class="gold-badge"><i class="fa-solid fa-filter"></i> Browse All Sessions</span>
-            <h2 class="section-title">Explore Webinars & Recordings</h2>
-            <p class="section-subtitle">Filter through our live schedule or dive into high-impact recorded sessions on demand.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill"><i class="fa-solid fa-filter"></i> Browse All Sessions</span><h2 class="ip-title">Explore Webinars & Recordings</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Filter through our live schedule or dive into high-impact recorded sessions on demand.</p></div>
 
         <!-- Filter Categories -->
         <div class="filter-container" data-aos="fade-up" data-aos-delay="100">
@@ -1102,13 +396,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 5. Featured Speakers Spotlight Grid -->
-<section class="py-5">
+<section class="ip-section">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 3%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
     <div class="container">
-        <div class="section-title-wrap" data-aos="fade-up">
-            <span class="gold-badge"><i class="fa-solid fa-user-tie"></i> World-Class Thought Leaders</span>
-            <h2 class="section-title">Meet Our Keynote Speakers</h2>
-            <p class="section-subtitle">Learn directly from globally recognized pioneers, researchers, executives, and innovators driving industry evolution.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill"><i class="fa-solid fa-user-tie"></i> World-Class Thought Leaders</span><h2 class="ip-title">Meet Our Keynote Speakers</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Learn directly from globally recognized pioneers, researchers, executives, and innovators driving industry evolution.</p></div>
 
         <div class="row g-4">
             <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
@@ -1167,13 +458,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 6. On-Demand Popular Series Section -->
-<section class="py-5 bg-golden-gradient">
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container">
-        <div class="section-title-wrap" data-aos="fade-up">
-            <span class="gold-badge"><i class="fa-solid fa-layer-group"></i> Masterclass Collections</span>
-            <h2 class="section-title">Popular On-Demand Series</h2>
-            <p class="section-subtitle">Curated multi-part video series structured to upskill leadership teams on key organizational disciplines.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill"><i class="fa-solid fa-layer-group"></i> Masterclass Collections</span><h2 class="ip-title">Popular On-Demand Series</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Curated multi-part video series structured to upskill leadership teams on key organizational disciplines.</p></div>
 
         <div class="row g-4">
             <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
@@ -1242,25 +530,22 @@ include ROOT_PATH . '/elements/header.php';
     </div>
 </section>
 
-<!-- 8. Host a Webinar / Speaker Invitation CTA Banner -->
-<section class="py-5">
-    <div class="container" data-aos="zoom-in">
-        <div class="cta-host-banner">
-            <div class="row align-items-center position-relative z-1">
-                <div class="col-lg-8 mb-4 mb-lg-0">
-                    <span class="badge bg-white text-dark fw-bold px-3 py-2 rounded-pill mb-3">Partner With Us</span>
-                    <h2 class="fw-bold mb-3">Interested in Hosting an Executive Webinar?</h2>
-                    <p class="lead opacity-90 mb-0">We collaborate with renowned thinkers, C-suite executives, and industry tech leaders to co-create high-impact interactive masterclasses and panel discussions.</p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <button class="btn btn-light btn-lg text-dark fw-bold shadow-lg px-4" id="btnHostSubmit">
-                        Apply as Speaker <i class="fa-solid fa-paper-plane ms-2"></i>
-                    </button>
-                </div>
+<!-- 8. HOST A WEBINAR (CTA) -->
+<section class="ip-cta" id="contact">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <span class="ip-pill">Partner With Us</span>
+                <h2 class="ip-title" style="margin-top: 1rem;">Interested in Hosting an Executive Webinar?</h2>
+                <p>We collaborate with renowned thinkers, C-suite executives, and industry tech leaders to co-create high-impact interactive masterclasses and panel discussions.</p>
+                <button class="ip-btn ip-btn--pill" id="btnHostSubmit">Apply as Speaker <i class="fa-solid fa-paper-plane ms-2"></i></button>
             </div>
         </div>
     </div>
 </section>
+
+</main>
 
 <!-- 7. Registration & Event Details Dynamic Modal -->
 <div class="modal fade" id="eventRegistrationModal" tabindex="-1" aria-hidden="true">

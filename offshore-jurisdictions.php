@@ -2,335 +2,167 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/offshore-jurisdictions';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero background: drop your own hero-bg.webp into the folder above and it is used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
 ?>
 
-    <style>
+<!-- Shared inner-page theme (same look & animation set as index) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
 
-        /* Animated Mesh Background Hero */
-        .hero-banner {
-            background: radial-gradient(circle at 80% 20%, rgba(184, 150, 85, 0.25) 0%, transparent 40%),
-                        radial-gradient(circle at 10% 80%, rgba(181, 141, 61, 0.2) 0%, transparent 40%),
-                        linear-gradient(135deg, #111111 0%, #1e1b18 100%);
-            color: var(--white);
-            padding: 100px 0 80px;
-            position: relative;
-        }
+<main>
 
-        .gold-badge {
-            background: rgba(184, 150, 85, 0.15);
-            border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* Glassmorphic Hub Cards */
-        .hub-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid var(--gold-border);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-            height: 100%;
-        }
-
-        .hub-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 16px;
-            background: linear-gradient(135deg, var(--gold-light), transparent);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .hub-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--gold-primary);
-        }
-
-        .hub-card:hover::before {
-            opacity: 1;
-        }
-
-        .hub-flag {
-            width: 48px;
-            height: 48px;
-            background-color: var(--gold-light);
-            color: var(--gold-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .hub-card:hover .hub-flag {
-            background-color: var(--gold-primary);
-            color: var(--white);
-            transform: scale(1.1) rotate(-5deg);
-        }
-
-        /* Modern Feature Item List */
-        .feature-box {
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            padding: 18px;
-            border-radius: 12px;
-            background: var(--white);
-            border: 1px solid var(--gold-border);
-            transition: var(--transition);
-            margin-bottom: 16px;
-        }
-
-        .feature-box:hover {
-            border-color: var(--gold-primary);
-            transform: translateX(6px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .feature-box .icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--gold-light);
-            color: var(--gold-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 1rem;
-        }
-
-        /* External Link Cards */
-        .resource-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--gold-primary);
-            font-weight: 600;
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 2px;
-        }
-
-        .resource-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--gold-primary);
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-
-        .resource-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* Disclaimer Section Banner */
-        .disclaimer-card {
-            background: linear-gradient(135deg, var(--gray-color) 0%, var(--gold-light) 100%);
-            border-left: 4px solid var(--gold-primary);
-            border-radius: 12px;
-            padding: 35px;
-        }
-    </style>
-
-    <!-- Hero Header -->
-    <header class="hero-banner">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-9" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="gold-badge"><i class="fa-solid fa-globe me-2"></i>Global Expansion Strategies</span>
-                    <h1 class="display-3 fw-bold mb-3">Offshore Jurisdictions</h1>
-                    <p class="lead mb-0 text-light opacity-75">
-                        Shield your capital from domestic sovereign risk, optimize tax structures, access high-growth global markets, and unlock international residency rights.
-                    </p>
-                </div>
+<!-- 1. HERO -->
+<header class="ip-hero">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Global Expansion Strategies</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Offshore<br><span class="ip-gold">Jurisdictions</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Shield your capital from domestic sovereign risk, optimize tax structures, access high-growth global markets, and unlock international residency rights.</p>
+                <a href="#hubs" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Explore Offshore Hubs</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="py-5">
-        <div class="container py-4">
+<!-- 2. INTRO QUOTE -->
+<section class="ip-section ip-section--cream">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--a d-none d-md-block" style="top: 10%; right: 3%; width: 60px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
+    <div class="container">
+        <blockquote class="ip-quote m-0" data-aos="fade-up">Living and investing offshore offers a powerful combination of <strong>wealth protection, tax optimization,</strong> and <strong>lifestyle diversification</strong>. Branching out internationally guarantees freedom, privacy, and resilience against local volatility.</blockquote>
+    </div>
+</section>
 
-            <!-- Intro Quote Banner -->
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <div class="p-4 p-md-5 rounded-4 bg-white border shadow-sm">
-                        <p class="fs-4 mb-0 text-dark fw-light">
-                            <i class="fa-solid fa-quote-left text-warning me-3 opacity-50"></i>
-                            Living and investing offshore offers a powerful combination of <strong>wealth protection, tax optimization,</strong> and <strong>lifestyle diversification</strong>. Branching out internationally guarantees freedom, privacy, and resilience against local volatility.
-                        </p>
+<!-- 3. INVEST vs LIVE -->
+<section class="ip-section">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 6%; right: 3%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h3 class="ip-subhead"><i class="fa-solid fa-chart-pie"></i>Why Invest Offshore</h3>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="0">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-shield-halved"></i></span>
+                        <div><h4>Asset Protection</h4><p>Insulate your wealth from domestic litigation, local economic crises, or aggressive creditors in top-tier legal systems.</p></div>
                     </div>
-                </div>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="100">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-coins"></i></span>
+                        <div><h4>Currency Diversification</h4><p>Hold and grow capital in stronger global currencies to hedge against domestic inflation and market volatility.</p></div>
+                    </div>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="200">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-globe"></i></span>
+                        <div><h4>Access to Global Markets</h4><p>Gain entrance into high-yield international asset classes, tech sectors, and real estate markets.</p></div>
+                    </div>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="300">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-percent"></i></span>
+                        <div><h4>Favorable Tax Structures</h4><p>Financial hubs like Cayman Islands or the Bahamas impose little to no capital gains, inheritance, or corporate taxes.</p></div>
+                    </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h3 class="ip-subhead"><i class="fa-solid fa-plane-departure"></i>Why Live Offshore</h3>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="0">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-user-shield"></i></span>
+                        <div><h4>Privacy and Security</h4><p>Offshore banking and trust structures provide robust personal privacy and financial confidentiality.</p></div>
+                    </div>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="100">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-house-chimney-window"></i></span>
+                        <div><h4>Lifestyle Upgrades</h4><p>Relocate to destinations offering a lower cost of living, superior healthcare, and optimal weather conditions.</p></div>
+                    </div>
+                    <div class="ip-feature" data-aos="fade-up" data-aos-delay="200">
+                        <span class="ip-feature__icon"><i class="fa-solid fa-passport"></i></span>
+                        <div><h4>Residency Programs</h4><p>Gain Golden Visas or residency pathways through real estate or local investment, leading to second passports.</p></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. POPULAR HUBS -->
+<section class="ip-suite" id="hubs">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 5%; left: 3%; width: 70px;"><img src="<?= $obj ?>/yellow-square.png" alt=""></div>
+    <div class="container">
+        <div class="ip-suite__head" data-aos="fade-up">
+            <span class="ip-pill">Top Destinations</span>
+            <h2 class="ip-title">Popular Offshore Hubs</h2>
+            <p class="ip-sub">Tailored jurisdiction catering to unique financial objectives, privacy demands, and lifestyle goals.</p>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
+                <article class="ip-card">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title">Switzerland</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-vault"></i></span>
+                    </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Renowned for strict banking privacy, world-class wealth management, and unmatched economic stability.</p>
+                </article>
             </div>
 
-            <!-- Two-Column Section: Invest vs Live -->
-            <div class="row g-4 mb-5">
-                
-                <!-- Why Invest Offshore Column -->
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                    <h3 class="fw-bold mb-4 d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-chart-pie text-warning"></i> Why Invest Offshore
-                    </h3>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Asset Protection</h6>
-                            <p class="text-muted small mb-0">Insulate your wealth from domestic litigation, local economic crises, or aggressive creditors in top-tier legal systems.</p>
-                        </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="110">
+                <article class="ip-card">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title">Singapore</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span>
                     </div>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-coins"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Currency Diversification</h6>
-                            <p class="text-muted small mb-0">Hold and grow capital in stronger global currencies to hedge against domestic inflation and market volatility.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-globe"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Access to Global Markets</h6>
-                            <p class="text-muted small mb-0">Gain entrance into high-yield international asset classes, tech sectors, and real estate markets.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-percent"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Favorable Tax Structures</h6>
-                            <p class="text-muted small mb-0">Financial hubs like Cayman Islands or the Bahamas impose little to no capital gains, inheritance, or corporate taxes.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Why Live Offshore Column -->
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-                    <h3 class="fw-bold mb-4 d-flex align-items-center gap-2">
-                        <i class="fa-solid fa-plane-departure text-warning"></i> Why Live Offshore
-                    </h3>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-user-shield"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Privacy and Security</h6>
-                            <p class="text-muted small mb-0">Offshore banking and trust structures provide robust personal privacy and financial confidentiality.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-house-chimney-window"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Lifestyle Upgrades</h6>
-                            <p class="text-muted small mb-0">Relocate to destinations offering a lower cost of living, superior healthcare, and optimal weather conditions.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-box">
-                        <div class="icon"><i class="fa-solid fa-passport"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Residency Programs</h6>
-                            <p class="text-muted small mb-0">Gain Golden Visas or residency pathways through real estate or local investment, leading to second passports.</p>
-                        </div>
-                    </div>
-                </div>
-
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Asia's premier financial capital featuring business-friendly tax policies, security, and infrastructure.</p>
+                </article>
             </div>
 
-            <!-- Hubs Section Grid -->
-            <div class="pt-4 mb-5">
-                <div class="text-center max-width-600 mx-auto mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Popular Offshore Hubs</h2>
-                    <p class="text-muted">Tailored jurisdiction catering to unique financial objectives, privacy demands, and lifestyle goals.</p>
-                </div>
-
-                <div class="row g-4">
-                    <!-- Switzerland -->
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="hub-card">
-                            <div class="hub-flag"><i class="fa-solid fa-vault"></i></div>
-                            <h5 class="fw-bold mb-2">Switzerland</h5>
-                            <p class="text-muted small mb-0">Renowned for strict banking privacy, world-class wealth management, and unmatched economic stability.</p>
-                        </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="220">
+                <article class="ip-card">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title">Cayman &amp; Bahamas</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-umbrella-beach"></i></span>
                     </div>
-
-                    <!-- Singapore -->
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="hub-card">
-                            <div class="hub-flag"><i class="fa-solid fa-building-columns"></i></div>
-                            <h5 class="fw-bold mb-2">Singapore</h5>
-                            <p class="text-muted small mb-0">Asia's premier financial capital featuring business-friendly tax policies, security, and infrastructure.</p>
-                        </div>
-                    </div>
-
-                    <!-- Cayman Islands & Bahamas -->
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="hub-card">
-                            <div class="hub-flag"><i class="fa-solid fa-island-tropical"></i></div>
-                            <h5 class="fw-bold mb-2">Cayman & Bahamas</h5>
-                            <p class="text-muted small mb-0">Famed for zero-tax frameworks on capital gains and corporate income for international investors.</p>
-                        </div>
-                    </div>
-
-                    <!-- UAE (Dubai) -->
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="hub-card">
-                            <div class="hub-flag"><i class="fa-solid fa-city"></i></div>
-                            <h5 class="fw-bold mb-2">UAE (Dubai)</h5>
-                            <p class="text-muted small mb-0">Offers 0% personal income tax, 100% foreign corporate ownership, and world-class luxury expatriate living.</p>
-                        </div>
-                    </div>
-                </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Famed for zero-tax frameworks on capital gains and corporate income for international investors.</p>
+                </article>
             </div>
 
-            <!-- Advisory Disclaimer Section -->
-            <div class="row mt-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-12">
-                    <div class="disclaimer-card">
-                        <div class="d-flex align-items-start gap-3">
-                            <i class="fa-solid fa-scale-balanced fs-3 text-warning mt-1"></i>
-                            <div>
-                                <h5 class="fw-bold mb-2">Compliance & Tax Advisory</h5>
-                                <p class="text-muted mb-3">
-                                    When considering an offshore move, consulting international financial and legal advisors is crucial to ensure full compliance with home-country tax reporting laws.
-                                </p>
-                                <p class="mb-0">
-                                    Learn more with detailed guides from 
-                                    <a href="https://www.investopedia.com" target="_blank" class="resource-link me-3">Investopedia <i class="fa-solid fa-arrow-up-right-from-square fs-6"></i></a> 
-                                    or consult wealth managers at 
-                                    <a href="https://alpenpartners.com" target="_blank" class="resource-link">Alpen Partners <i class="fa-solid fa-arrow-up-right-from-square fs-6"></i></a>.
-                                </p>
-                            </div>
-                        </div>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="330">
+                <article class="ip-card">
+                    <div class="ip-card__head">
+                        <h3 class="ip-card__title">UAE (Dubai)</h3>
+                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-city"></i></span>
                     </div>
-                </div>
+                    <span class="ip-card__divider"></span>
+                    <p class="ip-card__desc">Offers 0% personal income tax, 100% foreign corporate ownership, and world-class luxury expatriate living.</p>
+                </article>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- 5. ADVISORY NOTICE + JURISDICTION MENU -->
+<section class="ip-section ip-section--cream">
+    <div class="container">
+        <div class="ip-notice" data-aos="fade-up">
+            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+            <div>
+                <h3>Compliance &amp; Tax Advisory</h3>
+                <p>When considering an offshore move, consulting international financial and legal advisors is crucial to ensure full compliance with home-country tax reporting laws.</p>
+                <p class="mb-0">Learn more with detailed guides from <a href="https://www.investopedia.com" target="_blank" rel="noopener">Investopedia <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7em"></i></a> or consult wealth managers at <a href="https://alpenpartners.com" target="_blank" rel="noopener">Alpen Partners <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7em"></i></a>.</p>
+            </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
             <?php include ROOT_PATH . '/elements/offshore-jurisdiction-menu.php'; ?>
         </div>
-    </main>
+    </div>
+</section>
 
-    
+</main>
+
+<script src="<?= BASE_URL.BASE_FOLDER ?>/assets/js/inner-pages.js?v=<?= FILE_VERSISON ?>"></script>
+
 <?php include ROOT_PATH . '/elements/footer.php'; ?>

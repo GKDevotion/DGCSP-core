@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2300 795" width="2300" height="795" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="bgforexbh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa"/><stop offset="0.45" stop-color="#f1f3f7"/><stop offset="1" stop-color="#e9ecf2"/></linearGradient>
+<linearGradient id="goldforexbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="0.5" stop-color="#c39a47"/><stop offset="1" stop-color="#96783d"/></linearGradient>
+<linearGradient id="tanforexbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#d4b57a"/></linearGradient>
+<linearGradient id="darkforexbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7d83"/><stop offset="1" stop-color="#3b3d41"/></linearGradient>
+<linearGradient id="greyforexbh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e4e8"/><stop offset="1" stop-color="#bfc1c7"/></linearGradient>
+<radialGradient id="glowforexbh" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="shforexbh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2b2410" flood-opacity="0.22"/></filter>
+<filter id="shsforexbh" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2b2410" flood-opacity="0.2"/></filter>
+</defs><linearGradient id="veilforexbh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa" stop-opacity="1"/><stop offset="0.5" stop-color="#f7f8fa" stop-opacity="0.85"/><stop offset="0.7" stop-color="#f7f8fa" stop-opacity="0"/></linearGradient><rect width="2300" height="795" fill="url(#bgforexbh)"/><ellipse cx="1650" cy="400" rx="760" ry="520" fill="url(#glowforexbh)"/><circle cx="1650" cy="400" r="420" fill="none" stroke="#c39a47" stroke-opacity="0.35" stroke-width="2"/>
+<circle cx="1650" cy="400" r="302" fill="none" stroke="#c39a47" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="6 10"/>
+<ellipse cx="1650" cy="400" rx="470" ry="143" fill="none" stroke="#c39a47" stroke-opacity="0.3" stroke-width="2" transform="rotate(-18 1650 400)"/>
+<line x1="1887" y1="568" x2="1896" y2="349" stroke="#b08a3e" stroke-opacity="0.06" stroke-width="1.6"/>
+<line x1="1887" y1="568" x2="1803" y2="652" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
+<line x1="1887" y1="568" x2="1975" y2="487" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
+<line x1="1887" y1="568" x2="1961" y2="444" stroke="#b08a3e" stroke-opacity="0.18" stroke-width="1.6"/>
+<line x1="1887" y1="568" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
+<line x1="1758" y1="122" x2="1883" y2="96" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<line x1="1758" y1="122" x2="1954" y2="280" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1758" y1="122" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1896" y1="349" x2="1883" y2="96" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
+<line x1="1896" y1="349" x2="1975" y2="487" stroke="#b08a3e" stroke-opacity="0.15" stroke-width="1.6"/>
+<line x1="1896" y1="349" x2="1954" y2="280" stroke="#b08a3e" stroke-opacity="0.26" stroke-width="1.6"/>
+<line x1="1896" y1="349" x2="1961" y2="444" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
+<line x1="1896" y1="349" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.34" stroke-width="1.6"/>
+<line x1="1623" y1="715" x2="1803" y2="652" stroke="#b08a3e" stroke-opacity="0.11" stroke-width="1.6"/>
+<line x1="1623" y1="715" x2="1399" y2="692" stroke="#b08a3e" stroke-opacity="0.05" stroke-width="1.6"/>
+<line x1="1623" y1="715" x2="1542" y2="652" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
+<line x1="1803" y1="652" x2="1975" y2="487" stroke="#b08a3e" stroke-opacity="0.03" stroke-width="1.6"/>
+<line x1="1399" y1="692" x2="1542" y2="652" stroke="#b08a3e" stroke-opacity="0.17" stroke-width="1.6"/>
+<line x1="1399" y1="692" x2="1319" y2="630" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
+<line x1="1883" y1="96" x2="1954" y2="280" stroke="#b08a3e" stroke-opacity="0.10" stroke-width="1.6"/>
+<line x1="1883" y1="96" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.05" stroke-width="1.6"/>
+<line x1="1542" y1="652" x2="1319" y2="630" stroke="#b08a3e" stroke-opacity="0.05" stroke-width="1.6"/>
+<line x1="1975" y1="487" x2="1954" y2="280" stroke="#b08a3e" stroke-opacity="0.08" stroke-width="1.6"/>
+<line x1="1975" y1="487" x2="1961" y2="444" stroke="#b08a3e" stroke-opacity="0.33" stroke-width="1.6"/>
+<line x1="1975" y1="487" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.13" stroke-width="1.6"/>
+<line x1="1319" y1="630" x2="1297" y2="426" stroke="#b08a3e" stroke-opacity="0.08" stroke-width="1.6"/>
+<line x1="1954" y1="280" x2="1961" y2="444" stroke="#b08a3e" stroke-opacity="0.15" stroke-width="1.6"/>
+<line x1="1954" y1="280" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.32" stroke-width="1.6"/>
+<line x1="1961" y1="444" x2="1919" y2="321" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<circle cx="1887" cy="568" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1758" cy="122" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1896" cy="349" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1623" cy="715" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1803" cy="652" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1399" cy="692" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1883" cy="96" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1542" cy="652" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1975" cy="487" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1319" cy="630" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1954" cy="280" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1961" cy="444" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1919" cy="321" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1297" cy="426" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<rect x="1290" y="150" width="640" height="500" rx="34" fill="url(#greyforexbh)" filter="url(#shforexbh)" transform="rotate(0 1610.0 400.0)"/>
+<line x1="1392" y1="330" x2="1392" y2="520" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1370" y="370" width="44" height="110" rx="10" fill="url(#goldforexbh)" filter="url(#shsforexbh)"/>
+<line x1="1482" y1="290" x2="1482" y2="480" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1460" y="330" width="44" height="110" rx="10" fill="url(#goldforexbh)" filter="url(#shsforexbh)"/>
+<line x1="1572" y1="360" x2="1572" y2="540" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1550" y="400" width="44" height="100" rx="10" fill="url(#darkforexbh)" filter="url(#shsforexbh)"/>
+<line x1="1662" y1="300" x2="1662" y2="500" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1640" y="340" width="44" height="120" rx="10" fill="url(#goldforexbh)" filter="url(#shsforexbh)"/>
+<line x1="1752" y1="240" x2="1752" y2="440" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1730" y="280" width="44" height="120" rx="10" fill="url(#goldforexbh)" filter="url(#shsforexbh)"/>
+<line x1="1842" y1="290" x2="1842" y2="500" stroke="#8a6a2c" stroke-width="6" stroke-linecap="round"/><rect x="1820" y="330" width="44" height="130" rx="10" fill="url(#darkforexbh)" filter="url(#shsforexbh)"/>
+<path d="M1330 520 C1450 470 1520 520 1640 400 S1800 300 1900 230" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.95"/>
+<circle cx="2030" cy="280" r="74" fill="url(#goldforexbh)" filter="url(#shforexbh)"/><text x="2030" y="302" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="72" font-weight="700" fill="#fff">$</text>
+<circle cx="1250" cy="610" r="64" fill="url(#darkforexbh)" filter="url(#shforexbh)"/><text x="1250" y="632" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="64" font-weight="700" fill="#fff">€</text><rect width="2300" height="795" fill="url(#veilforexbh)"/></svg>

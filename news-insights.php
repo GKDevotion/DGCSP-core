@@ -2,366 +2,65 @@
 require_once __DIR__ . '/config.php';
 include ROOT_PATH . '/elements/header.php';
 
+$imgDir = '/assets/images/news-insights';
+$img    = BASE_URL . BASE_FOLDER . $imgDir;
+$obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
+
+// Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
 ?>
 
-<style>
+<!-- Shared theme + app-page components (same look & animation set as the other pages) -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/app-pages.css?v=<?= FILE_VERSISON ?>">
+<main>
 
-    /* Gold Banner Header Section */
-    .gold-hero-banner {
-        background: linear-gradient(135deg, var(--brand-dark) 0%, #1a1a1a 40%, var(--dark-gold) 100%);
-        color: var(--white);
-        padding: 80px 0 70px 0;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 3px solid var(--gold-primary);
-    }
-
-    .gold-hero-banner::before {
-        content: '';
-        position: absolute;
-        top: -20%;
-        right: -10%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, var(--overlay-gold) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .gold-badge {
-        background-color: rgba(171, 129, 57, 0.2);
-        color: var(--gold-light);
-        border: 1px solid var(--gold-primary);
-        font-size: 0.85rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-    }
-
-    /* Custom Search Box */
-    .search-box-gold {
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(12px);
-        border: 1px solid var(--gold-border);
-        border-radius: 50px;
-        padding: 6px 8px 6px 22px;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-    }
-
-    .search-box-gold:focus-within {
-        border-color: var(--gold-primary);
-        box-shadow: 0 0 15px rgba(171, 129, 57, 0.3);
-        background: rgba(255, 255, 255, 0.18);
-    }
-
-    .search-box-gold input {
-        background: transparent;
-        border: none;
-        color: var(--white);
-        font-size: 0.95rem;
-    }
-
-    .search-box-gold input::placeholder {
-        color: rgba(255, 255, 255, 0.65);
-    }
-
-    .search-box-gold input:focus {
-        box-shadow: none;
-        background: transparent;
-        color: var(--white);
-    }
-
-    .btn-gold-action {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        border-radius: 30px;
-        font-weight: 600;
-        padding: 10px 24px;
-        border: none;
-        transition: var(--transition);
-    }
-
-    .btn-gold-action:hover {
-        background-color: var(--gold-hover);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(171, 129, 57, 0.35);
-    }
-
-    /* Hero Stat Counters */
-    .stat-card-gold {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--gold-border);
-        border-radius: var(--card-radius);
-        padding: 20px 15px;
-        text-align: center;
-        backdrop-filter: blur(8px);
-        transition: var(--transition);
-    }
-
-    .stat-card-gold:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.1);
-        border-color: var(--gold-primary);
-    }
-
-    .stat-number-gold {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #e5c07b;
-        line-height: 1.2;
-    }
-
-    /* Filter Tabs */
-    .category-tabs-gold {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 45px;
-    }
-
-    .btn-filter-gold {
-        border-radius: 30px;
-        padding: 10px 24px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        border: 1px solid var(--gold-border);
-        background-color: var(--white);
-        color: var(--text-dark);
-        transition: var(--transition);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .btn-filter-gold:hover, .btn-filter-gold.active {
-        background-color: var(--gold-primary);
-        color: var(--white);
-        border-color: var(--gold-primary);
-        box-shadow: var(--shadow-md);
-    }
-
-    /* Article Grid & Cards */
-    .article-card-gold {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-card);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .article-card-gold:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--gold-primary);
-    }
-
-    .article-img-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: 220px;
-    }
-
-    .article-img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .article-card-gold:hover .article-img-wrapper img {
-        transform: scale(1.08);
-    }
-
-    .category-badge-overlay {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: rgba(43, 43, 43, 0.85);
-        backdrop-filter: blur(6px);
-        color: var(--gold-light);
-        border: 1px solid var(--gold-primary);
-        font-weight: 600;
-        font-size: 0.75rem;
-        padding: 5px 14px;
-        border-radius: 20px;
-        z-index: 2;
-    }
-
-    .tag-pill-gold {
-        font-size: 0.75rem;
-        background: var(--gray-color);
-        color: var(--brand-text-sub);
-        padding: 4px 10px;
-        border-radius: 6px;
-        margin-right: 6px;
-        margin-bottom: 6px;
-        display: inline-block;
-        border: 1px solid var(--brand-grey);
-    }
-
-    .btn-outline-gold {
-        color: var(--gold-primary);
-        border: 1px solid var(--gold-primary);
-        background: transparent;
-        font-weight: 600;
-        border-radius: 30px;
-        transition: var(--transition);
-    }
-
-    .btn-outline-gold:hover {
-        background: var(--gold-primary);
-        color: var(--white);
-        box-shadow: 0 4px 12px rgba(171, 129, 57, 0.25);
-    }
-
-    /* Featured Spotlight Card */
-    .spotlight-card-gold {
-        background: var(--golden-gradient-background);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-border);
-        padding: 45px;
-        box-shadow: var(--shadow-md);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .spotlight-img {
-        border-radius: 12px;
-        box-shadow: var(--shadow-md);
-        object-fit: cover;
-        width: 100%;
-        max-height: 380px;
-    }
-
-    /* Trending Highlights */
-    .trending-item-gold {
-        background: var(--white);
-        border-radius: var(--card-radius);
-        padding: 20px;
-        border: 1px solid var(--gold-border);
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        height: 100%;
-    }
-
-    .trending-item-gold:hover {
-        transform: translateX(5px);
-        border-color: var(--gold-primary);
-        box-shadow: var(--shadow-card);
-    }
-
-    .trending-rank-badge {
-        width: 48px;
-        height: 48px;
-        background: var(--gold-light);
-        border: 1px solid var(--gold-primary);
-        color: var(--dark-gold);
-        font-weight: 800;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    /* Newsletter CTA Section */
-    .cta-gold-banner {
-        background: linear-gradient(135deg, var(--brand-dark) 0%, var(--dark-gold) 100%);
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-primary);
-        color: var(--white);
-        padding: 60px 40px;
-        box-shadow: var(--shadow-hover);
-    }
-
-    .newsletter-input {
-        border-radius: 30px;
-        padding: 12px 24px;
-        border: 1px solid var(--gold-border);
-        font-size: 0.95rem;
-    }
-
-    .newsletter-input:focus {
-        box-shadow: 0 0 10px rgba(171, 129, 57, 0.4);
-        border-color: var(--gold-primary);
-    }
-
-    /* Modal Custom Styling */
-    .modal-content-gold {
-        border-radius: var(--card-radius);
-        border: 1px solid var(--gold-primary);
-        box-shadow: var(--shadow-hover);
-        background: var(--white);
-    }
-
-    .modal-header-gold {
-        border-bottom: 1px solid var(--gold-border);
-        background: var(--gold-light);
-    }
-
-    .author-avatar {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--gold-primary);
-    }
-</style>
-
-<!-- 1. HEADER BANNER SECTION -->
-<section class="gold-hero-banner" id="news-hero">
-    <div class="container relative-10">
-        <div class="row align-items-center gy-5">
-            <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
-                <span class="badge gold-badge rounded-pill px-3 py-2 mb-3">
-                    <i class="fa-solid fa-newspaper me-2 text-warning"></i> Thought Leadership & Intelligence
-                </span>
-                <h1 class="display-4 text-white fw-bold mb-3">News & Insights</h1>
-                <p class="lead text-white-50 mb-4">Stay updated with industry trends, expert analysis, enterprise innovations, and company updates curated by our senior strategist team.</p>
-                
-                <!-- Search Input Filter -->
-                <div class="search-box-gold d-flex align-items-center max-w-lg mb-2">
-                    <i class="fa-solid fa-magnifying-glass text-white-50 me-2"></i>
+<!-- 1. HERO -->
+<header class="ip-hero ip-hero--tall" id="news-hero">
+    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Thought Leadership &amp; Intelligence</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">News &amp;<br><span class="ip-gold">Insights</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Stay updated with industry trends, expert analysis, enterprise innovations, and company updates curated by our senior strategist team.</p>
+                <div class="hero-search-box" data-aos="fade-up" data-aos-delay="450">
                     <input type="text" id="articleSearchInput" class="form-control" placeholder="Search by topic, keyword, or author name...">
-                    <button class="btn btn-gold-action" type="button" id="searchBtn">Search</button>
+                    <button class="search-btn" type="button" id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
+        </div>
+    </div>
+</header>
 
-            <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
-                <div class="row g-3">
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="250">0</div>
-                            <div class="text-white-50 small mt-1">Articles Published</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="50">0</div>
-                            <div class="text-white-50 small mt-1">k Monthly Readers</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="15">0</div>
-                            <div class="text-white-50 small mt-1">Industry Experts</div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-card-gold">
-                            <div class="stat-number-gold" data-target="98">0</div>
-                            <div class="text-white-50 small mt-1">% Reader Approval</div>
-                        </div>
-                    </div>
+<!-- 2. LIVE STATS -->
+<section class="ip-stats ip-stats--pull">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="ip-stat ip-stat--gold">
+                    <span class="ip-stat__num stat-number-gold" data-target="250">0</span>
+                    <span class="ip-stat__label">Articles Published</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="ip-stat ip-stat--dark">
+                    <span class="ip-stat__num stat-number-gold" data-target="50">0</span>
+                    <span class="ip-stat__label">k Monthly Readers</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="ip-stat ip-stat--tan">
+                    <span class="ip-stat__num stat-number-gold" data-target="15">0</span>
+                    <span class="ip-stat__label">Industry Experts</span>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="ip-stat ip-stat--grey">
+                    <span class="ip-stat__num stat-number-gold" data-target="98">0</span>
+                    <span class="ip-stat__label">% Reader Approval</span>
                 </div>
             </div>
         </div>
@@ -369,7 +68,8 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 2. FEATURED SPOTLIGHT ARTICLE -->
-<section class="py-5" style="background-color: var(--gold-light);" id="featured-spotlight">
+<section class="ip-section ip-section--cream" id="featured-spotlight">
+    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
     <div class="container py-3" data-aos="fade-up">
         <div class="spotlight-card-gold">
             <div class="row align-items-center gy-4">
@@ -415,13 +115,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 3. ARTICLE GRID & CATEGORY FILTER SECTION -->
-<section class="py-5" id="articles-directory">
+<section class="ip-section ip-section--gray" id="articles-directory">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
     <div class="container py-4">
-        <div class="text-center max-w-2xl mx-auto mb-4" data-aos="fade-up">
-            <h6 class="text-uppercase fw-bold letter-spacing-1" style="color: var(--gold-primary);">Knowledge Hub</h6>
-            <h2 class="fw-bold mb-2">Explore Latest Articles & Reports</h2>
-            <p class="text-muted">Filtered by expert categories to deliver actionable perspectives for business leaders.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Knowledge Hub</span><h2 class="ip-title">Explore Latest Articles & Reports</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Filtered by expert categories to deliver actionable perspectives for business leaders.</p></div>
 
         <!-- Filter Tabs -->
         <div class="category-tabs-gold" data-aos="fade-up" data-aos-delay="100">
@@ -706,13 +403,10 @@ include ROOT_PATH . '/elements/header.php';
 </section>
 
 <!-- 4. TRENDING HIGHLIGHTS SECTION -->
-<section class="py-5" style="background-color: var(--gold-light);">
+<section class="ip-section">
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 3%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
     <div class="container py-3">
-        <div class="text-center max-w-2xl mx-auto mb-5" data-aos="fade-up">
-            <h6 class="text-uppercase fw-bold letter-spacing-1" style="color: var(--gold-primary);">Most Popular</h6>
-            <h2 class="fw-bold">Trending Insights This Month</h2>
-            <p class="text-muted">Top-read executive briefings curated by readership engagement metrics.</p>
-        </div>
+        <div class="ip-head" data-aos="fade-up"><span class="ip-pill">Most Popular</span><h2 class="ip-title">Trending Insights This Month</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">Top-read executive briefings curated by readership engagement metrics.</p></div>
 
         <div class="row g-4">
             
@@ -753,28 +447,31 @@ include ROOT_PATH . '/elements/header.php';
     </div>
 </section>
 
-<!-- 5. NEWSLETTER SUBSCRIPTION CTA BANNER -->
-<section class="py-5">
-    <div class="container" data-aos="zoom-in">
-        <div class="cta-gold-banner text-center">
-            <h2 class="display-6 text-white fw-bold mb-3">Subscribe to Insights Digest</h2>
-            <p class="lead text-white-50 mb-4 max-w-xl mx-auto">Get our bi-weekly executive intelligence brief delivered straight to your inbox. No spam, only high-impact technology and strategy updates.</p>
-            
-            <form id="newsletterForm" class="row g-2 justify-content-center max-w-lg mx-auto">
-                <div class="col-sm-8">
-                    <input type="email" id="newsletterEmail" class="form-control newsletter-input" placeholder="Enter your executive email address..." required>
+<!-- 5. NEWSLETTER SUBSCRIPTION (CTA) -->
+<section class="ip-cta" id="subscribe">
+    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+    <div class="container ip-cta__content">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+                <h2 class="ip-title">Subscribe to Insights Digest</h2>
+                <p>Get our bi-weekly executive intelligence brief delivered straight to your inbox. No spam, only high-impact technology and strategy updates.</p>
+                <form id="newsletterForm" class="row g-2 justify-content-end">
+                    <div class="col-sm-8">
+                        <input type="email" id="newsletterEmail" class="form-control newsletter-input" placeholder="Enter your executive email address..." required>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-gold-action w-100">Subscribe</button>
+                    </div>
+                </form>
+                <div id="newsletterSuccess" class="alert alert-success bg-white text-dark border-0 mt-3 d-none rounded-pill fw-semibold" role="alert">
+                    <i class="fa-solid fa-circle-check text-success me-2"></i> Thank you for subscribing to Insights Digest!
                 </div>
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-gold-action w-100 py-2">Subscribe</button>
-                </div>
-            </form>
-            
-            <div id="newsletterSuccess" class="alert alert-success bg-white text-dark border-0 mt-3 max-w-lg mx-auto d-none rounded-pill fw-semibold" role="alert">
-                <i class="fa-solid fa-circle-check text-success me-2"></i> Thank you for subscribing to Insights Digest!
             </div>
         </div>
     </div>
 </section>
+
+</main>
 
 <!-- 6. DYNAMIC ARTICLE READER MODAL -->
 <div class="modal fade" id="articleModal" tabindex="-1" aria-hidden="true">

@@ -1,60 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2300 795" width="2300" height="795" preserveAspectRatio="xMidYMid slice"><defs>
-<linearGradient id="bgbankinm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa"/><stop offset="0.45" stop-color="#f1f3f7"/><stop offset="1" stop-color="#e9ecf2"/></linearGradient>
-<linearGradient id="goldbankinm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="0.5" stop-color="#c39a47"/><stop offset="1" stop-color="#96783d"/></linearGradient>
-<linearGradient id="tanbankinm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#d4b57a"/></linearGradient>
-<linearGradient id="darkbankinm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7d83"/><stop offset="1" stop-color="#3b3d41"/></linearGradient>
-<linearGradient id="greybankinm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e4e8"/><stop offset="1" stop-color="#bfc1c7"/></linearGradient>
-<radialGradient id="glowbankinm" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-<filter id="shbankinm" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2b2410" flood-opacity="0.22"/></filter>
-<filter id="shsbankinm" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2b2410" flood-opacity="0.2"/></filter>
-</defs><linearGradient id="veilbankinm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa" stop-opacity="1"/><stop offset="0.5" stop-color="#f7f8fa" stop-opacity="0.85"/><stop offset="0.7" stop-color="#f7f8fa" stop-opacity="0"/></linearGradient><rect width="2300" height="795" fill="url(#bgbankinm)"/><ellipse cx="650" cy="400" rx="760" ry="520" fill="url(#glowbankinm)"/><g transform="translate(-1000 0)"><circle cx="1650" cy="400" r="420" fill="none" stroke="#c39a47" stroke-opacity="0.35" stroke-width="2"/>
+<linearGradient id="bgbankinc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa"/><stop offset="0.45" stop-color="#f1f3f7"/><stop offset="1" stop-color="#e9ecf2"/></linearGradient>
+<linearGradient id="goldbankinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c27a"/><stop offset="0.5" stop-color="#c39a47"/><stop offset="1" stop-color="#96783d"/></linearGradient>
+<linearGradient id="tanbankinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#d4b57a"/></linearGradient>
+<linearGradient id="darkbankinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7d83"/><stop offset="1" stop-color="#3b3d41"/></linearGradient>
+<linearGradient id="greybankinc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e4e8"/><stop offset="1" stop-color="#bfc1c7"/></linearGradient>
+<radialGradient id="glowbankinc" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<filter id="shbankinc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#2b2410" flood-opacity="0.22"/></filter>
+<filter id="shsbankinc" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2b2410" flood-opacity="0.2"/></filter>
+</defs><linearGradient id="veilbankinc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f8fa" stop-opacity="1"/><stop offset="0.5" stop-color="#f7f8fa" stop-opacity="0.85"/><stop offset="0.7" stop-color="#f7f8fa" stop-opacity="0"/></linearGradient><rect width="2300" height="795" fill="url(#bgbankinc)"/><ellipse cx="650" cy="400" rx="760" ry="520" fill="url(#glowbankinc)"/><g transform="translate(-1000 0)"><circle cx="1650" cy="400" r="420" fill="none" stroke="#c39a47" stroke-opacity="0.35" stroke-width="2"/>
 <circle cx="1650" cy="400" r="302" fill="none" stroke="#c39a47" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="6 10"/>
 <ellipse cx="1650" cy="400" rx="470" ry="143" fill="none" stroke="#c39a47" stroke-opacity="0.3" stroke-width="2" transform="rotate(-18 1650 400)"/>
-<line x1="1968" y1="203" x2="2002" y2="180" stroke="#b08a3e" stroke-opacity="0.34" stroke-width="1.6"/>
-<line x1="1968" y1="203" x2="1965" y2="306" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
-<line x1="1968" y1="203" x2="1907" y2="247" stroke="#b08a3e" stroke-opacity="0.28" stroke-width="1.6"/>
-<line x1="1968" y1="203" x2="1767" y2="106" stroke="#b08a3e" stroke-opacity="0.06" stroke-width="1.6"/>
-<line x1="1968" y1="203" x2="1896" y2="451" stroke="#b08a3e" stroke-opacity="0.00" stroke-width="1.6"/>
-<line x1="1695" y1="4" x2="1767" y2="106" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
-<line x1="1627" y1="742" x2="1727" y2="668" stroke="#b08a3e" stroke-opacity="0.21" stroke-width="1.6"/>
-<line x1="2002" y1="180" x2="1965" y2="306" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
-<line x1="2002" y1="180" x2="1907" y2="247" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
-<line x1="2002" y1="180" x2="1767" y2="106" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
-<line x1="1266" y1="620" x2="1317" y2="550" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
-<line x1="1891" y1="568" x2="1727" y2="668" stroke="#b08a3e" stroke-opacity="0.11" stroke-width="1.6"/>
-<line x1="1891" y1="568" x2="1963" y2="562" stroke="#b08a3e" stroke-opacity="0.29" stroke-width="1.6"/>
-<line x1="1891" y1="568" x2="1896" y2="451" stroke="#b08a3e" stroke-opacity="0.22" stroke-width="1.6"/>
-<line x1="1965" y1="306" x2="1907" y2="247" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
-<line x1="1965" y1="306" x2="1963" y2="562" stroke="#b08a3e" stroke-opacity="0.01" stroke-width="1.6"/>
-<line x1="1965" y1="306" x2="1896" y2="451" stroke="#b08a3e" stroke-opacity="0.15" stroke-width="1.6"/>
-<line x1="1727" y1="668" x2="1963" y2="562" stroke="#b08a3e" stroke-opacity="0.00" stroke-width="1.6"/>
-<line x1="1907" y1="247" x2="1767" y2="106" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
-<line x1="1907" y1="247" x2="1896" y2="451" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
-<line x1="1963" y1="562" x2="1896" y2="451" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
-<circle cx="1968" cy="203" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1695" cy="4" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1627" cy="742" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="2002" cy="180" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1409" cy="291" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1266" cy="620" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1891" cy="568" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1965" cy="306" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1727" cy="668" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1907" cy="247" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1317" cy="550" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1767" cy="106" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1963" cy="562" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<circle cx="1896" cy="451" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
-<ellipse cx="1650" cy="640" rx="470" ry="46" fill="#000" opacity="0.07"/>
-<polygon points="1650,160 1930,320 1370,320" fill="url(#goldbankinm)" filter="url(#shbankinm)"/>
-<polygon points="1650,205 1830,305 1470,305" fill="#fff" opacity="0.28"/>
-<rect x="1360" y="322" width="580" height="36" rx="8" fill="url(#darkbankinm)"/>
-<rect x="1405" y="372" width="64" height="210" rx="12" fill="url(#greybankinm)" filter="url(#shsbankinm)"/><rect x="1413" y="372" width="10" height="210" rx="5" fill="#fff" opacity="0.7"/>
-<rect x="1517" y="372" width="64" height="210" rx="12" fill="url(#greybankinm)" filter="url(#shsbankinm)"/><rect x="1525" y="372" width="10" height="210" rx="5" fill="#fff" opacity="0.7"/>
-<rect x="1629" y="372" width="64" height="210" rx="12" fill="url(#greybankinm)" filter="url(#shsbankinm)"/><rect x="1637" y="372" width="10" height="210" rx="5" fill="#fff" opacity="0.7"/>
-<rect x="1741" y="372" width="64" height="210" rx="12" fill="url(#greybankinm)" filter="url(#shsbankinm)"/><rect x="1749" y="372" width="10" height="210" rx="5" fill="#fff" opacity="0.7"/>
-<rect x="1853" y="372" width="64" height="210" rx="12" fill="url(#greybankinm)" filter="url(#shsbankinm)"/><rect x="1861" y="372" width="10" height="210" rx="5" fill="#fff" opacity="0.7"/>
-<rect x="1340" y="590" width="620" height="34" rx="8" fill="url(#darkbankinm)"/><rect x="1310" y="628" width="680" height="34" rx="8" fill="url(#goldbankinm)"/>
-<circle cx="1650" cy="262" r="30" fill="#fff"/><text x="1650" y="275" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="38" font-weight="700" fill="#96783d">$</text>
-<rect x="2010" y="230" width="190" height="120" rx="22" fill="url(#tanbankinm)" filter="url(#shsbankinm)" transform="rotate(-5 2105.0 290.0)"/>
-<rect x="1160" y="420" width="170" height="110" rx="22" fill="url(#greybankinm)" filter="url(#shsbankinm)" transform="rotate(5 1245.0 475.0)"/></g><rect width="2300" height="795" fill="url(#veilbankinm)" transform="translate(2300 0) scale(-1 1)"/></svg>
+<line x1="1676" y1="140" x2="1752" y2="173" stroke="#b08a3e" stroke-opacity="0.27" stroke-width="1.6"/>
+<line x1="1417" y1="574" x2="1404" y2="506" stroke="#b08a3e" stroke-opacity="0.29" stroke-width="1.6"/>
+<line x1="1417" y1="574" x2="1498" y2="769" stroke="#b08a3e" stroke-opacity="0.08" stroke-width="1.6"/>
+<line x1="1417" y1="574" x2="1503" y2="673" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1886" y2="679" stroke="#b08a3e" stroke-opacity="0.16" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1702" y2="700" stroke="#b08a3e" stroke-opacity="0.25" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1809" y2="574" stroke="#b08a3e" stroke-opacity="0.28" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1793" y2="792" stroke="#b08a3e" stroke-opacity="0.12" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1976" y2="630" stroke="#b08a3e" stroke-opacity="0.04" stroke-width="1.6"/>
+<line x1="1745" y1="615" x2="1503" y2="673" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
+<line x1="1886" y1="679" x2="1702" y2="700" stroke="#b08a3e" stroke-opacity="0.12" stroke-width="1.6"/>
+<line x1="1886" y1="679" x2="1809" y2="574" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<line x1="1886" y1="679" x2="1793" y2="792" stroke="#b08a3e" stroke-opacity="0.17" stroke-width="1.6"/>
+<line x1="1886" y1="679" x2="1976" y2="630" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
+<line x1="1702" y1="700" x2="1809" y2="574" stroke="#b08a3e" stroke-opacity="0.15" stroke-width="1.6"/>
+<line x1="1702" y1="700" x2="1793" y2="792" stroke="#b08a3e" stroke-opacity="0.20" stroke-width="1.6"/>
+<line x1="1702" y1="700" x2="1498" y2="769" stroke="#b08a3e" stroke-opacity="0.07" stroke-width="1.6"/>
+<line x1="1702" y1="700" x2="1503" y2="673" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
+<line x1="1294" y1="340" x2="1404" y2="506" stroke="#b08a3e" stroke-opacity="0.09" stroke-width="1.6"/>
+<line x1="1294" y1="340" x2="1213" y2="409" stroke="#b08a3e" stroke-opacity="0.24" stroke-width="1.6"/>
+<line x1="1809" y1="574" x2="1793" y2="792" stroke="#b08a3e" stroke-opacity="0.06" stroke-width="1.6"/>
+<line x1="1809" y1="574" x2="1976" y2="630" stroke="#b08a3e" stroke-opacity="0.13" stroke-width="1.6"/>
+<line x1="1404" y1="506" x2="1213" y2="409" stroke="#b08a3e" stroke-opacity="0.07" stroke-width="1.6"/>
+<line x1="1404" y1="506" x2="1503" y2="673" stroke="#b08a3e" stroke-opacity="0.10" stroke-width="1.6"/>
+<line x1="1793" y1="792" x2="1976" y2="630" stroke="#b08a3e" stroke-opacity="0.02" stroke-width="1.6"/>
+<line x1="1498" y1="769" x2="1503" y2="673" stroke="#b08a3e" stroke-opacity="0.25" stroke-width="1.6"/>
+<circle cx="1676" cy="140" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1417" cy="574" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1745" cy="615" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1886" cy="679" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1702" cy="700" r="8" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1752" cy="173" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1294" cy="340" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1809" cy="574" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1404" cy="506" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1793" cy="792" r="5" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1976" cy="630" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1213" cy="409" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1498" cy="769" r="6" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<circle cx="1503" cy="673" r="10" fill="#fff" stroke="#c39a47" stroke-width="2.5"/>
+<rect x="1480" y="150" width="270" height="500" rx="44" fill="url(#darkbankinc)" filter="url(#shbankinc)"/>
+<rect x="1498" y="176" width="234" height="448" rx="30" fill="#fff"/>
+<rect x="1522" y="206" width="120" height="16" rx="8" fill="#c7c8cc"/><rect x="1522" y="238" width="186" height="46" rx="12" fill="url(#goldbankinc)"/>
+<rect x="1522" y="320" width="186" height="44" rx="12" fill="#eef0f4"/><circle cx="1546" cy="342" r="12" fill="url(#tanbankinc)"/><rect x="1570" y="336" width="90" height="12" rx="6" fill="#c7c8cc"/>
+<rect x="1522" y="382" width="186" height="44" rx="12" fill="#eef0f4"/><circle cx="1546" cy="404" r="12" fill="url(#tanbankinc)"/><rect x="1570" y="398" width="90" height="12" rx="6" fill="#c7c8cc"/>
+<rect x="1522" y="444" width="186" height="44" rx="12" fill="#eef0f4"/><circle cx="1546" cy="466" r="12" fill="url(#tanbankinc)"/><rect x="1570" y="460" width="90" height="12" rx="6" fill="#c7c8cc"/>
+<rect x="1522" y="506" width="186" height="44" rx="12" fill="#eef0f4"/><circle cx="1546" cy="528" r="12" fill="url(#tanbankinc)"/><rect x="1570" y="522" width="90" height="12" rx="6" fill="#c7c8cc"/>
+<g transform="rotate(-12 1850 470)"><rect x="1690" y="350" width="400" height="250" rx="30" fill="url(#goldbankinc)" filter="url(#shbankinc)"/><rect x="1690" y="400" width="400" height="48" fill="#6a5224" opacity="0.55"/><rect x="1724" y="476" width="70" height="52" rx="10" fill="#f6e7bd"/><text x="1724" y="570" text-anchor="start" font-family="Poppins,Arial,sans-serif" font-size="26" font-weight="500" fill="#fff">•••• •••• •••• 2026</text></g>
+<rect x="1200" y="260" width="180" height="115" rx="22" fill="url(#greybankinc)" filter="url(#shsbankinc)" transform="rotate(-6 1290.0 317.5)"/>
+<g filter="url(#shsbankinc)"><ellipse cx="1340" cy="656" rx="58" ry="18" fill="#8a6a2c"/><rect x="1282" y="640" width="116" height="16" fill="#a98238"/><ellipse cx="1340" cy="640" rx="58" ry="18" fill="url(#goldbankinc)"/><ellipse cx="1340" cy="640" rx="42" ry="13" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2"/></g>
+<g filter="url(#shsbankinc)"><ellipse cx="1340" cy="636" rx="58" ry="18" fill="#8a6a2c"/><rect x="1282" y="620" width="116" height="16" fill="#a98238"/><ellipse cx="1340" cy="620" rx="58" ry="18" fill="url(#goldbankinc)"/><ellipse cx="1340" cy="620" rx="42" ry="13" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2"/></g>
+<g filter="url(#shsbankinc)"><ellipse cx="1340" cy="616" rx="58" ry="18" fill="#8a6a2c"/><rect x="1282" y="600" width="116" height="16" fill="#a98238"/><ellipse cx="1340" cy="600" rx="58" ry="18" fill="url(#goldbankinc)"/><ellipse cx="1340" cy="600" rx="42" ry="13" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="2"/></g></g><rect width="2300" height="795" fill="url(#veilbankinc)" transform="translate(2300 0) scale(-1 1)"/></svg>
