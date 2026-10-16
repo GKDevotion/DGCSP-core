@@ -150,12 +150,12 @@
     }
 
     /* Absolute Percentage Positioning (Desktop) */
-    .pos-mauritius { top: 20%; left: 17%; width: 12%; }
-    .pos-uae       { top: 16%; left: 40%; width: 12%; }
-    .pos-hongkong  { top: 15%; left: 70%; width: 16%; }
-    .pos-singapore { top: 44%; left: 30%; width: 16%; }
-    .pos-india     { top: 42%; left: 55%; width: 16%; }
-    .pos-uk        { top: 38%; left: 81%; width: 12%; }
+    .pos-mauritius { top: 20%; left: 17%; width: 11.5%; }
+    .pos-uae       { top: 16%; left: 40%; width: 11.5%; }
+    .pos-hongkong  { top: 15%; left: 70%; width: 15.5%; }
+    .pos-singapore { top: 44%; left: 30%; width: 15.5%; }
+    .pos-india     { top: 42%; left: 55%; width: 15.5%; }
+    .pos-uk        { top: 38%; left: 81%; width: 11.5%; }
 
     /* -------------------------------------------------------------
         RANDOMIZED FLOATING SERVICE BADGES
@@ -283,86 +283,180 @@
 
     </div>
 
+    <style>
+        /* Feature cards styled to match the supplied reference */
+        .gdb-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px 20px;
+            padding-top: 12px;
+        }
+
+        .gdb-feature-card {
+            min-height: 104px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 22px;
+            border: 1px solid #b38f51;
+            border-radius: 19px;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 20px rgba(45, 35, 18, 0.08);
+            text-align: left;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        }
+
+        .gdb-feature-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 12px 26px rgba(45, 35, 18, 0.13);
+        }
+
+        .gdb-feature-icon {
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #eee7d9;
+        }
+
+        .gdb-feature-icon img {
+            display: block;
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .gdb-feature-divider {
+            align-self: center;
+            flex: 0 0 1px;
+            height: 54px;
+            background: #c5a66c;
+        }
+
+        .gdb-feature-title {
+            margin: 0;
+            color: #111;
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.65;
+            font-weight: 700;
+        }
+
+        @media (max-width: 991.98px) {
+            .gdb-feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+            }
+            .gdb-feature-card {
+                padding: 15px 18px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .gdb-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding-top: 8px;
+            }
+            .gdb-feature-card {
+                min-height: 94px;
+                border-radius: 15px;
+                padding: 13px 16px;
+                gap: 15px;
+            }
+            .gdb-feature-icon {
+                flex-basis: 62px;
+                width: 62px;
+                height: 62px;
+            }
+            .gdb-feature-icon img {
+                width: 42px;
+                height: 42px;
+            }
+            .gdb-feature-divider {
+                height: 46px;
+            }
+            .gdb-feature-title {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gdb-feature-card { transition: none; }
+        }
+    </style>
+
     <div class="container-xl cards-wrapper-relative mb-4">
-        
-        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-3 g-lg-4 align-items-stretch pb-0">
-            
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/emerging-industries.gif' ?>" alt="Globe Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">10+ Countries &<br>Global Coverage</h3>
-                    </div>
+        <div class="gdb-feature-grid">
+            <div class="gdb-feature-card" >
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/emerging-industries.gif' ?>" alt="Global coverage icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">10+ Countries &amp;<br>Global Coverage</h3>
                 </div>
             </div>
 
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/transparent-pricing.gif' ?>" alt="Pricing Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">Transparent<br>Pricing</h3>
-                    </div>
+            <div class="gdb-feature-card" >
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/transparent-pricing.gif' ?>" alt="Transparent pricing icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">Transparent<br>Pricing</h3>
                 </div>
             </div>
 
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="600">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/clock-icon.gif' ?>" alt="Clock Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">Fast Company<br>Setup</h3>
-                    </div>
+            <div class="gdb-feature-card" >
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/clock-icon.gif' ?>" alt="Fast company setup icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">Fast Company<br>Setup</h3>
                 </div>
             </div>
 
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="800">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/secure-confidential.gif' ?>" alt="Security Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">Secure &<br>Confidential</h3>
-                    </div>
+            <div class="gdb-feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/secure-confidential.gif' ?>" alt="Security and confidentiality icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">Secure &amp;<br>Confidential</h3>
                 </div>
             </div>
 
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1000">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/expert-support.gif' ?>" alt="Support Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">Expert Business<br>Support</h3>
-                    </div>
+            <div class="gdb-feature-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/expert-support.gif' ?>" alt="Expert business support icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">Expert Business<br>Support</h3>
                 </div>
             </div>
 
-            <div class="col mt-0">
-                <div class="glass-card text-center" data-aos="fade-up" data-aos-delay="1200">
-                    <div class="icon-container">
-                        <img src="<?=  BASE_URL.BASE_FOLDER.'/assets/images/gif/24-7-support.gif' ?>" alt="24/7 Icon" class="card-icon">
-                    </div>
-                    <div class="card-body-content w-100">
-                        <div class="gold-divider"></div>
-                        <h3 class="fw-bold fs-6 mt-2 mb-2 text-dark mb-0 brand-font">24 x 7<br>Support Center</h3>
-                    </div>
+            <div class="gdb-feature-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="gdb-feature-icon">
+                    <img src="<?= BASE_URL.BASE_FOLDER.'/assets/images/gif/24-7-support.gif' ?>" alt="24/7 support icon" loading="lazy">
+                </div>
+                <span class="gdb-feature-divider" aria-hidden="true"></span>
+                <div class="gdb-feature-content">
+                    <h3 class="gdb-feature-title">24 x 7<br>Support Center</h3>
                 </div>
             </div>
-
         </div>
 
-        <p class="hero-subtitle mx-auto mt-2">
-            Global Business Consulting & Company Formation Services
+        <p class="hero-subtitle mx-auto mt-3">
+            Global Business Consulting &amp; Company Formation Services
         </p>
     </div>
 

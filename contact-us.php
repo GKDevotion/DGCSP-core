@@ -189,8 +189,6 @@ include ROOT_PATH . '/elements/header.php';
         color: var(--gold-primary);
     }
   </style>
-</head>
-<body>
 
   <!-- Top Accent Bar -->
   <div class="top-accent-line"></div>
