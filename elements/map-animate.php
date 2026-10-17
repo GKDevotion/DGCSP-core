@@ -284,6 +284,62 @@
     </div>
 
     <style>
+        /* Country Selector Container */
+        .country-selector-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 25px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .country-select-dropdown {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333333;
+            background-color: #ffffff;
+            border: 1.5px solid #ab8139;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(171, 129, 57, 0.15);
+            transition: all 0.3s ease;
+            text-align-last: center;
+        }
+
+        .country-select-dropdown:hover, 
+        .country-select-dropdown:focus {
+            border-color: #7d5e27;
+            box-shadow: 0 6px 18px rgba(171, 129, 57, 0.25);
+        }
+    </style>
+
+    <!-- Country Select Dropdown -->
+    <div class="country-selector-wrapper">
+        <select class="country-select-dropdown" id="countryDropdown" onchange="navigateToJurisdiction(this.value)">
+            <option value="" disabled selected>-- Select Country / Jurisdiction --</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/mauritius-company-registration">Mauritius</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/uae-company-registration">UAE</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/hongkong-company-registration">Hong Kong</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/singapore-company-registration">Singapore</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/india-company-registration">India</option>
+            <option value="<?= BASE_URL.BASE_FOLDER ?>/uk-company-registration">United Kingdom (UK)</option>
+        </select>
+    </div>
+
+    <script>
+        function navigateToJurisdiction(url) {
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+
+    <style>
         /* Feature cards styled to match the supplied reference */
         .gdb-feature-grid {
             display: grid;
