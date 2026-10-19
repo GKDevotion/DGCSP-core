@@ -244,7 +244,7 @@
 .ip-card:hover .ip-card__list li:nth-child(3) { transition-delay: 0.1s; }
 
 /* ---------- FAQ ---------- */
-.ip-faq { position: relative; padding: 5rem 0; background: #fff; overflow: hidden; }
+.ip-faq { position: relative; padding: 5rem 0; background: #fff; overflow: hidden; display:none }
 .ip-faq .container { position: relative; z-index: 2; }
 .ip-faq__art { width: 100%; max-width: 360px; height: auto; display: block; animation: floatTop 5s ease-in-out infinite alternate; }
 .ip-faq__tag { display: flex; align-items: center; gap: 0.9rem; margin: 1.2rem 0 0.6rem; }

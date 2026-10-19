@@ -1132,7 +1132,3 @@ body, html {
     transform: translateY(-3px);
     box-shadow: 0 6px 14px rgba(163, 130, 64, 0.25);
 }
-
-.ip-faq{
-    display: none;
-}

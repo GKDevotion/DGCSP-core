@@ -8,8 +8,8 @@ $obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
 
 // Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
-$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp') ? 'hero-bg.webp' : 'hero-bg.svg';
-$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')  ? 'cta-bg.webp'  : 'cta-bg.svg';
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp?v=' . FILE_VERSISON) ? 'hero-bg.webp?v=' . FILE_VERSISON : 'hero-bg.svg';
+$ctaFile  = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)  ? 'cta-bg.webp?v=' . FILE_VERSISON  : 'cta-bg.svg';
 ?>
 
     <!-- JSON-LD Structured Data (SEO, AEO, GEO Optimization) -->

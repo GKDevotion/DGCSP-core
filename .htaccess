@@ -67,6 +67,13 @@ RewriteRule ^webinars$ webinars.php?slug=$1 [L,QSA]
 RewriteRule ^resources$ resources.php?slug=$1 [L,QSA]
 RewriteRule ^our-clients$ our-clients.php?slug=$1 [L,QSA]
 
+RewriteRule ^mauritius-company-registration$ mauritius-company-registration.php?slug=$1 [L,QSA]
+RewriteRule ^singapore-company-registration$ singapore-company-registration.php?slug=$1 [L,QSA]
+RewriteRule ^uk-company-registration$ uk-company-registration.php?slug=$1 [L,QSA]
+RewriteRule ^india-company-registration$ india-company-registration.php?slug=$1 [L,QSA]
+RewriteRule ^uae-company-registration$ uae-company-registration.php?slug=$1 [L,QSA]
+RewriteRule ^hongkong-company-registration$ hongkong-company-registration.php?slug=$1 [L,QSA]
+
 RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 

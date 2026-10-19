@@ -170,7 +170,7 @@ $obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 
     <!-- 1. HERO -->
     <header class="ip-hero">
-        <img src="<?= $img ?>/hero-bg.webp" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+        <img src="<?= $img ?>/hero-bg.webp?v=<?= FILE_VERSISON ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
         <div class="container ip-hero__content">
             <div class="row">
                 <div class="col-lg-6 col-md-8">

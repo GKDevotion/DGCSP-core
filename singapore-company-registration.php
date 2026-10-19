@@ -180,7 +180,6 @@ include ROOT_PATH . '/elements/header.php';
       display: inline-flex;
       flex-wrap: wrap;
       gap: 0.25rem;
-      max-w-full;
     }
 
     .switcher-btn {
@@ -339,7 +338,7 @@ include ROOT_PATH . '/elements/header.php';
       .stepper-item::before { content: none; }
     }
   </style>
-  
+
   <!-- 2. Dynamic Hero Section with Split-Screen & Stats -->
   <section class="hero-wrapper">
     <div class="container">
