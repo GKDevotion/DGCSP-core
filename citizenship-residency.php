@@ -7,7 +7,14 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
 $obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 
 // Hero background: drop your own hero-bg.webp into the folder above and it is used automatically.
-$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp??v=' . FILE_VERSISON)') ? 'hero-bg.webp??v=' . FILE_VERSISON)' : 'hero-bg.svg';
+$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp?v=' . FILE_VERSISON)
+    ? 'hero-bg.webp?v=' . FILE_VERSISON
+    : 'hero-bg.svg';
+
+$ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
+    ? 'cta-bg.webp?v=' . FILE_VERSISON
+    : 'cta-bg.svg';
+
 ?>
 
 <!-- Shared theme + app-page components (same look & animation set as the other pages) -->
