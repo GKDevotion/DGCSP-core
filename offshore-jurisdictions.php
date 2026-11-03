@@ -477,6 +477,39 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         position: relative;
         overflow: hidden;
     }
+
+    /* Section artwork: a consistent atlas and document motif throughout the page. */
+    .hero-wrapper {
+        background-image: url('<?= $img ?>/<?= $heroFile ?>'), radial-gradient(circle at 85% 15%, rgba(184,150,85,.18), transparent 55%), linear-gradient(135deg,#fff 0%,#fbf9f4 100%);
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-bg-grid { opacity: .22; }
+    .globe-container { background: radial-gradient(circle at 35% 32%,rgba(255,255,255,.98),rgba(232,224,205,.78)); }
+    .access-platform-strip::after {
+        content: ''; position: absolute; width: 360px; height: 360px; right: 12%; top: 50%;
+        transform: translateY(-50%); border: 1px solid rgba(255,255,255,.12); border-radius: 50%;
+        box-shadow: 0 0 0 34px rgba(255,255,255,.035), 0 0 0 68px rgba(255,255,255,.025); pointer-events:none;
+    }
+    .flow-step-card { position: relative; }
+    .flow-step-node { background: radial-gradient(circle at 35% 30%,#fff 0%,#f6f0e3 100%); }
+    .map-matrix-wrapper { overflow: hidden; position: relative; }
+    .map-artwork { display:block; width:100%; max-height:180px; object-fit:contain; object-position:left center; margin-top:18px; opacity:.92; }
+    .country-card { position:relative; overflow:hidden; }
+    .country-card::before { content:''; position:absolute; width:150px; height:150px; top:-92px; right:-55px; border-radius:50%; background:radial-gradient(circle,rgba(184,150,85,.16),rgba(184,150,85,0) 70%); pointer-events:none; }
+    .notice-callout-card { overflow:hidden; background:linear-gradient(115deg,#fff 0%,#fff 68%,#fbf8f0 100%); }
+    .table-responsive { position:relative; }
+    .table-matrix thead th { background-image:linear-gradient(110deg,#0f1c2e,#203a5d); }
+    .package-card { position:relative; overflow:hidden; }
+    .package-card::after { content:''; display:block; width:96px; height:96px; position:absolute; right:-38px; bottom:-44px; border:1px solid rgba(184,150,85,.25); border-radius:50%; box-shadow:0 0 0 12px rgba(184,150,85,.045),0 0 0 24px rgba(184,150,85,.035); pointer-events:none; }
+    .order-wrapper { background-image:radial-gradient(circle at 100% 0%,rgba(184,150,85,.16),transparent 32%),linear-gradient(135deg,#fbf9f4,#f7f4ed); }
+    .order-card,.summary-card { position:relative; overflow:hidden; }
+    .cta-banner::after { content:''; position:absolute; width:260px; height:260px; right:12%; top:-150px; border:1px solid rgba(255,255,255,.16); border-radius:50%; box-shadow:0 0 0 24px rgba(255,255,255,.035),0 0 0 48px rgba(255,255,255,.025); pointer-events:none; }
+    @media (max-width: 767px) {
+        .hero-wrapper { background-position:62% center; }
+        .map-artwork { max-height:130px; }
+        .access-platform-strip::after { right:-180px; }
+    }
 </style>
 
 <main>
