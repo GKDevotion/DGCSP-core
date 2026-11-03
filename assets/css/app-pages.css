@@ -322,16 +322,6 @@
 .estimator-box .bg-gold-light { background: linear-gradient(135deg, #fffdf9, var(--gold-light, #f9f5ed)) !important; border-radius: 16px !important; border: 1px solid rgba(171, 129, 57, 0.28) !important; }
 @media (min-width: 768px) { .border-end-md { border-right: 1px solid rgba(171, 129, 57, 0.2); } }
 
-/* accordion */
-.accordion-item { border: 1px solid rgba(171, 129, 57, 0.22) !important; margin-bottom: 0.9rem; border-radius: 14px !important; overflow: hidden; background: #fff; transition: border-color 0.3s ease, box-shadow 0.35s var(--ip-ease); }
-.accordion-item:hover { border-color: var(--gold-primary) !important; }
-.accordion-button { font-weight: 600; font-size: 0.95rem; color: #333; background: #fff; padding: 1.15rem 1.4rem; }
-.accordion-button:not(.collapsed) { background: #fffdf8; color: var(--gold-hover); box-shadow: none; }
-.accordion-item:has(.accordion-button:not(.collapsed)) { border-color: var(--gold-primary) !important; box-shadow: 0 12px 30px rgba(171, 129, 57, 0.14); }
-.accordion-button:focus { box-shadow: 0 0 0 4px rgba(171, 129, 57, 0.15); border-color: var(--gold-primary); }
-.accordion-button::after { filter: sepia(1) saturate(4) hue-rotate(5deg); }
-.accordion-body { font-size: 0.9rem; line-height: 1.8; color: #666; }
-
 /* lead form + modal */
 #pageLeadForm .form-control, #pageLeadForm .form-select, #modalLeadForm .form-control, #modalLeadForm .form-select { border-radius: 12px; border: 1px solid rgba(171, 129, 57, 0.3); }
 #consultationModal .modal-header.bg-dark { background: linear-gradient(135deg, #fffdf9, var(--gold-light, #f9f5ed)) !important; border-bottom: 1px solid rgba(171, 129, 57, 0.2) !important; }
