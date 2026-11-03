@@ -36,13 +36,6 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    body {
-        font-family: 'Poppins', sans-serif;
-        color: var(--text-dark);
-        background-color: #ffffff;
-        overflow-x: hidden;
-    }
-
     .section-padding { padding: 95px 0; }
     
     .sub-heading {
@@ -62,12 +55,30 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         line-height: 1.25;
     }
 
-    /* Hero Banner Styling */
+    /* Keyframe Animations */
+    @keyframes floatAnim {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(2deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .floating-element { animation: floatAnim 4.5s ease-in-out infinite; }
+
+    /* 1. HERO SECTION WITH BACKGROUND SVG & CORNER ELEMENTS */
     .hero-wrapper {
-        background: radial-gradient(circle at 80% 20%, rgba(184, 150, 85, 0.15) 0%, rgba(255, 255, 255, 0) 60%),
+        background: radial-gradient(circle at 85% 15%, rgba(184, 150, 85, 0.18) 0%, rgba(255, 255, 255, 0) 55%),
                     linear-gradient(135deg, #ffffff 0%, #fbf9f4 100%);
         padding: 100px 0 85px;
         position: relative;
+        overflow: hidden;
+    }
+
+    .hero-bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(184, 150, 85, 0.15) 1px, transparent 1px);
+        background-size: 28px 28px;
+        opacity: 0.6;
+        pointer-events: none;
     }
 
     .hero-title {
@@ -110,11 +121,11 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         transform: translateY(-3px);
     }
 
-    /* Graphic Visual Sphere */
+    /* Globe & Corner Visuals */
     .globe-visual-wrapper {
         position: relative;
-        width: 360px;
-        height: 360px;
+        width: 370px;
+        height: 370px;
         margin: auto;
     }
     .globe-container {
@@ -129,6 +140,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         align-items: center;
         justify-content: center;
     }
+
     .float-card {
         position: absolute;
         background: rgba(255, 255, 255, 0.94);
@@ -145,6 +157,158 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
     .fc-1 { top: 10px; left: -30px; }
     .fc-2 { right: -40px; top: 150px; }
     .fc-3 { left: 0px; bottom: -10px; }
+
+    /* 2. ADAPTED FROM image_e7330a.png: FULL-WIDTH ACCESS STRIP WITH BADGES & 3D POLYGONS */
+    .access-platform-strip {
+        background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy-accent) 100%);
+        padding: 50px 0;
+        position: relative;
+        color: var(--white);
+        overflow: hidden;
+    }
+    .platform-icon-bar {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 18px;
+        padding: 14px 28px;
+        display: inline-flex;
+        gap: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    }
+    .platform-icon-btn {
+        width: 58px;
+        height: 58px;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: var(--dark-navy);
+        transition: var(--transition);
+    }
+    .platform-icon-btn:hover {
+        background: var(--gold-light);
+        color: var(--gold-primary);
+        transform: translateY(-4px);
+    }
+
+    /* Floating 3D Graphic Polygon Accents */
+    .poly-shape {
+        position: absolute;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .poly-1 { right: 8%; top: 15%; width: 50px; }
+    .poly-2 { right: 4%; bottom: 12%; width: 65px; }
+
+    /* 3. ADAPTED FROM image_e7328d.png: TRI-CIRCULAR HUB GRID */
+    .tri-hub-container {
+        position: relative;
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    .tri-circle-item {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 1px solid var(--gold-border);
+        box-shadow: 0 16px 40px rgba(15, 28, 46, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
+        position: relative;
+        z-index: 2;
+        transition: var(--transition);
+    }
+    .tri-circle-item:hover {
+        transform: scale(1.05);
+        border-color: var(--gold-primary);
+        box-shadow: var(--shadow-md);
+    }
+    .tri-hub-center-badge {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background: var(--gold-primary);
+        border-radius: 50%;
+        z-index: 3;
+        box-shadow: 0 0 25px rgba(184, 150, 85, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+    }
+    .tri-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #cbd5e1;
+        margin-top: 5px;
+    }
+
+    /* 4. ADAPTED FROM image_e7281b.png: FLOATING ICON CLOUD CONTAINER */
+    .icon-cloud-section {
+        background: linear-gradient(180deg, #ffffff 0%, var(--bg-slate) 100%);
+        position: relative;
+        padding: 80px 0;
+        overflow: hidden;
+    }
+    .cloud-icon-card {
+        background: var(--white);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: 0 14px 30px rgba(15, 28, 46, 0.08);
+        border: 1px solid var(--gold-border);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    .cloud-icon-card:hover {
+        transform: translateY(-8px) scale(1.08);
+        border-color: var(--gold-primary);
+    }
+
+    /* 5. ADAPTED FROM image_e727be.png: CALLOUT / RISK NOTICE BOX WITH 3D ACCENTS */
+    .notice-callout-card {
+        background: var(--white);
+        border: 1px solid var(--gold-border);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: var(--shadow-sm);
+        position: relative;
+    }
+    .notice-card-header {
+        background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-hover) 100%);
+        color: var(--white);
+        border-radius: 12px;
+        padding: 18px 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    .chevron-list li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 12px;
+        color: var(--text-muted);
+        font-size: 0.92rem;
+    }
+    .chevron-list li::before {
+        content: '❯';
+        position: absolute;
+        left: 0;
+        color: var(--gold-primary);
+        font-weight: 700;
+    }
 
     /* Country Cards Grid */
     .country-card {
@@ -182,27 +346,6 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
     .btn-navy-sm:hover {
         background-color: var(--gold-primary);
         color: var(--white);
-    }
-
-    /* Platform Features Section (Dark Banner) */
-    .platform-dark-banner {
-        background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy-accent) 100%);
-        color: var(--white);
-        border-radius: 24px;
-        padding: 70px 50px;
-        box-shadow: var(--shadow-lg);
-    }
-    .platform-feature-badge {
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 14px;
-        padding: 26px;
-        height: 100%;
-        transition: var(--transition);
-    }
-    .platform-feature-badge:hover {
-        background: rgba(255, 255, 255, 0.12);
-        transform: translateY(-4px);
     }
 
     /* Package Cards */
@@ -310,7 +453,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         box-shadow: var(--shadow-sm);
     }
 
-    /* Matrix Table */
+    /* Comparison Table */
     .table-matrix th {
         background-color: var(--dark-navy);
         color: var(--white);
@@ -331,13 +474,16 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         padding: 55px 60px;
         color: var(--white);
         box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
     }
 </style>
 
 <main>
-    <!-- 1. HERO BANNER SECTION -->
+    <!-- 1. HERO BANNER SECTION WITH AOS ANIMATED GRAPHICS -->
     <section class="hero-wrapper">
-        <div class="container">
+        <div class="hero-bg-grid"></div>
+        <div class="container position-relative">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <span class="sub-heading"><i class="bi bi-cpu-fill me-2"></i>Global Business Mobility</span>
@@ -348,7 +494,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
                         <button class="btn btn-outline-navy" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Build Your Package ↗</button>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="fade-left">
+                <div class="col-lg-6 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="globe-visual-wrapper">
                         <div class="globe-container">
                             <svg viewBox="0 0 300 300" fill="none" stroke="#b8965580" style="width:90%; height:90%;">
@@ -356,15 +502,15 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
                                 <ellipse cx="150" cy="150" rx="115" ry="149"></ellipse>
                                 <path d="M0 150H300M18 80Q150 40 282 80M18 220Q150 260 282 220"></path>
                             </svg>
-                            <div class="float-card fc-1">
+                            <div class="float-card fc-1 floating-element" data-aos="fade-down" data-aos-delay="300">
                                 <span class="fi fi-vg me-2"></span><strong>BVI Company</strong>
                                 <div class="text-muted extra-small">Zero Local Taxes</div>
                             </div>
-                            <div class="float-card fc-2">
+                            <div class="float-card fc-2 floating-element" data-aos="fade-left" data-aos-delay="400">
                                 <span class="fi fi-ae me-2"></span><strong>UAE · RAK ICC</strong>
                                 <div class="text-muted extra-small">100% Foreign Ownership</div>
                             </div>
-                            <div class="float-card fc-3">
+                            <div class="float-card fc-3 floating-element" data-aos="fade-up" data-aos-delay="500">
                                 <span class="fi fi-sc me-2"></span><strong>Seychelles IBC</strong>
                                 <div class="text-muted extra-small">Fast 1-Week Formation</div>
                             </div>
@@ -375,40 +521,225 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 2. DARK FEATURE BANNER (ZED STYLE) -->
-    <section class="section-padding pt-0">
-        <div class="container">
-            <div class="platform-dark-banner" data-aos="fade-up">
-                <div class="row align-items-center mb-5">
-                    <div class="col-lg-7">
-                        <span class="sub-heading text-warning">Platform Capabilities</span>
-                        <h2 class="text-white fw-bold display-6">Institutional-grade global entity management</h2>
+    <!-- 2. REFERENCE ADAPTATION 1 (image_e7330a.png & image_e727e1.jpg): FULL-WIDTH DARK STRIP WITH PLATFORM ACCESS BADGES & 3D POLYGONS -->
+    <section class="access-platform-strip">
+        <!-- Corner 3D Polygon Graphics from reference -->
+        <svg class="poly-shape poly-1 floating-element" viewBox="0 0 100 100" fill="none">
+            <polygon points="50,15 90,85 10,85" fill="#b89655" opacity="0.8" />
+        </svg>
+        <svg class="poly-shape poly-2 floating-element" style="animation-delay: 2s;" viewBox="0 0 100 100" fill="none">
+            <polygon points="50,10 90,50 50,90 10,50" fill="#ffffff" opacity="0.4" />
+        </svg>
+
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 text-center" data-aos="fade-right">
+                    <div class="platform-icon-bar">
+                        <div class="platform-icon-btn"><i class="bi bi-windows"></i></div>
+                        <div class="platform-icon-btn"><i class="bi bi-android2"></i></div>
+                        <div class="platform-icon-btn"><i class="bi bi-apple"></i></div>
+                        <div class="platform-icon-btn"><i class="bi bi-display"></i></div>
+                        <div class="platform-icon-btn"><i class="bi bi-globe"></i></div>
                     </div>
-                    <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
-                        <p class="text-white-50 mb-0">Engineered for speed, compliance, transparency, and multi-jurisdictional control.</p>
+                    <h3 class="fw-bold text-white mt-4 mb-0" data-aos="fade-up" data-aos-delay="100">Deploy Entities Across Any Device Now</h3>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <p class="text-white-50 lead mb-0">Our offshore formation portal is engineered for maximum stability, precision, and complete remote management of your global corporate structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Built around your success -->
+    <style>
+        /* Option 2: Connected Flow */
+        .flow-line-container {
+            position: relative;
+            padding: 30px 0;
+        }
+        .flow-line-container::before {
+            content: '';
+            position: absolute;
+            top: 90px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--gold-primary) 0, var(--gold-primary) 8px, transparent 8px, transparent 16px);
+            z-index: 1;
+        }
+        @media (max-width: 991px) {
+            .flow-line-container::before { display: none; }
+        }
+        .flow-step-node {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gold-primary);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        .flow-step-card:hover .flow-step-node {
+            background: var(--dark-navy);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+    </style>   
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center max-width-600 mx-auto mb-5" data-aos="fade-up">
+                <span class="sub-heading">Corporate Foundation</span>
+                <h2 class="section-title">Built around your success</h2>
+            </div>
+
+            <div class="flow-line-container">
+                <div class="row g-4 text-center">
+                    <!-- Step 1 -->
+                    <div class="col-lg-4 flow-step-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="flow-step-node">
+                            <i class="bi bi-sliders"></i>
+                        </div>
+                        <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-1 mb-2 fw-bold">Step 01</span>
+                        <h5 class="fw-bold text-dark mb-2">Tools That Work For Everyone</h5>
+                        <p class="text-muted small px-lg-3">Intuitive digital tools tailored for both first-time founders and complex enterprise operations.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="col-lg-4 flow-step-card" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="flow-step-node">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-1 mb-2 fw-bold">Step 02</span>
+                        <h5 class="fw-bold text-dark mb-2">Actionable Insights</h5>
+                        <p class="text-muted small px-lg-3">In-depth regulatory intelligence and jurisdictional reporting to maximize tax efficiencies.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="col-lg-4 flow-step-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="flow-step-node">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <span class="badge bg-warning bg-opacity-10 text-dark px-3 py-1 mb-2 fw-bold">Step 03</span>
+                        <h5 class="fw-bold text-dark mb-2">Dedicated Support</h5>
+                        <p class="text-muted small px-lg-3">Hands-on account management and continuous post-incorporation advisory.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="platform-feature-badge">
-                            <i class="bi bi-shield-lock-fill text-warning fs-3 mb-3 d-block"></i>
-                            <h5 class="fw-bold text-white mb-2">Automated Verification</h5>
-                            <p class="text-white-50 small mb-0">Bank-level encrypted portal for shareholder identity verification and document filing.</p>
+    <!-- 4. REFERENCE ADAPTATION 3 (image_e7281b.png): FLOATING 3D ICON MATRIX CLOUD -->
+    
+    <style>
+        /* Concept 4 Styles */
+        .map-matrix-wrapper {
+            background: var(--white);
+            border: 1px solid var(--gold-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+        .jurisdiction-chip {
+            background: var(--bg-slate);
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .jurisdiction-chip:hover {
+            border-color: var(--gold-primary);
+            background: var(--gold-light);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+    <section class="section-padding">
+        <div class="container" data-aos="fade-up">
+            <div class="map-matrix-wrapper">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <span class="sub-heading">Global Reach</span>
+                        <h2 class="section-title mb-3">Multi-Jurisdiction Entities at Your Fingertips</h2>
+                        <p class="text-muted small mb-4">Incorporate and coordinate tax-optimized holdings across prime financial hubs worldwide with complete peace of mind.</p>
+                        
+                        <div class="p-3 rounded-3 bg-light border mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="bi bi-shield-check text-warning fs-3"></i>
+                                <div>
+                                    <strong class="small d-block text-dark">Direct Registry Access</strong>
+                                    <span class="extra-small text-muted">Licensed agents in all featured jurisdictions.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="platform-feature-badge">
-                            <i class="bi bi-lightning-charge-fill text-warning fs-3 mb-3 d-block"></i>
-                            <h5 class="fw-bold text-white mb-2">Accelerated Execution</h5>
-                            <p class="text-white-50 small mb-0">Direct registry coordination yielding fast turnaround timelines for digital corporate kits.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="platform-feature-badge">
-                            <i class="bi bi-bank2 text-warning fs-3 mb-3 d-block"></i>
-                            <h5 class="fw-bold text-white mb-2">Banking Pre-Screening</h5>
-                            <p class="text-white-50 small mb-0">Pre-approval coordination with tier-1 international banks and digital EMIs.</p>
+
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                        <div class="row g-3">
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-vg fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">BVI Company</strong>
+                                        <span class="extra-small text-muted">Caribbean Region</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-sc fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">Seychelles IBC</strong>
+                                        <span class="extra-small text-muted">Indian Ocean</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-ae fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">UAE RAK ICC</strong>
+                                        <span class="extra-small text-muted">Middle East</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-gb fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">United Kingdom</strong>
+                                        <span class="extra-small text-muted">Europe Region</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-sg fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">Singapore Pte Ltd</strong>
+                                        <span class="extra-small text-muted">Asia-Pacific</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="600">
+                                <div class="jurisdiction-chip">
+                                    <span class="fi fi-ky fs-2"></span>
+                                    <div>
+                                        <strong class="d-block small text-dark">Cayman Islands</strong>
+                                        <span class="extra-small text-muted">Caribbean Hub</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -416,7 +747,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 3. JURISDICTIONS CATALOGUE GRID -->
+    <!-- 5. JURISDICTIONS CATALOGUE GRID -->
     <section class="section-padding" id="jurisdictions">
         <div class="container">
             <div class="row align-items-end mb-4" data-aos="fade-up">
@@ -513,8 +844,27 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 4. COMPARISON MATRIX -->
+    <!-- 6. REFERENCE ADAPTATION 4 (image_e727be.png): RISK MANAGEMENT CALLOUT CARD WITH CHEVRONS & 3D CORNER SHAPES -->
     <section class="section-padding bg-light">
+        <div class="container" data-aos="fade-up">
+            <div class="notice-callout-card">
+                <div class="notice-card-header">
+                    At Devotion Global CSP, we provide risk management & legal compliance protocols ensuring that clients incorporate safely and with total regulatory clarity.
+                </div>
+                <ul class="list-unstyled chevron-list mb-0">
+                    <li><strong>Compliance Transparency:</strong> Jurisdictional guidelines and annual government license fees are disclosed upfront.</li>
+                    <li><strong>Banking Regulatory Alignment:</strong> Cross-border entity structures undergo pre-screening to match corporate banking KYC standards.</li>
+                    <li><strong>Data Security & Privacy:</strong> All client documentation is stored within encrypted corporate vaults adhering to strict international privacy mandates.</li>
+                </ul>
+                <svg class="poly-shape poly-2 floating-element" style="bottom: 10px; right: 20px; width: 45px;" viewBox="0 0 100 100" fill="none">
+                    <polygon points="50,10 90,50 50,90 10,50" fill="#b89655" opacity="0.6" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. COMPARISON MATRIX -->
+    <section class="section-padding pt-0 bg-light">
         <div class="container">
             <div class="text-center max-width-600 mx-auto mb-5" data-aos="fade-up">
                 <span class="sub-heading">Jurisdiction Matrix</span>
@@ -561,7 +911,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 5. PACKAGES SECTION -->
+    <!-- 8. SERVICE BUNDLES -->
     <section class="section-padding" id="packages">
         <div class="container">
             <div class="text-center max-width-600 mx-auto mb-5" data-aos="fade-up">
@@ -619,48 +969,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 6. PROCESS STEPS -->
-    <section class="section-padding bg-light" id="process">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="sub-heading">Execution Path</span>
-                <h2 class="section-title">From idea to incorporation</h2>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-card">
-                        <div class="step-num">1</div>
-                        <h5 class="fw-bold mb-2">Configure Order</h5>
-                        <p class="text-muted small mb-0">Select your preferred jurisdiction, package, and extra services.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-card">
-                        <div class="step-num">2</div>
-                        <h5 class="fw-bold mb-2">Verification (KYC)</h5>
-                        <p class="text-muted small mb-0">Submit passport and proof of address through our secure platform.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-card">
-                        <div class="step-num">3</div>
-                        <h5 class="fw-bold mb-2">Registry Filing</h5>
-                        <p class="text-muted small mb-0">Direct filing with government authorities by our licensed agents.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step-card">
-                        <div class="step-num">4</div>
-                        <h5 class="fw-bold mb-2">Receive Corporate Kit</h5>
-                        <p class="text-muted small mb-0">Obtain corporate certificates and proceed directly to bank account opening.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. INTERACTIVE ORDER BUILDER -->
+    <!-- 9. INTERACTIVE ORDER BUILDER -->
     <section class="section-padding" id="order">
         <div class="container" data-aos="fade-up">
             <div class="order-wrapper">
@@ -810,62 +1119,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
         </div>
     </section>
 
-    <!-- 8. FAQ SECTION -->
-    <section class="section-padding bg-light" id="faq">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
-                    <span class="sub-heading">Got Questions?</span>
-                    <h2 class="section-title mb-3">A little more clarity.</h2>
-                    <p class="text-muted small pe-lg-3">Have questions regarding offshore company formation, taxes, or legal compliance? Find answers below.</p>
-                </div>
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    Which jurisdiction should I choose?
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted small">
-                                    Selection depends on your business model, banking needs, and tax residence. BVI is ideal for holding entities and investment funds, while Seychelles offers fast cost-effective privacy, and the UAE provides high reputation and banking access.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden shadow-sm">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    What documents are required for incorporation?
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted small">
-                                    Standard onboarding requires a certified passport copy, proof of residential address (utility bill issued within 3 months), and a brief business description.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item border-0 rounded-3 overflow-hidden shadow-sm">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    Can I open a corporate bank account remotely?
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted small">
-                                    Yes. We partner with international banks and digital EMIs in major financial hubs that offer remote corporate account opening.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. CONSULTATION CTA BANNER -->
+    <!-- 10. CONSULTATION CTA BANNER -->
     <section class="section-padding">
         <div class="container" data-aos="fade-up">
             <div class="cta-banner d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4">
