@@ -85,13 +85,10 @@ body, html {
    ========================================================================== */
 
 .top-bar-belt {
-    background-color: #b88a38;
-    /* Exact Devotion Logo Gold Tone */
     font-size: 0.8rem;
-    /* ~13px compact font size */
     letter-spacing: 0.2px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    background-color: #b88a38;
+    background-color: var(--gold-primary);
     letter-spacing: 0.2px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     position: relative;
@@ -124,7 +121,7 @@ body, html {
 
 /* WhatsApp Icon Badge */
 .whatsapp-highlight i {
-    color: #25D366;
+    color: #fff;
     /* Official WhatsApp Green */
     font-size: 1rem;
 }

@@ -61,147 +61,288 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
 
 <!-- Shared inner-page theme (same look & animation set as index) -->
 <link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/inner-pages.css?v=<?= FILE_VERSISON ?>">
+<!-- Hero theme for this page only -->
+<link rel="stylesheet" href="<?= BASE_URL.BASE_FOLDER ?>/assets/css/crypto-forex-hero.css?v=<?= FILE_VERSISON ?>">
 
 <main>
 
 <!-- HERO -->
-<header class="ip-hero">
-    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
-    <div class="container ip-hero__content">
-        <div class="row">
-            <div class="col-lg-6 col-md-8">
-                <span class="ip-line ip-line--grow" style="margin: 0 0 1.5rem;"></span>
-                <h1 data-aos="fade-right" data-aos-delay="150">Crypto &amp; Forex<br><span class="ip-gold">Licensing Solutions</span></h1>
-                <p data-aos="fade-right" data-aos-delay="300">Devotion Global Customer Service Provider offers regulatory registration, VASP approvals, offshore crypto licensing, Forex broker setups, and corporate banking solutions worldwide.</p>
-                <a href="#crypto-services" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Explore License Types</a>
+<header class="cf-hero">
+    <svg class="cf-hero__waves" viewBox="0 0 800 400" fill="none" stroke="#ab8139" stroke-width="1" aria-hidden="true">
+        <path d="M0 330 C200 250 400 380 800 200"/><path d="M0 345 C200 265 400 395 800 220"/><path d="M0 360 C200 280 400 410 800 240"/><path d="M0 375 C200 295 400 425 800 260"/>
+    </svg>
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="cf-rule" aria-hidden="true"></span>
+                <h1 data-aos="fade-right" data-aos-delay="100">Crypto &amp; Forex <span>Licensing Solutions</span></h1>
+                <p class="cf-hero__lead" data-aos="fade-right" data-aos-delay="200">Comprehensive licensing and regulatory support for crypto exchanges, forex brokers, and financial institutions across global jurisdictions.</p>
+                <a href="#contact" class="cf-btn" data-aos="fade-up" data-aos-delay="300">Get Licensing Support <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <ul class="cf-feats" data-aos="fade-up" data-aos-delay="400">
+                    <li><span class="cf-feats__ic"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>Regulatory<br>Guidance</li>
+                    <li><span class="cf-feats__ic"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span>End-to-End<br>Setup</li>
+                    <li><span class="cf-feats__ic"><i class="fa-solid fa-globe" aria-hidden="true"></i></span>Global<br>Jurisdictions</li>
+                    <li><span class="cf-feats__ic"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></span>Ongoing<br>Compliance</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="cf-stage" role="img" aria-label="Crypto and forex exchange dashboard with Bitcoin and Ethereum, a world map and 50+ global licences">
+                    <div class="cf-stage__in" aria-hidden="true">
+                        <div class="cf-globe"><img src="<?= $img ?>/hero-globe.svg?v=<?= FILE_VERSISON ?>" alt="" width="600" height="600"></div>
+                        <svg class="cf-orbit" viewBox="0 0 760 440" fill="none" stroke="#ab8139" stroke-width="1.2">
+                            <ellipse cx="380" cy="220" rx="372" ry="190" transform="rotate(-8 380 220)" opacity=".55"/>
+                            <ellipse cx="380" cy="230" rx="330" ry="150" transform="rotate(6 380 230)" opacity=".3"/>
+                        </svg>
+
+                        <div class="cf-dash">
+                            <div class="cf-dash__bar">
+                                <span class="cf-dash__brand"><svg viewBox="0 0 24 24" fill="none" stroke="#ab8139" stroke-width="2.2" stroke-linejoin="round"><path d="M12 2.5l8 4.6v9.8l-8 4.6-8-4.6V7.1z"/><circle cx="12" cy="12" r="2.6" fill="#ab8139" stroke="none"/></svg> Exchange</span>
+                                <span class="cf-dash__nav"><span>Markets</span><span>Trade</span><span>Assets</span></span>
+                                <span class="cf-dash__login">Login</span>
+                            </div>
+                            <div class="cf-dash__body">
+                                <div class="cf-chart">
+                                    <div class="cf-pair">BTC / USDT <b>+2.45%</b></div>
+                                    <p class="cf-price">$67,438.24</p>
+                                    <svg viewBox="0 0 300 110" preserveAspectRatio="none">
+                                        <defs><linearGradient id="cfArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ab8139" stop-opacity=".28"/><stop offset="1" stop-color="#ab8139" stop-opacity="0"/></linearGradient></defs>
+                                        <path class="cf-chart__area" d="M0 96 L28 80 L48 86 L72 60 L96 66 L120 44 L142 52 L168 28 L196 36 L226 14 L262 8 L262 110 L0 110Z" fill="url(#cfArea)"/>
+                                        <path d="M0 98 L40 92 L80 82 L120 70 L160 62 L200 50 L262 36" stroke="#b8b0a0" stroke-width="1.2" stroke-dasharray="2 3" fill="none"/>
+                                        <path class="cf-chart__path" d="M0 96 L28 80 L48 86 L72 60 L96 66 L120 44 L142 52 L168 28 L196 36 L226 14 L262 8" stroke="#ab8139" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                                        <circle class="cf-chart__dot" cx="262" cy="8" r="4.5" fill="#fff" stroke="#ab8139" stroke-width="2"/>
+                                    </svg>
+                                    <div class="cf-range"><span>1D</span><span class="on">1W</span><span>1M</span><span>3M</span><span>1Y</span><span>ALL</span></div>
+                                </div>
+                                <div class="cf-stats"><dl>
+                                    <dt>24h Volume</dt><dd>$2.8B</dd>
+                                    <dt>Market Cap</dt><dd>$1.3T</dd>
+                                    <dt>Circulating Supply</dt><dd>19.6M BTC</dd>
+                                </dl></div>
+                            </div>
+                        </div>
+
+                        <div class="cf-tag cf-tag--secure"><i class="fa-solid fa-shield-halved"></i><div><strong>Secure &amp; Regulated</strong><small>Compliance First</small></div></div>
+                        <div class="cf-tag cf-tag--multi"><i class="fa-solid fa-chart-simple"></i><strong>Multi-Jurisdiction Support</strong></div>
+                        <div class="cf-shield"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="cf-tag cf-tag--lic"><b>50+</b><div><strong>Global Licenses</strong><small>Across Key Markets</small></div></div>
+
+                        <div class="cf-podium"></div>
+                        <div class="cf-coin cf-coin--btc"><i class="fa-brands fa-bitcoin"></i></div>
+                        <div class="cf-coin cf-coin--eth"><i class="fa-brands fa-ethereum"></i></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
 <!-- OVERVIEW -->
-<section class="ip-about">
-    <div class="ip-float ip-float--a d-none d-md-block" style="top: 8%; left: 2%; width: 60px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
-    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 90px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
-    <div class="container position-relative" style="z-index: 2;" id="about">
+<section class="cf-about" id="about">  
+    <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <div class="ip-tiles">
-                    <div class="ip-stat ip-stat--gold" data-aos="zoom-in" data-aos-delay="0"><span class="ip-stat__num ip-count">50+</span><span class="ip-stat__label">Global Legal Options</span></div>
-                    <div class="ip-stat ip-stat--dark" data-aos="zoom-in" data-aos-delay="120"><span class="ip-stat__num ip-count">VASP &amp; CASP</span><span class="ip-stat__label">Regulatory Expertise</span></div>
-                    <div class="ip-stat ip-stat--tan" data-aos="zoom-in" data-aos-delay="240"><span class="ip-stat__num ip-count">Crypto Banking</span><span class="ip-stat__label">Fiat &amp; Off-Ramp Setup</span></div>
-                    <div class="ip-stat ip-stat--grey" data-aos="zoom-in" data-aos-delay="360"><span class="ip-stat__num ip-count">AML/KYC</span><span class="ip-stat__label">Complete Compliance</span></div>
+                <div class="cf-vis" role="img" aria-label="Crypto license illustration: shield with check mark, crypto license certificate, Bitcoin and Ethereum coins, with 50+ legal options, VASP and CASP expertise, crypto banking and AML/KYC compliance">
+                    <div class="cf-vis__in" aria-hidden="true">
+                        <svg class="cf-vis__arc" viewBox="0 0 600 560" fill="none" stroke="#ab8139"><path d="M60 330 C60 150 190 20 360 20 C470 20 560 80 585 170" stroke-width="1.4" opacity=".55"/><path d="M40 360 C40 160 190 0 370 4" stroke-width=".8" opacity=".3"/></svg>
+                        <div class="cf-vis__ghost"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+                        <svg class="cf-shield3" viewBox="0 0 260 310">
+                            <defs>
+                                <linearGradient id="cfSG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4dfa5"/><stop offset=".5" stop-color="#c79a45"/><stop offset="1" stop-color="#8a6528"/></linearGradient>
+                                <linearGradient id="cfSD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a4c54"/><stop offset="1" stop-color="#16171b"/></linearGradient>
+                                <linearGradient id="cfSC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbeab8"/><stop offset="1" stop-color="#b98f45"/></linearGradient>
+                                <filter id="cfSh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#5a3e12" flood-opacity=".28"/></filter>
+                            </defs>
+                            <g filter="url(#cfSh)">
+                                <path d="M130 4 L248 42 V140 C248 218 198 272 130 306 C62 272 12 218 12 140 V42 Z" fill="url(#cfSG)"/>
+                                <path d="M130 24 L228 55 V140 C228 205 187 252 130 282 C73 252 32 205 32 140 V55 Z" fill="url(#cfSD)"/>
+                                <path d="M130 24 L228 55 V100 C190 70 150 60 130 24Z" fill="#fff" opacity=".07"/>
+                                <path d="M78 150 L116 190 L184 112" stroke="url(#cfSC)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </g>
+                        </svg>
+
+                        <div class="cf-cert">
+                            <b>CRYPTO<br>LICENSE</b>
+                            <span></span><span></span><span></span><span class="s"></span><span class="s"></span>
+                            <svg class="cf-cert__seal" viewBox="0 0 80 100">
+                                <defs><linearGradient id="cfSeal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4dfa5"/><stop offset="1" stop-color="#a97c32"/></linearGradient></defs>
+                                <path d="M24 52 L12 96 L30 86 L40 98 L44 56Z" fill="#c79a45"/><path d="M56 52 L68 96 L50 86 L40 98 L36 56Z" fill="#b98f45"/>
+                                <circle cx="40" cy="36" r="32" fill="url(#cfSeal)"/><circle cx="40" cy="36" r="24" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+                                <path d="M28 37 L36 45 L53 27" stroke="#fff" stroke-opacity=".9" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+                        <div class="cf-podium2"></div>
+
+                        <svg class="cf-stack cf-stack--a" viewBox="0 0 160 110">
+                            <defs>
+                                <linearGradient id="cfCT" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e3ae"/><stop offset="1" stop-color="#c79a45"/></linearGradient>
+                                <linearGradient id="cfCS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a6528"/><stop offset=".45" stop-color="#d8b062"/><stop offset="1" stop-color="#8a6528"/></linearGradient>
+                                <g id="cfDisc"><rect x="0" y="8" width="80" height="12" fill="url(#cfCS)"/><path d="M0 14 H80" stroke="#6f4f18" stroke-opacity=".35" stroke-dasharray="1.6 1.6"/><ellipse cx="40" cy="20" rx="40" ry="9" fill="url(#cfCS)"/><ellipse cx="40" cy="8" rx="40" ry="9" fill="url(#cfCT)"/><ellipse cx="40" cy="8" rx="31" ry="6.5" fill="none" stroke="#fff" stroke-opacity=".45"/></g>
+                            </defs>
+                            <use href="#cfDisc" x="0" y="82"/><use href="#cfDisc" x="0" y="68"/><use href="#cfDisc" x="0" y="54"/><use href="#cfDisc" x="0" y="40"/><use href="#cfDisc" x="0" y="26"/>
+                            <use href="#cfDisc" x="46" y="90"/><use href="#cfDisc" x="46" y="76"/><use href="#cfDisc" x="46" y="62"/>
+                        </svg>
+                        <svg class="cf-stack cf-stack--b" viewBox="0 0 160 60"><use href="#cfDisc" x="0" y="36"/><use href="#cfDisc" x="0" y="22"/><use href="#cfDisc" x="0" y="8"/></svg>
+
+                        <div class="cf-gcoin cf-gcoin--btc"><i class="fa-brands fa-bitcoin"></i></div>
+                        <div class="cf-gcoin cf-gcoin--eth"><i class="fa-brands fa-ethereum"></i></div>
+
+                        <div class="cf-sc cf-sc--1"><i class="fa-solid fa-gavel"></i><b>50+</b><span>Global Legal<br>Options</span></div>
+                        <div class="cf-sc cf-sc--2"><i class="fa-solid fa-shield-halved"></i><b>VASP &amp; CASP</b><span>Regulatory<br>Expertise</span></div>
+                        <div class="cf-sc cf-sc--3"><i class="fa-solid fa-building-columns"></i><b>Crypto</b><span>Banking</span></div>
+                        <div class="cf-sc cf-sc--4"><i class="fa-solid fa-file-shield"></i><b>AML/KYC</b><span>Compliance</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
-                <h2 class="ip-title">What is a Crypto Currency License by Devotion Global?</h2>
-                <span class="ip-line"></span>
-                <p>A Cryptocurrency License (or Virtual Asset Service Provider - VASP registration) is a regulatory authorization that permits companies to legally offer crypto exchange services, digital wallet custody, payment processing, and token launch solutions. Devotion Global manages end-to-end licensing in leading crypto jurisdictions—including Dubai (VARA), Lithuania, El Salvador, Labuan, and offshore regions—providing corporate setup, AML compliance policies, and banking integrations.</p>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <h2 class="cf-about__title">What is a<br><span>Crypto Currency License</span> by Devotion Global?</h2>
+                <span class="cf-rule cf-rule--sm" aria-hidden="true"></span>
+                <p class="cf-about__text">A Cryptocurrency License (or Virtual Asset Service Provider - VASP registration) is a regulatory authorization that permits companies to legally offer crypto exchange services, digital wallet custody, payment processing, and token launch solutions. Devotion Global manages end-to-end licensing in leading crypto jurisdictions—including Dubai (VARA), Lithuania, El Salvador, Labuan, and offshore regions—providing corporate setup, AML compliance policies, and banking integrations.</p>
+                <a href="#contact" class="cf-btn">Get Expert Guidance <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- SERVICES 1 -->
-<section class="ip-suite" id="crypto-services">
-    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+<section class="cf-services" id="crypto-services"> 
     <div class="container">
-        <div class="ip-head" data-aos="fade-up">
-            <span class="ip-pill">Our Services</span>
-            <h2 class="ip-title">Cryptocurrency &amp; VASP Licensing</h2>
-            <p class="ip-sub">Comprehensive corporate structures designed for Web3, crypto exchanges, and digital asset firms.</p>
+        <div class="cf-head" data-aos="fade-up">
+            <span class="cf-eyebrow"><i></i>Our Services<i></i></span>
+            <h2 class="cf-head__title">Cryptocurrency &amp; <span>VASP Licensing</span></h2>
+            <p class="cf-head__sub">Comprehensive corporate structures designed for Web3, crypto exchanges, and digital asset firms.</p>
         </div>
         <div class="row g-4">
 
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">VASP Exchange License</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <article class="cf-svc" itemscope itemtype="https://schema.org/Service">
+                    <div class="cf-svc__top">
+                        <span class="cf-svc__ic" aria-hidden="true"><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+                        <span class="cf-svc__no" aria-hidden="true">01</span>
                     </div>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Operate centralized or decentralized crypto spot and derivatives exchanges with compliant order matching, AML monitoring, and fiat processing.</p>
+                    <h3 class="cf-svc__title" itemprop="name">VASP Exchange<br>License</h3>
+                    <span class="cf-svc__rule" aria-hidden="true"></span>
+                    <p class="cf-svc__desc" itemprop="description">Operate centralized or decentralized crypto spot and derivatives exchanges with compliant order matching, AML monitoring, and fiat processing.</p>
+                    <a href="#contact" class="cf-svc__more">Learn More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                 </article>
             </div>
 
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="110">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Digital Wallet Custody</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-wallet"></i></span>
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="110">
+                <article class="cf-svc" itemscope itemtype="https://schema.org/Service">
+                    <div class="cf-svc__top">
+                        <span class="cf-svc__ic" aria-hidden="true"><i class="fa-solid fa-wallet"></i></span>
+                        <span class="cf-svc__no" aria-hidden="true">02</span>
                     </div>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Secure regulatory permission to store, manage, and safeguard digital asset private keys on behalf of retail and institutional clients.</p>
+                    <h3 class="cf-svc__title" itemprop="name">Digital<br>Wallet Custody</h3>
+                    <span class="cf-svc__rule" aria-hidden="true"></span>
+                    <p class="cf-svc__desc" itemprop="description">Secure regulatory permission to store, manage, and safeguard digital asset private keys on behalf of retail and institutional clients.</p>
+                    <a href="#contact" class="cf-svc__more">Learn More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                 </article>
             </div>
 
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="220">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Crypto Merchant &amp; Off-Ramp</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-cash-register"></i></span>
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="220">
+                <article class="cf-svc" itemscope itemtype="https://schema.org/Service">
+                    <div class="cf-svc__top">
+                        <span class="cf-svc__ic" aria-hidden="true"><i class="fa-solid fa-clone"></i></span>
+                        <span class="cf-svc__no" aria-hidden="true">03</span>
                     </div>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Obtain processing authorizations to convert digital currencies to fiat cash payments using multi-currency merchant processing integrations.</p>
+                    <h3 class="cf-svc__title" itemprop="name">Crypto Merchant &amp;<br>Off-Ramp</h3>
+                    <span class="cf-svc__rule" aria-hidden="true"></span>
+                    <p class="cf-svc__desc" itemprop="description">Obtain processing authorizations to convert digital currencies to fiat cash payments using multi-currency merchant processing integrations.</p>
+                    <a href="#contact" class="cf-svc__more">Learn More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                 </article>
             </div>
 
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="330">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Token Issuance &amp; ICO/STO Setup</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-coins"></i></span>
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="330">
+                <article class="cf-svc" itemscope itemtype="https://schema.org/Service">
+                    <div class="cf-svc__top">
+                        <span class="cf-svc__ic" aria-hidden="true"><i class="fa-solid fa-coins"></i></span>
+                        <span class="cf-svc__no" aria-hidden="true">04</span>
                     </div>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Launch compliant token offerings with legal opinions, whitepaper compliance reviews, and legal token issuer corporate structures.</p>
+                    <h3 class="cf-svc__title" itemprop="name">Token Issuance &amp;<br>ICO/STO Setup</h3>
+                    <span class="cf-svc__rule" aria-hidden="true"></span>
+                    <p class="cf-svc__desc" itemprop="description">Launch compliant token offerings with legal opinions, whitepaper compliance reviews, and legal token issuer corporate structures.</p>
+                    <a href="#contact" class="cf-svc__more">Learn More <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
                 </article>
             </div>
-
         </div>
     </div>
 </section>
 
 <!-- PROCESS -->
-<section class="ip-steps" id="process">
-    <div class="ip-float ip-float--a d-none d-md-block" style="top: 10%; right: 4%; width: 60px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
+<section class="cf-proc" id="process">
     <div class="container">
-        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Our Licensing Process</h2><span class="ip-line" style="margin: 1rem auto 0.9rem;"></span><p class="ip-sub">A streamlined methodology from initial consultation to final operational launch.</p></div>
-        <div class="row g-4 ip-steps__row">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <div class="ip-step">
-                    <span class="ip-step__num">01</span>
-                    <span class="ip-step__label">Step 01</span>
-                    <h3>Jurisdiction Selection</h3>
-                    <p>We assess your business goals, target countries, and available capital to select the ideal VASP or FX framework.</p>
+        <div class="cf-head" data-aos="fade-up">
+            <span class="cf-eyebrow"><i></i>How We Work<i></i></span>
+            <h2 class="cf-head__title">Our <span>Licensing Process</span></h2>
+            <p class="cf-head__sub">A streamlined methodology from initial consultation to final operational launch.</p>
+        </div>
+        <div class="row g-4 cf-proc__row">
+
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="cf-proc__card">
+                    <div class="cf-proc__top">
+                        <span class="cf-proc__ic" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+                        <div>
+                            <span class="cf-proc__step">Step 01</span>
+                            <span class="cf-proc__rule" aria-hidden="true"></span>
+                            <h3 class="cf-proc__title">Jurisdiction<br>Selection</h3>
+                        </div>
+                    </div>
+                    <p class="cf-proc__desc">We assess your business goals, target countries, and available capital to select the ideal VASP or FX framework.</p>
+                    <span class="cf-proc__chev" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="120">
-                <div class="ip-step">
-                    <span class="ip-step__num">02</span>
-                    <span class="ip-step__label">Step 02</span>
-                    <h3>Corporate Structuring</h3>
-                    <p>We draft corporate articles, incorporate local operating entities, and assign local compliance officers or directors.</p>
+
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="120">
+                <div class="cf-proc__card">
+                    <div class="cf-proc__top">
+                        <span class="cf-proc__ic" aria-hidden="true"><i class="fa-solid fa-file-pen"></i></span>
+                        <div>
+                            <span class="cf-proc__step">Step 02</span>
+                            <span class="cf-proc__rule" aria-hidden="true"></span>
+                            <h3 class="cf-proc__title">Corporate<br>Structuring</h3>
+                        </div>
+                    </div>
+                    <p class="cf-proc__desc">We draft corporate articles, incorporate local operating entities, and assign local compliance officers or directors.</p>
+                    <span class="cf-proc__chev" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
-                <div class="ip-step">
-                    <span class="ip-step__num">03</span>
-                    <span class="ip-step__label">Step 03</span>
-                    <h3>Filing &amp; Compliance</h3>
-                    <p>Our regulatory legal team prepares AML/KYC policies, cyber audit documentation, and formal regulatory applications.</p>
+
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
+                <div class="cf-proc__card">
+                    <div class="cf-proc__top">
+                        <span class="cf-proc__ic" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></span>
+                        <div>
+                            <span class="cf-proc__step">Step 03</span>
+                            <span class="cf-proc__rule" aria-hidden="true"></span>
+                            <h3 class="cf-proc__title">Filing &amp;<br>Compliance</h3>
+                        </div>
+                    </div>
+                    <p class="cf-proc__desc">Our regulatory legal team prepares AML/KYC policies, cyber audit documentation, and formal regulatory applications.</p>
+                    <span class="cf-proc__chev" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="360">
-                <div class="ip-step">
-                    <span class="ip-step__num">04</span>
-                    <span class="ip-step__label">Step 04</span>
-                    <h3>Banking &amp; Integration</h3>
-                    <p>Following approval, we setup dedicated corporate accounts, crypto payment rails, and platform technology bridges.</p>
+
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="360">
+                <div class="cf-proc__card">
+                    <div class="cf-proc__top">
+                        <span class="cf-proc__ic" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span>
+                        <div>
+                            <span class="cf-proc__step">Step 04</span>
+                            <span class="cf-proc__rule" aria-hidden="true"></span>
+                            <h3 class="cf-proc__title">Banking &amp;<br>Integration</h3>
+                        </div>
+                    </div>
+                    <p class="cf-proc__desc">Following approval, we setup dedicated corporate accounts, crypto payment rails, and platform technology bridges.</p>
+                    <span class="cf-proc__chev" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- SERVICES 2 -->
 <section class="ip-why" id="forex-services">
@@ -310,14 +451,25 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
 </section>
 
 <!-- CALL TO ACTION -->
-<section class="ip-cta" id="contact">
-    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
-    <div class="container ip-cta__content">
-        <div class="row">
-            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
+<section class="ip-cta ip-cta--split" id="contact">
+    <canvas class="ip-constellation" aria-hidden="true"></canvas>
+    <div class="ip-float ip-float--a d-none d-md-block" style="top: 9%; left: 2%; width: 56px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
+    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 3%; width: 84px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+    <div class="container position-relative" style="z-index: 2;">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="zoom-in">
+                <img src="<?= $img ?>/cta-overview.webp?v=<?= FILE_VERSISON ?>" alt="Go-live roadmap for a crypto or forex business: jurisdiction strategy, entity formation, regulatory filing, banking and PSP setup, with crypto exchange, wallet custody, forex broker and token launch licensing" class="ip-about__img ip-cta__art" width="1580" height="1000" loading="lazy">
+            </div>
+            <div class="col-lg-6 ip-cta__content" data-aos="fade-left" data-aos-delay="150">
                 <h2 class="ip-title">Ready to Launch Your Crypto or Forex Business?</h2>
+                <span class="ip-line"></span>
                 <p>Contact Devotion Global's compliance and licensing experts to structure your exchange, brokerage, or wallet company today.</p>
-                <div class="d-flex flex-wrap justify-content-end gap-2"><a href="mailto:info@devotionglobal.com" class="ip-btn ip-btn--pill">Consult an Expert Today</a></div>
+                <ul class="ip-cta__points">
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Licence route matched to your crypto or forex model</li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Entity, banking and AML/KYC set-up under one team</li>
+                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dedicated support from filing to go-live</li>
+                </ul>
+                <div class="d-flex flex-wrap justify-content-end gap-2 ip-cta__actions"><a href="mailto:info@devotionglobal.com" class="ip-btn ip-btn--pill">Consult an Expert Today</a></div>
             </div>
         </div>
     </div>

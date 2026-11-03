@@ -49,7 +49,7 @@
                 <!-- Country Dropdown -->
                 <div class="dropdown belt-dropdown dropdown-hover">
                     <a href="#" class="btn btn-sm text-white dropdown-toggle p-0 border-0 shadow-none d-flex align-items-center gap-1 fw-bold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-geo-alt-fill text-warning"></i>
+                        <i class="bi bi-geo-alt-fill text-white"></i>
                         <span>Country</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-0 py-2 jurisdiction-menu">

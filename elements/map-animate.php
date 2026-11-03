@@ -235,9 +235,40 @@
 </style>
 
 <section class="canvas-section">
+    <?php
+        if( isset( $_GET['cp'] ) && ( 
+            $_GET['cp'] == "top_center" || 
+            $_GET['cp'] == "top_right" || 
+            $_GET['cp'] == "top_left" )
+        ) {
+
+            $style = "";
+            if( $_GET['cp'] == "top_left" ){
+                $style = "justify-content: left; margin: 0 0 25px 30px;";
+            }
+
+            if( $_GET['cp'] == "top_right" ){
+                $style = "justify-content: right; margin: 0 30px 25px 0;";
+            }
+            ?>
+            <!-- Country Select Dropdown -->
+            <div class="country-selector-wrapper mt-3" style="<?= $style ?>">
+                <select class="country-select-dropdown" id="countryDropdown" onchange="navigateToJurisdiction(this.value)">
+                    <option value="" disabled selected>-- Select Country / Jurisdiction --</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/mauritius-company-registration">Mauritius</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/uae-company-registration">UAE</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/hongkong-company-registration">Hong Kong</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/singapore-company-registration">Singapore</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/india-company-registration">India</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/uk-company-registration">United Kingdom (UK)</option>
+                </select>
+            </div>
+            <?php
+        }
+        ?>
     <canvas class="gdb-constellation-canvas"></canvas>
     <div class="map-centered-container">
-        <h1 class="map-title"  data-aos="fade-right" data-aos-delay="400">Where can we assist you to set up business?</h1>
+        <h1 class="map-title d-none"  data-aos="fade-right" data-aos-delay="400">Where can we assist you to set up business?</h1>
     </div>
     
     <div class="map-banner-wrapper">
@@ -318,18 +349,53 @@
         }
     </style>
 
-    <!-- Country Select Dropdown -->
-    <div class="country-selector-wrapper">
-        <select class="country-select-dropdown" id="countryDropdown" onchange="navigateToJurisdiction(this.value)">
-            <option value="" disabled selected>-- Select Country / Jurisdiction --</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/mauritius-company-registration">Mauritius</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/uae-company-registration">UAE</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/hongkong-company-registration">Hong Kong</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/singapore-company-registration">Singapore</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/india-company-registration">India</option>
-            <option value="<?= BASE_URL.BASE_FOLDER ?>/uk-company-registration">United Kingdom (UK)</option>
-        </select>
-    </div>
+    <?php
+    if( !isset( $_GET['cp'] ) ) {
+        ?>
+        <!-- Country Select Dropdown -->
+        <div class="country-selector-wrapper">
+            <select class="country-select-dropdown" id="countryDropdown" onchange="navigateToJurisdiction(this.value)">
+                <option value="" disabled selected>-- Select Country / Jurisdiction --</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/mauritius-company-registration">Mauritius</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/uae-company-registration">UAE</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/hongkong-company-registration">Hong Kong</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/singapore-company-registration">Singapore</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/india-company-registration">India</option>
+                <option value="<?= BASE_URL.BASE_FOLDER ?>/uk-company-registration">United Kingdom (UK)</option>
+            </select>
+        </div>
+        <?php
+    } else {
+        if( isset( $_GET['cp'] ) && ( 
+            $_GET['cp'] == "bottom_right" || 
+            $_GET['cp'] == "bottom_left" )
+        ) {
+
+            $style = "";
+            if( $_GET['cp'] == "bottom_left" ){
+                $style = "justify-content: left; margin: 0 0 25px 30px;";
+            }
+
+            if( $_GET['cp'] == "bottom_right" ){
+                $style = "justify-content: right; margin: 0 30px 25px 0;";
+            }
+            ?>
+            <!-- Country Select Dropdown -->
+            <div class="country-selector-wrapper mt-3" style="<?= $style ?>">
+                <select class="country-select-dropdown" id="countryDropdown" onchange="navigateToJurisdiction(this.value)">
+                    <option value="" disabled selected>-- Select Country / Jurisdiction --</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/mauritius-company-registration">Mauritius</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/uae-company-registration">UAE</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/hongkong-company-registration">Hong Kong</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/singapore-company-registration">Singapore</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/india-company-registration">India</option>
+                    <option value="<?= BASE_URL.BASE_FOLDER ?>/uk-company-registration">United Kingdom (UK)</option>
+                </select>
+            </div>
+            <?php
+        }
+    }
+    ?>
 
     <script>
         function navigateToJurisdiction(url) {

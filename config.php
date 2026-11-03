@@ -23,6 +23,9 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $mode = "local";
 $base_folder = ''; 
 
+// echo$protocol.$host;
+// die;
+
 // Local / Live
 if (
     $host === 'localhost' ||
