@@ -8,10 +8,6 @@ $obj    = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
 
 // Hero / CTA backgrounds: drop your own hero-bg.webp / cta-bg.webp into the folder above and they are used automatically.
-$heroFile = file_exists(ROOT_PATH . $imgDir . '/hero-bg.webp?v=' . FILE_VERSISON)
-    ? 'hero-bg.webp?v=' . FILE_VERSISON
-    : 'hero-bg.svg';
-
 $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
     ? 'cta-bg.webp?v=' . FILE_VERSISON
     : 'cta-bg.svg';
@@ -81,7 +77,37 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
 
 <!-- 1. HERO -->
 <header class="ip-hero">
-    <img src="<?= $img ?>/<?= $heroFile ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <img src="<?= $img ?>/fund-service-hero-bg-1.jpg?v=<?= FILE_VERSISON ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Institutional Grade Support</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Devotion Global<br><span class="ip-gold">Fund Services</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Empowering investment managers, private equity funds, and venture firms with seamless global customer service, investor administration, and regulatory compliance solutions.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Request a Consultation</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header class="ip-hero">
+    <img src="<?= $img ?>/fund-service-hero-bg-2.jpg?v=<?= FILE_VERSISON ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
+    <div class="container ip-hero__content">
+        <div class="row">
+            <div class="col-lg-6 col-md-8">
+                <p class="ip-eyebrow" style="text-transform: uppercase;" data-aos="fade-right">Institutional Grade Support</p>
+                <span class="ip-line ip-line--grow" style="margin: 1rem 0 1.5rem;"></span>
+                <h1 data-aos="fade-right" data-aos-delay="150">Devotion Global<br><span class="ip-gold">Fund Services</span></h1>
+                <p data-aos="fade-right" data-aos-delay="300">Empowering investment managers, private equity funds, and venture firms with seamless global customer service, investor administration, and regulatory compliance solutions.</p>
+                <a href="#contact" class="ip-btn" data-aos="fade-up" data-aos-delay="450">Request a Consultation</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header class="ip-hero">
+    <img src="<?= $img ?>/fund-service-hero-bg-3.jpg?v=<?= FILE_VERSISON ?>" alt="" class="ip-hero__bg" width="2300" height="795" fetchpriority="high">
     <div class="container ip-hero__content">
         <div class="row">
             <div class="col-lg-6 col-md-8">
@@ -96,150 +122,882 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
 </header>
 
 <!-- 2. CORE SERVICES -->
+<style>
+
+    /* =========================================
+    FUND SOLUTIONS SECTION
+    ========================================= */
+
+    .ip-suite {
+        --suite-gold: #b38a36;
+        --suite-bg: #eff0f5;
+        --suite-text: #111111;
+        --suite-muted: #484848;
+
+        position: relative;
+        padding: 75px 0 85px;
+        background: var(--suite-bg);
+        overflow: hidden;
+    }
+
+    /* Section Heading */
+
+    .ip-suite__head {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .ip-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 198px;
+        padding: 12px 30px;
+        border-radius: 50px;
+        background: var(--suite-gold);
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 17px;
+    }
+
+    .ip-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 35px;
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: -0.7px;
+        color: var(--suite-text);
+        margin-bottom: 15px;
+    }
+
+    .ip-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.75;
+        color: #858585;
+        margin: 0;
+    }
+
+    /* Service Cards */
+
+    .ip-card {
+        position: relative;
+        height: 100%;
+        min-height: 320px;
+        padding: 32px 32px 30px;
+        background: #ffffff;
+        border: 1px solid #d8d8d8;
+        border-radius: 19px;
+        transition: all 0.35s ease;
+    }
+
+    /* Card Header */
+
+    .ip-card__head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 19px;
+    }
+
+    .ip-card__title {
+        flex: 1;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.65;
+        letter-spacing: -0.4px;
+        color: #080808;
+        margin: 0;
+    }
+
+    /* SVG Icons */
+
+    .ip-card__icon {
+        flex: 0 0 65px;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3px;
+    }
+
+    .ip-card__icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.35s ease;
+    }
+
+    /* Gold Divider */
+
+    .ip-card__divider {
+        display: block;
+        width: 90px;
+        height: 2px;
+        background: var(--suite-gold);
+        margin-bottom: 18px;
+    }
+
+    /* Card Description */
+
+    .ip-card__desc {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14.5px;
+        font-weight: 400;
+        line-height: 1.68;
+        color: var(--suite-muted);
+        margin: 0;
+    }
+
+    /* Hover Effect */
+
+    .ip-card:hover {
+        transform: translateY(-7px);
+        border-color: var(--suite-gold);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+    }
+
+    .ip-card:hover .ip-card__icon img {
+        transform: scale(1.08);
+    }
+
+    /* =========================================
+    RESPONSIVE DESIGN
+    ========================================= */
+
+    /* Laptop */
+
+    @media (max-width: 1199px) {
+
+        .ip-card {
+            padding: 27px 24px;
+            min-height: 320px;
+        }
+
+        .ip-card__title {
+            font-size: 21px;
+        }
+
+        .ip-card__icon {
+            flex-basis: 55px;
+            width: 55px;
+            height: 55px;
+        }
+
+        .ip-card__desc {
+            font-size: 14px;
+        }
+
+    }
+
+    /* Tablet */
+
+    @media (max-width: 991px) {
+
+        .ip-suite {
+            padding: 65px 0;
+        }
+
+        .ip-suite__head {
+            margin-bottom: 40px;
+        }
+
+        .ip-title {
+            font-size: 31px;
+        }
+
+        .ip-card {
+            min-height: 300px;
+            padding: 28px 25px;
+        }
+
+        .ip-card__title {
+            font-size: 22px;
+        }
+
+    }
+
+    /* Mobile */
+
+    @media (max-width: 575px) {
+
+        .ip-suite {
+            padding: 50px 0 55px;
+        }
+
+        .ip-suite__head {
+            margin-bottom: 32px;
+            padding: 0 10px;
+        }
+
+        .ip-pill {
+            min-width: 165px;
+            padding: 10px 22px;
+            font-size: 13px;
+        }
+
+        .ip-title {
+            font-size: 25px;
+            line-height: 1.4;
+            letter-spacing: -0.4px;
+        }
+
+        .ip-subtitle {
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .ip-card {
+            min-height: auto;
+            padding: 25px 23px;
+            border-radius: 15px;
+        }
+
+        .ip-card__head {
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .ip-card__title {
+            font-size: 20px;
+            line-height: 1.55;
+        }
+
+        .ip-card__icon {
+            flex-basis: 55px;
+            width: 55px;
+            height: 55px;
+        }
+
+        .ip-card__divider {
+            width: 75px;
+            margin-bottom: 15px;
+        }
+
+        .ip-card__desc {
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .ip-card:hover {
+            transform: translateY(-3px);
+        }
+
+    }
+
+</style>
 <section class="ip-suite" id="services">
-    <canvas class="ip-constellation" aria-hidden="true"></canvas>
-    <div class="ip-float ip-float--c d-none d-md-block" style="bottom: 6%; left: 3%; width: 70px;"><img src="<?= $obj ?>/yellow-square.png" alt=""></div>
+
     <div class="container">
+
+        <!-- SECTION HEADING -->
         <div class="ip-suite__head" data-aos="fade-up">
-            <span class="ip-pill">Our Services</span>
-            <h2 class="ip-title">Our Comprehensive Fund Solutions</h2>
+
+            <span class="ip-pill">Solutions Suite</span>
+
+            <h2 class="ip-title">
+                Our Comprehensive Fund Solutions
+            </h2>
+
+            <p class="ip-subtitle">
+                Tailored corporate finance and regulatory tax advisory modules
+                <br class="d-none d-md-block">
+                designed for multinational holdings and cross-border expansion.
+            </p>
+
         </div>
 
+        <!-- SERVICES GRID -->
         <div class="row g-4">
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+            <!-- SERVICE 01 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="0">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">24/7 Investor Desk Support</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-headset"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            24/7 Investor<br class="d-none d-sm-block">
+                            Desk Support
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/24x7-investor.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Multilingual, round-the-clock helpdesk providing rapid inquiry resolution for institutional and retail limited partners (LPs).</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Multilingual, round-the-clock helpdesk providing
+                        rapid inquiry resolution for institutional and
+                        retail limited partners (LPs).
+                    </p>
+
                 </article>
             </div>
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+
+            <!-- SERVICE 02 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="120">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Fund Accounting &amp; NAV Assistance</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            Fund Accounting<br class="d-none d-sm-block">
+                            &amp; NAV Assistance
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/fund-accounting.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Operational support for daily/monthly Net Asset Value (NAV) reconciliations, fee calculations, and reporting verification.</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Operational support for daily/monthly Net Asset
+                        Value (NAV) reconciliations, fee calculations,
+                        and reporting verification.
+                    </p>
+
                 </article>
             </div>
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+
+            <!-- SERVICE 03 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="240">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">KYC / AML Onboarding</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-user-check"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            KYC / AML<br class="d-none d-sm-block">
+                            Onboarding
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/kyc-aml.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Automated and manual Identity Verification (IDV), Anti-Money Laundering screening, and continuous investor compliance checkups.</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Automated and manual Identity Verification (IDV),
+                        Anti-Money Laundering screening, and continuous
+                        investor compliance checkups.
+                    </p>
+
                 </article>
             </div>
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+
+            <!-- SERVICE 04 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="0">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Capital Call &amp; Distribution Desk</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-money-bill-transfer"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            Capital Call &amp;<br class="d-none d-sm-block">
+                            Distribution Desk
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/capital-call.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Precision management of capital call notifications, wire confirmation follow-ups, and dividend payout communication.</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Precision management of capital call notifications,
+                        wire confirmation follow-ups, and dividend payout
+                        communication.
+                    </p>
+
                 </article>
             </div>
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+
+            <!-- SERVICE 05 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="120">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Digital LP Portal Management</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-laptop"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            Digital LP Portal<br class="d-none d-sm-block">
+                            Management
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/digital-lp-product.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Dedicated technical assistance guiding fund clients through reporting portal access, multi-factor authentication, and statement retrieval.</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Dedicated technical assistance guiding fund clients
+                        through reporting portal access, multi-factor
+                        authentication, and statement retrieval.
+                    </p>
+
                 </article>
             </div>
 
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
-                <article class="ip-card" itemscope itemtype="https://schema.org/Service">
+
+            <!-- SERVICE 06 -->
+            <div class="col-lg-4 col-md-6"
+                 data-aos="fade-up" data-aos-delay="240">
+
+                <article class="ip-card"
+                         itemscope itemtype="https://schema.org/Service">
+
                     <div class="ip-card__head">
-                        <h3 class="ip-card__title" itemprop="name">Escrow &amp; Settlement Operations</h3>
-                        <span class="ip-card__fa" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
+
+                        <h3 class="ip-card__title" itemprop="name">
+                            Escrow &amp;<br class="d-none d-sm-block">
+                            Settlement Operations
+                        </h3>
+
+                        <div class="ip-card__icon">
+                            <img src="<?= $img ?>/escrow-settlement.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+
                     </div>
+
                     <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc" itemprop="description">Direct assistance with transaction reconciliation, subscription tracking, and escrow confirmation workflows.</p>
+
+                    <p class="ip-card__desc" itemprop="description">
+                        Direct assistance with transaction reconciliation,
+                        subscription tracking, and escrow confirmation
+                        workflows.
+                    </p>
+
                 </article>
             </div>
 
         </div>
     </div>
+
 </section>
 
 <!-- 3. WHY US -->
-<section class="ip-why">
-    <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 80px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+<style>
+    .fund-section {
+        padding: 75px 0;
+        overflow: hidden;
+    }
+
+    /* Left Image */
+
+    .visual-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .visual-wrapper img {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    /* Right Content */
+
+    .content-wrapper {
+        padding: 20px 10px 20px 30px;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 45px;
+        row-gap: 28px;
+        align-items: start;
+    }
+
+    .main-heading {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: 5px;
+    }
+
+    .main-heading h2 {
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.55;
+        letter-spacing: -1px;
+        color: #080808;
+        margin-bottom: 34px;
+    }
+
+    .heading-line {
+        width: 90px;
+        height: 2px;
+        background: var(--gold-dark);
+    }
+
+    /* Information Items */
+
+    .feature-item {
+        position: relative;
+    }
+
+    .feature-01 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .feature-02 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .feature-03 {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .feature-number {
+        display: block;
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--gold);
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+
+    .feature-item h3 {
+        font-size: 19px;
+        font-weight: 600;
+        color: #080808;
+        line-height: 1.5;
+        margin-bottom: 3px;
+    }
+
+    .feature-item p {
+        font-size: 15.5px;
+        font-weight: 400;
+        color: var(--text);
+        line-height: 1.85;
+        margin-bottom: 0;
+    }
+
+    /* Tablet */
+
+    @media (max-width: 1199px) {
+        .content-wrapper {
+            padding-left: 15px;
+        }
+
+        .content-grid {
+            column-gap: 25px;
+            row-gap: 25px;
+        }
+
+        .main-heading h2 {
+            font-size: 29px;
+        }
+
+        .feature-item h3 {
+            font-size: 17px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+        }
+    }
+
+    /* Mobile */
+
+    @media (max-width: 991px) {
+        .fund-section {
+            padding: 55px 0;
+        }
+
+        .visual-wrapper {
+            margin-bottom: 35px;
+        }
+
+        .visual-wrapper img {
+            max-width: 450px;
+        }
+
+        .content-wrapper {
+            padding: 0 15px;
+        }
+
+        .content-grid {
+            column-gap: 30px;
+        }
+
+        .main-heading h2 {
+            font-size: 32px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .fund-section {
+            padding: 35px 0 50px;
+        }
+
+        .visual-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .visual-wrapper img {
+            max-width: 100%;
+        }
+
+        .content-wrapper {
+            padding: 0 20px;
+        }
+
+        .content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+        }
+
+        .main-heading {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .main-heading h2 {
+            font-size: 27px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .heading-line {
+            width: 70px;
+        }
+
+        .feature-number {
+            font-size: 26px;
+        }
+
+        .feature-item h3 {
+            font-size: 17px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+    }
+</style>
+<section class="fund-section">
     <div class="container">
-        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Why Leading Fund Managers Partner With Us</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
-                <article class="ip-card">
-                    <h3 class="ip-card__title">99.9% SLA Commitment</h3>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc">We operate strictly under contractually backed service level agreements to ensure fast query turnarounds and operational continuity.</p>
-                </article>
+        <div class="row align-items-center">
+
+            <!-- LEFT IMAGE -->
+            <div class="col-lg-5 col-md-12">
+                <div class="visual-wrapper"
+                     data-aos="zoom-in"
+                     data-aos-duration="1100">
+
+                    <img
+                        src="<?= $img ?>/why-leading-fund-manager.jpg?v=<?= FILE_VERSISON ?>"
+                        alt="Why leading fund managers partner with us"
+                        class="img-fluid"
+                    >
+
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="130">
-                <article class="ip-card">
-                    <h3 class="ip-card__title">Multi-Jurisdictional Reach</h3>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc">Full operational readiness tailored for funds domiciled in the US, Cayman Islands, Luxembourg, Singapore, and Europe.</p>
-                </article>
+
+            <!-- RIGHT CONTENT -->
+            <div class="col-lg-7 col-md-12">
+                <div class="content-wrapper">
+
+                    <div class="content-grid">
+
+                        <!-- MAIN HEADING -->
+                        <div class="main-heading"
+                             data-aos="fade-up"
+                             data-aos-delay="100">
+
+                            <h2>
+                                Why Leading<br>
+                                Fund Managers<br>
+                                Partner With Us
+                            </h2>
+
+                            <div class="heading-line"></div>
+                        </div>
+
+                        <!-- FEATURE 01 -->
+                        <div class="feature-item feature-01"
+                             data-aos="fade-left"
+                             data-aos-delay="200">
+
+                            <span class="feature-number">01</span>
+
+                            <h3>99.9% SLA Commitment</h3>
+
+                            <p>
+                                We operate strictly under contractually
+                                backed service level agreements to ensure
+                                fast query turnarounds and operational
+                                continuity.
+                            </p>
+                        </div>
+
+                        <!-- FEATURE 02 -->
+                        <div class="feature-item feature-02"
+                             data-aos="fade-up"
+                             data-aos-delay="300">
+
+                            <span class="feature-number">02</span>
+
+                            <h3>Bank-Grade Security</h3>
+
+                            <p>
+                                ISO 27001 certified and SOC 2 Type II
+                                compliant processes engineered to protect
+                                sensitive investor financial records.
+                            </p>
+                        </div>
+
+                        <!-- FEATURE 03 -->
+                        <div class="feature-item feature-03"
+                             data-aos="fade-up"
+                             data-aos-delay="400">
+
+                            <span class="feature-number">03</span>
+
+                            <h3>Multi-Jurisdictional Reach</h3>
+
+                            <p>
+                                Full operational readiness tailored for
+                                funds domiciled in the US, Cayman Islands,
+                                Luxembourg, Singapore, and Europe.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="260">
-                <article class="ip-card">
-                    <h3 class="ip-card__title">Bank-Grade Security</h3>
-                    <span class="ip-card__divider"></span>
-                    <p class="ip-card__desc">ISO 27001 certified and SOC 2 Type II compliant processes engineered to protect sensitive investor financial records.</p>
-                </article>
-            </div>
+
         </div>
     </div>
 </section>
 
 <!-- 4. KEY NUMBERS -->
-<section class="ip-stats">
-    <canvas class="ip-constellation ip-constellation--left" aria-hidden="true"></canvas>
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="0">
-                <div class="ip-stat ip-stat--gold">
-                    <span class="ip-stat__num ip-count">$15B+</span>
-                    <span class="ip-stat__label">Assets Under Support</span>
+
+
+<!-- =================================
+        HERO SECTION
+================================= -->
+
+<section class="hero-section"
+            aria-labelledby="hero-title">
+
+    <div class="container-fluid px-0 hero-inner">
+
+        <div class="row g-0 h-100">
+
+            <!-- Right-side content -->
+
+            <div class="col-lg-6 offset-lg-6 hero-copy-col"
+                    data-aos="fade-left"
+                    data-aos-duration="1000">
+
+                <div class="hero-copy">
+
+                    <h1 id="hero-title">
+                        Optimize Your Fund<br class="d-none d-md-block">
+                        Operations Today
+                    </h1>
+
+
+                    <p>
+                        Partner with Devotion Global Customer Service
+                        Provider for institutional-grade fund
+                        administration and 24/7 LP desk support.
+                    </p>
+
+
+                    <a href="#contact" class="btn-gold">
+                        Request a consultation
+                    </a>
+
                 </div>
+
             </div>
-            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="120">
-                <div class="ip-stat ip-stat--dark">
-                    <span class="ip-stat__num ip-count">24/7/365</span>
-                    <span class="ip-stat__label">Multilingual Availability</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="240">
-                <div class="ip-stat ip-stat--tan">
-                    <span class="ip-stat__num ip-count">99.8%</span>
-                    <span class="ip-stat__label">Investor Satisfaction</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="flip-left" data-aos-delay="360">
-                <div class="ip-stat ip-stat--grey">
-                    <span class="ip-stat__num ip-count">15 Min</span>
-                    <span class="ip-stat__label">Avg. Inquiry Response</span>
-                </div>
-            </div>
+
         </div>
+
     </div>
+
 </section>
+
+
+<!-- =================================
+        CONTACT TARGET
+================================= -->
+
+<div id="contact"
+        class="visually-hidden"
+        aria-hidden="true">
+</div>
 
 <!-- 5. COMPLIANCE / SECURITY -->
 <section class="ip-badges">

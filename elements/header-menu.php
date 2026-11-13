@@ -34,7 +34,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/about-us">About Us</a></li>
                                 <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/contact-us">Contact Us</a></li>
-                                <li><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/faqs">FAQs</a></li>
+                                <li class="d-none"><a class="dropdown-item" href="<?= BASE_URL.BASE_FOLDER ?>/faqs">FAQs</a></li>
                             </ul>
                         </li>
 
@@ -87,11 +87,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/ready-made-licenses">Read-Made Licenses</a>
+                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/ready-made-licenses">Ready-Made Licenses</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/our-clients">Our Client</a>
+                            <a class="nav-link" href="<?= BASE_URL.BASE_FOLDER ?>/our-clients">Our Clients</a>
                         </li>
 
                         <li class="nav-item dropdown dropdown-hover ms-lg-2">

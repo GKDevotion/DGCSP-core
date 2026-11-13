@@ -141,8 +141,12 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
 
     <!-- 2. WHAT IS GLOBAL ENTITY MANAGEMENT -->
     <section class="ip-about">
-        <div class="ip-float ip-float--a d-none d-md-block" style="top: 8%; left: 2%; width: 60px;"><img src="<?= $obj ?>/golden-square.png" alt=""></div>
-        <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 90px;"><img src="<?= $obj ?>/brown-ring.png" alt=""></div>
+        <div class="ip-float ip-float--a d-none d-md-block" style="top: 8%; left: 2%; width: 60px;">
+            <img src="<?= $obj ?>/golden-square.png" alt="">
+        </div>
+        <div class="ip-float ip-float--b d-none d-md-block" style="bottom: 8%; right: 4%; width: 90px;">
+            <img src="<?= $obj ?>/brown-ring.png" alt="">
+        </div>
         <div class="container position-relative" style="z-index: 2;">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="zoom-in">
@@ -506,22 +510,41 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     </section>
 
     <!-- 8. CALL TO ACTION -->
-    <section class="container py-1" id="contact">
-        <div class="row align-items-center">
-            <!-- Left Image Column -->
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="<?= $img ?>/Optimize-Your-Global-Entity.png" alt="Optimize Your Global Entity Governance" class="img-fluid ip-cta__bg" width="2300" height="787" loading="lazy">
-            </div>
+    <section class="ip-about py-5">
+        <?php
+        if( false ){ ?>
+            <div class="row align-items-center">
+                <!-- Left Image Column -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="<?= $img ?>/Optimize-Your-Global-Entity.png" alt="Optimize Your Global Entity Governance" class="img-fluid ip-cta__bg" width="2300" height="787" loading="lazy">
+                </div>
 
-            <!-- Right Content Column -->
-            <div class="col-lg-6">
-                <div class="ip-cta__content ps-lg-4" data-aos="fade-left">
-                    <h2 class="ip-title mb-3">Optimize Your Global Entity<br>Governance Today</h2>
-                    <p class="mb-0">Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
-                    <a href="mailto:contact@devotioncsp.com" class="btn ip-btn ip-btn--pill mt-4">Speak with a CSP Advisor</a>
+                <!-- Right Content Column -->
+                <div class="col-lg-6">
+                    <div class="ip-cta__content ps-lg-4" data-aos="fade-left">
+                        <h2 class="ip-title mb-3">Optimize Your Global Entity<br>Governance Today</h2>
+                        <p class="mb-0">Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
+                        <a href="mailto:contact@devotioncsp.com" class="btn ip-btn ip-btn--pill mt-4">Speak with a CSP Advisor</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        <?php } else { ?>
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="zoom-in">
+                        <img src="<?= $img ?>/Optimize-Your-Global-Entity.png" alt="Global expansion, our expertise" class="ip-about__img img-fluid" style="max-width: 600px;" width="1580" height="1012" loading="lazy">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                        <h2 class="ip-title">Optimize Your Global Entity<br>Governance Today</h2>
+                        <span class="ip-line"></span>
+                        <p class="mb-0">Partner with Devotion Global CSP for seamless compliance across all operational territories.</p>
+                        <div class="mt-4 w-100 text-center">
+                            <a href="mailto:contact@devotioncsp.com" class="btn ip-btn ip-btn--pill mt-4">Speak with a CSP Advisor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
     </section>
 
     <style>

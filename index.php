@@ -1300,6 +1300,7 @@ include ROOT_PATH . '/elements/map-animate.php';
             height: auto;
             max-height: 580px;
             overflow: visible;
+            padding: 35px 0;
         }
 
         /* Interactive SVG Nodes & Connections */

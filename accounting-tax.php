@@ -444,7 +444,7 @@ $obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 
     <!-- 5. CALL TO ACTION -->
     <section class="ip-cta" id="contact">
-        <img src="<?= $img ?>/cta-bg.webp" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
+        <img src="<?= $img ?>/cta-bg-compliance-partnership-checklist.jpg" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
         <div class="container ip-cta__content">
             <div class="row">
                 <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
