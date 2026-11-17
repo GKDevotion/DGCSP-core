@@ -12,44 +12,51 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
     --ac-gold: #b08843;
     --ac-text-dark: #111111;
     --ac-text-muted: #4a4f55;
+    --ac-bg: #ffffff;
   }
 
   .ac-hero-section {
     position: relative;
-    min-height: 550px;
-    background-color: #f4f4f4;
+    min-height: 600px;
+    background-color: var(--ac-bg);
     overflow: hidden;
     display: flex;
-    align-items: center;
+    /* Align to top-start so text stays in the clean upper negative space */
+    align-items: flex-start;
+    padding-top: 4rem;
+    padding-bottom: 0.1rem;
   }
 
-  /* Full-Bleed Skyline Background with Subtle Ambient Motion */
+  /* Skyline Background: Anchored bottom-right so left text remains clear */
   .ac-hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: left center;
+    background-size: 80% auto;
+    background-position: right 100%;
     background-repeat: no-repeat;
     animation: acSkylineFloat 18s ease-in-out infinite alternate;
     will-change: transform;
+    z-index: 0;
   }
 
   @keyframes acSkylineFloat {
     0% { transform: scale(1) translateX(0); }
-    100% { transform: scale(1.03) translateX(-0.4%); }
+    100% { transform: scale(1.02) translateX(-0.6%); }
   }
 
-  /* Responsive Readability Gradient on Mobile/Tablet */
+  /* Soft Left-to-Right Readability Shield (Active on all viewports) */
   .ac-hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       90deg,
-      rgba(244, 244, 244, 0.72) 0%,
-      rgba(244, 244, 244, 0.94) 45%,
-      rgba(244, 244, 244, 0.98) 100%
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 38%,
+      rgba(255, 255, 255, 0.25) 65%,
+      rgba(255, 255, 255, 0) 100%
     );
     z-index: 1;
+    pointer-events: none;
   }
 
   /* Spaced Eyebrow Tagline */
@@ -97,15 +104,50 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
     max-width: 470px;
   }
 
-  @media (min-width: 1200px) {
+  /* Tablet Breakpoint (768px - 1199px) */
+  @media (max-width: 1199.98px) {
     .ac-hero-section {
-      min-height: 550px;
+      min-height: 540px;
+      padding-top: 4.5rem;
+      padding-bottom: 5rem;
+    }
+
+    .ac-hero-bg {
+      background-size: 95% auto;
+      background-position: right bottom;
+    }
+
+    .ac-hero-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.85) 55%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
     }
   }
 
-  @media (max-width: 991.98px) {
+  /* Mobile Breakpoint (< 768px): Reserves clean space below text for skyline */
+  @media (max-width: 767.98px) {
     .ac-hero-section {
-      min-height: 550px;
+      min-height: auto;
+      padding-top: 3.5rem;
+      padding-bottom: 14rem;
+    }
+
+    .ac-hero-bg {
+      background-size: 135% auto;
+      background-position: 75% bottom;
+      animation: none;
+    }
+
+    .ac-hero-overlay {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.95) 55%,
+        rgba(255, 255, 255, 0) 85%
+      );
     }
   }
 
@@ -118,7 +160,7 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
 
 <section class="ac-hero-section" id="across-borders-connected">
   
-  <!-- Full-Bleed Architectural Skyline Graphic -->
+  <!-- Architectural Skyline Graphic -->
   <div 
     class="ac-hero-bg" 
     style="background-image: url('<?= $img ?>/always-connected.png?v=<?= FILE_VERSISON ?>');"
@@ -126,21 +168,21 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
     aria-label="Global financial skyline featuring Big Ben, Burj Khalifa, Burj Al Arab, and Marina Bay Sands"
   ></div>
 
-  <!-- Soft Readability Overlay on Smaller Viewports -->
-  <div class="ac-hero-overlay d-lg-none"></div>
+  <!-- Responsive Readability Overlay -->
+  <div class="ac-hero-overlay"></div>
 
-  <div class="container position-relative z-2 py-5">
+  <div class="container position-relative z-2">
     <div class="row justify-content-start">
-      <div class="col-12 col-md-9 col-lg-6 col-xl-6 text-start">
+      <div class="col-12 col-md-10 col-lg-6 col-xl-5 text-start">
         
         <!-- Spaced Eyebrow -->
         <p class="ac-eyebrow" data-aos="fade-down" data-aos-duration="750">
           Local presence. &nbsp;Centralised support.
         </p>
 
-        <!-- Right-Aligned Gold Rule -->
+        <!-- Gold Rule -->
         <div 
-          class="ac-gold-line ms-auto" 
+          class="ac-gold-line" 
           data-aos="zoom-in-left" 
           data-aos-delay="120" 
           data-aos-duration="800"
@@ -177,7 +219,7 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
 
   .go-offices-section {
     background-color: #ffffff;
-    padding: 5.5rem 0;
+    padding: 0 0 4rem 0;
   }
 
   /* Header Typography */
