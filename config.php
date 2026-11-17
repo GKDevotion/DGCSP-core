@@ -31,7 +31,7 @@ if (
     $host === 'localhost' ||
     str_starts_with($host, 'localhost:') ||
     str_starts_with($host, '127.0.0.1') ||
-    str_starts_with($host, '192.168')
+    str_starts_with($host, '192.168.2.110')
 ) {
 
     define(

@@ -16,7 +16,7 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
 
   .ac-hero-section {
     position: relative;
-    min-height: 440px;
+    min-height: 550px;
     background-color: #f4f4f4;
     overflow: hidden;
     display: flex;
@@ -99,13 +99,13 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
 
   @media (min-width: 1200px) {
     .ac-hero-section {
-      min-height: 500px;
+      min-height: 550px;
     }
   }
 
   @media (max-width: 991.98px) {
     .ac-hero-section {
-      min-height: 400px;
+      min-height: 550px;
     }
   }
 
@@ -121,7 +121,7 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
   <!-- Full-Bleed Architectural Skyline Graphic -->
   <div 
     class="ac-hero-bg" 
-    style="background-image: url('<?= $img ?>/always-connected.jpg?v=<?= FILE_VERSISON ?>');"
+    style="background-image: url('<?= $img ?>/always-connected.png?v=<?= FILE_VERSISON ?>');"
     role="img"
     aria-label="Global financial skyline featuring Big Ben, Burj Khalifa, Burj Al Arab, and Marina Bay Sands"
   ></div>
@@ -130,8 +130,8 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
   <div class="ac-hero-overlay d-lg-none"></div>
 
   <div class="container position-relative z-2 py-5">
-    <div class="row justify-content-end">
-      <div class="col-12 col-md-9 col-lg-6 col-xl-6 text-end">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-9 col-lg-6 col-xl-6 text-start">
         
         <!-- Spaced Eyebrow -->
         <p class="ac-eyebrow" data-aos="fade-down" data-aos-duration="750">
@@ -153,7 +153,7 @@ $img    = BASE_URL . BASE_FOLDER . $imgDir;
         </h1>
 
         <!-- Description Paragraph -->
-        <p class="ac-desc ms-auto mb-0" data-aos="fade-up" data-aos-delay="320" data-aos-duration="850">
+        <p class="ac-desc mb-0" data-aos="fade-up" data-aos-delay="320" data-aos-duration="850">
           Find your nearest office, connect with the right department, or get help with an existing request. One place for every conversation.
         </p>
 
