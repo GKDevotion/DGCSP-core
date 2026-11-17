@@ -677,13 +677,13 @@ $obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
 
         .cs-oval-ring {
             position: relative;
-            border-radius: 52% 48% 52% 48% / 46% 54% 46% 54%;
+            /* border-radius: 52% 48% 52% 48% / 46% 54% 46% 54%;
             transform: rotate(-8deg);
             border: 3px solid var(--brand-gold);
             box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             aspect-ratio: 16 / 10.5;
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; */
         }
 
         .cs-oval-ring--reverse {
@@ -870,7 +870,7 @@ $obj = BASE_URL . BASE_FOLDER . '/assets/images/objects';
                 <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-duration="850">
                     <div class="cs-oval-wrap">
                         <div class="cs-oval-ring cs-oval-ring--reverse">
-                            <img src="<?= $img; ?>/Built-on-Global-Compliance-and-Professional-Excellence-square.jpeg" alt="Our Standards - Dubai Skyline">
+                            <img src="<?= $img; ?>/Built-on-Global-Compliance-and-Professional-Excellence-square.png" alt="Our Standards - Dubai Skyline">
                         </div>
                     </div>
                 </div>
