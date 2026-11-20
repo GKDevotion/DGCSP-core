@@ -173,7 +173,7 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     About Licensing Section
     ========================================= */
     .about-licensing-section {
-        background-color: #ffffff;
+        background-color: #f7f7f7;
         overflow: hidden;
     }
 
@@ -1096,13 +1096,14 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
         background-color: var(--brand-gold, #b58932);
         border: 3px solid #ffffff;
         color: #ffffff;
-        display: flex;
+        /* display: flex; */
         align-items: center;
         justify-content: center;
         font-size: 0.85rem;
         z-index: 10;
         box-shadow: 0 6px 16px rgba(181, 137, 50, 0.35);
         animation: pulseArrow 2s infinite ease-in-out;
+        display: none;
     }
 
     @keyframes pulseArrow {
@@ -1320,7 +1321,7 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     }
 
     .vasp-card:hover {
-        transform: translateY(-8px);
+        /* transform: translateY(-8px); */
         border-color: var(--brand-gold, #b58932);
         box-shadow: 0 22px 45px rgba(181, 137, 50, 0.16);
     }
@@ -1544,7 +1545,7 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     Fintech License Comparison Matrix Section
     ========================================= */
     .comparison-matrix-section {
-        background-color: #ffffff;
+        background-color: #f7f7f7;
         position: relative;
         overflow: hidden;
     }
@@ -1596,6 +1597,11 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     }
 
     /* Table Wrapper */
+    .table-responsive{
+        overflow-x: clip;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .matrix-table-wrapper {
         border: 1.5px solid #dec692;
         border-radius: 16px;
@@ -2090,12 +2096,12 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
     /* Circular Photo Ring */
     .node-circle-wrap {
         position: relative;
-        width: 112px;
-        height: 112px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
-        padding: 4px;
+        padding: 5px;
         background-color: #ffffff;
-        border: 2px solid var(--brand-gold, #b58932);
+        border: 1px solid var(--brand-gold, #b58932);
         box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
         flex-shrink: 0;
     }
@@ -2148,30 +2154,32 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
         max-width: 155px;
     }
 
-    .node-left .node-info {
+    /* .node-left .node-info {
         margin-right: -12px;
-    }
+    } */
 
-    .node-right .node-info {
+    /* .node-right .node-info {
         margin-left: -12px;
-    }
+    } */
 
     .node-pill-title {
         background-color: #ffffff;
         border: 1px solid #dec692;
-        border-radius: 50px;
-        padding: 0.42rem 1rem;
-        font-size: 0.78rem;
-        font-weight: 700;
+        border-radius: 25px;
+        padding: 0.7rem;
+        font-size: 0.8rem;
+        font-weight: 600;
         line-height: 1.25;
         color: var(--brand-dark, #1d1d1f);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
-        margin-bottom: 0.45rem;
+        /* margin-bottom: 0.45rem; */
+        width: 150px;
+        text-align: center;
     }
 
-    .node-left .node-pill-title {
+    /* .node-left .node-pill-title {
         padding-right: 1.35rem;
-    }
+    } */
 
     .node-right .node-pill-title {
         padding-left: 1.35rem;
@@ -2183,6 +2191,7 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
         color: var(--brand-muted, #5c5f66);
         margin-bottom: 0;
         padding: 0 0.4rem;
+        display: none;
     }
 
     /* =========================================
