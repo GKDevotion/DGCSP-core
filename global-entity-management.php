@@ -532,7 +532,7 @@ $faqArt = BASE_URL . BASE_FOLDER . '/assets/images/faq-art.webp';
             <div class="container position-relative" style="z-index: 2;">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6" data-aos="zoom-in">
-                        <img src="<?= $img ?>/Optimize-Your-Global-Entity.png" alt="Global expansion, our expertise" class="ip-about__img img-fluid" style="max-width: 600px;" width="1580" height="1012" loading="lazy">
+                        <img src="<?= $img ?>/Optimize-Your-Global-Entity.png" alt="Global expansion, our expertise" class="ip-about__img img-fluid" style="max-width: 700px;" width="1580" height="1012" loading="lazy">
                     </div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
                         <h2 class="ip-title">Optimize Your Global Entity<br>Governance Today</h2>
