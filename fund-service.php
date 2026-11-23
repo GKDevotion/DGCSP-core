@@ -940,137 +940,351 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
     </div>
 </section>
 
-<!-- 4. KEY NUMBERS -->
+<style>
+  :root {
+    --gold-primary: #a37e35;
+    --gold-dark: #8c6b2a;
+    --text-dark: #111111;
+  }
 
+  /* =========================================
+     1. TOP GOLD STATS BAR
+     ========================================= */
+  .top-stats-section {
+    background-color: var(--gold-primary);
+    color: #ffffff;
+    padding-top: 4.5rem;
+    padding-bottom: 10.5rem; /* Space for top half of floating card */
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
 
-<!-- =================================
-        HERO SECTION
-================================= -->
+  .stat-item {
+    padding: 0.25rem 1rem;
+  }
 
-<section class="hero-section"
-            aria-labelledby="hero-title">
+  .stat-number {
+    font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
 
-    <div class="container-fluid px-0 hero-inner">
+  .stat-label {
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.92);
+  }
 
-        <div class="row g-0 h-100">
+  /* Desktop vertical dividers */
+  @media (min-width: 992px) {
+    .stat-col:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 8%;
+      height: 84%;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
 
-            <!-- Right-side content -->
+  @media (max-width: 991.98px) {
+    .stat-col {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 1rem;
+    }
+    .stat-col:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
 
-            <div class="col-lg-6 offset-lg-6 hero-copy-col"
-                    data-aos="fade-left"
-                    data-aos-duration="1000">
+  @media (max-width: 575.98px) {
+    .stat-col:nth-last-child(2) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
 
-                <div class="hero-copy">
+  /* =========================================
+     2. CUT-TO-CUT OVERLAPPING FLOATING BANNER
+     Zero-height anchor right on the exact seam!
+     ========================================= */
+  .floating-seam-anchor {
+    position: relative;
+    height: 0;
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+  }
 
-                    <h1 id="hero-title">
-                        Optimize Your Fund<br class="d-none d-md-block">
-                        Operations Today
-                    </h1>
+  .floating-banner {
+    max-width: 820px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    /* Moves the top beige box into the gold area and leaves the bottom white strip below the seam */
+    transform: translateY(-73%);
+  }
 
+  .floating-banner-top {
+    background: rgba(235, 224, 204, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 2rem 1.25rem 1.65rem;
+    text-align: center;
+  }
 
-                    <p>
-                        Partner with Devotion Global Customer Service
-                        Provider for institutional-grade fund
-                        administration and 24/7 LP desk support.
-                    </p>
+  .floating-banner-top h2 {
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.35;
+    margin: 0;
+  }
 
+  .floating-banner-bottom {
+    background-color: #ffffff;
+    padding: 0.95rem 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #333333;
+    font-weight: 500;
+    /* Covers any 1px subpixel seam */
+    border-top: 1px solid #ffffff;
+  }
 
-                    <a href="#contact" class="btn-gold">
-                        Request a consultation
-                    </a>
+  .compliance-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-                </div>
+  .compliance-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
 
-            </div>
+  .compliance-list li:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 1.5px;
+    height: 13px;
+    background-color: var(--gold-primary);
+  }
 
+  @media (max-width: 575.98px) {
+    .floating-banner {
+      transform: translateY(-62%);
+    }
+    .compliance-list li:not(:last-child)::after {
+      display: none;
+    }
+    .compliance-list li {
+      background: #f8f5ef;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+  }
+
+  /* =========================================
+     3. BOTTOM CTA SECTION (CUT-TO-CUT FLUSH)
+     ========================================= */
+  .bottom-cta-section {
+    position: relative;
+    background-color: #ffffff;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  /* Bottom-Left Full Bleed Artwork */
+  .bottom-left-artwork {
+    position: absolute;
+    top: -4px; /* Pulls image 4px up under the gold edge to hide the image's top white border */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% + 4px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .bottom-left-artwork img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+    display: block;
+  }
+
+  .cta-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-content-box {
+    max-width: 470px;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.65rem, 2.7vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111111;
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+    margin-bottom: 1.75rem;
+  }
+
+  .btn-gold {
+    background-color: var(--gold-primary);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.65rem 1.85rem;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(163, 126, 53, 0.28);
+  }
+
+  .btn-gold:hover,
+  .btn-gold:focus {
+    background-color: var(--gold-dark);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  /* Responsive Adjustments for Tablet & Mobile */
+  @media (max-width: 991.98px) {
+    .bottom-cta-section {
+      display: block;
+      min-height: auto;
+      padding-top: 6.5rem;
+      padding-bottom: 0;
+    }
+
+    .bottom-left-artwork {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-top: 2rem;
+    }
+
+    .bottom-left-artwork img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .cta-content-box {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- 1. Top Gold Metrics Bar -->
+<section class="top-stats-section">
+  <div class="container">
+    <div class="row g-3 justify-content-center">
+
+      <div class="col-6 col-lg-3 position-relative stat-col d-flex justify-content-center">
+        <div class="stat-item text-start">
+          <div class="stat-number">$15B+</div>
+          <div class="stat-label">Assets Under<br />Support</div>
         </div>
+      </div>
+
+      <div class="col-6 col-lg-3 position-relative stat-col d-flex justify-content-center">
+        <div class="stat-item text-start">
+          <div class="stat-number">24/7/365</div>
+          <div class="stat-label">Multilingual<br />Availability</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3 position-relative stat-col d-flex justify-content-center">
+        <div class="stat-item text-start">
+          <div class="stat-number">99.8%</div>
+          <div class="stat-label">Investor<br />Satisfaction</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3 position-relative stat-col d-flex justify-content-center">
+        <div class="stat-item text-start">
+          <div class="stat-number">15 Min</div>
+          <div class="stat-label">Avg. Inquiry<br />Response</div>
+        </div>
+      </div>
 
     </div>
-
+  </div>
 </section>
 
-
-<!-- =================================
-        CONTACT TARGET
-================================= -->
-
-<div id="contact"
-        class="visually-hidden"
-        aria-hidden="true">
+<!-- 2. Zero-Height Seam Anchor for Floating Card -->
+<div class="floating-seam-anchor">
+  <div class="floating-banner">
+    <div class="floating-banner-top">
+      <h2>Have a business vision in mind?<br />Let's turn it into reality!</h2>
+    </div>
+    <div class="floating-banner-bottom">
+      <ul class="compliance-list">
+        <li>SOC 1 Type II</li>
+        <li>SOC 2 Type II</li>
+        <li>ISO 27001 Certified</li>
+        <li>GDPR &amp; CCPA Compliant</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<!-- 5. COMPLIANCE / SECURITY -->
-<section class="ip-badges">
-    <div class="container">
-        <div class="ip-head" data-aos="fade-up"><h2 class="ip-title">Regulatory &amp; Compliance Infrastructure</h2><span class="ip-line" style="margin: 1rem auto 0;"></span></div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-                <div class="ip-badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>SOC 1 Type II</span></div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="120">
-                <div class="ip-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>SOC 2 Type II</span></div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
-                <div class="ip-badge"><i class="fa-solid fa-lock" aria-hidden="true"></i><span>ISO 27001 Certified</span></div>
-            </div>
-            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="360">
-                <div class="ip-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>GDPR &amp; CCPA Compliant</span></div>
-            </div>
+<!-- 3. Bottom CTA Section -->
+<section class="bottom-cta-section">
+  <div class="container cta-container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-6">
+        <div class="cta-content-box">
+          <h3 class="cta-heading">Optimize Your Fund<br />Operations Today</h3>
+          <p class="cta-description">
+            Partner with Devotion Global Customer Service<br class="d-none d-sm-inline" />
+            Provider for institutional-grade fund administration<br class="d-none d-sm-inline" />
+            and 24/7 LP desk support.
+          </p>
+          <a href="#consultation" class="btn-gold">Request a consultation</a>
         </div>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- 6. FAQ -->
-<section class="ip-faq">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-5" data-aos="fade-right">
-                <img src="<?= $faqArt ?>" alt="FAQ" class="ip-faq__art" width="811" height="582" loading="lazy">
-                <div class="ip-faq__tag">
-                    <img src="<?= BASE_URL . BASE_FOLDER ?>/assets/images/global-entity-management/skill-development_1.svg" alt="" width="44" height="44" loading="lazy">
-                    <span class="ip-pill">AI &amp; Search Insights</span>
-                </div>
-                <h2>Frequently Asked Questions</h2>
-                <p class="ip-faq__lead">Clear answers for decision-makers and automated search engines.</p>
-            </div>
-            <div class="col-lg-7">
-                <div class="ip-acc">
-                <div class="ip-acc-item is-open" data-aos="fade-left" data-aos-delay="0">
-                    <button class="ip-acc-btn" type="button" aria-expanded="true" aria-controls="ipFaq0" id="ipFaqBtn0">
-                        <span>What types of funds does Devotion Global support?</span><span class="ip-acc-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="ip-acc-panel" id="ipFaq0" role="region" aria-labelledby="ipFaqBtn0"><div><p>We support Hedge Funds, Private Equity (PE) firms, Venture Capital (VC) funds, Real Estate Funds, and Mutual Funds across domestic and offshore jurisdictions.</p></div></div>
-                </div>
-                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="80">
-                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq1" id="ipFaqBtn1">
-                        <span>Can Devotion Global integrate with our existing CRM and software?</span><span class="ip-acc-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="ip-acc-panel" id="ipFaq1" role="region" aria-labelledby="ipFaqBtn1"><div><p>Yes. Our team integrates directly with leading fund software like FIS, Investran, Allvue, Salesforce Financial Services Cloud, and custom investor portals.</p></div></div>
-                </div>
-                <div class="ip-acc-item" data-aos="fade-left" data-aos-delay="160">
-                    <button class="ip-acc-btn" type="button" aria-expanded="false" aria-controls="ipFaq2" id="ipFaqBtn2">
-                        <span>How do you handle multilingual investor communications?</span><span class="ip-acc-icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="ip-acc-panel" id="ipFaq2" role="region" aria-labelledby="ipFaqBtn2"><div><p>Our global desks provide native support in English, Mandarin, Spanish, French, German, and Arabic to serve international LP bases seamlessly.</p></div></div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 7. CALL TO ACTION -->
-<section class="ip-cta" id="contact">
-    <img src="<?= $img ?>/<?= $ctaFile ?>" alt="" class="ip-cta__bg" width="2300" height="795" loading="lazy">
-    <div class="container ip-cta__content">
-        <div class="row">
-            <div class="col-lg-7 offset-lg-5" data-aos="fade-left">
-                <h2 class="ip-title">Optimize Your Fund Operations Today</h2>
-                <p>Partner with Devotion Global Customer Service Provider for institutional-grade fund administration and 24/7 LP desk support.</p>
-                <a href="mailto:contact@devotioncsp.com" class="ip-btn ip-btn--pill">Request a Consultation</a>
-            </div>
-        </div>
-    </div>
+  <!-- Bottom-Left Full-Bleed Image -->
+  <div class="bottom-left-artwork">
+    <img src="<?= $img; ?>/optimize-fund-operations.jpg" alt="24/7 LP Desk Support" />
+  </div>
 </section>
 
 </main>
