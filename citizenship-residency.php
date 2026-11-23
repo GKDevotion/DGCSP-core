@@ -2648,6 +2648,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
       align-items: center;
       justify-content: center;
       position: relative;
+      background-color: transparent;
     }
 
     .sovereign-legacy-checklist-div .visual-stage img {
@@ -2655,9 +2656,10 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
       width: 100%;
       height: auto;
       display: block;
+      background: transparent;
       mix-blend-mode: multiply;
       filter: contrast(1.03);
-      animation: gentleLegacyHover 5s ease-in-out infinite;
+      /* animation: gentleLegacyHover 5s ease-in-out infinite; */
     }
 
     @keyframes gentleLegacyHover {
@@ -2819,7 +2821,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
   <div class="container">
     <div class="row align-items-center justify-content-between g-4">
       <!-- Left Column: Multi-Generational European Citizenship 3D Visual -->
-      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="0">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="0" style="background-color: var(--bg-surface);">
         <div class="visual-stage">
           <img src="<?= $img; ?>/Multi-Generational-European-Citizenship-Legacy.png" alt="Multi-Generational European Citizenship Legacy">
         </div>

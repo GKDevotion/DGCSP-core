@@ -2060,7 +2060,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
             </h2>
             <div class="gold-accent-line mb-4"></div>
             <p class="text-muted fs-6 lh-lg mb-4">
-              Contact Devotion Global's compliance and licensing experts to structure your exchange, brokerage, or wallet company today.[cite: 23]
+              Contact Devotion Global's compliance and licensing experts to structure your exchange, brokerage, or wallet company today.
             </p>
 
             <!-- 3 Mini Value Pillars -->
@@ -2068,19 +2068,19 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
               <div class="col-sm-4">
                 <div class="cta-mini-feature">
                   <i class="bi bi-award"></i>
-                  <p>Licence route matched to your crypto or forex model[cite: 23]</p>
+                  <p>Licence route matched to your crypto or forex model</p>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="cta-mini-feature">
                   <i class="bi bi-bank2"></i>
-                  <p>Entity, banking and AML/KYC set-up under one team[cite: 23]</p>
+                  <p>Entity, banking and AML/KYC set-up under one team</p>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="cta-mini-feature">
                   <i class="bi bi-headset"></i>
-                  <p>Dedicated support from filing to go-live[cite: 23]</p>
+                  <p>Dedicated support from filing to go-live</p>
                 </div>
               </div>
             </div>

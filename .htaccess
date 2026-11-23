@@ -77,13 +77,6 @@ RewriteRule ^hongkong-company-registration$ hongkong-company-registration.php?sl
 RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 RewriteRule ^services$ services.php?slug=$1 [L,QSA]
 
-# Temp Pages
-RewriteRule ^about-us-1$ about-us-1.php?slug=$1 [L,QSA]
-RewriteRule ^forex-broker-license-1$ forex-broker-license-1.php?slug=$1 [L,QSA]
-RewriteRule ^crypto-currency-license-1$ crypto-currency-license-1.php?slug=$1 [L,QSA]
-RewriteRule ^payment-solution-license-1$ payment-solution-license-1.php?slug=$1 [L,QSA]
-RewriteRule ^citizenship-residency-1$ citizenship-residency-1.php?slug=$1 [L,QSA]
-
 # Catch-all: anything else that isn't a real file/folder or a route above -> custom 404
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
