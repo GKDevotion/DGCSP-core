@@ -424,7 +424,7 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')
     margin-right: auto;
     padding: 2.15rem 2.25rem 1.7rem;
     background: rgba(255, 255, 255, 0.62);
-    border: 1.5px solid #3898ec;
+    border: 1.5px solid #fff;
     border-radius: 16px;
     box-shadow: 0 18px 40px rgba(17, 17, 17, 0.08);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
