@@ -19,8 +19,8 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp')
 
 <style>
   :root {
-    --classic-gold: #b8841e;
-    --classic-gold-dark: #976a14;
+    --classic-gold: #ab8139;
+    --classic-gold-dark: #966e27;
     --classic-charcoal: #3f4348;
     --classic-cream: #f4e3c1;
     --classic-stone: #e3e5e8;

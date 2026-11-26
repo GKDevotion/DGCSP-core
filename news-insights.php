@@ -120,7 +120,6 @@ $ctaFile = file_exists(ROOT_PATH . $imgDir . '/cta-bg.webp?v=' . FILE_VERSISON)
 
 <style>
   .news-insight-banner {
-    font-family: 'Poppins', sans-serif;
     min-height: 540px;
     background-color: #f8f6f1;
     color: #1c1d21;
